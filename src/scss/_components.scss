@@ -1,0 +1,44 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    background: none;
+    border: 1px transparent solid;
+    border-radius: 25px;
+    padding: 0px 50px;
+    line-height: 20px;
+    min-height: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &_white {
+        color: white;
+        border-color: white;
+        &:hover {
+            background: #fff;
+            color: black;
+        }
+    }
+    &_black {
+        color: black;
+        border-color: black;
+        &:hover {
+            background: black;
+            color: white;
+        }
+    }
+    &_gray {
+        color: white;
+        border-color: rgba(white, 0.25);
+        background: rgba(black, 0.2);
+        backdrop-filter: blur(10px);
+        &:hover {
+            background: white;
+            color: black;
+        }
+    }
+    &_medium {
+        font-size: 14px;
+        min-height: 38px;
+        padding: 0 20px;
+    }
+}
