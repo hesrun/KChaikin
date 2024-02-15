@@ -1,6 +1,7 @@
 .header {
+    $root: &;
     height: 100px;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -27,11 +28,57 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        width: 200px;
+        height: 56px;
         transform: translate(-50%, -50%);
+        &:before {
+            content: url(../img/logos/logo-white.svg);
+        }
     }
     &__tools {
         display: flex;
         gap: 24px;
+    }
+    &_black {
+        color: #1f2022;
+        &:after {
+            background: rgba(#000, 0.25);
+        }
+        #{$root}__logo {
+            &:before {
+                content: url(../img/logos/logo-black.svg);
+            }
+        }
+        .header-burger__lines {
+            &:after,
+            &:before {
+                background: #1f2022;
+            }
+        }
+    }
+    &_header_scrolled {
+    }
+    &_open,
+    &_scrolled {
+        color: white;
+        &:after {
+            background: rgba(#fff, 0.25);
+        }
+        #{$root}__logo {
+            &:before {
+                content: url(../img/logos/logo-white.svg);
+            }
+        }
+        .header-burger__lines {
+            &:after,
+            &:before {
+                background: white;
+            }
+        }
+    }
+    &_scrolled {
+        background: rgba(#1f2022, 0.7);
+        backdrop-filter: blur(20px);
     }
     &_open {
         background: #1f2022;

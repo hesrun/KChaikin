@@ -1,3 +1,13 @@
+let headerHeight = $('.header').height()
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= headerHeight) {
+        $('.header').addClass('header_scrolled')
+    } else {
+        $('.header').removeClass('header_scrolled')
+    }
+})
+
 const swiper = new Swiper('.swiper', {
     loop: true,
     effect: 'fade',

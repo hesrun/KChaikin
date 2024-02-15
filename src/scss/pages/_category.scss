@@ -1,0 +1,88 @@
+.products-grid {
+    $root: &;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    &__item {
+        position: relative;
+        aspect-ratio: 4/5;
+        display: flex;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(216, 216, 220, 1) 100%
+        );
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(55, 65, 81, 1) 0%,
+                rgba(31, 32, 34, 1) 100%
+            );
+            transition: all 0.4s;
+            opacity: 0;
+        }
+        &:hover {
+            color: white;
+            &:before {
+                opacity: 1;
+            }
+            #{$root}__item-image {
+                img {
+                    transform: translateY(0px) scale(1.03);
+                }
+                &:after {
+                    background: radial-gradient(
+                        circle,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0) 40%
+                    );
+                    transform: translateX(-50%) translateY(50%) rotateX(75deg)
+                        scale(1.1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__item-name {
+        position: absolute;
+        text-transform: uppercase;
+        left: 50%;
+        top: 30px;
+        transform: translateX(-50%);
+    }
+    &__item-image {
+        position: relative;
+        img {
+            position: relative;
+            transform: translateY(20px);
+            z-index: 1;
+            transition: transform 0.4s;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            background: radial-gradient(
+                circle,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0) 40%
+            );
+            width: 272px;
+            height: 272px;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%) rotateX(75deg) scale(1);
+            transition: all 0.5s;
+            opacity: 0.2;
+            filter: blur(20px);
+        }
+    }
+}

@@ -1,12 +1,12 @@
-@import "reset";
-@import "vars";
-@import "mixins";
-@import "global";
-@import "fonts";
-@import "components";
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'global';
+@import 'fonts';
+@import 'components';
 
-@import "modules/footer";
-@import "modules/header";
+@import 'modules/footer';
+@import 'modules/header';
 
-@import "pages/index";
-
+@import 'pages/index';
+@import 'pages/category';
