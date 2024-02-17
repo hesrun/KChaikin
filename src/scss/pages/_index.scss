@@ -16,10 +16,22 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        @include md {
+            padding: 0 0 60px;
+        }
         .container {
             display: flex;
             align-items: center;
             gap: 60px;
+            @include md {
+                gap: 5px;
+                flex-direction: column;
+                align-items: flex-start;
+                .button {
+                    margin-top: 20px;
+                    width: 100%;
+                }
+            }
         }
         span {
         }
@@ -33,11 +45,69 @@
         }
     }
     &__pagination {
+        color: #fff;
         position: absolute;
         overflow: hidden;
         width: 100%;
         bottom: 200px;
         z-index: 3;
+        @include md {
+            bottom: 0;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            @include md {
+                justify-content: center;
+                padding: 23px 0;
+            }
+            &:after,
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 9000px;
+                height: 1px;
+                background: rgba(white, 0.5);
+                @include md {
+                    display: none;
+                }
+            }
+            &:after {
+                left: 100%;
+            }
+            &:before {
+                right: 100%;
+            }
+        }
+        .divider {
+            pointer-events: none;
+            flex: 1 1 auto;
+            height: 1px;
+            background: rgba(white, 0.5);
+            @include md {
+                display: none;
+            }
+        }
+        .swiper-nav {
+            transform: translateY(2px);
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            @include md {
+                display: none;
+            }
+            > * {
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
         .swiper-pagination-horizontal {
             top: auto !important;
             bottom: auto !important;
@@ -48,24 +118,6 @@
             position: relative;
             text-align: left;
             width: auto !important;
-
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                height: 1px;
-                width: 9999px;
-                top: 50%;
-                background: white;
-                opacity: 0.4;
-            }
-            &:before {
-                right: 130%;
-            }
-            &:after {
-                left: 130%;
-            }
         }
         .swiper-pagination-bullet {
             width: 14px;
@@ -85,18 +137,40 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 50px 20px;
+    @include md {
+        gap: 30px;
+    }
     &__item {
         grid-column: 3 span;
+        @include lg {
+            grid-column: 6 span;
+        }
+        @include sm {
+            grid-column: 12 span;
+        }
         &_2x {
             grid-column: 6 span;
+            @include lg {
+                grid-column: 6 span;
+            }
+            @include sm {
+                grid-column: 12 span;
+            }
         }
     }
     &__image {
         overflow: hidden;
+        @include lg {
+            aspect-ratio: 1/1;
+        }
         img {
             vertical-align: middle;
             width: 100%;
             transition: all 0.3s;
+            @include lg {
+                object-fit: cover;
+                height: 100%;
+            }
         }
         @include hover {
             &:hover {
@@ -113,9 +187,16 @@
         font-size: 18px;
         text-transform: uppercase;
         letter-spacing: 2px;
+        @include md {
+            font-size: 14px;
+            margin-top: 15px;
+        }
     }
 }
 
+.newsletter-grid-wrap {
+    overflow: auto;
+}
 .newsletter-grid {
     $root: &;
     display: grid;
@@ -126,6 +207,9 @@
         padding: 40px 0 20px;
         border-top: 1px rgba(black, 0.15) solid;
         border-bottom: 1px rgba(black, 0.15) solid;
+        @include md {
+            padding: 30px 0 20px;
+        }
         &:after {
             content: '';
             display: block;
@@ -148,12 +232,19 @@
                 }
             }
         }
+        @include md {
+            width: 70vw;
+        }
     }
     &__text {
         max-width: 330px;
         font-size: 20px;
         margin-bottom: 40px;
         transition: all 0.3s;
+        @include md {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
     }
     &__date {
         font-size: 12px;
@@ -164,10 +255,18 @@
     margin-top: 60px;
     gap: 50px;
     display: flex;
+    @include md {
+        margin-top: 40px;
+        flex-direction: column;
+        gap: 20px;
+    }
     &__social {
         display: flex;
         align-items: center;
         gap: 20px;
+        @include md {
+            justify-content: center;
+        }
         a {
             transition: all 0.3s;
             &:hover {
@@ -188,10 +287,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    @include md {
+        grid-template-columns: repeat(1, 1fr);
+    }
     &__item {
         position: relative;
     }
-    &__image {
+    img {
         vertical-align: middle;
         width: 100%;
     }
@@ -222,6 +324,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    @include md {
+        grid-template-columns: repeat(1, 1fr);
+    }
     &__image {
         width: 100%;
     }
@@ -238,9 +343,17 @@
         display: grid;
         grid-template-columns: auto auto;
         gap: 15px;
+        @include md {
+            margin-top: 30px;
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
         div {
             font-size: 14px;
             grid-column: 2 span;
+            @include md {
+                grid-column: 1 span;
+            }
         }
     }
 }

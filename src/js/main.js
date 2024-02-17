@@ -15,6 +15,10 @@ const swiper = new Swiper('.swiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    navigation: {
+        nextEl: '.hero-prev',
+        prevEl: '.hero-next',
+    },
 })
 
 $('.header-burger').click(function () {
@@ -22,9 +26,30 @@ $('.header-burger').click(function () {
     $('body').toggleClass('lock')
     $('.header').toggleClass('header_open')
     $('#menu').fadeToggle(200)
+    $('#searchForm').hide()
     if (!$(this).hasClass('header-burger_active')) {
         $('.header-burger__text').text('меню')
     } else {
         $('.header-burger__text').text('закрыть')
     }
 })
+
+$('#searchOpen').click(function () {
+    $('#searchForm').fadeIn(300)
+})
+
+function checkMediaQuery() {
+    // If the inner width of the window is greater then 768px
+    if (window.innerWidth < 768) {
+        $('.navigation__title').click(function () {
+            $(this).next().slideToggle()
+        })
+        $('#menu .container').prepend($('#searchForm'))
+    } else {
+        $('.header__search').prepend($('#searchForm'))
+    }
+}
+
+checkMediaQuery()
+// Add a listener for when the window resizes
+window.addEventListener('resize', checkMediaQuery)

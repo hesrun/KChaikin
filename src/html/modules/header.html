@@ -8,14 +8,49 @@
         </button>
         <a href="#" class="header__logo"> </a>
         <div class="header__tools">
-            <a href="" class="header__tools-link">
+            <a href="" class="header__tools-link header__tools-link_user">
                 <i class="icon-user"></i>
             </a>
-            <div class="header__serach">
-                <i class="icon-search"></i>
+            <div class="header__search">
+                <form id="searchForm" class="header__search-form">
+                    <input
+                        class="header__search-input"
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Я хочу найти..."
+                    />
+                    <div class="header__search-drop">
+                        <span class="header__popular-title">
+                            Популярные запросы
+                            <i></i>
+                        </span>
+                        <div class="header__popular__list">
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                            <a href="">Ристмоны</a>
+                        </div>
+                    </div>
+                    <button type="submit" class="header__search-submit">
+                        <i class="icon-search"></i>
+                    </button>
+                </form>
+                <button id="searchOpen" class="header__search-btn">
+                    <i class="icon-search"></i>
+                </button>
             </div>
             <div class="header__language">
-                US <i class="icon-arrow-down"></i>
+                <select name="" id="">
+                    <option>US</option>
+                    <option>RU</option>
+                    <option>CZ</option>
+                </select>
+                <i class="icon icon-arrow-down"></i>
             </div>
         </div>
     </div>
