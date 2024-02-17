@@ -51,5 +51,3 @@ function checkMediaQuery() {
 }
 
 checkMediaQuery()
-// Add a listener for when the window resizes
-window.addEventListener('resize', checkMediaQuery)
