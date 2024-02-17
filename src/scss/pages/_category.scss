@@ -7,11 +7,7 @@
         position: relative;
         aspect-ratio: 4/5;
         display: flex;
-        background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(216, 216, 220, 1) 100%
-        );
+        background: white;
         align-items: center;
         justify-content: center;
         transition: all 0.4s;
@@ -46,7 +42,7 @@
                         rgba(0, 0, 0, 0) 40%
                     );
                     transform: translateX(-50%) translateY(50%) rotateX(75deg)
-                        scale(1.1);
+                        scale(0.5);
                     opacity: 1;
                 }
             }

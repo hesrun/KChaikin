@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+    @include('modules/link.html',{ 'title': 'Main' })
+    <body>
+        @include('modules/header.html',{'theme':'white'})
+        <main class="main">
+            <div class="page-hero">
+                <img src="img/series/series-banner.jpg" alt="" />
+                <div class="page-hero__info">
+                    <div class="container">
+                        <div class="page-hero__text">
+                            <span class="page-hero__subtitle">РИСТМОНЫ</span>
+                            <h1 class="page-hero__title">КОЛОБОК</h1>
+                        </div>
+                        <div class="page-hero__btns">
+                            <a href="" class="button button_white">
+                                Обзор 360°
+                            </a>
+                            <a href="" class="button button_white">
+                                Технические характеристики
+                            </a>
+                            <a href="" class="button button_white">
+                                Для прессы
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section">
+                <div class="container">
+                    <p>
+                        В августе 2023 состоялась презентация первого
+                        российского персонажа в коллекции Константина Чайкина
+                        «Ристмоны» («монстры на запястье») – часов «Колобок».
+                    </p>
+                </div>
+            </div>
+            <div class="video-section">
+                <iframe
+                    src="https://www.youtube.com/embed/slGxWPi6rhM"
+                    title="This is the story about Kolobok. A watch from Konstantin Chaykin&#39;s Wristmons collection."
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </main>
+        @include('modules/footer.html')
+    </body>
+</html>

@@ -25,7 +25,7 @@ button {
 }
 .main {
     flex: 1 0 auto;
-    &:not(:has(.hero-slider)) {
+    &:not(:has(.hero-slider, .page-hero)) {
         padding-top: 60px;
     }
 }
@@ -77,8 +77,25 @@ button {
     .light {
         color: rgba(#1f2022, 0.4);
     }
+    &_text-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        @include md {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__text {
+        margin-bottom: 60px;
+        @include md {
+            margin-top: -30px;
+            margin-bottom: 40px;
+        }
+    }
 }
-
+p + p {
+    margin-top: 15px;
+}
 h1 {
     font-size: 50px;
     margin-bottom: 40px;
