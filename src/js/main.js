@@ -60,7 +60,7 @@ $(document).click(function (e) {
     }
 })
 
-$('.header__search-input').on('change paste keyup', function () {
+$('.header__search-input').on('paste keyup', function () {
     let inpLenth = $(this).val().length
     if (inpLenth >= 1) {
         $('.header__search-drop').fadeIn(200)
