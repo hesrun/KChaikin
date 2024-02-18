@@ -615,7 +615,7 @@ h3 {
 .header-burger {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 .header-burger_active .header-burger__lines:after {
   transform: translateY(-6px) rotate(-45deg);
@@ -707,6 +707,7 @@ h3 {
   display: inline-block;
   width: 100%;
   font-size: 14px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
   margin-bottom: 20px;

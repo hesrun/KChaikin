@@ -213,7 +213,7 @@
 .header-burger {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     &_active {
         .header-burger__lines {
             &:after {
@@ -287,6 +287,7 @@
         display: inline-block;
         width: 100%;
         font-size: 14px;
+        letter-spacing: 2px;
         text-transform: uppercase;
         border-bottom: 1px rgba(white, 0.15) solid;
         margin-bottom: 20px;
