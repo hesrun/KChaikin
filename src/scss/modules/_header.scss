@@ -259,9 +259,9 @@
     width: 100%;
     position: absolute;
     background: #1f2022;
-    height: calc(100vh - 100px);
+    height: calc(100dvh - 100px);
     @include md {
-        height: calc(100vh - 70px);
+        height: calc(100dvh - 70px);
     }
     > .container {
         height: 100%;
@@ -280,12 +280,15 @@
             column-count: auto;
         }
     }
+    &__block {
+        break-inside: avoid;
+    }
     &__title {
         display: inline-block;
         width: 100%;
         font-size: 14px;
         text-transform: uppercase;
-        border-bottom: 1px rgba(white, 0.25) solid;
+        border-bottom: 1px rgba(white, 0.15) solid;
         margin-bottom: 20px;
         padding-bottom: 15px;
         @include md {
@@ -324,12 +327,28 @@
             }
         }
         a {
-            opacity: 0.5;
+            position: relative;
+            color: rgba(white, 0.5);
             transition: all 0.3s;
-
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateY(-50%) scale(0);
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+                @include md {
+                    display: none;
+                }
+            }
             &:hover {
-                opacity: 1;
+                color: rgba(white, 1);
                 font-weight: 500;
+                img {
+                    left: 150%;
+                    transform: translateY(-50%) scale(1);
+                    opacity: 1;
+                }
             }
         }
     }

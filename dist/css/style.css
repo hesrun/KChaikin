@@ -661,11 +661,11 @@ h3 {
   width: 100%;
   position: absolute;
   background: #1f2022;
-  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
 }
 @media only screen and (max-width: 768px) {
   .navigation {
-    height: calc(100vh - 70px);
+    height: calc(100dvh - 70px);
   }
 }
 .navigation > .container {
@@ -700,12 +700,15 @@ h3 {
     column-count: auto;
   }
 }
+.navigation__block {
+  break-inside: avoid;
+}
 .navigation__title {
   display: inline-block;
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
-  border-bottom: 1px rgba(255, 255, 255, 0.25) solid;
+  border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
   margin-bottom: 20px;
   padding-bottom: 15px;
 }
@@ -747,12 +750,31 @@ h3 {
   }
 }
 .navigation__links a {
-  opacity: 0.5;
+  position: relative;
+  color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
 }
+.navigation__links a img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+@media only screen and (max-width: 768px) {
+  .navigation__links a img {
+    display: none;
+  }
+}
 .navigation__links a:hover {
-  opacity: 1;
+  color: white;
   font-weight: 500;
+}
+.navigation__links a:hover img {
+  left: 150%;
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
 }
 .navigation__footer {
   display: flex;
@@ -810,7 +832,7 @@ h3 {
 }
 
 .hero-slider .swiper-slide {
-  height: 100vh;
+  height: 100dvh;
   position: relative;
 }
 .hero-slider .swiper-slide img {
