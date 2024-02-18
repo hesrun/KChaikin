@@ -1345,6 +1345,65 @@ h3 {
   gap: 15px;
 }
 
+.whatch-history-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.whatch-history-grid__item {
+  text-align: right;
+  border-top: 1px #1f2022 solid;
+  padding: 40px 0;
+  line-height: 1.5;
+}
+.whatch-history-grid__item p {
+  text-align: left;
+}
+.whatch-history-grid__item img {
+  margin-top: 15px;
+}
+
+.whatch-master-quote {
+  position: relative;
+  margin-top: 40px;
+  border: 1px #1f2022 solid;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+}
+.whatch-master-quote:after, .whatch-master-quote:before {
+  content: "";
+  width: 50px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  background-image: url("../img/watch-item/quots.svg");
+  background-color: #e5e5e5;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.whatch-master-quote:before {
+  top: -27px;
+  left: 30px;
+}
+.whatch-master-quote:after {
+  bottom: -27px;
+  right: 30px;
+  transform: rotate(180deg);
+}
+.whatch-master-quote__text {
+  font-size: 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.whatch-master-quote__text img {
+  margin-top: auto;
+}
+
 .video-section {
   aspect-ratio: 16/9;
 }
