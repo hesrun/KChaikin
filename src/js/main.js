@@ -7,7 +7,7 @@ window.addEventListener('resize', function () {
     checkMediaQuery()
 })
 
-const swiper = new Swiper('.swiper', {
+const heroSlider = new Swiper('.hero-slider', {
     loop: true,
     effect: 'fade',
     pagination: {
@@ -17,6 +17,19 @@ const swiper = new Swiper('.swiper', {
     navigation: {
         nextEl: '.hero-prev',
         prevEl: '.hero-next',
+    },
+})
+
+const photoCarusel = new Swiper('.photo-carusel', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    pagination: {
+        el: '.photo-carusel-nav__pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.photo-carusel-nav__prev',
+        prevEl: '.photo-carusel-nav__next',
     },
 })
 

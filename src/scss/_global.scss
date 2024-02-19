@@ -44,7 +44,12 @@ button {
 .container-fluid {
     max-width: 100%;
 }
-
+.divder {
+    margin: 80px 0;
+    border: none;
+    height: 1px;
+    background: rgba(#1f2022, 0.15);
+}
 .page-section {
     margin-top: 100px;
     @include md {
@@ -55,6 +60,9 @@ button {
         @include md {
             margin-bottom: 50px;
         }
+    }
+    &:has(.photo-carusel) {
+        overflow: hidden;
     }
 }
 .section-head {
@@ -72,7 +80,6 @@ button {
     }
     &__title {
         text-transform: uppercase;
-        font-weight: 100;
     }
     .light {
         color: rgba(#1f2022, 0.4);
@@ -93,10 +100,14 @@ button {
         }
     }
 }
-p + p {
-    margin-top: 15px;
+p {
+    margin-bottom: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 h1 {
+    font-weight: 100;
     font-size: 50px;
     margin-bottom: 40px;
     letter-spacing: 3px;
@@ -111,6 +122,7 @@ h1 {
     }
 }
 h2 {
+    font-weight: 100;
     font-size: 50px;
     margin-bottom: 40px;
     letter-spacing: 3px;
@@ -125,6 +137,7 @@ h2 {
     }
 }
 h3 {
+    font-weight: 100;
     font-size: 34px;
     margin-bottom: 40px;
     letter-spacing: 3px;
