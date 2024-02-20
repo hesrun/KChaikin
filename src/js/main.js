@@ -33,6 +33,17 @@ const photoCarusel = new Swiper('.photo-carusel', {
     },
 })
 
+const photoSlider = new Swiper('.photo-slider', {
+    pagination: {
+        el: '.photo-carusel-nav__pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.photo-carusel-nav__prev',
+        prevEl: '.photo-carusel-nav__next',
+    },
+})
+
 $(window).scroll(function () {
     if ($(window).scrollTop() >= headerHeight) {
         $('.header').addClass('header_scrolled')

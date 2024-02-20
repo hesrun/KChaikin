@@ -64,6 +64,9 @@ button {
     &:has(.photo-carusel) {
         overflow: hidden;
     }
+    &:has(.photo-slider) {
+        margin-bottom: 0;
+    }
 }
 .section-head {
     &__subtitle {
@@ -77,9 +80,6 @@ button {
             font-size: 12px;
             margin-bottom: 5px;
         }
-    }
-    &__title {
-        text-transform: uppercase;
     }
     .light {
         color: rgba(#1f2022, 0.4);
@@ -111,6 +111,7 @@ h1 {
     font-size: 50px;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    text-transform: uppercase;
     @include lg {
         font-size: 32px;
         margin-bottom: 30px;
@@ -126,6 +127,7 @@ h2 {
     font-size: 50px;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    text-transform: uppercase;
     @include lg {
         font-size: 32px;
         margin-bottom: 30px;
@@ -141,6 +143,7 @@ h3 {
     font-size: 34px;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    text-transform: uppercase;
     @include lg {
         font-size: 28px;
         margin-bottom: 30px;
@@ -150,4 +153,9 @@ h3 {
         font-size: 20px;
         margin-bottom: 20px;
     }
+}
+h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
