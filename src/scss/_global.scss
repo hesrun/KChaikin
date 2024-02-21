@@ -25,7 +25,7 @@ button {
 }
 .main {
     flex: 1 0 auto;
-    &:not(:has(.hero-slider, .page-hero)) {
+    &:not(:has(.hero-slider, .page-hero, .page-section_dark:first-child)) {
         padding-top: 60px;
     }
 }
@@ -44,6 +44,7 @@ button {
 .container-fluid {
     max-width: 100%;
 }
+
 .divder {
     margin: 80px 0;
     border: none;
@@ -52,6 +53,18 @@ button {
 }
 .page-section {
     margin-top: 100px;
+    &_dark {
+        padding: 100px 0;
+        background: #1f2022;
+        color: white;
+        &:first-child {
+            margin-top: 0;
+            padding-top: 160px;
+        }
+        .section-head__subtitle {
+            color: white;
+        }
+    }
     @include md {
         margin-top: 50px;
     }

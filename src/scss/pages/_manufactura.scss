@@ -1,0 +1,47 @@
+.img-full {
+    margin: 50px 0;
+    img {
+        vertical-align: middle;
+        width: 100%;
+    }
+}
+
+.date-list {
+    display: flex;
+    margin-bottom: 50px;
+    .swiper-slide {
+        width: 80px;
+    }
+    &__item {
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px rgba(#1f2022, 0.15) solid;
+        transition: all 0.3s;
+        &_active,
+        &:hover {
+            font-weight: 700;
+            border-color: #1f2022;
+        }
+    }
+}
+
+.manuf-history {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 20px;
+    &__item {
+        padding: 0 50px 40px 0;
+        &:nth-child(n + 4) {
+            border-top: 1px #1f2022 solid;
+            padding-top: 40px;
+        }
+    }
+    &__date {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+}

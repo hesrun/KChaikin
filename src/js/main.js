@@ -44,6 +44,11 @@ const photoSlider = new Swiper('.photo-slider', {
     },
 })
 
+const dateCarusel = new Swiper('.date-list', {
+    slidesPerView: 'auto',
+    freeMode: true,
+    spaceBetween: 0,
+})
 $(window).scroll(function () {
     if ($(window).scrollTop() >= headerHeight) {
         $('.header').addClass('header_scrolled')

@@ -138,7 +138,7 @@ button {
 .main {
   flex: 1 0 auto;
 }
-.main:not(:has(.hero-slider, .page-hero)) {
+.main:not(:has(.hero-slider, .page-hero, .page-section_dark:first-child)) {
   padding-top: 60px;
 }
 
@@ -168,6 +168,18 @@ button {
 
 .page-section {
   margin-top: 100px;
+}
+.page-section_dark {
+  padding: 100px 0;
+  background: #1f2022;
+  color: white;
+}
+.page-section_dark:first-child {
+  margin-top: 0;
+  padding-top: 160px;
+}
+.page-section_dark .section-head__subtitle {
+  color: white;
 }
 @media only screen and (max-width: 768px) {
   .page-section {
@@ -1576,4 +1588,51 @@ h5 {
 .photo-slider__image img {
   vertical-align: middle;
   width: 100%;
+}
+
+.img-full {
+  margin: 50px 0;
+}
+.img-full img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.date-list {
+  display: flex;
+  margin-bottom: 50px;
+}
+.date-list .swiper-slide {
+  width: 80px;
+}
+.date-list__item {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px rgba(31, 32, 34, 0.15) solid;
+  transition: all 0.3s;
+}
+.date-list__item_active, .date-list__item:hover {
+  font-weight: 700;
+  border-color: #1f2022;
+}
+
+.manuf-history {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 20px;
+}
+.manuf-history__item {
+  padding: 0 50px 40px 0;
+}
+.manuf-history__item:nth-child(n+4) {
+  border-top: 1px #1f2022 solid;
+  padding-top: 40px;
+}
+.manuf-history__date {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
