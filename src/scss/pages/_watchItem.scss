@@ -6,6 +6,9 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
+        @include md {
+            min-height: 75vh;
+        }
     }
     &__text {
         margin-right: auto;
@@ -26,15 +29,31 @@
         bottom: 0px;
         left: 0px;
         margin-right: auto;
+        @include lg {
+            padding-bottom: 30px;
+        }
         .container {
             display: flex;
             align-items: flex-end;
+            @include lg {
+                align-items: stretch;
+                gap: 20px;
+                flex-direction: column;
+            }
         }
     }
     &__btns {
         margin-bottom: 5px;
         display: flex;
         gap: 15px;
+        @include md {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .button:nth-child(2) {
+                grid-column: 2 span;
+                order: 3;
+            }
+        }
     }
 }
 
@@ -42,12 +61,19 @@
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 0 20px;
+    @include md {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
     &__item {
         text-align: right;
         border-top: 1px #1f2022 solid;
-        padding: 40px 0;
+        padding: 40px 20px 40px 0;
         line-height: 1.5;
+        @include md {
+            padding: 20px 0 20px 0;
+        }
         p {
             text-align: left;
         }
@@ -62,6 +88,12 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 30px;
+    @include md {
+        padding: 30px;
+        align-items: center;
+        display: flex;
+        flex-direction: column-reverse;
+    }
     &:after,
     &:before {
         content: '';
@@ -77,11 +109,19 @@
     &:before {
         top: -27px;
         left: 30px;
+        @include md {
+            left: 15px;
+            transform: scale(0.7);
+        }
     }
     &:after {
         bottom: -27px;
         right: 30px;
         transform: rotate(180deg);
+        @include md {
+            right: 15px;
+            transform: rotate(180deg) scale(0.7);
+        }
     }
     &__text {
         font-size: 20px;
@@ -89,8 +129,48 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @include md {
+            font-size: 14px;
+        }
         img {
             margin-top: auto;
+        }
+    }
+    &_second {
+        display: block;
+        padding: 100px;
+        margin: 100px;
+        position: relative;
+        @include lg {
+            margin: 50px 0;
+        }
+        @include md {
+            padding: 30px;
+        }
+        + * {
+            margin-top: 300px;
+            @include md {
+                margin-top: 200px;
+            }
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &__author {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        transform: translate(50%, 50%);
+        @include lg {
+            width: 190px;
+            right: -15px;
+            transform: translate(0%, 50%);
+        }
+        @include md {
+            right: -15px;
+            bottom: 15px;
+            transform: translate(0%, 100%);
         }
     }
 }
@@ -108,14 +188,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    @include md {
+        grid-template-columns: 1fr;
+        .button {
+            width: 100%;
+        }
+    }
 }
 .push-left-text {
     margin-left: 33.33%;
+    @include md {
+        margin-left: auto;
+    }
 }
 
 .photo-carusel {
     margin-top: 40px;
     overflow: visible;
+    &__slide {
+        @include md {
+            max-width: 280px;
+        }
+    }
     &__image {
         overflow: hidden;
         margin-bottom: 20px;
@@ -136,6 +230,9 @@
         letter-spacing: 2px;
         font-size: 18px;
         text-transform: uppercase;
+        @include md {
+            font-size: 14px;
+        }
     }
 }
 
@@ -145,6 +242,9 @@
     justify-content: space-between;
     position: relative;
     margin-top: 50px;
+    @include md {
+        display: none;
+    }
     &:first-child {
         margin-bottom: 30px;
         margin-top: 0;
@@ -203,11 +303,19 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 40px;
-    &_reverse {
+    @include md {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
     }
     &__image {
         grid-column: 7 span;
         width: 100%;
+        @include md {
+            &:last-child {
+                order: -1;
+            }
+        }
     }
     &__text {
         grid-column: 5 span;
@@ -223,6 +331,11 @@
                 margin-right: 10px;
             }
         }
+        h5 {
+            @include md {
+                margin-top: 15px;
+            }
+        }
     }
 }
 
@@ -230,6 +343,9 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
+    @include md {
+        gap: 10px;
+    }
     &__item {
         grid-column: 12 span;
         img {
@@ -237,9 +353,15 @@
         }
         &_half {
             grid-column: 6 span;
+            @include md {
+                grid-column: 12 span;
+            }
         }
         &_quart {
             grid-column: 3 span;
+            @include md {
+                grid-column: 6 span;
+            }
         }
     }
     &__text {
@@ -248,6 +370,12 @@
 }
 
 .photo-slider {
+    &__slide {
+        @include md {
+            margin-bottom: 10px;
+            max-width: 80vw;
+        }
+    }
     &__image {
         img {
             vertical-align: middle;

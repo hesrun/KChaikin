@@ -21,8 +21,8 @@ const heroSlider = new Swiper('.hero-slider', {
 })
 
 const photoCarusel = new Swiper('.photo-carusel', {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
     pagination: {
         el: '.photo-carusel-nav__pagination',
         clickable: true,
@@ -30,10 +30,18 @@ const photoCarusel = new Swiper('.photo-carusel', {
     navigation: {
         nextEl: '.photo-carusel-nav__prev',
         prevEl: '.photo-carusel-nav__next',
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
     },
 })
 
 const photoSlider = new Swiper('.photo-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
     pagination: {
         el: '.photo-carusel-nav__pagination',
         clickable: true,
@@ -41,6 +49,12 @@ const photoSlider = new Swiper('.photo-slider', {
     navigation: {
         nextEl: '.photo-carusel-nav__prev',
         prevEl: '.photo-carusel-nav__next',
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+        },
     },
 })
 

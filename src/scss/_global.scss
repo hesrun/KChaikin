@@ -17,6 +17,9 @@ body {
     &.lock {
         overflow: hidden;
     }
+    @include md {
+        font-size: 14px;
+    }
 }
 input,
 select,
@@ -50,6 +53,9 @@ button {
     border: none;
     height: 1px;
     background: rgba(#1f2022, 0.15);
+    @include md {
+        margin: 40px 0;
+    }
 }
 .page-section {
     margin-top: 100px;
@@ -57,9 +63,15 @@ button {
         padding: 100px 0;
         background: #1f2022;
         color: white;
+        @include md {
+            padding: 50px 0;
+        }
         &:first-child {
             margin-top: 0;
             padding-top: 160px;
+            @include md {
+                padding-top: 110px;
+            }
         }
         .section-head__subtitle {
             color: white;
@@ -113,6 +125,37 @@ button {
         }
     }
 }
+.divider-title {
+    margin-top: 100px;
+    text-align: center;
+    padding: 80px 110px;
+    position: relative;
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(
+            93deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        left: 0px;
+    }
+    &:before {
+        top: 0;
+    }
+    &:after {
+        bottom: 0;
+    }
+    @include md {
+        margin-top: 50px;
+        padding: 40px 0;
+    }
+}
 p {
     margin-bottom: 15px;
     &:last-child {
@@ -133,6 +176,9 @@ h1 {
     @include md {
         font-size: 28px;
         margin-bottom: 20px;
+        br {
+            display: none;
+        }
     }
 }
 h2 {
@@ -149,6 +195,9 @@ h2 {
     @include md {
         font-size: 28px;
         margin-bottom: 20px;
+        br {
+            display: none;
+        }
     }
 }
 h3 {
@@ -171,4 +220,7 @@ h5 {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 300;
+    @include md {
+        margin-bottom: 10px;
+    }
 }
