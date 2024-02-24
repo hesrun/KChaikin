@@ -12,6 +12,9 @@
     cursor: pointer;
     text-align: center;
     transition: all 0.3s;
+    @include md {
+        padding: 0px 15px;
+    }
     &_white {
         color: white;
         border-color: white;

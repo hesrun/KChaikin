@@ -7,7 +7,7 @@
         object-fit: cover;
         object-position: center;
         @include md {
-            min-height: 75vh;
+            height: 100dvh;
         }
     }
     &__text {
@@ -197,6 +197,7 @@
 }
 .push-left-text {
     margin-left: 33.33%;
+    line-height: 1.5;
     @include md {
         margin-left: auto;
     }
@@ -350,6 +351,7 @@
         grid-column: 12 span;
         img {
             width: 100%;
+            vertical-align: middle;
         }
         &_half {
             grid-column: 6 span;
@@ -366,6 +368,9 @@
     }
     &__text {
         max-width: 500px;
+        @include md {
+            padding: 10px 0;
+        }
     }
 }
 
@@ -373,13 +378,21 @@
     &__slide {
         @include md {
             margin-bottom: 10px;
-            max-width: 80vw;
+            width: 80vw;
+            height: 70vw;
         }
     }
     &__image {
         img {
             vertical-align: middle;
             width: 100%;
+        }
+        @include md {
+            height: 100%;
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }

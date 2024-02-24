@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    line-height: 1.3;
+    line-height: 1.5;
     text-rendering: optimizeSpeed;
     background: #e5e5e5;
     &.lock {
@@ -167,6 +167,7 @@ h1 {
     font-size: 50px;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    line-height: 1.3;
     text-transform: uppercase;
     @include lg {
         font-size: 32px;
@@ -186,6 +187,7 @@ h2 {
     font-size: 50px;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    line-height: 1.3;
     text-transform: uppercase;
     @include lg {
         font-size: 32px;
@@ -205,6 +207,7 @@ h3 {
     font-size: 34px;
     margin-bottom: 40px;
     letter-spacing: 3px;
+    line-height: 1.3;
     text-transform: uppercase;
     @include lg {
         font-size: 28px;
@@ -220,6 +223,7 @@ h5 {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 300;
+    line-height: 1.3;
     @include md {
         margin-bottom: 10px;
     }

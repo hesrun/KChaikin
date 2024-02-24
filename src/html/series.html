@@ -1,112 +1,115 @@
 <!doctype html>
 <html lang="ru">
-    @include('modules/link.html',{ 'title': 'Category' })
-    <body>
-        @include('modules/header.html',{'theme':'white'})
-        <main class="main">
-            <div class="page-hero">
+@include('modules/link.html',{ 'title': 'Category' })
+
+<body>
+    @include('modules/header.html',{'theme':'white'})
+    <main class="main">
+        <div class="page-hero">
+            <picture>
+                <source media="(max-width: 768px)" srcset="series-banner-m.jpg">
                 <img src="img/series/series-hero.jpg" alt="" />
-            </div>
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head section-head_text-right">
-                        <div class="section-head__left">
-                            <span class="section-head__subtitle"
-                                >НАРУЧНЫЕ ЧАСЫ</span
-                            >
-                            <h1 class="section-head__title">РИСТМОНЫ</h1>
-                        </div>
-                        <div class="section-head__text">
-                            <p>
-                                Константин Чайкин предлагает взглянуть на
-                                высокое часовое искусство с иной, нестандартной
-                                точки зрения, решив заново изобрести часы как
-                                кинематический арт-объект.
-                            </p>
-                            <p>
-                                Он осмелился выпустить чёртика из табакерки,
-                                создать новый дух высокой механики, вечно
-                                меняющийся, эффектный и провокационный.
-                            </p>
-                        </div>
+            </picture>
+        </div>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head section-head_text-right">
+                    <div class="section-head__left">
+                        <span class="section-head__subtitle">НАРУЧНЫЕ ЧАСЫ</span>
+                        <h1 class="section-head__title">РИСТМОНЫ</h1>
                     </div>
-                    <div class="products-grid">
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                ЛУНОХОД
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-1.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                ВРЕМЯ РОССИИ
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-2.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                РИСТМОНЫ
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-3.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                ЛУНОХОД
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-1.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                ВРЕМЯ РОССИИ
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-2.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                РИСТМОНЫ
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-3.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                ЛУНОХОД
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-1.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                ВРЕМЯ РОССИИ
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-2.png" alt="" />
-                            </div>
-                        </a>
-                        <a href="" class="products-grid__item">
-                            <span class="products-grid__item-name">
-                                РИСТМОНЫ
-                            </span>
-                            <div class="products-grid__item-image">
-                                <img src="img/category/product-3.png" alt="" />
-                            </div>
-                        </a>
+                    <div class="section-head__text">
+                        <p>
+                            Константин Чайкин предлагает взглянуть на
+                            высокое часовое искусство с иной, нестандартной
+                            точки зрения, решив заново изобрести часы как
+                            кинематический арт-объект.
+                        </p>
+                        <p>
+                            Он осмелился выпустить чёртика из табакерки,
+                            создать новый дух высокой механики, вечно
+                            меняющийся, эффектный и провокационный.
+                        </p>
                     </div>
                 </div>
-            </section>
-        </main>
-        @include('modules/footer.html')
-    </body>
+                <div class="products-grid">
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            ЛУНОХОД
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-1.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            ВРЕМЯ РОССИИ
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-2.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            РИСТМОНЫ
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-3.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            ЛУНОХОД
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-1.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            ВРЕМЯ РОССИИ
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-2.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            РИСТМОНЫ
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-3.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            ЛУНОХОД
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-1.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            ВРЕМЯ РОССИИ
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-2.png" alt="" />
+                        </div>
+                    </a>
+                    <a href="" class="products-grid__item">
+                        <span class="products-grid__item-name">
+                            РИСТМОНЫ
+                        </span>
+                        <div class="products-grid__item-image">
+                            <img src="img/category/product-3.png" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+</body>
+
 </html>
