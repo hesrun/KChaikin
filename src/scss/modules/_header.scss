@@ -188,25 +188,36 @@
     &_open {
         background: #1f2022;
     }
-    &__language {
-        position: relative;
-        select {
-            padding-right: 30px;
-            background: transparent;
-            color: inherit;
-            cursor: pointer;
-        }
-        option {
-            text-align: center;
-            line-height: 1.3;
-            font-size: 12px;
-            background: #1f2022;
-            color: white;
-        }
-        .icon {
-            position: absolute;
-            right: 0;
-            pointer-events: none;
+}
+.language-select {
+    position: relative;
+    .icon {
+        font-size: 24px;
+        pointer-events: none;
+    }
+    &__current {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &__drop {
+        display: none;
+        top: 120%;
+        left: 50%;
+        border-radius: 10px;
+        font-size: 14px;
+        position: absolute;
+        background: black;
+        padding: 5px 0;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+    &__item {
+        display: block;
+        padding: 5px 15px;
+        &:hover {
+            opacity: 0.7;
         }
     }
 }
@@ -333,11 +344,13 @@
             transition: all 0.3s;
             img {
                 position: absolute;
+                width: 150px;
                 left: 50%;
                 top: 50%;
                 transform: translateY(-50%) scale(0);
                 opacity: 0;
                 transition: all 0.3s ease-in-out;
+                pointer-events: none;
                 @include md {
                     display: none;
                 }

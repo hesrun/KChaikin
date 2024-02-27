@@ -28,8 +28,8 @@ const photoCarusel = new Swiper('.photo-carusel', {
         clickable: true,
     },
     navigation: {
-        nextEl: '.photo-carusel-nav__prev',
-        prevEl: '.photo-carusel-nav__next',
+        prevEl: '.photo-carusel-nav__prev',
+        nextEl: '.photo-carusel-nav__next',
     },
     breakpoints: {
         768: {
@@ -47,8 +47,8 @@ const photoSlider = new Swiper('.photo-slider', {
         clickable: true,
     },
     navigation: {
-        nextEl: '.photo-carusel-nav__prev',
-        prevEl: '.photo-carusel-nav__next',
+        prevEl: '.photo-carusel-nav__prev',
+        nextEl: '.photo-carusel-nav__next',
     },
     breakpoints: {
         768: {
@@ -81,6 +81,10 @@ $('.header-burger').click(function () {
     } else {
         $('.header-burger__text').text('закрыть')
     }
+})
+
+$('.language-select__current').click(function () {
+    $('.language-select__drop').slideToggle(200)
 })
 
 $('.navigation__title').click(function () {

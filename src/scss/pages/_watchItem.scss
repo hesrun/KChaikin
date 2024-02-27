@@ -1,14 +1,11 @@
 .page-hero {
     position: relative;
     img {
+        height: 100dvh;
         vertical-align: middle;
-        max-height: 900px;
         width: 100%;
         object-fit: cover;
         object-position: center;
-        @include md {
-            height: 100dvh;
-        }
     }
     &__text {
         margin-right: auto;
@@ -367,7 +364,7 @@
         }
     }
     &__text {
-        max-width: 500px;
+        padding: 10px 100px 10px 0;
         @include md {
             padding: 10px 0;
         }
