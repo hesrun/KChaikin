@@ -1382,6 +1382,11 @@ h5 {
     opacity: 1;
   }
 }
+@media only screen and (max-width: 576px) {
+  .products-grid__item {
+    aspect-ratio: 4/6;
+  }
+}
 .products-grid__item-name {
   position: absolute;
   text-transform: uppercase;
@@ -1390,7 +1395,7 @@ h5 {
   transform: translateX(-50%);
   letter-spacing: 2px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 576px) {
   .products-grid__item-name {
     font-size: 12px;
     width: 100%;
@@ -1405,7 +1410,7 @@ h5 {
   transform: translateY(20px);
   transition: transform 0.4s;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 576px) {
   .products-grid__item-image img {
     max-width: 110px;
   }

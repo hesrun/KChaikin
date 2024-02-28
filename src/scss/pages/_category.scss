@@ -37,6 +37,9 @@
                 }
             }
         }
+        @include sm {
+            aspect-ratio: 4/6;
+        }
     }
     &__item-name {
         position: absolute;
@@ -45,7 +48,7 @@
         top: 30px;
         transform: translateX(-50%);
         letter-spacing: 2px;
-        @include md {
+        @include sm {
             font-size: 12px;
             width: 100%;
             text-align: center;
@@ -57,7 +60,7 @@
         img {
             transform: translateY(20px);
             transition: transform 0.4s;
-            @include md {
+            @include sm {
                 max-width: 110px;
             }
         }
