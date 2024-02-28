@@ -1352,6 +1352,12 @@ h5 {
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+@media only screen and (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
 .products-grid__item {
   position: relative;
   aspect-ratio: 4/5;
@@ -1361,18 +1367,20 @@ h5 {
   justify-content: center;
   transition: all 0.4s;
 }
-.products-grid__item:hover {
-  color: white;
-  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
-  background: #374151;
-}
-.products-grid__item:hover .products-grid__item-image img {
-  transform: translateY(0px) scale(1.03);
-}
-.products-grid__item:hover .products-grid__item-image:after {
-  background: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 40%);
-  transform: translateX(-50%) translateY(50%) rotateX(75deg) scale(0.5);
-  opacity: 1;
+@media (any-hover: hover) {
+  .products-grid__item:hover:hover {
+    color: white;
+    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+    background: #374151;
+  }
+  .products-grid__item:hover:hover .products-grid__item-image img {
+    transform: translateY(0px) scale(1.03);
+  }
+  .products-grid__item:hover:hover .products-grid__item-image:after {
+    background: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 40%);
+    transform: translateX(-50%) translateY(50%) rotateX(75deg) scale(0.5);
+    opacity: 1;
+  }
 }
 .products-grid__item-name {
   position: absolute;
@@ -1382,12 +1390,25 @@ h5 {
   transform: translateX(-50%);
   letter-spacing: 2px;
 }
+@media only screen and (max-width: 768px) {
+  .products-grid__item-name {
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    top: 20px;
+  }
+}
 .products-grid__item-image {
   position: relative;
 }
 .products-grid__item-image img {
   transform: translateY(20px);
   transition: transform 0.4s;
+}
+@media only screen and (max-width: 768px) {
+  .products-grid__item-image img {
+    max-width: 110px;
+  }
 }
 .products-grid__item-image:after {
   content: "";
@@ -1401,6 +1422,11 @@ h5 {
   transition: all 0.5s;
   opacity: 0.2;
   filter: blur(20px);
+}
+@media only screen and (max-width: 768px) {
+  .products-grid__item-image:after {
+    display: none;
+  }
 }
 
 .whatch-history-grid {
