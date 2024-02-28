@@ -112,14 +112,6 @@ button {
     .light {
         color: rgba(#1f2022, 0.4);
     }
-    &_text-right {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        @include md {
-            grid-template-columns: 1fr;
-        }
-    }
     &__text {
         margin-bottom: 60px;
         @include md {

@@ -126,31 +126,29 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     // setting scripts
-    return (
-        gulp
-            .src(path.src.js)
-            .pipe(
-                fileInclude({
-                    prefix: '@',
-                    basepath: '@file',
-                })
-            )
-            .pipe(concat('main.js'))
-            .pipe(
-                babel({
-                    presets: ['@babel/preset-env'],
-                })
-            )
-            //.pipe(gulp.dest(path.build.js)) // if need also not-uglify version
-            .pipe(uglify())
-            .pipe(
-                rename({
-                    extname: '.min.js',
-                })
-            )
-            .pipe(gulp.dest(path.build.js))
-            .pipe(browserSync.stream())
-    )
+    return gulp
+        .src(path.src.js)
+        .pipe(
+            fileInclude({
+                prefix: '@',
+                basepath: '@file',
+            })
+        )
+        .pipe(concat('main.js'))
+        .pipe(
+            babel({
+                presets: ['@babel/preset-env'],
+            })
+        )
+        .pipe(gulp.dest(path.build.js)) // if need also not-uglify version
+        .pipe(uglify())
+        .pipe(
+            rename({
+                extname: '.min.js',
+            })
+        )
+        .pipe(gulp.dest(path.build.js))
+        .pipe(browserSync.stream())
 })
 
 gulp.task('img', function () {

@@ -1,0 +1,71 @@
+.page-hero {
+    position: relative;
+    img {
+        height: 100dvh;
+        vertical-align: middle;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__text {
+        margin-right: auto;
+    }
+    &__subtitle {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    &__title {
+        font-weight: 100;
+        margin: 5px 0 0 0;
+    }
+    &__info {
+        color: white;
+        padding: 60px 0;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        margin-right: auto;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        @include lg {
+            padding-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            align-items: flex-end;
+            @include lg {
+                align-items: stretch;
+                gap: 20px;
+                flex-direction: column;
+            }
+        }
+    }
+    &__btns {
+        margin-bottom: 5px;
+        display: flex;
+        gap: 15px;
+        @include md {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .button:nth-child(2) {
+                grid-column: 2 span;
+                order: 3;
+            }
+        }
+    }
+    &__descr {
+        max-width: 670px;
+    }
+}
+
+.series-text {
+    max-width: 800px;
+    margin-bottom: 50px;
+    @include md {
+        margin-bottom: 30px;
+    }
+}

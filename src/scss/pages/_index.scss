@@ -140,21 +140,18 @@
     @include md {
         gap: 30px;
     }
+    @include sm {
+        gap: 20px 10px;
+    }
     &__item {
         grid-column: 3 span;
         @include lg {
             grid-column: 6 span;
         }
-        @include sm {
-            grid-column: 12 span;
-        }
         &_2x {
             grid-column: 6 span;
             @include lg {
                 grid-column: 6 span;
-            }
-            @include sm {
-                grid-column: 12 span;
             }
         }
     }
@@ -356,4 +353,8 @@
             }
         }
     }
+}
+
+.signature {
+    max-width: 230px;
 }
