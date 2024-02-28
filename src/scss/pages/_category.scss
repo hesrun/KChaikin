@@ -2,8 +2,8 @@
     $root: &;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    @include sm {
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    @include md {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
@@ -37,8 +37,9 @@
                 }
             }
         }
-        @include sm {
-            aspect-ratio: 4/6;
+        @include md {
+            aspect-ratio: auto;
+            height: 250px;
         }
     }
     &__item-name {
@@ -48,7 +49,7 @@
         top: 30px;
         transform: translateX(-50%);
         letter-spacing: 2px;
-        @include sm {
+        @include md {
             font-size: 12px;
             width: 100%;
             text-align: center;
@@ -60,8 +61,8 @@
         img {
             transform: translateY(20px);
             transition: transform 0.4s;
-            @include sm {
-                max-width: 110px;
+            @include md {
+                width: 110px;
             }
         }
         &:after {
