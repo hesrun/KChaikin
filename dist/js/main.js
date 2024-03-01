@@ -118,27 +118,30 @@ function checkMediaQuery() {
 }
 
 checkMediaQuery();
-var textContainer = $('.section-head_anim');
-var text = textContainer.text().trim();
-var words = text.split(/\s+/);
-textContainer.empty();
-words.forEach(function (word) {
-  var span = $('<span/>').text(word);
-  textContainer.append(span).append(' ');
-});
-/* Function */
+$('.text-reveal-anim').each(function () {
+  var textContainer = $(this);
+  var text = textContainer.text().trim();
+  var words = text.split(/\s+/);
+  textContainer.empty();
+  words.forEach(function (word) {
+    var span = $('<span/>').text(word);
+    textContainer.append(span).append(' ');
+  });
+  /* Function */
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.to('.section-head_anim span', {
-  duration: 0.3,
-  opacity: 1,
-  ease: 'none',
-  stagger: 0.1,
-  scrollTrigger: {
-    trigger: $('.section-head_anim'),
-    //markers: true,
-    start: 'top 90%',
-    end: 'bottom 60%',
-    scrub: true
-  }
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to('.text-reveal-anim span', {
+    duration: 0.3,
+    opacity: 1,
+    ease: 'none',
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: textContainer,
+      // Используем текущий элемент как триггер
+      markers: true,
+      start: 'top 100%',
+      end: 'bottom 70%',
+      scrub: true
+    }
+  });
 });

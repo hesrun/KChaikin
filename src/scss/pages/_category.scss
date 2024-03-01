@@ -38,8 +38,29 @@
             }
         }
         @include md {
-            aspect-ratio: auto;
-            height: 250px;
+            grid-column: 2 span;
+        }
+        &_mx2 {
+            @include md {
+                grid-column: 1 span;
+                aspect-ratio: auto;
+                height: 250px;
+            }
+            #{$root}__item-name {
+                @include md {
+                    font-size: 12px;
+                    width: 100%;
+                    text-align: center;
+                    top: 20px;
+                }
+            }
+            #{$root}__item-image {
+                @include md {
+                    img {
+                        width: 110px;
+                    }
+                }
+            }
         }
     }
     &__item-name {
@@ -49,21 +70,12 @@
         top: 30px;
         transform: translateX(-50%);
         letter-spacing: 2px;
-        @include md {
-            font-size: 12px;
-            width: 100%;
-            text-align: center;
-            top: 20px;
-        }
     }
     &__item-image {
         position: relative;
         img {
             transform: translateY(20px);
             transition: transform 0.4s;
-            @include md {
-                width: 110px;
-            }
         }
         &:after {
             content: '';
