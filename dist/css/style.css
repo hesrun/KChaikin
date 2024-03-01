@@ -238,9 +238,6 @@ button {
     margin-bottom: 5px;
   }
 }
-.section-head .light {
-  color: rgba(31, 32, 34, 0.4);
-}
 .section-head__text {
   margin-bottom: 60px;
 }
@@ -368,6 +365,10 @@ h5 {
   h5 {
     margin-bottom: 10px;
   }
+}
+
+.section-head_anim span {
+  opacity: 0.05;
 }
 
 .button {
