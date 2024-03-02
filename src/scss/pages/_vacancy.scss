@@ -1,0 +1,56 @@
+.vacancy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.vacancy-item {
+    background: white;
+    padding: 40px;
+    display: flex;
+    gap: 50px;
+    @include lg {
+        flex-direction: column;
+        gap: 0;
+    }
+    @include md {
+        padding: 20px;
+    }
+    &__title {
+        flex: 0 0 400px;
+        @include lg {
+            flex: 1 1 auto;
+        }
+    }
+    &__btns {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        @include md {
+            flex-direction: column;
+        }
+    }
+    hr {
+        margin: 30px 0;
+        border: none;
+        height: 1px;
+        background: #1f2022;
+        opacity: 0.15;
+    }
+    &__full {
+        ul {
+            li {
+                display: flex;
+                gap: 10px;
+                & + li {
+                    margin-top: 5px;
+                }
+            }
+            li:before {
+                content: '•';
+            }
+        }
+    }
+    &__full {
+        display: none;
+    }
+}

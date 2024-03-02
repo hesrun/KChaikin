@@ -136,7 +136,6 @@ $('.text-reveal-anim').each(function () {
         textContainer.append(span).append(' ')
     })
 
-    /* Function */
     gsap.registerPlugin(ScrollTrigger)
 
     gsap.to('.text-reveal-anim span', {
@@ -145,11 +144,27 @@ $('.text-reveal-anim').each(function () {
         ease: 'none',
         stagger: 0.1,
         scrollTrigger: {
-            trigger: textContainer, // Используем текущий элемент как триггер
+            trigger: textContainer,
             markers: true,
             start: 'top 100%',
             end: 'bottom 70%',
             scrub: true,
         },
     })
+})
+
+$('.expand-vacation').click(function () {
+    let btn = $(this)
+    let vacancyContent = btn
+        .closest('.vacancy-item')
+        .find('.vacancy-item__full')
+    if (vacancyContent.is(':visible')) {
+        btn.html(`Подробнее <i class="icon icon-arrow-down"></i>`)
+    } else {
+        btn.html(
+            `Свернуть <i class="icon icon-arrow-down" style="transform: rotateX(180deg)"></i>`
+        )
+    }
+    vacancyContent.slideToggle(300)
+    return false
 })

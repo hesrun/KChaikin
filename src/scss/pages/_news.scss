@@ -43,3 +43,29 @@
         letter-spacing: 2px;
     }
 }
+
+.news-detail {
+    max-width: 820px;
+    margin: 0 auto;
+}
+.share-block {
+    margin-top: 50px;
+    @include md {
+        margin-top: 30px;
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__link {
+        font-size: 36px;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__text {
+        color: #7c7c7c;
+        letter-spacing: 1px;
+    }
+}

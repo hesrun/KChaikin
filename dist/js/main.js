@@ -127,8 +127,6 @@ $('.text-reveal-anim').each(function () {
     var span = $('<span/>').text(word);
     textContainer.append(span).append(' ');
   });
-  /* Function */
-
   gsap.registerPlugin(ScrollTrigger);
   gsap.to('.text-reveal-anim span', {
     duration: 0.3,
@@ -137,11 +135,23 @@ $('.text-reveal-anim').each(function () {
     stagger: 0.1,
     scrollTrigger: {
       trigger: textContainer,
-      // Используем текущий элемент как триггер
       markers: true,
       start: 'top 100%',
       end: 'bottom 70%',
       scrub: true
     }
   });
+});
+$('.expand-vacation').click(function () {
+  var btn = $(this);
+  var vacancyContent = btn.closest('.vacancy-item').find('.vacancy-item__full');
+
+  if (vacancyContent.is(':visible')) {
+    btn.html("\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435 <i class=\"icon icon-arrow-down\"></i>");
+  } else {
+    btn.html("\u0421\u0432\u0435\u0440\u043D\u0443\u0442\u044C <i class=\"icon icon-arrow-down\" style=\"transform: rotateX(180deg)\"></i>");
+  }
+
+  vacancyContent.slideToggle(300);
+  return false;
 });
