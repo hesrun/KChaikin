@@ -5,14 +5,13 @@
 }
 body {
     font-family: 'Onest';
-    font-optical-sizing: auto;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
     font-style: normal;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.5;
-    text-rendering: optimizeSpeed;
     background: #e5e5e5;
     &.lock {
         overflow: hidden;

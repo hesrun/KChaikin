@@ -115,14 +115,13 @@ button {
 
 body {
   font-family: "Onest";
-  font-optical-sizing: auto;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
   font-style: normal;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   line-height: 1.5;
-  text-rendering: optimizeSpeed;
   background: #e5e5e5;
 }
 body.lock {
@@ -667,6 +666,7 @@ h5 {
 }
 .header__search-drop {
   display: none;
+  color: #fff;
   overflow: hidden;
   top: 70px;
   width: 100%;
@@ -771,6 +771,7 @@ h5 {
   z-index: 1;
 }
 .language-select__item {
+  color: #fff;
   display: block;
   padding: 5px 15px;
 }

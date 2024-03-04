@@ -109,6 +109,7 @@
     }
     &__search-drop {
         display: none;
+        color: #fff;
         overflow: hidden;
         top: 70px;
         width: 100%;
@@ -214,6 +215,7 @@
         z-index: 1;
     }
     &__item {
+        color: #fff;
         display: block;
         padding: 5px 15px;
         &:hover {

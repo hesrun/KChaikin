@@ -135,7 +135,7 @@ $('.text-reveal-anim').each(function () {
     stagger: 0.1,
     scrollTrigger: {
       trigger: textContainer,
-      markers: true,
+      //markers: true,
       start: 'top 100%',
       end: 'bottom 70%',
       scrub: true
