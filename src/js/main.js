@@ -168,3 +168,8 @@ $('.expand-vacation').click(function () {
     vacancyContent.slideToggle(300)
     return false
 })
+
+$('.faq-accordion__title').click(function () {
+    $(this).toggleClass('faq-accordion__title_active')
+    $(this).next().slideToggle(300)
+})

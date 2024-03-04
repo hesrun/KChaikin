@@ -154,6 +154,12 @@
                 grid-column: 6 span;
             }
         }
+        &_3x {
+            grid-column: 4 span;
+            @include lg {
+                grid-column: 6 span;
+            }
+        }
     }
     &__image {
         overflow: hidden;
