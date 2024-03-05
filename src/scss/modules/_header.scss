@@ -295,6 +295,7 @@
     }
     &__block {
         break-inside: avoid;
+        page-break-inside: avoid;
     }
     &__title {
         display: inline-block;

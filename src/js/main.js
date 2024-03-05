@@ -173,3 +173,15 @@ $('.faq-accordion__title').click(function () {
     $(this).toggleClass('faq-accordion__title_active')
     $(this).next().slideToggle(300)
 })
+
+$('.sorting__btn').click(function () {
+    $('.sorting__drop').fadeToggle(200)
+})
+$('.sorting__option').click(function () {
+    let optionText = $(this).find('.sorting__value').text().trim()
+    $('.sorting__current').text(optionText)
+    $('.sorting__drop').fadeOut(200)
+})
+$(document).click(function (e) {
+    let sortDrop = $('.sorting__drop')
+})

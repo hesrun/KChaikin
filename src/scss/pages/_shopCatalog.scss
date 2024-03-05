@@ -1,0 +1,58 @@
+.shop-filter {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__category {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.sorting {
+    position: relative;
+    &__btn {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        gap: 10px;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__drop {
+        display: none;
+        position: absolute;
+        border-radius: 8px;
+        top: calc(100% + 20px);
+        right: 0px;
+        background: white;
+        box-shadow: 0 4px 50px 0 rgba(black, 0.1);
+        z-index: 2;
+    }
+    &__option {
+        white-space: nowrap;
+        display: flex;
+        padding: 16px;
+        gap: 10px;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            box-shadow: 0 0 0 1px rgba(#1f2022, 0.15);
+            border: 6px white solid;
+            transition: all 0.3s;
+        }
+        &:not(:last-child) {
+            border-bottom: 1px rgba(#1f2022, 0.15) solid;
+        }
+        &:has(input:checked):before {
+            background: black;
+        }
+    }
+}
