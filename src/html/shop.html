@@ -4,19 +4,57 @@
     <body>
         @include('modules/header.html',{'theme':'white'})
         <main class="main">
+            <div class="hero-slider__title">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-head__subtitle">
+                            КОНСТАНТИН ЧАЙКИН
+                        </span>
+                        <h1 class="section-head__title">
+                            Онлайн <br />
+                            магазин
+                        </h1>
+                    </div>
+                </div>
+            </div>
             <div class="hero-slider swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <picture>
                             <source
                                 media="(max-width: 768px)"
-                                srcset="img/shop/shop-banner-1.jpg"
+                                srcset="img/shop/shop-banner-1-m.jpg"
                             />
                             <img src="img/shop/shop-banner-1.jpg" alt="" />
                         </picture>
                         <div class="hero-slider__text">
                             <div class="container">
-                                <h2>ЗВЕЗДОЧЕТ</h2>
+                                <h2>JOKER SKELETON</h2>
+                                <div class="hero-slider__product-info">
+                                    <div class="hero-slider__product-name">
+                                        LONG-SLEEVED T-SHIRT
+                                    </div>
+                                    <div class="hero-slider__product-price">
+                                        18 700 ₽
+                                    </div>
+                                </div>
+                                <a href="" class="button button_white">
+                                    Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <picture>
+                            <source
+                                media="(max-width: 768px)"
+                                srcset="img/shop/shop-banner-1-m.jpg"
+                            />
+                            <img src="img/shop/shop-banner-1.jpg" alt="" />
+                        </picture>
+                        <div class="hero-slider__text">
+                            <div class="container">
+                                <h2>JOKER SKELETON</h2>
                                 <span>
                                     Самые сложные часы <br />
                                     Константина Чайкина
@@ -31,34 +69,13 @@
                         <picture>
                             <source
                                 media="(max-width: 768px)"
-                                srcset="img/shop/shop-banner-1.jpg"
+                                srcset="img/shop/shop-banner-1-m.jpg"
                             />
                             <img src="img/shop/shop-banner-1.jpg" alt="" />
                         </picture>
                         <div class="hero-slider__text">
                             <div class="container">
-                                <h2>ЗВЕЗДОЧЕТ</h2>
-                                <span>
-                                    Самые сложные часы <br />
-                                    Константина Чайкина
-                                </span>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/shop/shop-banner-1.jpg"
-                            />
-                            <img src="img/shop/shop-banner-1.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>ЗВЕЗДОЧЕТ</h2>
+                                <h2>JOKER SKELETON</h2>
                                 <span>
                                     Самые сложные часы <br />
                                     Константина Чайкина
@@ -156,7 +173,10 @@
                     </div>
                     <div class="photo-carusel swiper">
                         <div class="swiper-wrapper">
-                            <a href="" class="swiper-slide shop-product">
+                            <a
+                                href=""
+                                class="swiper-slide shop-product shop-product_carusel"
+                            >
                                 <div class="shop-product__image">
                                     <img
                                         src="img/shop/merch-item-1.jpg"
@@ -175,7 +195,10 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="swiper-slide shop-product">
+                            <a
+                                href=""
+                                class="swiper-slide shop-product shop-product_carusel"
+                            >
                                 <div class="shop-product__image">
                                     <img
                                         src="img/shop/merch-item-2.jpg"
@@ -194,7 +217,10 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="swiper-slide shop-product">
+                            <a
+                                href=""
+                                class="swiper-slide shop-product shop-product_carusel"
+                            >
                                 <div class="shop-product__image">
                                     <img
                                         src="img/shop/merch-item-3.jpg"
@@ -213,7 +239,10 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="swiper-slide shop-product">
+                            <a
+                                href=""
+                                class="swiper-slide shop-product shop-product_carusel"
+                            >
                                 <div class="shop-product__image">
                                     <img
                                         src="img/shop/merch-item-1.jpg"
@@ -232,7 +261,10 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="swiper-slide shop-product">
+                            <a
+                                href=""
+                                class="swiper-slide shop-product shop-product_carusel"
+                            >
                                 <div class="shop-product__image">
                                     <img
                                         src="img/shop/merch-item-2.jpg"
@@ -251,7 +283,10 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="swiper-slide shop-product">
+                            <a
+                                href=""
+                                class="swiper-slide shop-product shop-product_carusel"
+                            >
                                 <div class="shop-product__image">
                                     <img
                                         src="img/shop/merch-item-3.jpg"
@@ -444,7 +479,7 @@
                     <div class="section-head">
                         <h2 class="section-head__title">Вы смотрели</h2>
                     </div>
-                    <div class="shop-grid">
+                    <div class="last-view-product">
                         <a href="" class="shop-product shop-product_row">
                             <div class="shop-product__image">
                                 <img src="img/shop/merch-item-1.jpg" alt="" />

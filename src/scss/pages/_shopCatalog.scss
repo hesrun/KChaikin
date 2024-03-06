@@ -3,9 +3,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include md {
+        margin-bottom: 20px;
+    }
     &__category {
         display: flex;
         gap: 10px;
+        @include md {
+            scroll-behavior: smooth;
+            max-width: 100%;
+            overflow: auto;
+            @include scrollbars(0, transparent, transparent);
+        }
+    }
+    @include md {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        &__sorting {
+            margin-left: auto;
+        }
     }
 }
 

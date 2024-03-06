@@ -1,6 +1,23 @@
 .hero-slider {
+    position: relative;
+    &__title {
+        color: white;
+        top: 160px;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        .section-head__subtitle {
+            color: currentColor;
+        }
+        .section-head__title {
+            font-size: 80px;
+        }
+        @include md {
+            display: none;
+        }
+    }
     .swiper-slide {
-        height: 100dvh;
+        height: 100svh;
         position: relative;
         img {
             width: 100%;
@@ -130,6 +147,14 @@
             background: white;
             opacity: 1;
         }
+    }
+    &__product-name {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    &__product-price {
+        font-size: 18px;
+        font-weight: 500;
     }
 }
 
