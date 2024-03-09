@@ -13,7 +13,8 @@
     box-shadow: none;
     padding: 0px;
     @include sm {
-        width: 80vw;
+        width: 400px;
+        max-width: 100%;
     }
     &_in {
         animation: 0.5s cartIn both;
