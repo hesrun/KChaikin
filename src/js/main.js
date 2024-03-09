@@ -192,8 +192,3 @@ $('#addCart').click(function () {
         showClose: false,
     })
 })
-
-$('#cart').modal({
-    fadeDuration: 300,
-    showClose: false,
-})
