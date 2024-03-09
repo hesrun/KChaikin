@@ -1074,6 +1074,7 @@ h5 {
 }
 
 .cart-modal {
+  display: none;
   width: 500px;
   position: fixed;
   right: 0px;
