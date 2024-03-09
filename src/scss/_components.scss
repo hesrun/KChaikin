@@ -13,6 +13,7 @@
     cursor: pointer;
     text-align: center;
     transition: all 0.3s;
+    gap: 10px;
     @include md {
         padding: 0px 15px;
     }

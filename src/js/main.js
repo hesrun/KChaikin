@@ -185,3 +185,15 @@ $('.sorting__option').click(function () {
 $(document).click(function (e) {
     let sortDrop = $('.sorting__drop')
 })
+
+$('#addCart').click(function () {
+    $('#cart').modal({
+        fadeDuration: 300,
+        showClose: false,
+    })
+})
+
+$('#cart').modal({
+    fadeDuration: 300,
+    showClose: false,
+})

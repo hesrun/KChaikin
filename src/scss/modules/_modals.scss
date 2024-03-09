@@ -1,0 +1,196 @@
+.blocker {
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+.cart-modal {
+    width: 500px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0px;
+    @include sm {
+        width: 80vw;
+    }
+    &_in {
+        animation: 0.5s cartIn both;
+    }
+    &__wrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__head {
+        flex: 0 0 auto;
+        border-bottom: 1px rgba(#1f2022, 0.15) solid;
+        padding: 30px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include sm {
+            padding: 20px 30px;
+        }
+    }
+    &__content {
+        padding: 30px 50px;
+        overflow: auto;
+        @include scrollbars(6px, rgba(#1f2022, 0.5), transparent);
+        @include sm {
+            padding: 20px 30px;
+        }
+    }
+    &__footer {
+        display: grid;
+        gap: 20px;
+        padding: 30px 50px;
+        border-top: 1px rgba(#1f2022, 0.15) solid;
+        @include sm {
+            padding: 20px 30px;
+        }
+    }
+    &__title {
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 2px;
+        @include sm {
+            font-size: 24px;
+        }
+    }
+    &__close {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        @include sm {
+            width: 30px;
+            height: 30px;
+        }
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            top: 50%;
+            height: 1px;
+            background: #1f2022;
+            transition: all 0.3s;
+        }
+        &:after {
+            rotate: 45deg;
+        }
+        &:before {
+            rotate: -45deg;
+        }
+        &:hover {
+            &:after {
+                rotate: -45deg;
+                transition-delay: 0.1s;
+            }
+            &:before {
+                rotate: 45deg;
+            }
+        }
+    }
+    &__ship-note {
+        font-size: 14px;
+        color: #7c7c7c;
+        text-align: center;
+    }
+}
+.cart-product-list {
+    display: grid;
+    gap: 30px;
+    @include sm {
+        gap: 20px;
+    }
+}
+.cart-product {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    align-items: center;
+    @include sm {
+        grid-template-columns: 90px 1fr;
+    }
+    &__image {
+        width: 100%;
+        border: 1px rgba(#1f2022, 0.15) solid;
+        vertical-align: middle;
+    }
+    &__info {
+        display: grid;
+        gap: 10px;
+    }
+    &__name {
+        font-size: 12px;
+        font-weight: 300;
+        color: #7c7c7c;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include sm {
+            font-size: 10px;
+        }
+    }
+    &__series {
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include sm {
+            font-size: 14px;
+        }
+    }
+    &__price {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        @include sm {
+            font-size: 14px;
+        }
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__counts {
+        display: flex;
+    }
+    &__quant-btn {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        color: #7c7c7c;
+        &:hover {
+            color: black;
+        }
+    }
+    &__quant-input {
+        font-weight: 500;
+        width: 40px;
+        text-align: center;
+    }
+    &__remove {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        color: #d6190c;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+@keyframes cartIn {
+    from {
+        translate: 100%;
+    }
+    to {
+        translate: 0;
+    }
+}
