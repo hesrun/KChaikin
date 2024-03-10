@@ -104,6 +104,7 @@
         text-align: center;
     }
 }
+
 .cart-product-list {
     display: grid;
     gap: 30px;
@@ -111,6 +112,7 @@
         gap: 20px;
     }
 }
+
 .cart-product {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -154,6 +156,10 @@
         @include sm {
             font-size: 14px;
         }
+    }
+    &__quantity {
+        font-size: 16px;
+        font-weight: 300;
     }
     &__actions {
         display: flex;
