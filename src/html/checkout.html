@@ -33,15 +33,24 @@
                                 Создать аккаунт для дальнейших быстрых покупок
                             </label>
                             <div class="form-title">Адрес доставки</div>
-                            <div class="с-input">
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Страна"
-                                />
-                                <label>Страна</label>
+                            <div class="с-select">
+                                <select>
+                                    <option></option>
+                                    <option>Россия</option>
+                                    <option>Казахстан</option>
+                                    <option>Узбекистан</option>
+                                    <option>Россия</option>
+                                    <option>Казахстан</option>
+                                    <option>Узбекистан</option>
+                                    <option>Россия</option>
+                                    <option>Казахстан</option>
+                                    <option>Узбекистан</option>
+                                </select>
+                                <label for="" class="с-select__label">
+                                    Страна
+                                </label>
                             </div>
+
                             <div class="input-2x-cols">
                                 <div class="с-input">
                                     <input
@@ -101,6 +110,7 @@
                                 </div>
                             </div>
                             <div class="form-title">Способ доставки</div>
+
                             <label class="checkout-radio" id="standart">
                                 <input
                                     type="radio"
@@ -124,17 +134,68 @@
                                 >
                             </label>
                             <div class="form-title">Способ оплаты</div>
-                            <label class="checkout-radio" id="card">
-                                <input type="radio" name="payment" id="card" />
-                                Банковская карта
-                                <span class="checkout-radio__note">
-                                    <img
-                                        src="img/icons/pay-systems.png"
-                                        alt=""
+                            <div class="checkout__pay-card">
+                                <label class="checkout-radio" for="card">
+                                    <input
+                                        type="radio"
+                                        name="payment"
+                                        id="card"
                                     />
-                                </span>
-                            </label>
-                            <label class="checkout-radio" id="PayPal">
+                                    Банковская карта
+                                    <span class="checkout-radio__note">
+                                        <img
+                                            src="img/icons/pay-systems.png"
+                                            alt=""
+                                        />
+                                    </span>
+                                </label>
+                                <div class="checkout__pay-card-form">
+                                    <div class="с-input">
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Номер карты"
+                                        />
+                                        <label>Номер карты</label>
+                                    </div>
+                                    <div class="input-2x-cols">
+                                        <div class="с-input">
+                                            <input
+                                                type="text"
+                                                name=""
+                                                id=""
+                                                placeholder="Срок действия"
+                                            />
+                                            <label>Срок действия</label>
+                                        </div>
+                                        <div class="с-input">
+                                            <input
+                                                type="text"
+                                                name=""
+                                                id=""
+                                                placeholder="CVV"
+                                            />
+                                            <label>CVV</label>
+                                        </div>
+                                    </div>
+                                    <div class="с-input">
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Владелец карты"
+                                        />
+                                        <label>Владелец карты</label>
+                                    </div>
+                                    <label class="с-checkbox">
+                                        <input type="checkbox" name="" id="" />
+                                        Использовать адрес доставки в качестве
+                                        платежного адреса
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="checkout-radio" for="PayPal">
                                 <input
                                     type="radio"
                                     name="payment"
@@ -145,7 +206,7 @@
                                     <img src="img/icons/paypal.png" alt="" />
                                 </span>
                             </label>
-                            <label class="checkout-radio" id="cardRF">
+                            <label class="checkout-radio" for="cardRF">
                                 <input
                                     type="radio"
                                     name="payment"
@@ -168,7 +229,7 @@
                         </div>
                         <div class="checkout__cart">
                             <h3 class="checkout__cart-title">Ваш заказ</h3>
-                            <div class="cart-product-list">
+                            <div class="checkout__products cart-product-list">
                                 <div class="cart-product">
                                     <img
                                         src="img/shop/shop-item-1.jpg"
@@ -231,6 +292,20 @@
                                             >
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="checkout__estimation">
+                                <div class="checkout__estimation-line">
+                                    <span>Стоимость товаров</span>
+                                    <span>18 700 ₽</span>
+                                </div>
+                                <div class="checkout__estimation-line">
+                                    <span>Доставка</span>
+                                    <span>Бесплатно</span>
+                                </div>
+                                <div class="checkout__estimation-line">
+                                    <b>Итог</b>
+                                    <b>18 700 ₽</b>
                                 </div>
                             </div>
                         </div>

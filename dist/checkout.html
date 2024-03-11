@@ -7,6 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link rel="icon" href="img/favicon.png" type="image/png" />
    <meta name="description" content="description" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.css" />
    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css" rel="stylesheet" />
    <link href="https://cdn.iconly.io/kits/KIze4AZ1VXv8/v_9c83f2f/iconly.min.css" rel="stylesheet" integrity="sha384-yXvBzaH1oREER12rgRvVrUGgRUeTVt0jfP2gnzBCxHuGiouCiAB2aFbXPJrsdJtU" crossorigin="anonymous" />
@@ -220,10 +221,24 @@
                      Создать аккаунт для дальнейших быстрых покупок
                   </label>
                   <div class="form-title">Адрес доставки</div>
-                  <div class="с-input">
-                     <input type="text" name="" id="" placeholder="Страна" />
-                     <label>Страна</label>
+                  <div class="с-select">
+                     <select>
+                        <option></option>
+                        <option>Россия</option>
+                        <option>Казахстан</option>
+                        <option>Узбекистан</option>
+                        <option>Россия</option>
+                        <option>Казахстан</option>
+                        <option>Узбекистан</option>
+                        <option>Россия</option>
+                        <option>Казахстан</option>
+                        <option>Узбекистан</option>
+                     </select>
+                     <label for="" class="с-select__label">
+                        Страна
+                     </label>
                   </div>
+
                   <div class="input-2x-cols">
                      <div class="с-input">
                         <input type="text" name="" id="" placeholder="Имя" />
@@ -253,6 +268,7 @@
                      </div>
                   </div>
                   <div class="form-title">Способ доставки</div>
+
                   <label class="checkout-radio" id="standart">
                      <input type="radio" name="delivery" id="standart" />
                      Стандартная доставка
@@ -266,24 +282,51 @@
                                     >999 USD</span>
                   </label>
                   <div class="form-title">Способ оплаты</div>
-                  <label class="checkout-radio" id="card">
-                     <input type="radio" name="payment" id="card" />
-                     Банковская карта
-                     <span class="checkout-radio__note">
-                                    <img
-                                        src="img/icons/pay-systems.png"
-                                        alt=""
-                                    />
-                                </span>
-                  </label>
-                  <label class="checkout-radio" id="PayPal">
+                  <div class="checkout__pay-card">
+                     <label class="checkout-radio" for="card">
+                        <input type="radio" name="payment" id="card" />
+                        Банковская карта
+                        <span class="checkout-radio__note">
+                                        <img
+                                            src="img/icons/pay-systems.png"
+                                            alt=""
+                                        />
+                                    </span>
+                     </label>
+                     <div class="checkout__pay-card-form">
+                        <div class="с-input">
+                           <input type="text" name="" id="" placeholder="Номер карты" />
+                           <label>Номер карты</label>
+                        </div>
+                        <div class="input-2x-cols">
+                           <div class="с-input">
+                              <input type="text" name="" id="" placeholder="Срок действия" />
+                              <label>Срок действия</label>
+                           </div>
+                           <div class="с-input">
+                              <input type="text" name="" id="" placeholder="CVV" />
+                              <label>CVV</label>
+                           </div>
+                        </div>
+                        <div class="с-input">
+                           <input type="text" name="" id="" placeholder="Владелец карты" />
+                           <label>Владелец карты</label>
+                        </div>
+                        <label class="с-checkbox">
+                           <input type="checkbox" name="" id="" />
+                           Использовать адрес доставки в качестве
+                           платежного адреса
+                        </label>
+                     </div>
+                  </div>
+                  <label class="checkout-radio" for="PayPal">
                      <input type="radio" name="payment" id="PayPal" />
                      PayPal
                      <span class="checkout-radio__note">
                                     <img src="img/icons/paypal.png" alt="" />
                                 </span>
                   </label>
-                  <label class="checkout-radio" id="cardRF">
+                  <label class="checkout-radio" for="cardRF">
                      <input type="radio" name="payment" id="cardRF" />
                      Оплата для клиентов из РФ
                   </label>
@@ -297,7 +340,7 @@
                </div>
                <div class="checkout__cart">
                   <h3 class="checkout__cart-title">Ваш заказ</h3>
-                  <div class="cart-product-list">
+                  <div class="checkout__products cart-product-list">
                      <div class="cart-product">
                         <img src="img/shop/shop-item-1.jpg" alt="" class="cart-product__image" />
                         <div class="cart-product__info">
@@ -345,6 +388,20 @@
                                                 >х 1</span>
                            </div>
                         </div>
+                     </div>
+                  </div>
+                  <div class="checkout__estimation">
+                     <div class="checkout__estimation-line">
+                        <span>Стоимость товаров</span>
+                        <span>18 700 ₽</span>
+                     </div>
+                     <div class="checkout__estimation-line">
+                        <span>Доставка</span>
+                        <span>Бесплатно</span>
+                     </div>
+                     <div class="checkout__estimation-line">
+                        <b>Итог</b>
+                        <b>18 700 ₽</b>
                      </div>
                   </div>
                </div>
@@ -460,6 +517,7 @@
       </div>
    </footer>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

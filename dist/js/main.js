@@ -176,3 +176,12 @@ $('#addCart').click(function () {
     showClose: false
   });
 });
+$('.с-select select').select2({
+  width: 'style',
+  minimumResultsForSearch: Infinity
+}).on('select2:select', function (e) {
+  $(e.target).parent('.с-select').find('.с-select__label').addClass('с-select__label_choised');
+});
+$("input[name='payment']").change(function () {
+  $('#card').is(':checked') ? $('.checkout__pay-card-form').slideDown() : $('.checkout__pay-card-form').slideUp();
+});
