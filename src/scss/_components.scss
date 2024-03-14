@@ -146,7 +146,7 @@
         top: 0px;
         position: absolute;
         line-height: 35px;
-        transition: all 0.3s;
+        transition: all 0.2s;
     }
 }
 
@@ -188,6 +188,9 @@
         &:after {
             opacity: 1;
         }
+    }
+    a {
+        text-decoration: underline;
     }
 }
 

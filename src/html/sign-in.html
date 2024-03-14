@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+    @include('modules/link.html',{ 'title': 'Category' })
+    <body>
+        @include('modules/header.html',{'theme':'black'})
+        <main class="main">
+            <section class="page-section">
+                <div class="container">
+                    <div class="section-head">
+                        <h1 class="section-head__title">
+                            Регистрация на сайте
+                        </h1>
+                    </div>
+                    <div class="sign-form">
+                        <div class="с-input">
+                            <input
+                                type="email"
+                                name=""
+                                id=""
+                                placeholder="Электронная почта"
+                            />
+                            <label>Электронная почта</label>
+                        </div>
+                        <div class="с-input">
+                            <input
+                                type="password"
+                                name=""
+                                id=""
+                                placeholder="Пароль"
+                            />
+                            <label>Пароль</label>
+                        </div>
+                        <div class="account-btn">
+                            <button class="button button_black button_filled">
+                                Войти
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @include('modules/footer.html')
+    </body>
+</html>

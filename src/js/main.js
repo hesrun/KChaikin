@@ -210,3 +210,7 @@ $("input[name='payment']").change(function () {
         ? $('.checkout__pay-card-form').slideDown()
         : $('.checkout__pay-card-form').slideUp()
 })
+
+$('.order-item__title').click(function () {
+    $(this).next().slideToggle()
+})

@@ -185,3 +185,6 @@ $('.с-select select').select2({
 $("input[name='payment']").change(function () {
   $('#card').is(':checked') ? $('.checkout__pay-card-form').slideDown() : $('.checkout__pay-card-form').slideUp();
 });
+$('.order-item__title').click(function () {
+  $(this).next().slideToggle();
+});

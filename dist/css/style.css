@@ -592,7 +592,7 @@ h5 {
   top: 0px;
   position: absolute;
   line-height: 35px;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .с-checkbox {
@@ -632,6 +632,9 @@ h5 {
 }
 .с-checkbox:has(input:checked):after {
   opacity: 1;
+}
+.с-checkbox a {
+  text-decoration: underline;
 }
 
 .c-textarea {
@@ -3394,4 +3397,85 @@ h5 {
 .checkout__estimation-line span:last-child,
 .checkout__estimation-line b:last-child {
   padding-left: 10px;
+}
+
+.sign-form {
+  max-width: 610px;
+}
+
+.account-btn {
+  margin-top: 40px;
+}
+
+.account {
+  display: grid;
+  grid-template-columns: 210px auto;
+  align-items: start;
+}
+.account__nav {
+  display: grid;
+  gap: 15px;
+  padding-top: 10px;
+}
+.account__nav-link {
+  font-size: 17px;
+  color: #7c7c7c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.account__nav-link:hover, .account__nav-link_active {
+  color: #1f2022;
+}
+
+.order-item {
+  border-bottom: 1px rgba(31, 32, 34, 0.15) solid;
+}
+.order-item .icon {
+  font-size: 24px;
+}
+.order-item .cart-product {
+  grid-template-columns: 80px 1fr;
+}
+.order-item .cart-product__image {
+  border: none;
+}
+.order-item__title {
+  padding: 30px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.order-item__title:hover {
+  opacity: 0.7;
+}
+.order-item__num {
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.order-item__state {
+  font-size: 12px;
+  font-weight: 400;
+  border: 1px #1f2022 solid;
+  line-height: 22px;
+  padding: 0 15px;
+  border-radius: 15px;
+}
+.order-item__content {
+  display: none;
+  padding-bottom: 30px;
+}
+.order-item__content-cols {
+  display: flex;
+  align-items: center;
+  gap: 20%;
+}
+.order-item__info {
+  display: grid;
+  gap: 10px;
+}
+.order-item__info-line span {
+  color: #7c7c7c;
 }
