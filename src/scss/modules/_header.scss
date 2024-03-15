@@ -109,18 +109,19 @@
     }
     &__search-drop {
         display: none;
-        color: #fff;
+        color: #1f2022;
+        background: #fff;
         overflow: hidden;
         top: 70px;
         width: 100%;
         padding: 30px;
         border-radius: 20px;
         position: absolute;
-        background: #1f2022;
         @include md {
-            height: 100vh;
-            padding: 0px;
-            border-radius: 0;
+            height: 70vh;
+            overflow: auto;
+            padding: 15px;
+            border-radius: 5px;
         }
     }
     &__popular-title {
@@ -135,7 +136,7 @@
         i {
             flex: 1 1 auto;
             height: 1px;
-            background: white;
+            background: rgba(#1f2022, 0.15);
             display: block;
             opacity: 0.3;
         }
@@ -151,7 +152,7 @@
             grid-template-columns: 1fr;
         }
     }
-    &_black {
+    &__ &_black {
         color: #1f2022;
         &:after {
             background: rgba(#000, 0.1);
@@ -188,6 +189,57 @@
     }
     &_open {
         background: #1f2022;
+    }
+}
+.search-result {
+    &__item {
+        padding: 15px 0;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px rgba(#1f2022, 0.15) solid;
+        transition: opacity 0.3s;
+        &:first-child {
+            border: none;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__type {
+        color: #7c7c7c;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        @include md {
+            display: none;
+        }
+    }
+    &__product {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__product-img {
+        width: 85px;
+        border: 1px rgba(#1f2022, 0.15) solid;
+        @include md {
+            width: 55px;
+        }
+    }
+    &__product-series {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    &__category {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    &__product-price {
+        font-weight: 700;
     }
 }
 .language-select {
@@ -306,6 +358,10 @@
         border-bottom: 1px rgba(white, 0.15) solid;
         margin-bottom: 20px;
         padding-bottom: 15px;
+        transition: border-color 0.3s;
+        @include hover {
+            border-color: white;
+        }
         @include md {
             position: relative;
             padding: 20px 0;

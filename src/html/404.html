@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+    @include('modules/link.html',{ 'title': 'Category' })
+    <body>
+        @include('modules/header.html',{'theme':'white'})
+        <main class="main">
+            <div class="page-hero">
+                <picture>
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="img/404/404-m.jpg"
+                    />
+                    <img src="img/404/404.jpg" alt="" />
+                </picture>
+
+                <div class="page-hero__info">
+                    <div class="container">
+                        <div class="page-hero__text page-hero__text_404">
+                            <h1 class="page-hero__title">
+                                Страница <br />
+                                не найдена
+                            </h1>
+                        </div>
+                        <div class="page-hero__descr page-hero__descr_404">
+                            Так уж получилось, что из множества страниц нашего
+                            сайта вы оказались как раз на той, которая уже не
+                            существует
+                        </div>
+                        <div class="page-hero__btns page-hero__btns_alone">
+                            <a href="" class="button button_white"
+                                >На главную</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @include('modules/footer.html')
+    </body>
+</html>

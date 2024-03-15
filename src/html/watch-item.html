@@ -22,9 +22,9 @@
                         </div>
                         <div class="page-hero__btns">
                             <a href="" class="button button_white"> 360° </a>
-                            <a href="" class="button button_white">
+                            <button id="showParams" class="button button_white">
                                 Характеристики
-                            </a>
+                            </button>
                             <a href="" class="button button_white">
                                 Как купить?
                             </a>
@@ -415,6 +415,6 @@
                 </div>
             </div>
         </main>
-        @include('modules/footer.html')
+        @include('modules/footer.html') @include('modals/techParamsModal.html')
     </body>
 </html>

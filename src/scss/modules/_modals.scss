@@ -104,7 +104,6 @@
         text-align: center;
     }
 }
-
 .cart-product-list {
     display: grid;
     gap: 30px;
@@ -112,7 +111,6 @@
         gap: 20px;
     }
 }
-
 .cart-product {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -191,6 +189,39 @@
         &:hover {
             opacity: 0.7;
         }
+    }
+}
+
+.common-modal {
+    width: 100%;
+    max-width: 600px;
+    padding: 0px;
+    &__title {
+        margin: 0;
+        font-size: 32px;
+    }
+    &__head {
+        padding: 30px;
+    }
+    &__content {
+        padding: 30px;
+    }
+    &__footer {
+        padding: 30px;
+    }
+}
+
+.tech-table {
+    width: 100%;
+    th {
+        width: 40%;
+        vertical-align: baseline;
+        padding-right: 30px;
+        padding-bottom: 20px;
+    }
+    td {
+        vertical-align: baseline;
+        padding-bottom: 20px;
     }
 }
 

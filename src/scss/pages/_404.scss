@@ -1,0 +1,81 @@
+.sign-form {
+    max-width: 610px;
+}
+.account-btn {
+    margin-top: 40px;
+}
+.account {
+    display: grid;
+    grid-template-columns: 210px auto;
+    align-items: start;
+    &__nav {
+        display: grid;
+        gap: 15px;
+        padding-top: 10px;
+    }
+    &__nav-link {
+        font-size: 17px;
+        color: #7c7c7c;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        &:hover,
+        &_active {
+            color: #1f2022;
+        }
+    }
+}
+
+.order-item {
+    border-bottom: 1px rgba(#1f2022, 0.15) solid;
+    .icon {
+        font-size: 24px;
+    }
+    .cart-product {
+        grid-template-columns: 80px 1fr;
+    }
+    .cart-product__image {
+        border: none;
+    }
+    &__title {
+        padding: 30px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__num {
+        margin-right: auto;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    &__state {
+        font-size: 12px;
+        font-weight: 400;
+        border: 1px #1f2022 solid;
+        line-height: 22px;
+        padding: 0 15px;
+        border-radius: 15px;
+    }
+    &__content {
+        display: none;
+        padding-bottom: 30px;
+    }
+    &__content-cols {
+        display: flex;
+        align-items: center;
+        gap: 20%;
+    }
+    &__info {
+        display: grid;
+        gap: 10px;
+    }
+    &__info-line {
+        span {
+            color: #7c7c7c;
+        }
+    }
+}

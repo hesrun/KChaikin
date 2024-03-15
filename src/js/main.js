@@ -90,6 +90,7 @@ $('.language-select__current').click(function () {
 $('.navigation__title').click(function () {
     if (screenSize < md) {
         $(this).next().slideToggle()
+        return false
     }
 })
 $(document).click(function (e) {
@@ -190,6 +191,12 @@ $('#addCart').click(function () {
     $('#cart').modal({
         fadeDuration: 300,
         showClose: false,
+    })
+})
+
+$('#showParams').click(function () {
+    $('#techModal').modal({
+        fadeDuration: 300,
     })
 })
 
