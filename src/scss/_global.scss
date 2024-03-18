@@ -20,6 +20,7 @@ body {
     @include md {
         font-size: 14px;
     }
+    @include scrollbars(5px, #ccc, #1f2022);
 }
 input,
 select,
@@ -265,6 +266,16 @@ h5 {
     }
 }
 
+.article {
+    img {
+        display: block;
+        margin: 40px 0;
+        width: 100%;
+        @include md {
+            margin: 15px 0;
+        }
+    }
+}
 @keyframes Spin {
     100% {
         transform: rotate(360deg);

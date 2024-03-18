@@ -397,7 +397,7 @@
                         </div>
                      </div>
                      <div class="vacancy-item__btns">
-                        <a href="" class="button button_black button_filled">
+                        <a href="" class="button button_black button_filled requestVacancy">
                            Откликнуться
                         </a>
                         <a href="" class="button button_black button_icon expand-vacation">
@@ -554,7 +554,7 @@
                         </div>
                      </div>
                      <div class="vacancy-item__btns">
-                        <a href="" class="button button_black button_filled">
+                        <a href="" class="button button_black button_filled requestVacancy">
                            Откликнуться
                         </a>
                         <a href="" class="button button_black button_icon expand-vacation">
@@ -711,7 +711,7 @@
                         </div>
                      </div>
                      <div class="vacancy-item__btns">
-                        <a href="" class="button button_black button_filled">
+                        <a href="" class="button button_black button_filled requestVacancy">
                            Откликнуться
                         </a>
                         <a href="" class="button button_black button_icon expand-vacation">
@@ -868,7 +868,7 @@
                         </div>
                      </div>
                      <div class="vacancy-item__btns">
-                        <a href="" class="button button_black button_filled">
+                        <a href="" class="button button_black button_filled requestVacancy">
                            Откликнуться
                         </a>
                         <a href="" class="button button_black button_icon expand-vacation">
@@ -1025,7 +1025,7 @@
                         </div>
                      </div>
                      <div class="vacancy-item__btns">
-                        <a href="" class="button button_black button_filled">
+                        <a href="" class="button button_black button_filled requestVacancy">
                            Откликнуться
                         </a>
                         <a href="" class="button button_black button_icon expand-vacation">
@@ -1154,6 +1154,41 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
    <script defer src="js/main.min.js"></script>
 
+
+   <div id="vacancyModal" class="modal common-modal">
+      <div class="common-modal__wrapper">
+         <div class="common-modal__head">
+            <h2 class="common-modal__title">Откликнуться на вакансию</h2>
+            <div class="common-modal__subtitle">
+               Заполните форму и мы свяжемся с вами
+            </div>
+         </div>
+         <div class="common-modal__content">
+            <div class="с-input">
+               <input type="text" name="" id="" placeholder="Имя" />
+               <label>Имя</label>
+            </div>
+            <div class="с-input">
+               <input type="tel" name="" id="" placeholder="Номер телефона" />
+               <label>Номер телефона</label>
+            </div>
+            <textarea class="c-textarea" placeholder="Ваш комментарий"></textarea>
+            <div class="clip-file">
+               <label for="clipFile" class="clip-file__btn">
+                  Прикрепить файл <br />
+                  <small>до 5 мб</small>
+                  <input class="clip-file__input" type="file" name="" id="clipFile" />
+               </label>
+               <div class="clip-file__name">Файл не выбран</div>
+            </div>
+         </div>
+         <div class="common-modal__footer">
+            <button class="button button_black button_full button_filled">
+               Отправить заявку
+            </button>
+         </div>
+      </div>
+   </div>
 
 </body>
 

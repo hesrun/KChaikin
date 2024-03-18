@@ -58,7 +58,8 @@ var photoSlider = new Swiper('.photo-slider', {
 var dateCarusel = new Swiper('.date-list', {
   slidesPerView: 'auto',
   freeMode: true,
-  spaceBetween: 0
+  spaceBetween: 0,
+  mousewheel: true
 });
 $(window).scroll(function () {
   if ($(window).scrollTop() >= headerHeight) {
@@ -181,6 +182,12 @@ $('#showParams').click(function () {
   $('#techModal').modal({
     fadeDuration: 300
   });
+});
+$('.requestVacancy').click(function () {
+  $('#vacancyModal').modal({
+    fadeDuration: 300
+  });
+  return false;
 });
 $('.с-select select').select2({
   width: 'style',
