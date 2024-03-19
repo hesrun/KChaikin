@@ -64,6 +64,11 @@
     }
     &_full {
         width: 100%;
+        &_m {
+            @include md {
+                width: 100%;
+            }
+        }
     }
     &_more {
         margin-top: 30px;

@@ -61,6 +61,23 @@ var dateCarusel = new Swiper('.date-list', {
   spaceBetween: 0,
   mousewheel: true
 });
+var storesCarusel = new Swiper('.stores-carusel', {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  pagination: {
+    el: '.photo-carusel-nav__pagination',
+    clickable: true
+  },
+  navigation: {
+    prevEl: '.photo-carusel-nav__prev',
+    nextEl: '.photo-carusel-nav__next'
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2
+    }
+  }
+});
 $(window).scroll(function () {
   if ($(window).scrollTop() >= headerHeight) {
     $('.header').addClass('header_scrolled');
