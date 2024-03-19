@@ -206,6 +206,12 @@ $('.requestVacancy').click(function () {
   });
   return false;
 });
+$('.queueModalOpen').click(function () {
+  $('#queueModal').modal({
+    fadeDuration: 300
+  });
+  return false;
+});
 $('.с-select select').select2({
   width: 'style',
   minimumResultsForSearch: Infinity
