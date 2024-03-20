@@ -206,6 +206,9 @@ $('.requestVacancy').click(function () {
   });
   return false;
 });
+$('#vacancyModal').modal({
+  fadeDuration: 300
+});
 $('.queueModalOpen').click(function () {
   $('#queueModal').modal({
     fadeDuration: 300

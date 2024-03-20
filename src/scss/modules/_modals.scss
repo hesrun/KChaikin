@@ -261,6 +261,7 @@
     gap: 20px;
     &__btn {
         border: 1px #1f2022 dashed;
+        white-space: nowrap;
         border-radius: 30px;
         height: 60px;
         display: inline-flex;
@@ -272,6 +273,10 @@
         small {
             color: #7c7c7c;
         }
+        &_error {
+            border-color: #ff1834;
+            border-style: solid;
+        }
         &:hover {
             opacity: 0.7;
         }
@@ -281,6 +286,9 @@
     }
     &__name {
         color: #7c7c7c;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__remove {
         &:hover {

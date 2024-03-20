@@ -1726,6 +1726,7 @@ h5 {
 }
 .clip-file__btn {
   border: 1px #1f2022 dashed;
+  white-space: nowrap;
   border-radius: 30px;
   height: 60px;
   display: inline-flex;
@@ -1738,6 +1739,10 @@ h5 {
 .clip-file__btn small {
   color: #7c7c7c;
 }
+.clip-file__btn_error {
+  border-color: #ff1834;
+  border-style: solid;
+}
 .clip-file__btn:hover {
   opacity: 0.7;
 }
@@ -1746,6 +1751,9 @@ h5 {
 }
 .clip-file__name {
   color: #7c7c7c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .clip-file__remove:hover {
   opacity: 0.7;
