@@ -269,7 +269,6 @@
         grid-column: 5 span;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         h2 {
             margin-bottom: 20px;
         }
@@ -280,7 +279,7 @@
             }
         }
         h5 {
-            @include md {
+            ьфк @include md {
                 margin-top: 15px;
             }
         }

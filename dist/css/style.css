@@ -2610,7 +2610,6 @@ h5 {
   grid-column: 5 span;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .tech-block__text h2 {
   margin-bottom: 20px;
