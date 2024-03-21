@@ -2,8 +2,8 @@
     $root: &;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    @include md {
+    grid-template-columns: repeat(3, 1fr);
+    @include lg {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
@@ -43,8 +43,6 @@
         &_mx2 {
             @include md {
                 grid-column: 1 span;
-                aspect-ratio: auto;
-                height: 250px;
             }
             #{$root}__item-name {
                 @include md {
@@ -57,7 +55,7 @@
             #{$root}__item-image {
                 @include md {
                     img {
-                        width: 110px;
+                        width: 100%;
                     }
                 }
             }

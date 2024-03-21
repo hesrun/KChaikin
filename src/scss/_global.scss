@@ -57,7 +57,6 @@ button {
 .img-responsive {
     max-width: 100%;
 }
-
 .divder {
     margin: 80px 0;
     border: none;
@@ -266,13 +265,11 @@ h5 {
         margin-bottom: 10px;
     }
 }
-
 .text-reveal-anim {
     span {
         opacity: 0.05;
     }
 }
-
 .article {
     img {
         display: block;
@@ -286,5 +283,11 @@ h5 {
 @keyframes Spin {
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@include sm {
+    .m-hidden {
+        display: none;
     }
 }

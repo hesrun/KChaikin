@@ -18,6 +18,9 @@
 
 .stores-carusel {
     margin-top: 40px;
+    .store-item {
+        height: auto;
+    }
     @include md {
         margin-top: 20px;
         .store-item {

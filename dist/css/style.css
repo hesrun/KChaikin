@@ -454,6 +454,11 @@ h5 {
     transform: rotate(360deg);
   }
 }
+@media only screen and (max-width: 576px) {
+  .m-hidden {
+    display: none;
+  }
+}
 .button {
   display: inline-flex;
   align-items: center;
@@ -1783,6 +1788,7 @@ h5 {
 }
 .hero-slider {
   position: relative;
+  background: black;
 }
 .hero-slider__title {
   color: white;
@@ -1817,10 +1823,10 @@ h5 {
 .hero-slider__text {
   width: 100%;
   color: white;
-  padding: 80px 0;
   position: absolute;
   bottom: 0;
   left: 0;
+  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
 }
 @media only screen and (max-width: 768px) {
   .hero-slider__text {
@@ -1831,9 +1837,11 @@ h5 {
   display: flex;
   align-items: center;
   gap: 60px;
+  height: 220px;
 }
 @media only screen and (max-width: 768px) {
   .hero-slider__text .container {
+    height: auto;
     gap: 5px;
     flex-direction: column;
     align-items: flex-start;
@@ -1843,10 +1851,20 @@ h5 {
     width: 100%;
   }
 }
+@media only screen and (max-width: 768px) {
+  .hero-slider__text span br {
+    display: none;
+  }
+}
 .hero-slider__text h2 {
   margin: 0;
   font-weight: 100;
   letter-spacing: 2px;
+}
+@media only screen and (max-width: 768px) {
+  .hero-slider__text h2 br {
+    display: none;
+  }
 }
 .hero-slider__text .button {
   margin-left: auto;
@@ -2046,6 +2064,8 @@ h5 {
 }
 .newsletter-grid__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 40px 0 20px;
   border-top: 1px rgba(0, 0, 0, 0.15) solid;
   border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
@@ -2071,9 +2091,6 @@ h5 {
     transform-origin: 0% 50%;
     transform: scaleX(1);
   }
-  .newsletter-grid__item:hover:hover .newsletter-grid__text {
-    margin-top: -5px;
-  }
 }
 @media only screen and (max-width: 768px) {
   .newsletter-grid__item {
@@ -2093,6 +2110,7 @@ h5 {
   }
 }
 .newsletter-grid__date {
+  margin-top: auto;
   font-size: 12px;
 }
 
@@ -2188,8 +2206,6 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-top: 1px rgba(0, 0, 0, 0.2) solid;
-  padding-top: 30px;
   gap: 15px;
 }
 .about-master__more {
@@ -2222,9 +2238,9 @@ h5 {
 .products-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .products-grid {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -2262,8 +2278,6 @@ h5 {
 @media only screen and (max-width: 768px) {
   .products-grid__item_mx2 {
     grid-column: 1 span;
-    aspect-ratio: auto;
-    height: 250px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2276,7 +2290,7 @@ h5 {
 }
 @media only screen and (max-width: 768px) {
   .products-grid__item_mx2 .products-grid__item-image img {
-    width: 110px;
+    width: 100%;
   }
 }
 .products-grid__item-name {
@@ -2434,6 +2448,7 @@ h5 {
 }
 .whatch-master-quote__author {
   position: absolute;
+  width: 280px;
   right: 0px;
   bottom: 0px;
   transform: translate(50%, 50%);
@@ -2456,7 +2471,8 @@ h5 {
 .video-section {
   aspect-ratio: 16/9;
 }
-.video-section iframe {
+.video-section iframe,
+.video-section video {
   width: 100%;
   height: 100%;
   vertical-align: middle;
@@ -2607,6 +2623,8 @@ h5 {
 }
 .tech-block__image {
   grid-column: 7 span;
+}
+.tech-block__image img {
   width: 100%;
 }
 @media only screen and (max-width: 768px) {
@@ -2802,6 +2820,7 @@ h5 {
 
 .img-full {
   margin: 50px 0;
+  display: block;
 }
 @media only screen and (max-width: 768px) {
   .img-full {
@@ -2849,8 +2868,14 @@ h5 {
     grid-template-columns: 1fr;
   }
 }
+.manuf-history_all .manuf-history__item:nth-child(n+7) {
+  display: block;
+}
 .manuf-history__item {
   padding: 0 50px 40px 0;
+}
+.manuf-history__item:nth-child(n+7) {
+  display: none;
 }
 .manuf-history__item:nth-child(n+4) {
   border-top: 1px #1f2022 solid;
@@ -2869,9 +2894,6 @@ h5 {
   .manuf-history__item:nth-child(n+2) {
     border-top: 1px #1f2022 solid;
     padding-top: 30px;
-  }
-  .manuf-history__item:last-child {
-    padding-bottom: 0;
   }
 }
 .manuf-history__date {
@@ -3775,6 +3797,9 @@ h5 {
 
 .stores-carusel {
   margin-top: 40px;
+}
+.stores-carusel .store-item {
+  height: auto;
 }
 @media only screen and (max-width: 768px) {
   .stores-carusel {

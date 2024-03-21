@@ -9,14 +9,26 @@ window.addEventListener('resize', function () {
 
 const heroSlider = new Swiper('.hero-slider', {
     loop: true,
-    effect: 'fade',
+    speed: 1000,
+    effect: 'creative',
+    creativeEffect: {
+        prev: {
+            opacity: 0,
+            rotate: [0, 0, -5],
+        },
+        next: {
+            opacity: 0,
+            scale: 1.2,
+            rotate: [0, 0, 5],
+        },
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
     navigation: {
-        nextEl: '.hero-prev',
-        prevEl: '.hero-next',
+        prevEl: '.hero-prev',
+        nextEl: '.hero-next',
     },
 })
 
@@ -188,6 +200,18 @@ $('.expand-vacation').click(function () {
     }
     vacancyContent.slideToggle(300)
     return false
+})
+
+$('.expand-history').click(function () {
+    $('.manuf-history').toggleClass('manuf-history_all')
+
+    if ($('.manuf-history').hasClass('manuf-history_all')) {
+        $(this).html(
+            `Скрыть <i class="icon icon-arrow-down" style="transform: rotateX(180deg)"></i>`
+        )
+    } else {
+        $(this).html(`Показать ещё <i class="icon icon-arrow-down" ></i>`)
+    }
 })
 
 $('.faq-accordion__title').click(function () {

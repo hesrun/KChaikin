@@ -1,5 +1,6 @@
 .hero-slider {
     position: relative;
+    background: black;
     &__title {
         color: white;
         top: 160px;
@@ -29,10 +30,14 @@
     &__text {
         width: 100%;
         color: white;
-        padding: 80px 0;
         position: absolute;
         bottom: 0;
         left: 0;
+        background: linear-gradient(
+            0deg,
+            rgba(black, 1) 0%,
+            rgba(black, 0) 100%
+        );
         @include md {
             padding: 0 0 60px;
         }
@@ -40,7 +45,9 @@
             display: flex;
             align-items: center;
             gap: 60px;
+            height: 220px;
             @include md {
+                height: auto;
                 gap: 5px;
                 flex-direction: column;
                 align-items: flex-start;
@@ -51,11 +58,21 @@
             }
         }
         span {
+            @include md {
+                br {
+                    display: none;
+                }
+            }
         }
         h2 {
             margin: 0;
             font-weight: 100;
             letter-spacing: 2px;
+            @include md {
+                br {
+                    display: none;
+                }
+            }
         }
         .button {
             margin-left: auto;
@@ -232,6 +249,8 @@
     gap: 20px;
     &__item {
         position: relative;
+        display: flex;
+        flex-direction: column;
         padding: 40px 0 20px;
         border-top: 1px rgba(black, 0.15) solid;
         border-bottom: 1px rgba(black, 0.15) solid;
@@ -255,9 +274,6 @@
                     transform-origin: 0% 50%;
                     transform: scaleX(1);
                 }
-                #{$root}__text {
-                    margin-top: -5px;
-                }
             }
         }
         @include md {
@@ -275,6 +291,7 @@
         }
     }
     &__date {
+        margin-top: auto;
         font-size: 12px;
     }
 }
@@ -362,8 +379,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        border-top: 1px rgba(black, 0.2) solid;
-        padding-top: 30px;
         gap: 15px;
     }
     &__more {
