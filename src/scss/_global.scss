@@ -17,9 +17,15 @@ body {
     &.lock {
         overflow: hidden;
         border-right: 5px transparent solid;
+        @include md {
+            border-right: none;
+        }
         .header,
         #menu {
             padding-right: 5px;
+            @include md {
+                padding-right: 0;
+            }
         }
     }
     @include md {

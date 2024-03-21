@@ -129,9 +129,20 @@ body.lock {
   overflow: hidden;
   border-right: 5px transparent solid;
 }
+@media only screen and (max-width: 768px) {
+  body.lock {
+    border-right: none;
+  }
+}
 body.lock .header,
 body.lock #menu {
   padding-right: 5px;
+}
+@media only screen and (max-width: 768px) {
+  body.lock .header,
+body.lock #menu {
+    padding-right: 0;
+  }
 }
 @media only screen and (max-width: 768px) {
   body {
