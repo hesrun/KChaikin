@@ -512,14 +512,13 @@ h5 {
 }
 .button_gray {
   color: white;
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  border-color: #bfbfbf;
+  color: #1f2022;
 }
 .button_gray:hover {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
+  border-color: black;
 }
 .button_medium {
   font-size: 14px;
@@ -637,6 +636,7 @@ h5 {
 }
 
 .с-checkbox {
+  margin-top: 20px;
   position: relative;
   display: flex;
   align-items: center;
@@ -2187,6 +2187,11 @@ h5 {
 .club-card-grid__info span {
   text-transform: uppercase;
   margin-bottom: auto;
+}
+.club-card-grid .button_gray {
+  color: white;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 .about-master {
@@ -3807,5 +3812,124 @@ h5 {
   }
   .stores-carusel .store-item {
     width: 80vw;
+  }
+}
+
+.contacts-map {
+  margin-top: 56px;
+}
+@media only screen and (max-width: 768px) {
+  .contacts-map {
+    margin-top: 30px;
+  }
+}
+.contacts-map iframe {
+  vertical-align: middle;
+  width: 100%;
+  height: 600px;
+}
+@media only screen and (max-width: 576px) {
+  .contacts-map iframe {
+    height: 100vw;
+  }
+}
+
+.contacts__info {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .contacts__info {
+    flex-direction: column;
+  }
+}
+.contacts__btns {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 76px;
+}
+@media only screen and (max-width: 768px) {
+  .contacts__btns {
+    align-self: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contacts__btns {
+    width: 100%;
+  }
+  .contacts__btns .button {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contacts__socials {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+.contacts__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 100px;
+}
+@media only screen and (max-width: 576px) {
+  .contacts__list {
+    gap: 30px;
+  }
+}
+.contacts__list-item {
+  display: grid;
+  gap: 10px;
+}
+.contacts__item-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media only screen and (max-width: 576px) {
+  .contacts__item-title {
+    font-size: 12px;
+  }
+}
+.contacts__item-tel {
+  font-size: 18px;
+  color: #000;
+}
+.contacts__item-tel:hover {
+  color: #7c7c7c;
+}
+@media only screen and (max-width: 576px) {
+  .contacts__item-tel {
+    font-size: 16px;
+  }
+}
+.contacts__item-email {
+  color: #7c7c7c;
+}
+.contacts__item-email:hover {
+  color: #1f2022;
+}
+@media only screen and (max-width: 576px) {
+  .contacts__item-email {
+    font-size: 12px;
+  }
+}
+.contacts__adress {
+  letter-spacing: 2px;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-top: 80px;
+}
+@media only screen and (max-width: 576px) {
+  .contacts__adress {
+    font-size: 16px;
+    margin-top: 30px;
   }
 }

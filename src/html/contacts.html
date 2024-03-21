@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+    @include('modules/link.html',{ 'title': 'Category' })
+    <body>
+        @include('modules/header.html',{'theme':'black'})
+        <main class="main">
+            <section class="page-section">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-head__subtitle"
+                            >КОНСТАНТИН ЧАЙКИН</span
+                        >
+                        <h1 class="section-head__title">Контакты</h1>
+                    </div>
+                    <div class="contacts">
+                        <div class="contacts__info">
+                            <div class="contacts__list">
+                                <div class="contacts__list-item">
+                                    <div class="contacts__item-title">
+                                        ОТДЕЛ ПРОДАЖ
+                                    </div>
+                                    <a class="contacts__item-tel" href="tel:+79778000288"
+                                        >+7 (977) 800-02-88</a
+                                    >
+                                    <a class="contacts__item-email" href="mailto:sales@chaykin.ru"
+                                        >sales@chaykin.ru</a
+                                    >
+                                </div>
+                                <div class="contacts__list-item">
+                                    <div class="contacts__item-title">
+                                        ОТДЕЛ КАДРОВ
+                                    </div>
+                                    <a class="contacts__item-tel" href="tel:+79688623303"
+                                        >+7 (968) 862-33-03</a
+                                    >
+                                    <a class="contacts__item-email" href="mailto:hr@chaykin.ru"
+                                        >hr@chaykin.ru</a
+                                    >
+                                </div>
+                                <div class="contacts__list-item">
+                                    <div class="contacts__item-title">
+                                        ОТДЕЛ ЗАКУПОК
+                                    </div>
+                                    <a class="contacts__item-tel" href="tel:+79091690878"
+                                        >+7 (909) 169-08-78</a
+                                    >
+                                    <a class="contacts__item-email" href="mailto:zakupka@chaykin.ru"
+                                        >zakupka@chaykin.ru</a
+                                    >
+                                </div>
+                                <div class="contacts__list-item">
+                                    <div class="contacts__item-title">
+                                        ОБЩИЕ ВОПРОСЫ
+                                    </div>
+                                    <a class="contacts__item-tel" href="tel:+74959887372"
+                                        >+7 (495) 988-73-72</a
+                                    >
+                                    <a class="contacts__item-email" href="mailto:zakupka@chaykin.ru"
+                                        >info@chaykin.ru</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="contacts__btns">
+                                <a
+                                        href="#"
+                                        class="button button_black button_filled feedBackModalOpen"
+                                >Обратная связь</a
+                                >
+                                <div class="contacts__socials">
+                                    <a
+                                            href="#"
+                                            class="button button_gray button_medium"
+                                    >
+                                        <i class="icon icon-whatsapp"></i>
+                                        Telegram
+                                    </a>
+                                    <a
+                                            href="#"
+                                            class="button button_gray button_medium"
+                                    >
+                                        <i class="icon icon-wechat"></i>
+                                        Wechat
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contacts__adress">
+                            <i class="icon icon-location"></i> Россия,
+                            Москва, Речников 15 стр. 2
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </section>
+            <div class="contacts-map">
+                <div style="position: relative; overflow: hidden">
+                    <a
+                            href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                            style="
+                                color: #eee;
+                                font-size: 12px;
+                                position: absolute;
+                                top: 0px;
+                            "
+                    >Москва</a
+                    ><a
+                        href="https://yandex.ru/maps/213/moscow/house/ulitsa_rechnikov_15k2/Z04YcA5jTkYFQFtvfXp5cH9lYg==/?ll=37.693731%2C55.681367&utm_medium=mapframe&utm_source=maps&z=17.05"
+                        style="
+                                color: #eee;
+                                font-size: 12px;
+                                position: absolute;
+                                top: 14px;
+                            "
+                >Улица Речников, 15к2 — Яндекс Карты</a
+                ><iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=37.693731%2C55.681367&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY2ODczNRI-0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0KDQtdGH0L3QuNC60L7QsiwgMTXQujIiCg1hxhZCFbi5XkI%2C&z=17.05"
+                        frameborder="1"
+                        allowfullscreen="true"
+                        style="position: relative"
+                ></iframe>
+                </div>
+        </main>
+        @include('modules/footer.html')
+        @include('modals/contactFeedBackModal.html')
+
+    </body>
+</html>

@@ -49,12 +49,12 @@
     }
     &_gray {
         color: white;
-        border-color: rgba(white, 0.25);
-        background: rgba(black, 0.2);
-        backdrop-filter: blur(10px);
+        border-color: #bfbfbf;
+        color: #1f2022;
         &:hover {
-            background: white;
-            color: black;
+            background: black;
+            color: white;
+            border-color: black;
         }
     }
     &_medium {
@@ -156,6 +156,7 @@
 }
 
 .с-checkbox {
+    margin-top: 20px;
     position: relative;
     display: flex;
     align-items: center;

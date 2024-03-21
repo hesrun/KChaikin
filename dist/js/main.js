@@ -233,6 +233,12 @@ $('.queueModalOpen').click(function () {
   });
   return false;
 });
+$('.feedBackModalOpen').click(function () {
+  $('#feedBackModal').modal({
+    fadeDuration: 300
+  });
+  return false;
+});
 $('.с-select select').select2({
   width: 'style',
   minimumResultsForSearch: Infinity
