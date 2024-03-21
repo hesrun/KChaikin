@@ -127,6 +127,11 @@ body {
 }
 body.lock {
   overflow: hidden;
+  border-right: 5px transparent solid;
+}
+body.lock .header,
+body.lock #menu {
+  padding-right: 5px;
 }
 @media only screen and (max-width: 768px) {
   body {
@@ -1820,13 +1825,24 @@ h5 {
   -o-object-position: center;
      object-position: center;
 }
+.hero-slider .swiper-slide:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, black 100%);
+  pointer-events: none;
+}
 .hero-slider__text {
   width: 100%;
   color: white;
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
 }
 @media only screen and (max-width: 768px) {
   .hero-slider__text {
@@ -2722,6 +2738,17 @@ h5 {
 .page-hero {
   position: relative;
 }
+.page-hero:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, black 100%);
+  pointer-events: none;
+}
 .page-hero img {
   height: 100svh;
   vertical-align: middle;
@@ -2743,6 +2770,7 @@ h5 {
   }
 }
 .page-hero__subtitle {
+  text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
 }
@@ -2763,7 +2791,7 @@ h5 {
   bottom: 0px;
   left: 0px;
   margin-right: auto;
-  background: linear-gradient(0deg, black 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
 }
 @media only screen and (max-width: 992px) {
   .page-hero__info {

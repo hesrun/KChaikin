@@ -16,6 +16,11 @@ body {
     background: #e5e5e5;
     &.lock {
         overflow: hidden;
+        border-right: 5px transparent solid;
+        .header,
+        #menu {
+            padding-right: 5px;
+        }
     }
     @include md {
         font-size: 14px;
