@@ -186,7 +186,7 @@ $('.expand-vacation').click(function () {
   vacancyContent.slideToggle(300);
   return false;
 });
-$('.expand-history').click(function () {
+$(document).on("click", ".expand-history", function () {
   $('.manuf-history').toggleClass('manuf-history_all');
 
   if ($('.manuf-history').hasClass('manuf-history_all')) {
