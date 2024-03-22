@@ -17,7 +17,7 @@
 </head>
 
 <body>
-   <header class=" header">
+   <header class="header header_black ">
       <div class="container">
          <button class="header-burger">
             <div class="header-burger__lines"></div>
@@ -242,31 +242,163 @@
    </header>
 
    <main class="main">
-      <div class="page-hero">
-         <picture>
-            <source media="(max-width: 768px)" srcset="img/404/404-m.jpg" />
-            <img src="img/404/404.jpg" alt="" />
-         </picture>
-
-         <div class="page-hero__info">
-            <div class="container">
-               <div class="page-hero__text page-hero__text_404">
-                  <h1 class="page-hero__title">
-                     Страница <br />
-                                не найдена
-                  </h1>
+      <section class="page-section">
+         <div class="container">
+            <div class="account">
+               <div class="account__nav">
+                  <a class="account__nav-link" href="/account-orders.html">Заказы</a>
+                  <a class="account__nav-link account__nav-link_active" href="/account-watches.html">Мои часы</a>
+                  <a class="account__nav-link" href="/account-profile.html">Профиль</a>
+                  <a class="account__nav-link" href="">Выйти</a>
                </div>
-               <div class="page-hero__descr page-hero__descr_404">
-                  Так уж получилось, что из множества страниц нашего
-                  сайта вы оказались как раз на той, которая уже не
-                  существует
-               </div>
-               <div class="page-hero__btns page-hero__btns_alone">
-                  <a href="" class="button button_white">На главную</a>
+               <div class="account-content">
+                  <div class="section-head section-head_btn-right">
+                     <h1 class="section-head__title">Мои Часы</h1>
+                     <a href="/account-add-watches.html" class="button button_black button_filled button_full_s">
+                        Добавить часы
+                     </a>
+                  </div>
+                  <div class="my-watch-empty">
+                     <p>
+                        Добавьте свои первые часы для подтверждения
+                        регистрации и подтверждения гарантии
+                     </p>
+                     <a href="/account-add-watches.html" class="button button_black button_filled button_full_s">
+                        Добавить часы
+                     </a>
+                  </div>
+                  <div class="my-watch-list">
+                     <div class="my-watch-item">
+                        <button class="my-watch-item__remove">
+                           <i class="icon-cross"></i>
+                        </button>
+                        <div class="my-watch-item__img">
+                           <img class="img-fluid" src="img/account/my-watch.jpg" alt="" />
+                        </div>
+                        <div class="my-watch-item__info">
+                           <h3 class="my-watch-item__title">
+                              ВРЕМЯ РОССИИ
+                           </h3>
+                           <div class="my-watch-item__params">
+                              <div class="my-watch-item__params-item">
+                                 <span>Reference</span><span>MIN-0001</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Case No.</span><span>450-23-22</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Серийный номер</span><span>3432-3342-34234</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Дата покупки</span><span>12.12.2023</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Гарантия до </span><span>12.12.2023</span>
+                                 <a href="">Продлить</a>
+                              </div>
+                           </div>
+                           <div class="my-watch-item__btns">
+                              <a href="#" class="button button_black button_medium">
+                                 PDF Руководство
+                              </a>
+                              <a href="#" class="button button_black button_medium">
+                                 Продать / Трейд-ин
+                              </a>
+                              <a href="#" class="button button_black button_medium">
+                                 Купить аксессуары
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="my-watch-item">
+                        <button class="my-watch-item__remove">
+                           <i class="icon-cross"></i>
+                        </button>
+                        <div class="my-watch-item__img">
+                           <img class="img-fluid" src="img/account/my-watch.jpg" alt="" />
+                        </div>
+                        <div class="my-watch-item__info">
+                           <h3 class="my-watch-item__title">
+                              ВРЕМЯ РОССИИ
+                           </h3>
+                           <div class="my-watch-item__params">
+                              <div class="my-watch-item__params-item">
+                                 <span>Reference</span><span>MIN-0001</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Case No.</span><span>450-23-22</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Серийный номер</span><span>3432-3342-34234</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Дата покупки</span><span>12.12.2023</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Гарантия до </span><span>12.12.2023</span>
+                                 <a href="">Продлить</a>
+                              </div>
+                           </div>
+                           <div class="my-watch-item__btns">
+                              <a href="#" class="button button_black button_medium">
+                                 PDF Руководство
+                              </a>
+                              <a href="#" class="button button_black button_medium">
+                                 Продать / Трейд-ин
+                              </a>
+                              <a href="#" class="button button_black button_medium">
+                                 Купить аксессуары
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="my-watch-item">
+                        <button class="my-watch-item__remove">
+                           <i class="icon-cross"></i>
+                        </button>
+                        <div class="my-watch-item__img">
+                           <img class="img-fluid" src="img/account/my-watch.jpg" alt="" />
+                        </div>
+                        <div class="my-watch-item__info">
+                           <h3 class="my-watch-item__title">
+                              ВРЕМЯ РОССИИ
+                           </h3>
+                           <div class="my-watch-item__params">
+                              <div class="my-watch-item__params-item">
+                                 <span>Reference</span><span>MIN-0001</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Case No.</span><span>450-23-22</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Серийный номер</span><span>3432-3342-34234</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Дата покупки</span><span>12.12.2023</span>
+                              </div>
+                              <div class="my-watch-item__params-item">
+                                 <span>Гарантия до </span><span>12.12.2023</span>
+                                 <a href="">Продлить</a>
+                              </div>
+                           </div>
+                           <div class="my-watch-item__btns">
+                              <a href="#" class="button button_black button_medium">
+                                 PDF Руководство
+                              </a>
+                              <a href="#" class="button button_black button_medium">
+                                 Продать / Трейд-ин
+                              </a>
+                              <a href="#" class="button button_black button_medium">
+                                 Купить аксессуары
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
+      </section>
    </main>
    <footer class="footer">
       <div class="navigation">

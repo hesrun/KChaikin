@@ -17,7 +17,7 @@
 </head>
 
 <body>
-   <header class=" header">
+   <header class="header header_black ">
       <div class="container">
          <button class="header-burger">
             <div class="header-burger__lines"></div>
@@ -242,31 +242,87 @@
    </header>
 
    <main class="main">
-      <div class="page-hero">
-         <picture>
-            <source media="(max-width: 768px)" srcset="img/404/404-m.jpg" />
-            <img src="img/404/404.jpg" alt="" />
-         </picture>
-
-         <div class="page-hero__info">
-            <div class="container">
-               <div class="page-hero__text page-hero__text_404">
-                  <h1 class="page-hero__title">
-                     Страница <br />
-                                не найдена
-                  </h1>
+      <section class="page-section">
+         <div class="container">
+            <div class="account">
+               <div class="account__nav">
+                  <a class="account__nav-link" href="/account-orders.html">Заказы</a>
+                  <a class="account__nav-link account__nav-link_active" href="/account-watches.html">Мои часы</a>
+                  <a class="account__nav-link" href="/account-profile.html">Профиль</a>
+                  <a class="account__nav-link" href="">Выйти</a>
                </div>
-               <div class="page-hero__descr page-hero__descr_404">
-                  Так уж получилось, что из множества страниц нашего
-                  сайта вы оказались как раз на той, которая уже не
-                  существует
-               </div>
-               <div class="page-hero__btns page-hero__btns_alone">
-                  <a href="" class="button button_white">На главную</a>
+               <div class="account-content">
+                  <div class="section-head">
+                     <a href="" class="section-head__subtitle">
+                        <i class="icon icon-arrow-left-thin"></i>
+                        Назад</a>
+                     <h1 class="section-head__title">
+                        Добавить часы
+                     </h1>
+                  </div>
+                  <div class="sign-form sign-form_account">
+                     <div class="с-input">
+                        <input type="text" name="" id="" placeholder="Серийный номер" />
+                        <label>Серийный номер</label>
+                     </div>
+                     <div class="input-3x-cols">
+                        <div class="с-select">
+                           <select>
+                              <option></option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                           </select>
+                           <label for="" class="с-select__label">
+                              День
+                           </label>
+                        </div>
+                        <div class="с-select">
+                           <select>
+                              <option></option>
+                              <option>Январь</option>
+                              <option>Февраль</option>
+                              <option>Март</option>
+                           </select>
+                           <label for="" class="с-select__label">
+                              Месяц
+                           </label>
+                        </div>
+                        <div class="с-select">
+                           <select>
+                              <option></option>
+                              <option>2010</option>
+                              <option>2011</option>
+                              <option>2012</option>
+                           </select>
+                           <label for="" class="с-select__label">
+                              Год
+                           </label>
+                        </div>
+                     </div>
+                     <div class="add-watch-preview">
+                        <div class="add-watch-preview__name">
+                           РИСТМОНЫ
+                        </div>
+                        <img class="add-watch-preview__img" src="https://dev.konstantinchaykin.com/upload/resize_cache/iblock/d71/350_350_1/6uih50ks3hvvmdh328n08p83gd02i2f5.png" alt="" />
+                        <div class="add-watch-preview__ref">
+                           Reference MIN-0001 <br />
+                                        Case No. 450-23-22
+                        </div>
+                     </div>
+                     <div class="account-btn">
+                        <button class="button button_black button_filled button_full_s">
+                           Сохранить данные
+                        </button>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
+      </section>
    </main>
    <footer class="footer">
       <div class="navigation">

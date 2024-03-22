@@ -1,5 +1,17 @@
+.account-content {
+    position: relative;
+}
 .sign-form {
     max-width: 610px;
+    &_account {
+        max-width: 500px;
+        @include md {
+            max-width: 100%;
+        }
+    }
+    @include md {
+        max-width: 100%;
+    }
 }
 .account-btn {
     margin-top: 40px;
@@ -8,10 +20,22 @@
     display: grid;
     grid-template-columns: 210px auto;
     align-items: start;
+    @include md {
+        grid-template-columns: 1fr;
+    }
     &__nav {
         display: grid;
         gap: 15px;
         padding-top: 10px;
+        @include md {
+            margin-bottom: 30px;
+            display: flex;
+            padding: 0;
+            gap: 10px;
+            overflow: auto;
+            scroll-behavior: smooth;
+        }
+        @include scrollbars(0px, transparent, transparent);
     }
     &__nav-link {
         font-size: 17px;
@@ -22,9 +46,24 @@
         &_active {
             color: #1f2022;
         }
+        @include md {
+            border: 1px #7c7c7c solid;
+            text-transform: none;
+            border-radius: 20px;
+            color: #1f2022;
+            font-size: 12px;
+            padding: 5px 10px;
+            letter-spacing: normal;
+            white-space: nowrap;
+            &:hover,
+            &_active {
+                background: #1f2022;
+                color: white;
+                border-color: #1f2022;
+            }
+        }
     }
 }
-
 .order-item {
     border-bottom: 1px rgba(#1f2022, 0.15) solid;
     .icon {
@@ -42,8 +81,10 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        &:hover {
-            opacity: 0.7;
+        @include hover {
+            &:hover {
+                opacity: 0.7;
+            }
         }
     }
     &__num {
@@ -51,6 +92,9 @@
         font-size: 18px;
         font-weight: 400;
         text-transform: uppercase;
+        @include sm {
+            font-size: 16px;
+        }
     }
     &__state {
         font-size: 12px;
@@ -68,6 +112,11 @@
         display: flex;
         align-items: center;
         gap: 20%;
+        @include sm {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
     }
     &__info {
         display: grid;
@@ -77,5 +126,101 @@
         span {
             color: #7c7c7c;
         }
+    }
+}
+.my-watch-empty {
+    max-width: 500px;
+}
+.my-watch-list {
+    display: grid;
+    gap: 20px;
+}
+.my-watch-item {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 165px 1fr;
+    gap: 30px;
+    @include sm {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    &__remove {
+        display: flex;
+        right: 15px;
+        top: 15px;
+        position: absolute;
+        font-size: 24px;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__img {
+        @include sm {
+            margin: auto;
+            max-width: 150px;
+        }
+    }
+    &__info {
+        align-self: start;
+        display: grid;
+        gap: 20px;
+    }
+    &__title {
+        margin: 0;
+    }
+    &__params {
+        display: grid;
+        gap: 5px;
+        font-size: 14px;
+    }
+    &__params-item {
+        display: flex;
+        gap: 10px;
+        span:first-child {
+            color: #7c7c7c;
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+    &__btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        @include sm {
+            display: grid;
+        }
+    }
+}
+
+.add-watch-preview {
+    position: absolute;
+    background: white;
+    width: 350px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+    padding: 30px;
+    @include xl {
+        position: static;
+        margin: 0 auto;
+    }
+    @include md {
+        width: 100%;
+    }
+    &__img {
+        width: 80%;
+        margin: 20px 0;
+    }
+    &__name {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &__ref {
+        font-size: 12px;
+        color: #7c7c7c;
     }
 }

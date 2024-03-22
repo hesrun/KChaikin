@@ -8,6 +8,17 @@
         margin-bottom: 20px;
     }
 }
+.input-3x-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 20px;
+    }
+}
 .form-title {
     margin: 30px 0 15px;
     font-size: 20px;

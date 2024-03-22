@@ -148,6 +148,13 @@ button {
         font-size: 14px;
         letter-spacing: 1px;
     }
+    &_btn-right {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
 }
 .divider-title {
     margin-top: 100px;
