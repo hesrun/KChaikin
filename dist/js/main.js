@@ -186,7 +186,7 @@ $('.expand-vacation').click(function () {
   vacancyContent.slideToggle(300);
   return false;
 });
-$(document).on("click", ".expand-history", function () {
+$(document).on('click', '.expand-history', function () {
   $('.manuf-history').toggleClass('manuf-history_all');
 
   if ($('.manuf-history').hasClass('manuf-history_all')) {
@@ -235,6 +235,18 @@ $('.queueModalOpen').click(function () {
 });
 $('.feedBackModalOpen').click(function () {
   $('#feedBackModal').modal({
+    fadeDuration: 300
+  });
+  return false;
+});
+$('.feedBackModalOpen').click(function () {
+  $('#feedBackModal').modal({
+    fadeDuration: 300
+  });
+  return false;
+});
+$('.openVideoModal').click(function () {
+  $('#videoModal').modal({
     fadeDuration: 300
   });
   return false;
