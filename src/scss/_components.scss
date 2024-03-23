@@ -323,3 +323,13 @@
         color: #fff;
     }
 }
+
+.iti {
+    width: 100%;
+    height: 100%;
+    &__selected-flag {
+        background: none !important;
+        padding-top: 15px;
+        padding-left: 15px;
+    }
+}

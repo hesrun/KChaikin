@@ -263,3 +263,18 @@ $("input[name='payment']").change(function () {
 $('.order-item__title').click(function () {
   $(this).next().slideToggle();
 });
+var input = document.querySelector('#phone');
+window.intlTelInput(input, {
+  initialCountry: 'auto',
+  geoIpLookup: function geoIpLookup(callback) {
+    fetch('https://ipapi.co/json').then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      return callback(data.country_code);
+    }).catch(function () {
+      return callback('us');
+    });
+  },
+  utilsScript: '/intl-tel-input/js/utils.js?1710935347720' // just for formatting/placeholders etc
+
+});
