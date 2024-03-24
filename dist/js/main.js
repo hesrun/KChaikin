@@ -1,5 +1,9 @@
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
@@ -277,4 +281,48 @@ if (phoneInput) {
   window.intlTelInput(phoneInput, {
     initialCountry: 'RU'
   });
+} //yamap
+
+
+initMap();
+
+function initMap() {
+  return _initMap.apply(this, arguments);
+}
+
+function _initMap() {
+  _initMap = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var _ymaps, YMap, YMapDefaultSchemeLayer, map;
+
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return ymaps3.ready;
+
+          case 2:
+            _ymaps = ymaps3, YMap = _ymaps.YMap, YMapDefaultSchemeLayer = _ymaps.YMapDefaultSchemeLayer; // Иницилиазируем карту
+
+            map = new YMap( // Передаём ссылку на HTMLElement контейнера
+            document.getElementById('yaMap'), // Передаём параметры инициализации карты
+            {
+              location: {
+                // Координаты центра карты
+                center: [37.588144, 55.733842],
+                // Уровень масштабирования
+                zoom: 10
+              }
+            }); // Добавляем слой для отображения схематической карты
+
+            map.addChild(new YMapDefaultSchemeLayer());
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _initMap.apply(this, arguments);
 }
