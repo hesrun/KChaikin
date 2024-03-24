@@ -179,6 +179,11 @@ button {
 .main:not(:has(.hero-slider, .page-hero, .page-section_dark:first-child)) {
   padding-top: 60px;
 }
+.main_dark {
+  background: #1f2022;
+  color: #fff;
+  border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
+}
 
 .footer,
 .header {
@@ -283,6 +288,9 @@ button {
     font-size: 12px;
     margin-bottom: 5px;
   }
+}
+.main_dark .section-head__subtitle {
+  color: #fff;
 }
 .section-head__title {
   margin-bottom: 0;
@@ -2372,6 +2380,9 @@ h5 {
   .products-grid__item_mx2 .products-grid__item-image img {
     width: 100%;
   }
+}
+.main_dark .products-grid__item {
+  background: rgba(255, 255, 255, 0.05);
 }
 .products-grid__item-name {
   position: absolute;

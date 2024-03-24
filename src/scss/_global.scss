@@ -46,6 +46,11 @@ button {
     &:not(:has(.hero-slider, .page-hero, .page-section_dark:first-child)) {
         padding-top: 60px;
     }
+    &_dark {
+        background: #1f2022;
+        color: #fff;
+        border-bottom: 1px rgba(white, 0.15) solid;
+    }
 }
 .footer,
 .header {
@@ -129,6 +134,9 @@ button {
         @include lg {
             font-size: 12px;
             margin-bottom: 5px;
+        }
+        .main_dark & {
+            color: #fff;
         }
     }
     &__title {
