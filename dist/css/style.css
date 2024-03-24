@@ -127,7 +127,7 @@ body {
 }
 body.lock {
   overflow: hidden;
-  border-right: 5px transparent solid;
+  border-right: var(--sw) transparent solid;
 }
 @media only screen and (max-width: 768px) {
   body.lock {
@@ -136,7 +136,7 @@ body.lock {
 }
 body.lock .header,
 body.lock #menu {
-  padding-right: 5px;
+  padding-right: var(--sw);
 }
 @media only screen and (max-width: 768px) {
   body.lock .header,

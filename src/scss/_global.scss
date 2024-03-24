@@ -16,13 +16,13 @@ body {
     background: #e5e5e5;
     &.lock {
         overflow: hidden;
-        border-right: 5px transparent solid;
+        border-right: var(--sw) transparent solid;
         @include md {
             border-right: none;
         }
         .header,
         #menu {
-            padding-right: 5px;
+            padding-right: var(--sw);
             @include md {
                 padding-right: 0;
             }

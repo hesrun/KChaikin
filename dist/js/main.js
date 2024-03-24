@@ -3,6 +3,14 @@
 var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
+
+var getScrollbarWidth = function getScrollbarWidth() {
+  return window.innerWidth - document.documentElement.clientWidth;
+};
+
+$('body').css({
+  '--sw': getScrollbarWidth() + 'px'
+});
 window.addEventListener('resize', function () {
   screenSize = window.innerWidth;
   checkMediaQuery();
@@ -263,18 +271,10 @@ $("input[name='payment']").change(function () {
 $('.order-item__title').click(function () {
   $(this).next().slideToggle();
 });
-var input = document.querySelector('#phone');
-window.intlTelInput(input, {
-  initialCountry: 'auto',
-  geoIpLookup: function geoIpLookup(callback) {
-    fetch('https://ipapi.co/json').then(function (res) {
-      return res.json();
-    }).then(function (data) {
-      return callback(data.country_code);
-    }).catch(function () {
-      return callback('us');
-    });
-  },
-  utilsScript: '/intl-tel-input/js/utils.js?1710935347720' // just for formatting/placeholders etc
+var phoneInput = document.querySelector('#phone');
 
-});
+if (phoneInput) {
+  window.intlTelInput(phoneInput, {
+    initialCountry: 'RU'
+  });
+}
