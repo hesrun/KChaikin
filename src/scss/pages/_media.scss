@@ -1,0 +1,42 @@
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 20px;
+    @include lg {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 10px;
+    }
+}
+.media-card {
+    $root: &;
+    &__img {
+        overflow: hidden;
+        margin-bottom: 20px;
+        @include md {
+            margin-bottom: 10px;
+        }
+        img {
+            width: 100%;
+            vertical-align: middle;
+            transition: all 0.3s;
+        }
+    }
+    &__title {
+        letter-spacing: 2px;
+        font-size: 18px;
+        text-transform: uppercase;
+        @include md {
+            font-size: 14px;
+        }
+    }
+    @include hover {
+        &:hover {
+            #{$root}__title {
+                opacity: 0.7;
+            }
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

@@ -175,6 +175,9 @@
             vertical-align: middle;
             transition: all 0.3s;
         }
+        @include md {
+            margin-bottom: 10px;
+        }
     }
     &__title {
         letter-spacing: 2px;
