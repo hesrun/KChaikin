@@ -3917,8 +3917,29 @@ h5 {
   position: relative;
 }
 
+.sign-head-note {
+  margin-bottom: 45px;
+}
+.sign-head-note a {
+  text-decoration: underline;
+}
+.sign-head-note a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  .sign-head-note {
+    margin-bottom: 30px;
+  }
+}
+
 .sign-form {
   max-width: 610px;
+}
+@media only screen and (max-width: 768px) {
+  .sign-form {
+    max-width: 100%;
+  }
 }
 .sign-form_account {
   max-width: 500px;
@@ -3928,14 +3949,73 @@ h5 {
     max-width: 100%;
   }
 }
+.sign-form_code-form {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sign-form__code-info {
+  color: #7c7c7c;
+}
+.sign-form__code-info span {
+  display: inline-block;
+}
 @media only screen and (max-width: 768px) {
-  .sign-form {
-    max-width: 100%;
+  .sign-form__code-info br {
+    display: none;
   }
+}
+.sign-form__title {
+  margin-bottom: 10px;
+}
+.sign-form__code-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 40px 0;
+}
+@media only screen and (max-width: 768px) {
+  .sign-form__code-grid {
+    margin: 30px 0;
+  }
+}
+.sign-form__code-item {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+.sign-form__code-again {
+  text-align: center;
+  color: #7c7c7c;
+}
+.sign-form__code-resend {
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+}
+.sign-form__code-resend:hover {
+  opacity: 0.7;
 }
 
 .account-btn {
   margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.account-btn__have-account a {
+  text-decoration: underline;
+}
+.account-btn__have-account a:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  .account-btn {
+    flex-direction: column;
+  }
 }
 
 .account {
@@ -4175,6 +4255,15 @@ h5 {
 .add-watch-preview__ref {
   font-size: 12px;
   color: #7c7c7c;
+}
+
+.whatsapp-text {
+  display: inline-block;
+  color: #2fab4c;
+}
+.whatsapp-text .icon {
+  color: ligh;
+  color: #42cb62;
 }
 
 .push-right-text {

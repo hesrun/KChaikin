@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+    @include('modules/link.html',{ 'title': 'Category' })
+    <body>
+        @include('modules/header.html',{'theme':'black'})
+        <main class="main">
+            <section class="page-section">
+                <div class="container">
+                    <div class="section-head">
+                        <a href="" class="section-head__subtitle">
+                            <i class="icon icon-arrow-left-thin"></i>
+                            Назад</a
+                        >
+                    </div>
+                    <div class="sign-form sign-form_code-form">
+                        <h1 class="sign-form__title">Введите код</h1>
+                        <div class="sign-form__code-info">
+                            Мы отправили его на
+                            <div class="whatsapp-text">
+                                <i class="icon icon-whatsapp-filled"></i>
+                                Whatsapp
+                            </div>
+                            по номеру <br />
+                            <span>+7 919 139 53 17</span>
+                        </div>
+                        <div class="sign-form__code-grid">
+                            <input type="text" class="sign-form__code-item" />
+                            <input type="text" class="sign-form__code-item" />
+                            <input type="text" class="sign-form__code-item" />
+                            <input type="text" class="sign-form__code-item" />
+                        </div>
+                        <div class="sign-form__code-again">
+                            Отправить код по СМС можно через 00:59
+                        </div>
+                        <a href="" class="sign-form__code-resend"
+                            >Отправить код по СМС</a
+                        >
+                        <div class="account-btn">
+                            <button
+                                class="button button_black button_filled button_full"
+                            >
+                                Зарегистрироваться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @include('modules/footer.html')
+    </body>
+</html>
