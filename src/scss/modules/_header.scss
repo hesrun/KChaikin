@@ -56,6 +56,35 @@
                 display: none;
             }
         }
+        &_cart {
+            position: relative;
+        }
+        > [class^='icon-'] {
+            font-size: 24px;
+            @include hover {
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            @include md {
+                font-size: 16px;
+            }
+        }
+    }
+    &__cart-badge {
+        right: -12px;
+        top: -50%;
+        position: absolute;
+        font-weight: 500;
+        text-align: center;
+        display: block;
+        padding: 0 5px;
+        min-width: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        border-radius: 20px;
+        background: #ff1834;
+        color: white;
     }
     &__search {
         @include md {
@@ -106,6 +135,17 @@
     }
     &__search-btn {
         cursor: pointer;
+        > [class^='icon-'] {
+            font-size: 24px;
+            @include hover {
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            @include md {
+                font-size: 16px;
+            }
+        }
     }
     &__search-drop {
         display: none;

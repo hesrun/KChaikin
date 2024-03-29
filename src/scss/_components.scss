@@ -119,7 +119,7 @@
         margin-bottom: 0;
     }
     &_error {
-        box-shadow: 0 0 0 1px #ff1834;
+        box-shadow: 0 0 0 1px #ff1834 inset;
         label {
             color: #ff1834 !important;
         }
@@ -177,6 +177,9 @@
     gap: 10px;
     font-size: 14px;
     cursor: pointer;
+    &_error {
+        color: #ff1834;
+    }
     input {
         display: none;
     }

@@ -218,6 +218,18 @@ $(document).on('click', '.expand-history', function () {
     }
 })
 
+$(document).on('click', '.expand-series-text', function () {
+    $('.series-text__collapse').toggleClass('series-text__collapse_full')
+
+    if ($('.series-text__collapse').hasClass('series-text__collapse_full')) {
+        $(this).html(
+            `Скрыть <i class="icon icon-arrow-down" style="transform: rotateX(180deg)"></i>`
+        )
+    } else {
+        $(this).html(`Показать ещё <i class="icon icon-arrow-down" ></i>`)
+    }
+})
+
 $('.faq-accordion__title').click(function () {
     $(this).toggleClass('faq-accordion__title_active')
     $(this).next().slideToggle(300)

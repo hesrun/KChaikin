@@ -1,7 +1,10 @@
 .shop-grid {
     display: grid;
     gap: 60px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    @include lg {
+        grid-template-columns: repeat(2, 1fr);
+    }
     @include sm {
         grid-template-columns: 1fr;
         gap: 30px;

@@ -207,6 +207,15 @@ $(document).on('click', '.expand-history', function () {
     $(this).html("\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0435\u0449\u0451 <i class=\"icon icon-arrow-down\" ></i>");
   }
 });
+$(document).on('click', '.expand-series-text', function () {
+  $('.series-text__collapse').toggleClass('series-text__collapse_full');
+
+  if ($('.series-text__collapse').hasClass('series-text__collapse_full')) {
+    $(this).html("\u0421\u043A\u0440\u044B\u0442\u044C <i class=\"icon icon-arrow-down\" style=\"transform: rotateX(180deg)\"></i>");
+  } else {
+    $(this).html("\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0435\u0449\u0451 <i class=\"icon icon-arrow-down\" ></i>");
+  }
+});
 $('.faq-accordion__title').click(function () {
   $(this).toggleClass('faq-accordion__title_active');
   $(this).next().slideToggle(300);
