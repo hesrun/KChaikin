@@ -258,12 +258,13 @@ $('#showParams').click(function () {
         fadeDuration: 300,
     })
 })
-$('.requestVacancy').click(function () {
-    $('#vacancyModal').modal({
-        fadeDuration: 300,
-    })
-    return false
-})
+ $(document).on("click", ".requestVacancy", function (e) {
+        conaole.log(12);
+        $('#vacancyModal').find('#VACANCY').val($(this).attr('val'));
+        $('#vacancyModal').modal({
+            fadeDuration: 300
+        });
+    });
 $('.queueModalOpen').click(function () {
     $('#queueModal').modal({
         fadeDuration: 300,
