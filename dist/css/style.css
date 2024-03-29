@@ -2416,25 +2416,8 @@ h5 {
 }
 @media only screen and (max-width: 768px) {
   .products-grid__item {
-    grid-column: 2 span;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .products-grid__item_mx2 {
     grid-column: 1 span;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .products-grid__item_mx2 .products-grid__item-name {
-    font-size: 12px;
-    width: 100%;
-    text-align: center;
-    top: 20px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .products-grid__item_mx2 .products-grid__item-image img {
-    width: 100%;
+    aspect-ratio: 4/5.5;
   }
 }
 .main_dark .products-grid__item {
@@ -2448,6 +2431,14 @@ h5 {
   transform: translateX(-50%);
   letter-spacing: 2px;
   text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .products-grid__item-name {
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    top: 20px;
+  }
 }
 .products-grid__item-image {
   position: relative;
@@ -2474,6 +2465,23 @@ h5 {
     display: none;
   }
 }
+@media only screen and (max-width: 768px) {
+  .products-grid__item-image img {
+    width: 100%;
+  }
+}
+.products-grid__item-reward {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .products-grid__item-reward {
+    right: 10px;
+    bottom: 10px;
+    width: 20%;
+  }
+}
 
 .whatch-history-grid {
   margin-top: 50px;
@@ -2490,7 +2498,7 @@ h5 {
 .whatch-history-grid__item {
   text-align: right;
   border-top: 1px #1f2022 solid;
-  padding: 40px 20px 40px 0;
+  padding: 40px 20px 0px 0;
   line-height: 1.5;
 }
 @media only screen and (max-width: 768px) {
@@ -3073,11 +3081,21 @@ h5 {
 .manuf-history_all .manuf-history__item:nth-child(n+7) {
   display: block;
 }
+@media only screen and (max-width: 768px) {
+  .manuf-history_all .manuf-history__item:nth-child(n+4) {
+    display: block;
+  }
+}
 .manuf-history__item {
   padding: 0 50px 40px 0;
 }
 .manuf-history__item:nth-child(n+7) {
   display: none;
+}
+@media only screen and (max-width: 768px) {
+  .manuf-history__item:nth-child(n+4) {
+    display: none;
+  }
 }
 .manuf-history__item:nth-child(n+4) {
   border-top: 1px #1f2022 solid;

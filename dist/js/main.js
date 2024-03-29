@@ -1,12 +1,9 @@
 "use strict";
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
+var currentSlide = 0;
 
 var getScrollbarWidth = function getScrollbarWidth() {
   return window.innerWidth - document.documentElement.clientWidth;
@@ -84,6 +81,20 @@ var dateCarusel = new Swiper('.date-list', {
   freeMode: true,
   spaceBetween: 0,
   mousewheel: true
+});
+$('.date-list .swiper-slide').click(function () {
+  $('.date-list__item').removeClass('date-list__item_active');
+  $(this).find('.date-list__item').addClass('date-list__item_active');
+
+  if ($(this).index() > currentSlide) {
+    dateCarusel.slideTo($(this).index(), 300);
+    currentSlide = $(this).index();
+  } else {
+    dateCarusel.slideTo($(this).index() - 1, 300);
+    currentSlide = $(this).index();
+  }
+
+  return false;
 });
 var storesCarusel = new Swiper('.stores-carusel', {
   slidesPerView: 'auto',
@@ -242,7 +253,7 @@ $('#showParams').click(function () {
     fadeDuration: 300
   });
 });
-$(document).on("click", ".requestVacancy", function (e) {
+$(document).on('click', '.requestVacancy', function (e) {
   conaole.log(12);
   $('#vacancyModal').find('#VACANCY').val($(this).attr('val'));
   $('#vacancyModal').modal({
@@ -291,48 +302,32 @@ if (phoneInput) {
   window.intlTelInput(phoneInput, {
     initialCountry: 'RU'
   });
-} //yamap
-
-
-initMap();
-
-function initMap() {
-  return _initMap.apply(this, arguments);
-}
-
-function _initMap() {
-  _initMap = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var _ymaps, YMap, YMapDefaultSchemeLayer, map;
-
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return ymaps3.ready;
-
-          case 2:
-            _ymaps = ymaps3, YMap = _ymaps.YMap, YMapDefaultSchemeLayer = _ymaps.YMapDefaultSchemeLayer; // Иницилиазируем карту
-
-            map = new YMap( // Передаём ссылку на HTMLElement контейнера
-            document.getElementById('yaMap'), // Передаём параметры инициализации карты
-            {
-              location: {
-                // Координаты центра карты
-                center: [37.588144, 55.733842],
-                // Уровень масштабирования
-                zoom: 10
-              }
-            }); // Добавляем слой для отображения схематической карты
-
-            map.addChild(new YMapDefaultSchemeLayer());
-
-          case 5:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _initMap.apply(this, arguments);
-}
+} // //yamap
+// initMap()
+//
+// async function initMap() {
+//     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+//     await ymaps3.ready
+//
+//     const { YMap, YMapDefaultSchemeLayer } = ymaps3
+//
+//     // Иницилиазируем карту
+//     const map = new YMap(
+//         // Передаём ссылку на HTMLElement контейнера
+//         document.getElementById('yaMap'),
+//
+//         // Передаём параметры инициализации карты
+//         {
+//             location: {
+//                 // Координаты центра карты
+//                 center: [37.588144, 55.733842],
+//
+//                 // Уровень масштабирования
+//                 zoom: 10,
+//             },
+//         }
+//     )
+//
+//     // Добавляем слой для отображения схематической карты
+//     map.addChild(new YMapDefaultSchemeLayer())
+// }

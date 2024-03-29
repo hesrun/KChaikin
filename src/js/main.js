@@ -1,6 +1,7 @@
 let headerHeight = $('.header').height()
 let screenSize = window.innerWidth
 let md = 768
+let currentSlide = 0
 
 const getScrollbarWidth = () =>
     window.innerWidth - document.documentElement.clientWidth
@@ -79,6 +80,21 @@ const dateCarusel = new Swiper('.date-list', {
     freeMode: true,
     spaceBetween: 0,
     mousewheel: true,
+})
+
+$('.date-list .swiper-slide').click(function () {
+    $('.date-list__item').removeClass('date-list__item_active')
+    $(this).find('.date-list__item').addClass('date-list__item_active')
+
+    if ($(this).index() > currentSlide) {
+        dateCarusel.slideTo($(this).index(), 300)
+        currentSlide = $(this).index()
+    } else {
+        dateCarusel.slideTo($(this).index() - 1, 300)
+        currentSlide = $(this).index()
+    }
+
+    return false
 })
 
 const storesCarusel = new Swiper('.stores-carusel', {
@@ -258,13 +274,13 @@ $('#showParams').click(function () {
         fadeDuration: 300,
     })
 })
- $(document).on("click", ".requestVacancy", function (e) {
-        conaole.log(12);
-        $('#vacancyModal').find('#VACANCY').val($(this).attr('val'));
-        $('#vacancyModal').modal({
-            fadeDuration: 300
-        });
-    });
+$(document).on('click', '.requestVacancy', function (e) {
+    conaole.log(12)
+    $('#vacancyModal').find('#VACANCY').val($(this).attr('val'))
+    $('#vacancyModal').modal({
+        fadeDuration: 300,
+    })
+})
 $('.queueModalOpen').click(function () {
     $('#queueModal').modal({
         fadeDuration: 300,
@@ -322,32 +338,32 @@ if (phoneInput) {
     })
 }
 
-//yamap
-initMap()
-
-async function initMap() {
-    // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-    await ymaps3.ready
-
-    const { YMap, YMapDefaultSchemeLayer } = ymaps3
-
-    // Иницилиазируем карту
-    const map = new YMap(
-        // Передаём ссылку на HTMLElement контейнера
-        document.getElementById('yaMap'),
-
-        // Передаём параметры инициализации карты
-        {
-            location: {
-                // Координаты центра карты
-                center: [37.588144, 55.733842],
-
-                // Уровень масштабирования
-                zoom: 10,
-            },
-        }
-    )
-
-    // Добавляем слой для отображения схематической карты
-    map.addChild(new YMapDefaultSchemeLayer())
-}
+// //yamap
+// initMap()
+//
+// async function initMap() {
+//     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+//     await ymaps3.ready
+//
+//     const { YMap, YMapDefaultSchemeLayer } = ymaps3
+//
+//     // Иницилиазируем карту
+//     const map = new YMap(
+//         // Передаём ссылку на HTMLElement контейнера
+//         document.getElementById('yaMap'),
+//
+//         // Передаём параметры инициализации карты
+//         {
+//             location: {
+//                 // Координаты центра карты
+//                 center: [37.588144, 55.733842],
+//
+//                 // Уровень масштабирования
+//                 zoom: 10,
+//             },
+//         }
+//     )
+//
+//     // Добавляем слой для отображения схематической карты
+//     map.addChild(new YMapDefaultSchemeLayer())
+// }
