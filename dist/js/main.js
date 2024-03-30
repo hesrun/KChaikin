@@ -85,9 +85,7 @@ var dateCarusel = new Swiper('.date-list', {
   spaceBetween: 0,
   mousewheel: true
 });
-$(document).on("click", ".date-list .swiper-slide", function (e) {
-  e.preventDefault();
-
+$('.date-list .swiper-slide').click(function () {
   $('.date-list__item').removeClass('date-list__item_active');
   $(this).find('.date-list__item').addClass('date-list__item_active');
 
@@ -99,13 +97,7 @@ $(document).on("click", ".date-list .swiper-slide", function (e) {
     currentSlide = $(this).index();
   }
 
-  let year = $(this).attr('cont');
-  $.get('', {year: year}, function(data){
-    $(".manuf-history, .expand-history").fadeOut("normal", function() {
-      $('.manuf-history, .expand-history').remove();
-      $(data).insertAfter( ".date-list" );
-    });
-  });
+  return false;
 });
 var storesCarusel = new Swiper('.stores-carusel', {
   slidesPerView: 'auto',

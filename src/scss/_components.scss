@@ -54,6 +54,12 @@
                 background: transparent;
                 color: black;
             }
+            &#{$root}_load {
+                &::before {
+                    border-right-color: white;
+                    border-bottom-color: white;
+                }
+            }
         }
     }
     &_gray {
@@ -88,7 +94,7 @@
         margin-top: 30px;
     }
     &_load {
-        color: transparent;
+        color: transparent !important;
         pointer-events: none;
         position: relative;
         &:before {
