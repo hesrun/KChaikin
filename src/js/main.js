@@ -16,6 +16,9 @@ const heroSlider = new Swiper('.hero-slider', {
     loop: true,
     speed: 1000,
     effect: 'creative',
+    autoplay: {
+        delay: 10000,
+    },
     creativeEffect: {
         prev: {
             opacity: 0,

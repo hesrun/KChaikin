@@ -292,8 +292,20 @@ h5 {
     }
 }
 .text-reveal-anim {
+    font-size: 50px;
+    @include lg {
+        font-size: 28px;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+    }
+    @include md {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
     span {
         opacity: 0.05;
+    }
+    @include md {
     }
 }
 .article {
