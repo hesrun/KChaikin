@@ -61,6 +61,18 @@ var photoCarusel = new Swiper('.photo-carusel', {
     }
   }
 });
+$().fancybox({
+  selector: '[data-fancybox="gallery"]',
+  hideScrollbar: false,
+  thumbs: false,
+  //hash: false,
+  beforeClose: function beforeClose(instance) {
+    // This is index of current fancyBox slide
+    console.info(instance.currIndex); // Update position of the slider
+
+    photoCarusel.slideTo(instance.currIndex, 0);
+  }
+});
 var photoSlider = new Swiper('.photo-slider', {
   slidesPerView: 'auto',
   spaceBetween: 10,

@@ -249,7 +249,7 @@ button {
 }
 @media only screen and (max-width: 768px) {
   .page-section {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
 .page-section:last-child {
@@ -265,6 +265,9 @@ button {
 }
 .page-section:has(.photo-slider) {
   margin-bottom: 0;
+}
+.page-section:has(h2:last-child) + .page-section {
+  margin-top: 40px;
 }
 
 .section-head {
@@ -1539,7 +1542,6 @@ h5 {
 }
 
 .blocker {
-  overflow: hidden;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   z-index: 100;
@@ -2516,7 +2518,7 @@ h5 {
 }
 .whatch-history-grid__item {
   text-align: right;
-  border-top: 1px #1f2022 solid;
+  border-top: 1px rgba(31, 32, 34, 0.15) solid;
   padding: 40px 20px 0px 0;
   line-height: 1.5;
 }
@@ -2694,6 +2696,7 @@ h5 {
   }
 }
 .photo-carusel__image {
+  display: block;
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -2800,9 +2803,6 @@ h5 {
     gap: 20px;
   }
 }
-.tech-block__image {
-  grid-column: 7 span;
-}
 .tech-block__image img {
   width: 100%;
 }
@@ -2812,7 +2812,7 @@ h5 {
   }
 }
 .tech-block__text {
-  grid-column: 5 span;
+  grid-column: auto;
   display: flex;
   flex-direction: column;
 }
@@ -2827,6 +2827,36 @@ h5 {
   .tech-block__text h5 {
     margin-top: 15px;
   }
+}
+.tech-block_1-2 .tech-block__image {
+  grid-column: 6 span;
+}
+.tech-block_1-2 .tech-block__text {
+  grid-column: 6 span;
+}
+.tech-block_1-3 .tech-block__image {
+  grid-column: 4 span;
+}
+.tech-block_1-3 .tech-block__text {
+  grid-column: 8 span;
+}
+.tech-block_1-4 .tech-block__image {
+  grid-column: 3 span;
+}
+.tech-block_1-4 .tech-block__text {
+  grid-column: 9 span;
+}
+.tech-block_3-4 .tech-block__image {
+  grid-column: 9 span;
+}
+.tech-block_3-4 .tech-block__text {
+  grid-column: 3 span;
+}
+.tech-block_2-3 .tech-block__image {
+  grid-column: 8 span;
+}
+.tech-block_2-3 .tech-block__text {
+  grid-column: 4 span;
 }
 
 .process-grid {
@@ -3014,7 +3044,7 @@ h5 {
 .series-text__collapse {
   max-width: 800px;
   margin-bottom: 30px;
-  max-height: 300px;
+  max-height: 150px;
   overflow: hidden;
   position: relative;
   transition: all 0.3s;

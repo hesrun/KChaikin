@@ -9,7 +9,7 @@
     }
     &__item {
         text-align: right;
-        border-top: 1px #1f2022 solid;
+        border-top: 1px rgba(#1f2022, 0.15) solid;
         padding: 40px 20px 0px 0;
         line-height: 1.5;
         @include md {
@@ -161,6 +161,7 @@
         }
     }
     &__image {
+        display: block;
         overflow: hidden;
         margin-bottom: 20px;
         @include hover {
@@ -252,6 +253,7 @@
 }
 
 .tech-block {
+    $root: &;
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -262,7 +264,6 @@
         gap: 20px;
     }
     &__image {
-        grid-column: 7 span;
         img {
             width: 100%;
         }
@@ -273,7 +274,7 @@
         }
     }
     &__text {
-        grid-column: 5 span;
+        grid-column: auto;
         display: flex;
         flex-direction: column;
         h2 {
@@ -289,6 +290,46 @@
             @include md {
                 margin-top: 15px;
             }
+        }
+    }
+    &_1-2 {
+        #{$root}__image {
+            grid-column: 6 span;
+        }
+        #{$root}__text {
+            grid-column: 6 span;
+        }
+    }
+    &_1-3 {
+        #{$root}__image {
+            grid-column: 4 span;
+        }
+        #{$root}__text {
+            grid-column: 8 span;
+        }
+    }
+    &_1-4 {
+        #{$root}__image {
+            grid-column: 3 span;
+        }
+        #{$root}__text {
+            grid-column: 9 span;
+        }
+    }
+    &_3-4 {
+        #{$root}__image {
+            grid-column: 9 span;
+        }
+        #{$root}__text {
+            grid-column: 3 span;
+        }
+    }
+    &_2-3 {
+        #{$root}__image {
+            grid-column: 8 span;
+        }
+        #{$root}__text {
+            grid-column: 4 span;
         }
     }
 }
