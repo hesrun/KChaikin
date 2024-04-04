@@ -13,14 +13,17 @@
         flex-direction: column;
         padding: 20px;
     }
-    &:hover {
-        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.15);
-        transform: translateY(-10px);
+    @include hover {
+        &:hover {
+            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+        }
     }
     &__img {
         align-self: flex-start;
         vertical-align: middle;
         aspect-ratio: 4/3;
+        object-fit: cover;
         @include md {
             width: 100%;
         }

@@ -3249,14 +3249,18 @@ h5 {
     padding: 20px;
   }
 }
-.news-list-item:hover {
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.15);
-  transform: translateY(-10px);
+@media (any-hover: hover) {
+  .news-list-item:hover:hover {
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+  }
 }
 .news-list-item__img {
   align-self: flex-start;
   vertical-align: middle;
   aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media only screen and (max-width: 768px) {
   .news-list-item__img {
