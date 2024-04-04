@@ -98,20 +98,28 @@ const dateCarusel = new Swiper('.date-list', {
     mousewheel: true,
 })
 
-$('.date-list .swiper-slide').click(function () {
-    $('.date-list__item').removeClass('date-list__item_active')
-    $(this).find('.date-list__item').addClass('date-list__item_active')
+$(document).on("click", ".date-list .swiper-slide", function (e) {
+    e.preventDefault();
+
+    $('.date-list__item').removeClass('date-list__item_active');
+    $(this).find('.date-list__item').addClass('date-list__item_active');
+
+    let year = $(this).attr('cont');
+    $.get('', {year: year}, function (data) {
+        $(".manuf-history, .expand-history").fadeOut("normal", function () {
+            $('.manuf-history, .expand-history').remove();
+            $(data).insertAfter(".date-list");
+        });
+    });
 
     if ($(this).index() > currentSlide) {
-        dateCarusel.slideTo($(this).index(), 300)
-        currentSlide = $(this).index()
+        dateCarusel.slideTo($(this).index(), 300);
+        currentSlide = $(this).index();
     } else {
-        dateCarusel.slideTo($(this).index() - 1, 300)
-        currentSlide = $(this).index()
+        dateCarusel.slideTo($(this).index() - 1, 300);
+        currentSlide = $(this).index();
     }
-
-    return false
-})
+});
 
 const storesCarusel = new Swiper('.stores-carusel', {
     slidesPerView: 'auto',
