@@ -17,7 +17,7 @@ const heroSlider = new Swiper('.hero-slider', {
     speed: 1000,
     effect: 'creative',
     autoplay: {
-        delay: 10000,
+        delay: 5000,
     },
     creativeEffect: {
         prev: {
@@ -98,28 +98,28 @@ const dateCarusel = new Swiper('.date-list', {
     mousewheel: true,
 })
 
-$(document).on("click", ".date-list .swiper-slide", function (e) {
-    e.preventDefault();
+$(document).on('click', '.date-list .swiper-slide', function (e) {
+    e.preventDefault()
 
-    $('.date-list__item').removeClass('date-list__item_active');
-    $(this).find('.date-list__item').addClass('date-list__item_active');
+    $('.date-list__item').removeClass('date-list__item_active')
+    $(this).find('.date-list__item').addClass('date-list__item_active')
 
-    let year = $(this).attr('cont');
-    $.get('', {year: year}, function (data) {
-        $(".manuf-history, .expand-history").fadeOut("normal", function () {
-            $('.manuf-history, .expand-history').remove();
-            $(data).insertAfter(".date-list");
-        });
-    });
+    let year = $(this).attr('cont')
+    $.get('', { year: year }, function (data) {
+        $('.manuf-history, .expand-history').fadeOut('normal', function () {
+            $('.manuf-history, .expand-history').remove()
+            $(data).insertAfter('.date-list')
+        })
+    })
 
     if ($(this).index() > currentSlide) {
-        dateCarusel.slideTo($(this).index(), 300);
-        currentSlide = $(this).index();
+        dateCarusel.slideTo($(this).index(), 300)
+        currentSlide = $(this).index()
     } else {
-        dateCarusel.slideTo($(this).index() - 1, 300);
-        currentSlide = $(this).index();
+        dateCarusel.slideTo($(this).index() - 1, 300)
+        currentSlide = $(this).index()
     }
-});
+})
 
 const storesCarusel = new Swiper('.stores-carusel', {
     slidesPerView: 'auto',
@@ -331,6 +331,9 @@ $('.openVideoModal').click(function () {
         fadeDuration: 300,
     })
     return false
+})
+$('#formSuccessModal').modal({
+    fadeDuration: 300,
 })
 $('.с-select select')
     .select2({

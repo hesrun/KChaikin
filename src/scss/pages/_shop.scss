@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
     &_carusel {
         @include sm {
             width: 75vw;
@@ -78,6 +79,25 @@
         font-size: 18px;
         letter-spacing: 1px;
         font-weight: 500;
+    }
+    &__status {
+        display: block;
+        position: absolute;
+        background: #2a2b2d;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        left: 20px;
+        top: 20px;
+        @include sm {
+            left: 10px;
+            top: 10px;
+            padding: 4px 10px;
+            font-size: 10px;
+        }
     }
 }
 

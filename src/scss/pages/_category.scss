@@ -102,4 +102,19 @@
             width: 20%;
         }
     }
+    &__item-status {
+        display: block;
+        position: absolute;
+        background: #2a2b2d;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        bottom: 30px;
+        @include sm {
+            display: none;
+        }
+    }
 }

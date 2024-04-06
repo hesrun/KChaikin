@@ -21,7 +21,7 @@ var heroSlider = new Swiper('.hero-slider', {
   speed: 1000,
   effect: 'creative',
   autoplay: {
-    delay: 10000
+    delay: 5000
   },
   creativeEffect: {
     prev: {
@@ -97,7 +97,7 @@ var dateCarusel = new Swiper('.date-list', {
   spaceBetween: 0,
   mousewheel: true
 });
-$(document).on("click", ".date-list .swiper-slide", function (e) {
+$(document).on('click', '.date-list .swiper-slide', function (e) {
   e.preventDefault();
   $('.date-list__item').removeClass('date-list__item_active');
   $(this).find('.date-list__item').addClass('date-list__item_active');
@@ -105,9 +105,9 @@ $(document).on("click", ".date-list .swiper-slide", function (e) {
   $.get('', {
     year: year
   }, function (data) {
-    $(".manuf-history, .expand-history").fadeOut("normal", function () {
+    $('.manuf-history, .expand-history').fadeOut('normal', function () {
       $('.manuf-history, .expand-history').remove();
-      $(data).insertAfter(".date-list");
+      $(data).insertAfter('.date-list');
     });
   });
 
@@ -306,6 +306,9 @@ $('.openVideoModal').click(function () {
     fadeDuration: 300
   });
   return false;
+});
+$('#formSuccessModal').modal({
+  fadeDuration: 300
 });
 $('.с-select select').select2({
   width: 'style',

@@ -1,6 +1,9 @@
 .blocker {
     backdrop-filter: blur(5px);
     z-index: 100;
+    &:has(.cart-modal) {
+        overflow: hidden;
+    }
 }
 .cart-modal {
     display: none;
@@ -36,6 +39,7 @@
         }
     }
     &__content {
+        flex: 1 1 auto;
         padding: 30px 50px;
         overflow: auto;
         @include scrollbars(6px, rgba(#1f2022, 0.5), transparent);
@@ -101,6 +105,11 @@
         font-size: 14px;
         color: #7c7c7c;
         text-align: center;
+    }
+    &__empty {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 .cart-product-list {
