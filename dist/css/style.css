@@ -4496,10 +4496,17 @@ h5 {
 
 .contacts-map {
   margin-top: 56px;
+  pointer-events: none;
+  height: 600px;
 }
 @media only screen and (max-width: 768px) {
   .contacts-map {
     margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contacts-map {
+    height: 100vw;
   }
 }
 .contacts-map iframe {

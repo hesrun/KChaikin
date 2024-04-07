@@ -1,7 +1,12 @@
 .contacts-map {
     margin-top: 56px;
+    pointer-events: none;
+    height: 600px;
     @include md {
         margin-top: 30px;
+    }
+    @include sm {
+        height: 100vw;
     }
     iframe {
         vertical-align: middle;
