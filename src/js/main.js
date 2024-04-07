@@ -299,7 +299,6 @@ $('#showParams').click(function () {
     })
 })
 $(document).on('click', '.requestVacancy', function (e) {
-    conaole.log(12)
     $('#vacancyModal').find('#VACANCY').val($(this).attr('val'))
     $('#vacancyModal').modal({
         fadeDuration: 300,
