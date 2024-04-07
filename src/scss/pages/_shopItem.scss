@@ -89,6 +89,13 @@
             font-size: 20px;
         }
     }
+    &__descr {
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+    }
     &__options {
         display: grid;
         gap: 10px;

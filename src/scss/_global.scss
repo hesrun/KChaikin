@@ -284,9 +284,6 @@ h4 {
     @include md {
         margin-bottom: 10px;
     }
-    @include sm {
-        font-size:;
-    }
 }
 h5 {
     font-size: 18px;

@@ -17,7 +17,7 @@ const heroSlider = new Swiper('.hero-slider', {
     speed: 1000,
     effect: 'creative',
     autoplay: {
-        delay: 5000,
+        delay: 15000,
     },
     creativeEffect: {
         prev: {
