@@ -311,7 +311,8 @@ $('#formSuccessModal').modal({
 });
 $('.с-select select').select2({
   width: 'style',
-  minimumResultsForSearch: Infinity
+  minimumResultsForSearch: Infinity,
+  dropdownParent: $('.с-select')
 }).on('select2:select', function (e) {
   $(e.target).parent('.с-select').find('.с-select__label').addClass('с-select__label_choised');
 });

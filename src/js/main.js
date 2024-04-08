@@ -338,6 +338,7 @@ $('.с-select select')
     .select2({
         width: 'style',
         minimumResultsForSearch: Infinity,
+        dropdownParent: $('.с-select'),
     })
     .on('select2:select', function (e) {
         $(e.target)
