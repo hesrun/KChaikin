@@ -626,6 +626,12 @@ h5 {
   top: 50%;
   animation: Spin 0.5s infinite linear;
 }
+.button_disabled, .button:disabled {
+  background: #b2b2b2;
+  border-color: #b2b2b2;
+  color: white;
+  pointer-events: none;
+}
 
 .с-input {
   height: 60px;
