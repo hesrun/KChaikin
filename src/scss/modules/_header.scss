@@ -427,6 +427,8 @@
         }
     }
     &__links {
+        list-style: none;
+        padding: 0;
         margin-bottom: 30px;
         display: flex;
         flex-direction: column;
