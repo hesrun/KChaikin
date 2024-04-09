@@ -3250,6 +3250,15 @@ h5 {
   vertical-align: middle;
   width: 100%;
 }
+@media only screen and (max-width: 576px) {
+  .img-full img {
+    aspect-ratio: 1/1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+}
 
 .date-list {
   display: flex;
