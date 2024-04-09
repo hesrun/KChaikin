@@ -372,7 +372,8 @@
     background: #1f2022;
     height: calc(100dvh - 100px);
     @include md {
-        height: calc(100dvh - 70px);
+        min-height: calc(100dvh - 70px);
+        overflow: auto;
     }
     > .container {
         height: 100%;
@@ -389,6 +390,7 @@
         @include md {
             padding: 0px 0 20px;
             column-count: auto;
+            overflow: visible;
         }
     }
     &__block {
@@ -423,7 +425,13 @@
                 border-right: 1px rgba(white, 0.25) solid;
                 border-bottom: 1px rgba(white, 0.25) solid;
                 transform: rotate(45deg);
+                @include sm {
+                    top: 28px;
+                }
             }
+        }
+        @include md {
+            font-size: 18px;
         }
     }
     &__links {
@@ -449,6 +457,9 @@
             position: relative;
             color: rgba(white, 0.5);
             transition: all 0.3s;
+            @include md {
+                font-size: 18px;
+            }
             img {
                 position: absolute;
                 width: 150px;

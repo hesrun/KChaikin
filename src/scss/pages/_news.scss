@@ -51,6 +51,9 @@
 .news-detail {
     max-width: 820px;
     margin: 0 auto;
+    @include sm {
+        margin-bottom: 30px;
+    }
 }
 .share-block {
     margin-top: 50px;

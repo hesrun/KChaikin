@@ -152,6 +152,7 @@
         margin-left: auto;
     }
 }
+
 .photo-carusel {
     margin-top: 40px;
     overflow: visible;
@@ -272,6 +273,14 @@
                 order: -1;
             }
         }
+        @include sm {
+            margin-left: -15px;
+            margin-right: -15px;
+            img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+        }
     }
     &__text {
         grid-column: auto;
@@ -351,6 +360,9 @@
             object-position: center;
             vertical-align: middle;
             transition: all 0.3s;
+            @include sm {
+                aspect-ratio: 1/1;
+            }
         }
         &:hover {
             img {
@@ -379,6 +391,11 @@
 }
 
 .photo-slider {
+    margin-top: 50px;
+    overflow: visible;
+    @include sm {
+        margin-top: 30px;
+    }
     &__slide {
         @include md {
             margin-bottom: 10px;

@@ -74,7 +74,7 @@ $().fancybox({
 
 const photoSlider = new Swiper('.photo-slider', {
     slidesPerView: 'auto',
-    spaceBetween: 10,
+    spaceBetween: 15,
     pagination: {
         el: '.photo-carusel-nav__pagination',
         clickable: true,
@@ -87,6 +87,7 @@ const photoSlider = new Swiper('.photo-slider', {
         768: {
             slidesPerView: 1,
             spaceBetween: 0,
+            spaceBetween: 30,
         },
     },
 })

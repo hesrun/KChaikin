@@ -112,11 +112,15 @@ button {
         }
     }
     &:has(.photo-carusel),
-    &:has(.stores-carusel) {
+    &:has(.stores-carusel),
+    &:has(.photo-slider) {
         overflow: hidden;
     }
     &:has(.photo-slider) {
-        margin-bottom: 0;
+        margin-bottom: 50px;
+        @include sm {
+            margin-bottom: 0;
+        }
     }
     &:has(.container > h2:only-child) + .page-section {
         margin-top: 40px;
