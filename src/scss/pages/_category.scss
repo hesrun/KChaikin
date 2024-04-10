@@ -65,6 +65,7 @@
         img {
             transform: translateY(20px);
             transition: transform 0.4s;
+            max-width: 350px;
         }
         &:after {
             content: '';

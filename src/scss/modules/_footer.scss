@@ -6,6 +6,7 @@
         display: block;
         position: static;
         height: auto;
+        min-height: auto;
         &__cols {
             @include md {
                 display: none;

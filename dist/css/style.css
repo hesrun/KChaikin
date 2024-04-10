@@ -942,6 +942,7 @@ h5 {
   display: block;
   position: static;
   height: auto;
+  min-height: auto;
 }
 @media only screen and (max-width: 768px) {
   .footer .navigation__cols {
@@ -2575,6 +2576,7 @@ h5 {
 .products-grid__item-image img {
   transform: translateY(20px);
   transition: transform 0.4s;
+  max-width: 350px;
 }
 .products-grid__item-image:after {
   content: "";
