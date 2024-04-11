@@ -3,12 +3,14 @@
     grid-template-columns: repeat(12, 1fr);
     gap: 45px;
     align-items: start;
+    position: relative;
     @include lg {
         gap: 30px;
     }
     @include md {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding-top: 50px;
     }
     &__images {
         grid-column: 8 span;
@@ -42,9 +44,17 @@
     }
     &__image {
         width: 100%;
-        vertical-align: middle;
+        &:only-child {
+            grid-column: 2 span;
+        }
+        img {
+            width: 100%;
+            vertical-align: middle;
+        }
         @include md {
+            flex-shrink: 0;
             scroll-snap-align: start;
+            width: calc(100vw - 30px);
         }
     }
     &__info {
@@ -62,6 +72,10 @@
         text-transform: uppercase;
         @include md {
             font-size: 12px;
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            padding: 10px 0;
         }
         &:hover {
             opacity: 0.7;

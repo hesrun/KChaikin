@@ -63,11 +63,8 @@ $().fancybox({
     selector: '[data-fancybox="gallery"]',
     hideScrollbar: false,
     thumbs: false,
-    //hash: false,
     beforeClose: function (instance) {
-        // This is index of current fancyBox slide
         console.info(instance.currIndex)
-        // Update position of the slider
         photoCarusel.slideTo(instance.currIndex, 0)
     },
 })

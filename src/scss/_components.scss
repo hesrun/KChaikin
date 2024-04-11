@@ -343,6 +343,8 @@
     transition: all 0.3s;
     cursor: pointer;
     user-select: none;
+    text-align: center;
+    white-space: nowrap;
     &:hover {
         border-color: #1f2022;
     }
