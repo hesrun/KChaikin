@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="img/favicon.png" type="image/png" />
+   <meta name="description" content="description" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.1.0/css/intlTelInput.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css" rel="stylesheet" />
+   <link href="https://cdn.iconly.io/kits/KIze4AZ1VXv8/v_8711d56/iconly.min.css" rel="stylesheet" integrity="sha384-1kcT1tW+YbIDBYJAinYbQI62XjsX5TvgHT/4vDjxgp56dHD/KPUH61VVFGbpoEC5" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="css/style.min.css" />
+   <title>Main</title>
+</head>
+
+<body>
+   <header class=" header">
+      <div class="container">
+         <button class="header-burger">
+            <div class="header-burger__lines"></div>
+            <div class="header-burger__text">Меню</div>
+         </button>
+         <a href="#" class="header__logo"> </a>
+         <div class="header__tools">
+            <a href="" class="header__tools-link header__tools-link_cart">
+               <i class="icon-shopping-bag"></i>
+               <span class="header__cart-text">Корзина</span>
+               <span class="header__cart-badge">5</span>
+            </a>
+            <a href="" class="header__tools-link header__tools-link_user">
+               <i class="icon-user"></i>
+            </a>
+            <div class="header__search">
+               <form id="searchForm" class="header__search-form">
+                  <input class="header__search-input" type="text" name="" id="" placeholder="Я хочу найти..." />
+                  <div class="header__search-drop">
+                     <div class="search-result">
+                        <a href="" class="search-result__item">
+                           <div class="search-result__product">
+                              <img src="img/shop/shop-item-1.jpg" alt="" class="search-result__product-img" />
+                              <div class="search-result__product-info">
+                                 <div class="search-result__product-series">
+                                    JOKER SKELETON
+                                 </div>
+                                 <div class="search-result__product-price">
+                                    18 700 ₽
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="search-result__type">
+                              LONG-SLEEVED T-SHIRT
+                           </div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__product">
+                              <img src="img/shop/shop-item-1.jpg" alt="" class="search-result__product-img" />
+                              <div class="search-result__product-info">
+                                 <div class="search-result__product-series">
+                                    JOKER SKELETON
+                                 </div>
+                                 <div class="search-result__product-price">
+                                    18 700 ₽
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="search-result__type">часы</div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__category">
+                              Наручные часы
+                           </div>
+                           <div class="search-result__type">Категория</div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__category">
+                              Футболки
+                           </div>
+                           <div class="search-result__type">Категория</div>
+                        </a>
+                     </div>
+                     <span class="header__popular-title">
+                            Популярные запросы
+                            <i></i>
+                        </span>
+                     <div class="header__popular-list">
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                     </div>
+                  </div>
+                  <button type="submit" class="header__search-submit">
+                     <i class="icon-search"></i>
+                  </button>
+               </form>
+               <button id="searchOpen" class="header__search-btn">
+                  <i class="icon-search"></i>
+               </button>
+            </div>
+            <div class="language-select">
+               <div class="language-select__current">
+                  US
+                  <i class="icon icon-arrow-down"></i>
+               </div>
+               <div class="language-select__drop">
+                  <a href="" class="language-select__item">English</a>
+                  <a href="" class="language-select__item">Russian</a>
+                  <a href="" class="language-select__item">Czech</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="menu" class="navigation">
+         <div class="container">
+            <nav class="navigation__cols">
+               <div class="navigation__block">
+                  <a href="#" class="navigation__title">НАРУЧНЫЕ ЧАСЫ</a>
+                  <ul class="navigation__links">
+                     <li>
+                        <a href="">links-item-1
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-2
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-3
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-4
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-5
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-6
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-7
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-8
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-9
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-10
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                     <li>
+                        <a href="">links-item-11
+                           <img src="img/main/nav-preview.png" alt="" /></a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <a href="#" class="navigation__title">ИНТЕРЬЕРНЫЕ ЧАСЫ</a>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <a href="#" class="navigation__title">ИСТОРИЧЕСКИЕ ШЕДЕВРЫ</a>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <a href="#" class="navigation__title">ОНЛАЙН-МАГАЗИН</a>
+                  <ul class="navigation__links">
+                     <li><a href="">Мерч</a></li>
+                     <li><a href="">Ремешки</a></li>
+                     <li><a href="">Книги</a></li>
+                     <li><a href="">Аксессуары</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <a href="#" class="navigation__title">МАНУФАКТУРА</a>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <a href="#" class="navigation__title">РАЗНОЕ</a>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                     <li><a href="">links-item-5</a></li>
+                     <li><a href="">links-item-6</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="navigation__footer">
+               <div class="navigation__adress">
+                  Россия. Москва, ул. Речников 15 стр. 2
+               </div>
+               <div class="navigation__footer-links">
+                  <a href="">Контакты</a>
+                  <a href="">Сервис</a>
+                  <a href="">Где купить</a>
+                  <a href="">Клуб владельцев</a>
+               </div>
+               <div class="navigation__socials">
+                  <a href="">
+                     <i class="icon-instagram"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-penterest"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-vk"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-youtube"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-telegram"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <main class="main">
+      <div class="page-section page-section_dark">
+         <div class="container">
+            <div class="section-head">
+               <span class="section-head__subtitle">О МАСТЕРЕ</span>
+               <h1 class="section-head__title">Константин чайкин</h1>
+            </div>
+            <picture class="img-full">
+               <source media="(max-width: 768px)" srcset="img/about/about-chaykin.jpg" />
+               <img src="img/about/about-chaykin.jpg" alt="" />
+            </picture>
+            <div class="push-left-text">
+               <p>
+                  Кто бы мог подумать лет двадцать назад, что в России
+                  могут производиться часы, конкурирующие с лучшими
+                  образцами швейцарских, немецких и японских мастеров?
+                  Работа Константина Чайкина, российского изобретателя
+                  и мастера высокого часового искусства, получила
+                  высокое признание на международном уровне.
+               </p>
+               <p>
+                  В 2010 году Константин Чайкин стал первым и пока
+                  единственным российским членом международной
+                  Академии независимых часовщиков AHCI (Académie
+                  Horlogère des Créateurs Indépendants), а с 2016-го
+                  по 2019 год он её возглавлял, занимая пост
+                  президента. 9 ноября 2018 года Константин Чайкин
+                  и его часы «Клоун» были удостоены приза
+                  «За дерзость» (Audacity prize) женевского Гран-при
+                  высокого часового искусства GPHG 2018 (Grand Prix
+                  d’Horlogerie de Genève), наиболее представительного
+                  и престижного часового конкурса в мире. Константин
+                  Чайкин — первый российский часовой мастер,
+                  завоевавший такую награду.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="page-section">
+         <div class="container">
+            <div class="whatch-master-quote whatch-master-quote_fird">
+               <blockquote class="whatch-master-quote__text">
+                  <p>
+                     В тот момент, когда часы утрачивают функцию
+                     приборов индикации времени, передавая её
+                     смартфонам и смарт-часам, эмоции — вот что может
+                     и что должна на самом деле дарить механика
+                  </p>
+                  <img src="img/main/sign.gif" alt="" class="signature" />
+               </blockquote>
+               <img class="whatch-master-quote__author" src="img/about/about-chykin-quote.jpg" alt="" />
+            </div>
+         </div>
+      </div>
+      <div class="page-section">
+         <div class="container">
+            <h2>Собственные изобретения</h2>
+            <div class="push-left-text">
+               <p>
+                  Часы Константина Чайкина, самобытного представителя
+                  направления независимых часовщиков, отличаются от
+                  продукции крупных, по сути, транснациональных
+                  брендов творческой свободой, желанием и умением
+                  воплощать в часах самые смелые и необыкновенные идеи
+                  — философские, дизайнерские, технические.
+               </p>
+               <p>
+                  Константин Чайкин не выпускает часы стандартной для
+                  каталогов большинства брендов комплектации. Вся его
+                  коллекция выполнена исключительно на основе его
+                  собственных изобретений, включая часы «Московская
+                  Пасхалия» с изобретённым Чайкиным указателем даты
+                  православной Пасхи — наиболее сложные механические
+                  часы за всю историю часового дела в России; часы
+                  «Луноход» с уникальным сферическим указателем фазы
+                  Луны — самым крупным указателем такого типа в
+                  наручных часах; «Синема» со встроенным миниатюрным
+                  аппаратом воспроизведения движущихся фотографических
+                  картинок беспрецедентной конструкции; «Левитас»
+                  с собственным, переработанным и оптимизированным
+                  вариантом конструкции «таинственной» индикации
+                  времени на прозрачном циферблате; «Время России» с
+                  индикацией времени во всех 11 часовых зонах России;
+                  «Марс Конкверор» — первые в мире сложные
+                  механические часы с индикацией марсианского времени
+                  и дополнительными астрономическими и космическими
+                  функциями; настольные и наручные часы с календарями
+                  по мусульманской и иудейской традициям…
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="page-section">
+         <div class="container">
+            <div class="photo-carusel-nav">
+               <div class="photo-carusel-nav__pagination"></div>
+               <div class="photo-carusel-nav__arrows">
+                  <div class="photo-carusel-nav__prev">
+                     <i class="icon-arrow-left"></i>
+                  </div>
+                  <div class="photo-carusel-nav__next">
+                     <i class="icon-arrow-right"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="photo-slider swiper">
+               <div class="swiper-wrapper">
+                  <div class="photo-slider__slide swiper-slide">
+                     <div class="photo-slider__image">
+                        <img src="../img/about/about-chaykn-slider-img.jpg" alt="" />
+                     </div>
+                     <div class="photo-slider__text">
+                        “МОсковская пасхалия” с изобретенным
+                        чайкиным указателем даты православной пасхи
+                        — наиболее сложные механические часы за всю
+                        историю часового дела в россии
+                     </div>
+                  </div>
+                  <div class="photo-slider__slide swiper-slide">
+                     <div class="photo-slider__image">
+                        <img src="../img/about/about-chaykn-slider-img.jpg" alt="" />
+                     </div>
+                     <div class="photo-slider__text">
+                        “МОсковская пасхалия” с изобретенным
+                        чайкиным указателем даты православной пасхи
+                        — наиболее сложные механические часы за всю
+                        историю часового дела в россии
+                     </div>
+                  </div>
+                  <div class="photo-slider__slide swiper-slide">
+                     <div class="photo-slider__image">
+                        <img src="../img/about/about-chaykn-slider-img.jpg" alt="" />
+                     </div>
+                     <div class="photo-slider__text">
+                        “МОсковская пасхалия” с изобретенным
+                        чайкиным указателем даты православной пасхи
+                        — наиболее сложные механические часы за всю
+                        историю часового дела в россии
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <footer class="footer">
+      <div class="navigation">
+         <div class="container">
+            <nav class="navigation__cols">
+               <div class="navigation__block">
+                  <span class="navigation__title">НАРУЧНЫЕ ЧАСЫ</span>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                     <li><a href="">links-item-5</a></li>
+                     <li><a href="">links-item-6</a></li>
+                     <li><a href="">links-item-7</a></li>
+                     <li><a href="">links-item-8</a></li>
+                     <li><a href="">links-item-9</a></li>
+                     <li><a href="">links-item-10</a></li>
+                     <li><a href="">links-item-11</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <span class="navigation__title">ИНТЕРЬЕРНЫЕ ЧАСЫ</span>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <span class="navigation__title">ИСТОРИЧЕСКИЕ ШЕДЕВРЫ</span>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <span class="navigation__title">ОНЛАЙН-МАГАЗИН</span>
+                  <ul class="navigation__links">
+                     <li><a href="">Мерч</a></li>
+                     <li><a href="">Ремешки</a></li>
+                     <li><a href="">Книги</a></li>
+                     <li><a href="">Аксессуары</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <span class="navigation__title">МАНУФАКТУРА</span>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                  </ul>
+               </div>
+               <div class="navigation__block">
+                  <span class="navigation__title">РАЗНОЕ</span>
+                  <ul class="navigation__links">
+                     <li><a href="">links-item-1</a></li>
+                     <li><a href="">links-item-2</a></li>
+                     <li><a href="">links-item-3</a></li>
+                     <li><a href="">links-item-4</a></li>
+                     <li><a href="">links-item-5</a></li>
+                     <li><a href="">links-item-6</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="navigation__footer">
+               <div class="navigation__adress">
+                  Россия. Москва, ул. Речников 15 стр. 2
+               </div>
+               <div class="navigation__footer-links">
+                  <a href="">Контакты</a>
+                  <a href="">Сервис</a>
+                  <a href="">Где купить</a>
+                  <a href="">Клуб владельцев</a>
+               </div>
+               <div class="navigation__socials">
+                  <a href="">
+                     <i class="icon-instagram"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-penterest"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-vk"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-youtube"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-telegram"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="copyright__logo">
+                  <img src="img/logos/logo-icon-white.svg" alt="" />
+                  <span>KONSTANTIN CHAYKIN © 2024</span>
+               </div>
+               <div class="copyright__links">
+                  <a href="">Пользовательское соглашение</a>
+                  <a href="">Обработка персональных данных</a>
+                  <span>Информация не является публичной офертой</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <button class="mobile-cart-btn">
+      <i class="icon-shopping-bag"></i>
+      <span class="mobile-cart-btn__text">Корзина</span>
+      <span class="mobile-cart-btn__badge">5</span>
+   </button>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://api-maps.yandex.ru/v3/?apikey=d0aab0e9-0ef2-4ba3-b5a2-0aea6cdffacf&lang=ru_RU"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.1.0/js/intlTelInput.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+   <script defer src="js/main.min.js"></script>
+
+
+</body>
+
+</html>

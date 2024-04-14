@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+    @include('modules/link.html',{ 'title': 'Main' })
+    <body>
+        @include('modules/header.html',{'theme':'white'})
+        <main class="main">
+            <div class="page-section page-section_dark">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-head__subtitle">О МАСТЕРЕ</span>
+                        <h1 class="section-head__title">Константин чайкин</h1>
+                    </div>
+                    <picture class="img-full">
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="img/about/about-chaykin.jpg"
+                        />
+                        <img src="img/about/about-chaykin.jpg" alt="" />
+                    </picture>
+                    <div class="push-left-text">
+                        <p>
+                            Кто бы мог подумать лет двадцать назад, что в России
+                            могут производиться часы, конкурирующие с лучшими
+                            образцами швейцарских, немецких и японских мастеров?
+                            Работа Константина Чайкина, российского изобретателя
+                            и мастера высокого часового искусства, получила
+                            высокое признание на международном уровне.
+                        </p>
+                        <p>
+                            В 2010 году Константин Чайкин стал первым и пока
+                            единственным российским членом международной
+                            Академии независимых часовщиков AHCI (Académie
+                            Horlogère des Créateurs Indépendants), а с 2016-го
+                            по 2019 год он её возглавлял, занимая пост
+                            президента. 9 ноября 2018 года Константин Чайкин
+                            и его часы «Клоун» были удостоены приза
+                            «За дерзость» (Audacity prize) женевского Гран-при
+                            высокого часового искусства GPHG 2018 (Grand Prix
+                            d’Horlogerie de Genève), наиболее представительного
+                            и престижного часового конкурса в мире. Константин
+                            Чайкин — первый российский часовой мастер,
+                            завоевавший такую награду.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section">
+                <div class="container">
+                    <div class="whatch-master-quote whatch-master-quote_fird">
+                        <blockquote class="whatch-master-quote__text">
+                            <p>
+                                В тот момент, когда часы утрачивают функцию
+                                приборов индикации времени, передавая её
+                                смартфонам и смарт-часам, эмоции — вот что может
+                                и что должна на самом деле дарить механика
+                            </p>
+                            <img
+                                src="img/main/sign.gif"
+                                alt=""
+                                class="signature"
+                            />
+                        </blockquote>
+                        <img
+                            class="whatch-master-quote__author"
+                            src="img/about/about-chykin-quote.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="page-section">
+                <div class="container">
+                    <h2>Собственные изобретения</h2>
+                    <div class="push-left-text">
+                        <p>
+                            Часы Константина Чайкина, самобытного представителя
+                            направления независимых часовщиков, отличаются от
+                            продукции крупных, по сути, транснациональных
+                            брендов творческой свободой, желанием и умением
+                            воплощать в часах самые смелые и необыкновенные идеи
+                            — философские, дизайнерские, технические.
+                        </p>
+                        <p>
+                            Константин Чайкин не выпускает часы стандартной для
+                            каталогов большинства брендов комплектации. Вся его
+                            коллекция выполнена исключительно на основе его
+                            собственных изобретений, включая часы «Московская
+                            Пасхалия» с изобретённым Чайкиным указателем даты
+                            православной Пасхи — наиболее сложные механические
+                            часы за всю историю часового дела в России; часы
+                            «Луноход» с уникальным сферическим указателем фазы
+                            Луны — самым крупным указателем такого типа в
+                            наручных часах; «Синема» со встроенным миниатюрным
+                            аппаратом воспроизведения движущихся фотографических
+                            картинок беспрецедентной конструкции; «Левитас»
+                            с собственным, переработанным и оптимизированным
+                            вариантом конструкции «таинственной» индикации
+                            времени на прозрачном циферблате; «Время России» с
+                            индикацией времени во всех 11 часовых зонах России;
+                            «Марс Конкверор» — первые в мире сложные
+                            механические часы с индикацией марсианского времени
+                            и дополнительными астрономическими и космическими
+                            функциями; настольные и наручные часы с календарями
+                            по мусульманской и иудейской традициям…
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section">
+                <div class="container">
+                    <div class="photo-carusel-nav">
+                        <div class="photo-carusel-nav__pagination"></div>
+                        <div class="photo-carusel-nav__arrows">
+                            <div class="photo-carusel-nav__prev">
+                                <i class="icon-arrow-left"></i>
+                            </div>
+                            <div class="photo-carusel-nav__next">
+                                <i class="icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="photo-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="photo-slider__slide swiper-slide">
+                                <div class="photo-slider__image">
+                                    <img
+                                        src="../img/about/about-chaykn-slider-img.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="photo-slider__text">
+                                    “МОсковская пасхалия” с изобретенным
+                                    чайкиным указателем даты православной пасхи
+                                    — наиболее сложные механические часы за всю
+                                    историю часового дела в россии
+                                </div>
+                            </div>
+                            <div class="photo-slider__slide swiper-slide">
+                                <div class="photo-slider__image">
+                                    <img
+                                        src="../img/about/about-chaykn-slider-img.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="photo-slider__text">
+                                    “МОсковская пасхалия” с изобретенным
+                                    чайкиным указателем даты православной пасхи
+                                    — наиболее сложные механические часы за всю
+                                    историю часового дела в россии
+                                </div>
+                            </div>
+                            <div class="photo-slider__slide swiper-slide">
+                                <div class="photo-slider__image">
+                                    <img
+                                        src="../img/about/about-chaykn-slider-img.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="photo-slider__text">
+                                    “МОсковская пасхалия” с изобретенным
+                                    чайкиным указателем даты православной пасхи
+                                    — наиболее сложные механические часы за всю
+                                    историю часового дела в россии
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @include('modules/footer.html')
+    </body>
+</html>

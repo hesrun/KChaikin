@@ -84,24 +84,7 @@ button {
 }
 .page-section {
     margin-top: 100px;
-    &_dark {
-        padding: 100px 0;
-        background: #1f2022;
-        color: white;
-        @include md {
-            padding: 50px 0;
-        }
-        &:first-child {
-            margin-top: 0;
-            padding-top: 160px;
-            @include md {
-                padding-top: 110px;
-            }
-        }
-        .section-head__subtitle {
-            color: white;
-        }
-    }
+
     @include md {
         margin-top: 40px;
     }
@@ -124,6 +107,28 @@ button {
     }
     &:has(.container > h2:only-child) + .page-section {
         margin-top: 40px;
+    }
+    &_dark {
+        padding: 100px 0;
+        background: #1f2022;
+        color: white;
+        @include md {
+            padding: 50px 0;
+        }
+        &:first-child {
+            margin-top: 0;
+            padding-top: 160px;
+            @include md {
+                padding-top: 110px;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: 1px rgba(white, 0.15) solid;
+        }
+        .section-head__subtitle {
+            color: white;
+        }
     }
 }
 .section-head {
@@ -206,6 +211,20 @@ button {
     @include md {
         margin-top: 50px;
         padding: 40px 0;
+    }
+    &_clear {
+        padding: 0 50px;
+        &:before,
+        &:after {
+            display: none;
+        }
+        &.text-reveal-anim {
+            font-size: 36px;
+            @include md {
+                padding: 0;
+                font-size: 20px;
+            }
+        }
     }
 }
 p {
