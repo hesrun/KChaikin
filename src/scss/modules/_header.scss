@@ -383,7 +383,7 @@
     &__cols {
         padding: 50px 0;
         flex: 1 1 auto;
-        column-count: 4;
+        column-count: 3;
         column-gap: 60px;
         overflow: auto;
         @include scrollbars(4px, rgba(white, 0.3), transparent);
