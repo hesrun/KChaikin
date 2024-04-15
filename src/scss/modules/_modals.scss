@@ -350,6 +350,8 @@
     max-width: 1440px;
     padding: 75px;
     box-shadow: none;
+    background: #e5e5e5;
+    overflow: hidden;
     @include md {
         padding: 30px;
         position: fixed;
@@ -370,8 +372,11 @@
         }
     }
     &__image {
+        max-width: 100%;
+        min-width: 100%;
         img {
             width: 100%;
+            vertical-align: middle;
         }
     }
     a.close-modal {
@@ -381,6 +386,9 @@
         &:hover {
             opacity: 0.7;
         }
+    }
+    .photo-carusel-nav {
+        margin-top: 20px;
     }
 }
 

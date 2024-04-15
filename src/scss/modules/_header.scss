@@ -407,6 +407,7 @@
         margin-bottom: 20px;
         padding-bottom: 15px;
         transition: border-color 0.3s;
+        text-decoration: none;
         @include hover {
             border-color: white;
         }
@@ -457,6 +458,7 @@
             position: relative;
             color: rgba(white, 0.5);
             transition: all 0.3s;
+            text-decoration: none;
             @include md {
                 font-size: 18px;
             }
@@ -527,6 +529,7 @@
         }
         a {
             transition: all 0.3s;
+            text-decoration: none;
         }
         a:hover {
             opacity: 0.5;

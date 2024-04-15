@@ -9,6 +9,8 @@
 }
 .media-card {
     $root: &;
+    cursor: pointer;
+    text-decoration: none;
     &__img {
         overflow: hidden;
         margin-bottom: 20px;

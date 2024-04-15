@@ -12,6 +12,9 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    a {
+        text-decoration: none;
+    }
     @include md {
         padding: 20px;
     }

@@ -294,6 +294,7 @@ button {
   font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 @media only screen and (max-width: 992px) {
   .section-head__subtitle {
@@ -504,6 +505,13 @@ h5 {
   }
 }
 
+a {
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
 .text-reveal-anim {
   font-size: 50px;
 }
@@ -581,6 +589,7 @@ input[type=number] {
   text-align: center;
   transition: all 0.3s;
   gap: 10px;
+  text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
   .button {
@@ -1024,6 +1033,7 @@ input[type=number] {
 }
 .footer .copyright__links a {
   opacity: 0.5;
+  text-decoration: none;
 }
 .footer .copyright__links a:hover {
   opacity: 1;
@@ -1534,6 +1544,7 @@ input[type=number] {
   margin-bottom: 20px;
   padding-bottom: 15px;
   transition: border-color 0.3s;
+  text-decoration: none;
 }
 @media (any-hover: hover) {
   .navigation__title:hover {
@@ -1593,6 +1604,7 @@ input[type=number] {
   position: relative;
   color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
+  text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
   .navigation__links a {
@@ -1673,6 +1685,7 @@ input[type=number] {
 }
 .navigation__footer-links a {
   transition: all 0.3s;
+  text-decoration: none;
 }
 .navigation__footer-links a:hover {
   opacity: 0.5;
@@ -2080,6 +2093,8 @@ input[type=number] {
   max-width: 1440px;
   padding: 75px;
   box-shadow: none;
+  background: #e5e5e5;
+  overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
   .invent-modal {
@@ -2106,8 +2121,13 @@ input[type=number] {
     gap: 30px;
   }
 }
+.invent-modal__image {
+  max-width: 100%;
+  min-width: 100%;
+}
 .invent-modal__image img {
   width: 100%;
+  vertical-align: middle;
 }
 .invent-modal a.close-modal {
   background-color: black;
@@ -2116,6 +2136,9 @@ input[type=number] {
 }
 .invent-modal a.close-modal:hover {
   opacity: 0.7;
+}
+.invent-modal .photo-carusel-nav {
+  margin-top: 20px;
 }
 
 @keyframes cartIn {
@@ -2347,6 +2370,7 @@ input[type=number] {
 }
 .watch-collection-grid__item {
   grid-column: 3 span;
+  text-decoration: none;
 }
 @media only screen and (max-width: 992px) {
   .watch-collection-grid__item {
@@ -2425,6 +2449,7 @@ input[type=number] {
   padding: 40px 0 20px;
   border-top: 1px rgba(0, 0, 0, 0.15) solid;
   border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+  text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
   .newsletter-grid__item {
@@ -2913,6 +2938,9 @@ input[type=number] {
 .photo-carusel {
   margin-top: 40px;
   overflow: visible;
+}
+.photo-carusel__slide {
+  text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
   .photo-carusel__slide {
@@ -3489,6 +3517,9 @@ input[type=number] {
   flex-direction: column;
   gap: 30px;
 }
+.store-item a {
+  text-decoration: none;
+}
 @media only screen and (max-width: 768px) {
   .store-item {
     padding: 20px;
@@ -3542,6 +3573,7 @@ input[type=number] {
   padding: 40px;
   gap: 30px;
   transition: all 0.3s;
+  text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
   .news-list-item {
@@ -3706,6 +3738,7 @@ input[type=number] {
   flex-direction: column;
   gap: 20px;
   position: relative;
+  text-decoration: none;
 }
 @media only screen and (max-width: 576px) {
   .shop-product_carusel {
@@ -4145,6 +4178,7 @@ input[type=number] {
   gap: 10px;
   font-weight: 400;
   transition: all 0.3s;
+  text-decoration: none;
 }
 .product-detail__other-links a:hover {
   opacity: 0.7;
@@ -4474,6 +4508,7 @@ input[type=number] {
   color: #7c7c7c;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
 }
 .account__nav-link:hover, .account__nav-link_active {
   color: #1f2022;
@@ -4853,6 +4888,10 @@ input[type=number] {
   }
 }
 
+.media-card {
+  cursor: pointer;
+  text-decoration: none;
+}
 .media-card__img {
   overflow: hidden;
   margin-bottom: 20px;

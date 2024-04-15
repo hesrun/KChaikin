@@ -9,6 +9,7 @@
     padding: 40px;
     gap: 30px;
     transition: all 0.3s;
+    text-decoration: none;
     @include md {
         flex-direction: column;
         padding: 20px;

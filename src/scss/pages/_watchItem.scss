@@ -167,6 +167,7 @@
     margin-top: 40px;
     overflow: visible;
     &__slide {
+        text-decoration: none;
         @include md {
             max-width: 280px;
         }

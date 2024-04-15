@@ -96,6 +96,19 @@ var dateCarusel = new Swiper('.date-list', {
   spaceBetween: 0,
   mousewheel: true
 });
+var inventSlider = new Swiper('.invent-modal-slider', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  pagination: {
+    el: '.photo-carusel-nav__pagination',
+    clickable: true
+  },
+  navigation: {
+    prevEl: '.photo-carusel-nav__prev',
+    nextEl: '.photo-carusel-nav__next'
+  }
+});
 $(document).on('click', '.date-list .swiper-slide', function (e) {
   e.preventDefault();
   $('.date-list__item').removeClass('date-list__item_active');
