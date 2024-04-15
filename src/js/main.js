@@ -329,9 +329,17 @@ $('.openVideoModal').click(function () {
     })
     return false
 })
+
 $('#formSuccessModal').modal({
     fadeDuration: 300,
 })
+
+$('.media-card').click(function () {
+    $('#inventModal').modal({
+        fadeDuration: 300,
+    })
+})
+
 $('.с-select select')
     .select2({
         width: 'style',

@@ -345,6 +345,45 @@
     }
 }
 
+.invent-modal {
+    border-radius: 0px;
+    max-width: 1440px;
+    padding: 75px;
+    box-shadow: none;
+    @include md {
+        padding: 30px;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+    }
+    &__wrap {
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        gap: 50px;
+        align-items: center;
+        @include lg {
+            grid-template-columns: 1fr;
+        }
+        @include md {
+            gap: 30px;
+        }
+    }
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+    a.close-modal {
+        background-color: black;
+        top: 0px;
+        right: 0px;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
 @keyframes cartIn {
     from {
         translate: 100%;
