@@ -16,6 +16,13 @@
     &:last-child {
         margin-bottom: 0;
     }
+    .push-right-text &:last-child,
+    .push-left-text &:last-child {
+        margin-bottom: 50px;
+        @include md {
+            margin: 30px 0;
+        }
+    }
 }
 
 .date-list {

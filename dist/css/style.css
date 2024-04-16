@@ -3424,6 +3424,14 @@ input[type=number] {
 .img-full:last-child {
   margin-bottom: 0;
 }
+.push-right-text .img-full:last-child, .push-left-text .img-full:last-child {
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .push-right-text .img-full:last-child, .push-left-text .img-full:last-child {
+    margin: 30px 0;
+  }
+}
 
 .date-list {
   display: flex;
