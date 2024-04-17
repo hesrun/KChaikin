@@ -187,13 +187,8 @@
     }
     &__content-cols {
         display: flex;
-        align-items: center;
-        gap: 20%;
-        @include sm {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
+        flex-direction: column;
+        gap: 24px;
     }
     &__info {
         display: grid;
