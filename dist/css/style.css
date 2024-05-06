@@ -305,6 +305,10 @@ button {
 .main_dark .section-head__subtitle {
   color: #fff;
 }
+.section-head__subtitle.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
 .section-head__title {
   margin-bottom: 0;
 }
