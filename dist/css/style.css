@@ -2020,6 +2020,11 @@ input[type=number] {
     flex: 0 0 auto;
   }
 }
+.common-modal__btns {
+  display: grid;
+  gap: 15px;
+  text-align: center;
+}
 
 .clip-file {
   margin-top: 30px;

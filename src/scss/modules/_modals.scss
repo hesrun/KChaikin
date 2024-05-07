@@ -262,6 +262,11 @@
             flex: 0 0 auto;
         }
     }
+    &__btns {
+        display: grid;
+        gap: 15px;
+        text-align: center;
+    }
 }
 .clip-file {
     margin-top: 30px;
