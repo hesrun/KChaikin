@@ -18,6 +18,7 @@
    <title>Category</title>
 </head>
 
+
 <body>
    <header class="header header_black ">
       <div class="container">
@@ -317,14 +318,12 @@
                   <label class="checkout-radio" id="standart">
                      <input type="radio" name="delivery" id="standart" />
                      Стандартная доставка
-                     <span class="checkout-radio__note"
-                                    >Бесплатно</span>
+                     <span class="checkout-radio__note">Бесплатно</span>
                   </label>
                   <label class="checkout-radio" id="priority">
                      <input type="radio" name="delivery" id="priority" />
                      Приоритетная доставка
-                     <span class="checkout-radio__note"
-                                    >999 USD</span>
+                     <span class="checkout-radio__note">999 USD</span>
                   </label>
                   <div class="form-title">Способ оплаты</div>
                   <div class="checkout__pay-card">
@@ -332,11 +331,8 @@
                         <input type="radio" name="payment" id="card" />
                         Банковская карта
                         <span class="checkout-radio__note">
-                                        <img
-                                            src="img/icons/pay-systems.png"
-                                            alt=""
-                                        />
-                                    </span>
+                                    <img src="img/icons/pay-systems.png" alt="" />
+                                </span>
                      </label>
                      <div class="checkout__pay-card-form">
                         <div class="с-input">
@@ -368,8 +364,8 @@
                      <input type="radio" name="payment" id="PayPal" />
                      PayPal
                      <span class="checkout-radio__note">
-                                    <img src="img/icons/paypal.png" alt="" />
-                                </span>
+                                <img src="img/icons/paypal.png" alt="" />
+                            </span>
                   </label>
                   <label class="checkout-radio" for="cardRF">
                      <input type="radio" name="payment" id="cardRF" />
@@ -397,8 +393,7 @@
                            </div>
                            <div class="cart-product__price">
                               18 700 ₽
-                              <span class="cart-product__quantity"
-                                                >х 1</span>
+                              <span class="cart-product__quantity">х 1</span>
                            </div>
                         </div>
                      </div>
@@ -413,8 +408,7 @@
                            </div>
                            <div class="cart-product__price">
                               18 700 ₽
-                              <span class="cart-product__quantity"
-                                                >х 1</span>
+                              <span class="cart-product__quantity">х 1</span>
                            </div>
                         </div>
                      </div>
@@ -429,8 +423,7 @@
                            </div>
                            <div class="cart-product__price">
                               18 700 ₽
-                              <span class="cart-product__quantity"
-                                                >х 1</span>
+                              <span class="cart-product__quantity">х 1</span>
                            </div>
                         </div>
                      </div>
@@ -454,6 +447,41 @@
          </div>
       </section>
    </main>
+   <div id="codeModal" class="modal common-modal">
+      <div class="common-modal__wrapper">
+         <div class="common-modal__head">
+         </div>
+         <div class="common-modal__content">
+            <div class="sign-form sign-form_code-form">
+               <h1 class="sign-form__title">Введите код</h1>
+               <div class="sign-form__code-info">
+                  Мы отправили его на
+                  <div class="whatsapp-text">
+                     <i class="icon icon-whatsapp-filled"></i>
+                     Whatsapp
+                  </div>
+                  по номеру <br>
+                  <span>+7 919 139 53 17</span>
+               </div>
+               <div class="sign-form__code-grid">
+                  <input type="text" class="sign-form__code-item">
+                  <input type="text" class="sign-form__code-item">
+                  <input type="text" class="sign-form__code-item">
+                  <input type="text" class="sign-form__code-item">
+               </div>
+               <div class="sign-form__code-again">
+                  Отправить код по СМС можно через 00:59
+               </div>
+               <a href="" class="sign-form__code-resend">Отправить код по СМС</a>
+            </div>
+         </div>
+         <div class="common-modal__footer">
+            <button class="button button_black button_full button_filled">
+               Зарегистрироваться
+            </button>
+         </div>
+      </div>
+   </div>
    <footer class="footer">
       <div class="navigation">
          <div class="container">

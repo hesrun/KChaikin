@@ -1,319 +1,215 @@
 <!doctype html>
 <html lang="ru">
-    @include('modules/link.html',{ 'title': 'Category' })
-    <body>
-        @include('modules/header.html',{'theme':'black'})
-        <main class="main">
-            <section class="page-section">
-                <div class="container">
-                    <div class="checkout">
-                        <div class="checkout__form">
-                            <div class="section-head">
-                                <a href="" class="section-head__subtitle">
-                                    <i class="icon icon-arrow-left-thin"></i>
-                                    В корзину</a
-                                >
-                                <h1 class="section-head__title">
-                                    Оформление заказа
-                                </h1>
-                            </div>
-                            <div class="form-title">Контактные данные</div>
-                            <div class="с-input">
-                                <input
-                                    type="text"
-                                    id="phone"
-                                    name=""
-                                    id=""
-                                    placeholder="Телефон"
-                                />
-                                <label>Телефон</label>
-                            </div>
-                            <label class="с-checkbox">
-                                <input type="checkbox" name="" id="" />
-                                Создать аккаунт для дальнейших быстрых покупок
-                            </label>
-                            <div class="form-title">Адрес доставки</div>
-                            <div class="с-select">
-                                <select>
-                                    <option></option>
-                                    <option>Россия</option>
-                                    <option>Казахстан</option>
-                                    <option>Узбекистан</option>
-                                    <option>Россия</option>
-                                    <option>Казахстан</option>
-                                    <option>Узбекистан</option>
-                                    <option>Россия</option>
-                                    <option>Казахстан</option>
-                                    <option>Узбекистан</option>
-                                </select>
-                                <label for="" class="с-select__label">
-                                    Страна
-                                </label>
-                            </div>
+@include('modules/link.html',{ 'title': 'Category' })
 
-                            <div class="input-2x-cols">
-                                <div class="с-input с-input_error">
-                                    <input
-                                        type="text"
-                                        name=""
-                                        id=""
-                                        placeholder="Имя"
-                                    />
-                                    <label>Имя</label>
-                                    <div class="с-input__note">Ошибка</div>
-                                </div>
-                                <div class="с-input">
-                                    <input
-                                        type="text"
-                                        name=""
-                                        id=""
-                                        placeholder="Фамилия"
-                                    />
-                                    <label>Фамилия</label>
-                                </div>
-                            </div>
-                            <div class="с-input">
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Адрес"
-                                />
-                                <label>Адрес</label>
-                            </div>
-                            <div class="с-input">
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Apartment, suite, etc. (optional)"
-                                />
-                                <label>Apartment, suite, etc. (optional)</label>
-                            </div>
-                            <div class="input-2x-cols">
-                                <div class="с-input">
-                                    <input
-                                        type="text"
-                                        name=""
-                                        id=""
-                                        placeholder="Почтовый код"
-                                    />
-                                    <label>Почтовый код</label>
-                                </div>
-                                <div class="с-input">
-                                    <input
-                                        type="text"
-                                        name=""
-                                        id=""
-                                        placeholder="Город"
-                                    />
-                                    <label>Город</label>
-                                </div>
-                            </div>
-                            <div class="form-title">Способ доставки</div>
+<body>
+    @include('modules/header.html',{'theme':'black'})
+    <main class="main">
+        <section class="page-section">
+            <div class="container">
+                <div class="checkout">
+                    <div class="checkout__form">
+                        <div class="section-head">
+                            <a href="" class="section-head__subtitle">
+                                <i class="icon icon-arrow-left-thin"></i>
+                                В корзину</a>
+                            <h1 class="section-head__title">
+                                Оформление заказа
+                            </h1>
+                        </div>
+                        <div class="form-title">Контактные данные</div>
+                        <div class="с-input">
+                            <input type="text" id="phone" name="" id="" placeholder="Телефон" />
+                            <label>Телефон</label>
+                        </div>
+                        <label class="с-checkbox">
+                            <input type="checkbox" name="" id="" />
+                            Создать аккаунт для дальнейших быстрых покупок
+                        </label>
+                        <div class="form-title">Адрес доставки</div>
+                        <div class="с-select">
+                            <select>
+                                <option></option>
+                                <option>Россия</option>
+                                <option>Казахстан</option>
+                                <option>Узбекистан</option>
+                                <option>Россия</option>
+                                <option>Казахстан</option>
+                                <option>Узбекистан</option>
+                                <option>Россия</option>
+                                <option>Казахстан</option>
+                                <option>Узбекистан</option>
+                            </select>
+                            <label for="" class="с-select__label">
+                                Страна
+                            </label>
+                        </div>
 
-                            <label class="checkout-radio" id="standart">
-                                <input
-                                    type="radio"
-                                    name="delivery"
-                                    id="standart"
-                                />
-                                Стандартная доставка
-                                <span class="checkout-radio__note"
-                                    >Бесплатно</span
-                                >
-                            </label>
-                            <label class="checkout-radio" id="priority">
-                                <input
-                                    type="radio"
-                                    name="delivery"
-                                    id="priority"
-                                />
-                                Приоритетная доставка
-                                <span class="checkout-radio__note"
-                                    >999 USD</span
-                                >
-                            </label>
-                            <div class="form-title">Способ оплаты</div>
-                            <div class="checkout__pay-card">
-                                <label class="checkout-radio" for="card">
-                                    <input
-                                        type="radio"
-                                        name="payment"
-                                        id="card"
-                                    />
-                                    Банковская карта
-                                    <span class="checkout-radio__note">
-                                        <img
-                                            src="img/icons/pay-systems.png"
-                                            alt=""
-                                        />
-                                    </span>
-                                </label>
-                                <div class="checkout__pay-card-form">
-                                    <div class="с-input">
-                                        <input
-                                            type="text"
-                                            name=""
-                                            id=""
-                                            placeholder="Номер карты"
-                                        />
-                                        <label>Номер карты</label>
-                                    </div>
-                                    <div class="input-2x-cols">
-                                        <div class="с-input">
-                                            <input
-                                                type="text"
-                                                name=""
-                                                id=""
-                                                placeholder="Срок действия"
-                                            />
-                                            <label>Срок действия</label>
-                                        </div>
-                                        <div class="с-input">
-                                            <input
-                                                type="text"
-                                                name=""
-                                                id=""
-                                                placeholder="CVV"
-                                            />
-                                            <label>CVV</label>
-                                        </div>
-                                    </div>
-                                    <div class="с-input">
-                                        <input
-                                            type="text"
-                                            name=""
-                                            id=""
-                                            placeholder="Владелец карты"
-                                        />
-                                        <label>Владелец карты</label>
-                                    </div>
-                                    <label class="с-checkbox">
-                                        <input type="checkbox" name="" id="" />
-                                        Использовать адрес доставки в качестве
-                                        платежного адреса
-                                    </label>
-                                </div>
+                        <div class="input-2x-cols">
+                            <div class="с-input с-input_error">
+                                <input type="text" name="" id="" placeholder="Имя" />
+                                <label>Имя</label>
+                                <div class="с-input__note">Ошибка</div>
                             </div>
-                            <label class="checkout-radio" for="PayPal">
-                                <input
-                                    type="radio"
-                                    name="payment"
-                                    id="PayPal"
-                                />
-                                PayPal
-                                <span class="checkout-radio__note">
-                                    <img src="img/icons/paypal.png" alt="" />
-                                </span>
-                            </label>
-                            <label class="checkout-radio" for="cardRF">
-                                <input
-                                    type="radio"
-                                    name="payment"
-                                    id="cardRF"
-                                />
-                                Оплата для клиентов из РФ
-                            </label>
-                            <div class="form-title">Комментарий к заказу</div>
-                            <textarea
-                                class="c-textarea"
-                                placeholder="Ваш комментарий"
-                            ></textarea>
-                            <div class="checkout__pay">
-                                <button
-                                    class="button button_black button_full button_filled"
-                                >
-                                    Оплатить заказ <b>18 700 ₽</b>
-                                </button>
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Фамилия" />
+                                <label>Фамилия</label>
                             </div>
                         </div>
-                        <div class="checkout__cart">
-                            <h3 class="checkout__cart-title">Ваш заказ</h3>
-                            <div class="checkout__products cart-product-list">
-                                <div class="cart-product">
-                                    <img
-                                        src="img/shop/shop-item-1.jpg"
-                                        alt=""
-                                        class="cart-product__image"
-                                    />
-                                    <div class="cart-product__info">
-                                        <div class="cart-product__name">
-                                            LONG-SLEEVED T-SHIRT
-                                        </div>
-                                        <div class="cart-product__series">
-                                            JOKER SKELETON
-                                        </div>
-                                        <div class="cart-product__price">
-                                            18 700 ₽
-                                            <span class="cart-product__quantity"
-                                                >х 1</span
-                                            >
-                                        </div>
+                        <div class="с-input">
+                            <input type="text" name="" id="" placeholder="Адрес" />
+                            <label>Адрес</label>
+                        </div>
+                        <div class="с-input">
+                            <input type="text" name="" id="" placeholder="Apartment, suite, etc. (optional)" />
+                            <label>Apartment, suite, etc. (optional)</label>
+                        </div>
+                        <div class="input-2x-cols">
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Почтовый код" />
+                                <label>Почтовый код</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Город" />
+                                <label>Город</label>
+                            </div>
+                        </div>
+                        <div class="form-title">Способ доставки</div>
+
+                        <label class="checkout-radio" id="standart">
+                            <input type="radio" name="delivery" id="standart" />
+                            Стандартная доставка
+                            <span class="checkout-radio__note">Бесплатно</span>
+                        </label>
+                        <label class="checkout-radio" id="priority">
+                            <input type="radio" name="delivery" id="priority" />
+                            Приоритетная доставка
+                            <span class="checkout-radio__note">999 USD</span>
+                        </label>
+                        <div class="form-title">Способ оплаты</div>
+                        <div class="checkout__pay-card">
+                            <label class="checkout-radio" for="card">
+                                <input type="radio" name="payment" id="card" />
+                                Банковская карта
+                                <span class="checkout-radio__note">
+                                    <img src="img/icons/pay-systems.png" alt="" />
+                                </span>
+                            </label>
+                            <div class="checkout__pay-card-form">
+                                <div class="с-input">
+                                    <input type="text" name="" id="" placeholder="Номер карты" />
+                                    <label>Номер карты</label>
+                                </div>
+                                <div class="input-2x-cols">
+                                    <div class="с-input">
+                                        <input type="text" name="" id="" placeholder="Срок действия" />
+                                        <label>Срок действия</label>
+                                    </div>
+                                    <div class="с-input">
+                                        <input type="text" name="" id="" placeholder="CVV" />
+                                        <label>CVV</label>
                                     </div>
                                 </div>
-                                <div class="cart-product">
-                                    <img
-                                        src="img/shop/shop-item-1.jpg"
-                                        alt=""
-                                        class="cart-product__image"
-                                    />
-                                    <div class="cart-product__info">
-                                        <div class="cart-product__name">
-                                            LONG-SLEEVED T-SHIRT
-                                        </div>
-                                        <div class="cart-product__series">
-                                            JOKER SKELETON
-                                        </div>
-                                        <div class="cart-product__price">
-                                            18 700 ₽
-                                            <span class="cart-product__quantity"
-                                                >х 1</span
-                                            >
-                                        </div>
-                                    </div>
+                                <div class="с-input">
+                                    <input type="text" name="" id="" placeholder="Владелец карты" />
+                                    <label>Владелец карты</label>
                                 </div>
-                                <div class="cart-product">
-                                    <img
-                                        src="img/shop/shop-item-1.jpg"
-                                        alt=""
-                                        class="cart-product__image"
-                                    />
-                                    <div class="cart-product__info">
-                                        <div class="cart-product__name">
-                                            LONG-SLEEVED T-SHIRT
-                                        </div>
-                                        <div class="cart-product__series">
-                                            JOKER SKELETON
-                                        </div>
-                                        <div class="cart-product__price">
-                                            18 700 ₽
-                                            <span class="cart-product__quantity"
-                                                >х 1</span
-                                            >
-                                        </div>
+                                <label class="с-checkbox">
+                                    <input type="checkbox" name="" id="" />
+                                    Использовать адрес доставки в качестве
+                                    платежного адреса
+                                </label>
+                            </div>
+                        </div>
+                        <label class="checkout-radio" for="PayPal">
+                            <input type="radio" name="payment" id="PayPal" />
+                            PayPal
+                            <span class="checkout-radio__note">
+                                <img src="img/icons/paypal.png" alt="" />
+                            </span>
+                        </label>
+                        <label class="checkout-radio" for="cardRF">
+                            <input type="radio" name="payment" id="cardRF" />
+                            Оплата для клиентов из РФ
+                        </label>
+                        <div class="form-title">Комментарий к заказу</div>
+                        <textarea class="c-textarea" placeholder="Ваш комментарий"></textarea>
+                        <div class="checkout__pay">
+                            <button class="button button_black button_full button_filled">
+                                Оплатить заказ <b>18 700 ₽</b>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="checkout__cart">
+                        <h3 class="checkout__cart-title">Ваш заказ</h3>
+                        <div class="checkout__products cart-product-list">
+                            <div class="cart-product">
+                                <img src="img/shop/shop-item-1.jpg" alt="" class="cart-product__image" />
+                                <div class="cart-product__info">
+                                    <div class="cart-product__name">
+                                        LONG-SLEEVED T-SHIRT
+                                    </div>
+                                    <div class="cart-product__series">
+                                        JOKER SKELETON
+                                    </div>
+                                    <div class="cart-product__price">
+                                        18 700 ₽
+                                        <span class="cart-product__quantity">х 1</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkout__estimation">
-                                <div class="checkout__estimation-line">
-                                    <span>Стоимость товаров</span>
-                                    <span>18 700 ₽</span>
+                            <div class="cart-product">
+                                <img src="img/shop/shop-item-1.jpg" alt="" class="cart-product__image" />
+                                <div class="cart-product__info">
+                                    <div class="cart-product__name">
+                                        LONG-SLEEVED T-SHIRT
+                                    </div>
+                                    <div class="cart-product__series">
+                                        JOKER SKELETON
+                                    </div>
+                                    <div class="cart-product__price">
+                                        18 700 ₽
+                                        <span class="cart-product__quantity">х 1</span>
+                                    </div>
                                 </div>
-                                <div class="checkout__estimation-line">
-                                    <span>Доставка</span>
-                                    <span>Бесплатно</span>
+                            </div>
+                            <div class="cart-product">
+                                <img src="img/shop/shop-item-1.jpg" alt="" class="cart-product__image" />
+                                <div class="cart-product__info">
+                                    <div class="cart-product__name">
+                                        LONG-SLEEVED T-SHIRT
+                                    </div>
+                                    <div class="cart-product__series">
+                                        JOKER SKELETON
+                                    </div>
+                                    <div class="cart-product__price">
+                                        18 700 ₽
+                                        <span class="cart-product__quantity">х 1</span>
+                                    </div>
                                 </div>
-                                <div class="checkout__estimation-line">
-                                    <b>Итог</b>
-                                    <b>18 700 ₽</b>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__estimation">
+                            <div class="checkout__estimation-line">
+                                <span>Стоимость товаров</span>
+                                <span>18 700 ₽</span>
+                            </div>
+                            <div class="checkout__estimation-line">
+                                <span>Доставка</span>
+                                <span>Бесплатно</span>
+                            </div>
+                            <div class="checkout__estimation-line">
+                                <b>Итог</b>
+                                <b>18 700 ₽</b>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        @include('modules/footer.html')
-    </body>
+            </div>
+        </section>
+    </main>
+    @include('modals/codeModal.html')
+    @include('modules/footer.html')
+</body>
+
 </html>

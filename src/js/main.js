@@ -353,6 +353,8 @@ $('.media-card').click(function () {
     })
 })
 
+$('#codeModal').modal({})
+
 $('.с-select select')
     .select2({
         width: 'style',

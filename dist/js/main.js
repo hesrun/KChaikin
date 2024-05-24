@@ -326,6 +326,7 @@ $('.media-card').click(function () {
     fadeDuration: 300
   });
 });
+$('#codeModal').modal({});
 $('.с-select select').select2({
   width: 'style',
   minimumResultsForSearch: Infinity,
