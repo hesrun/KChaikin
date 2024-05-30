@@ -791,6 +791,25 @@ input[type=number] {
   line-height: 35px;
   transition: all 0.2s;
 }
+.с-input_phone input::-webkit-input-placeholder {
+  color: #7c7c7c;
+}
+
+.с-input_phone input:-moz-placeholder {
+  color: #7c7c7c;
+}
+
+.с-input_phone input::-moz-placeholder {
+  color: #7c7c7c;
+}
+
+.с-input_phone input:-ms-input-placeholder {
+  color: #7c7c7c;
+}
+
+.с-input_phone label {
+  left: 45px;
+}
 
 .с-checkbox {
   margin-top: 20px;
@@ -993,10 +1012,73 @@ input[type=number] {
   width: 100%;
   height: 100%;
 }
+.iti__country-container {
+  background: #f1f1f1;
+  border-radius: 5px;
+  border: 2px white solid;
+}
 .iti__selected-flag {
   background: none !important;
   padding-top: 15px;
   padding-left: 15px;
+}
+.iti__tel-input {
+  padding-left: 60px !important;
+}
+.iti__search-input {
+  display: none;
+}
+.iti__dropdown-content {
+  z-index: 11 !important;
+  top: calc(100% + 10px) !important;
+  margin: 0px !important;
+  background: white;
+  left: -2px;
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+.iti__country-list::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.iti__country-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+.iti__country-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.iti__country-list {
+  scrollbar-face-color: rgba(0, 0, 0, 0.5);
+  scrollbar-track-color: transparent;
+}
+.iti__country {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-bottom: 1px rgba(31, 32, 34, 0.1) solid;
+  transition: all 0.3s;
+}
+
+.c-note {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 15px;
+  margin: 15px 0;
+  background: #ccc;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+.c-note_red {
+  background: #ff1834;
+  color: #fff;
+}
+.c-note_green {
+  background: #37ad19;
+  color: #fff;
+}
+.c-note_orange {
+  background: #d39d1f;
+  color: #fff;
 }
 
 .footer {

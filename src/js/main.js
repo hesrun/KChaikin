@@ -383,6 +383,9 @@ const phoneInput = document.querySelector('#phone')
 if (phoneInput) {
     window.intlTelInput(phoneInput, {
         initialCountry: 'RU',
+        strictMode: true,
+        utilsScript:
+            'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/utils.min.js',
     })
 }
 

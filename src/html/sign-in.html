@@ -1,46 +1,42 @@
 <!doctype html>
 <html lang="ru">
-    @include('modules/link.html',{ 'title': 'Category' })
-    <body>
-        @include('modules/header.html',{'theme':'black'})
-        <main class="main">
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head">
-                        <h1 class="section-head__title">Вход</h1>
+@include('modules/link.html',{ 'title': 'Category' })
+
+<body>
+    @include('modules/header.html',{'theme':'black'})
+    <main class="main">
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <h1 class="section-head__title">Вход</h1>
+                </div>
+                <div class="sign-form">
+                    <div class="с-input с-input_phone">
+                        <input type="tel" name="" id="phone" placeholder="" />
+                        <label>Телефон</label>
                     </div>
-                    <div class="sign-form">
-                        <div class="с-input">
-                            <input
-                                type="tel"
-                                name=""
-                                id="phone"
-                                placeholder="Телефон"
-                            />
-                            <label>Телефон</label>
+
+                    <div class="sign-form__code-info">
+                        Мы отправим вам одноразовый пароль на
+                        <div class="whatsapp-text">
+                            <i class="icon icon-whatsapp-filled"></i>
+                            Whatsapp
                         </div>
-                        <div class="sign-form__code-info">
-                            Мы отправим вам одноразовый пароль на
-                            <div class="whatsapp-text">
-                                <i class="icon icon-whatsapp-filled"></i>
-                                Whatsapp
-                            </div>
-                            или по SMS
-                        </div>
-                        <div class="account-btn">
-                            <button
-                                class="button button_black button_filled button_full_m"
-                            >
-                                Зарегистрироваться
-                            </button>
-                            <div class="account-btn__have-account">
-                                Нет аккаунта? <a href="">Пройти регистрацию</a>
-                            </div>
+                        или по SMS
+                    </div>
+                    <div class="account-btn">
+                        <button class="button button_black button_filled button_full_m">
+                            Зарегистрироваться
+                        </button>
+                        <div class="account-btn__have-account">
+                            Нет аккаунта? <a href="">Пройти регистрацию</a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        @include('modules/footer.html')
-    </body>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+</body>
+
 </html>
