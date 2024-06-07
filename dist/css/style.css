@@ -824,7 +824,7 @@ input[type=number] {
   color: #ff1834;
 }
 .с-checkbox input {
-  display: none;
+  visibility: hidden;
 }
 .с-checkbox:before {
   content: "";
@@ -1013,9 +1013,12 @@ input[type=number] {
   height: 100%;
 }
 .iti__country-container {
-  background: #f1f1f1;
-  border-radius: 5px;
-  border: 2px white solid;
+  border-radius: 5px 0 0 5px;
+  border-right: 1px rgba(31, 32, 34, 0.1) solid;
+  padding: 0;
+}
+.iti__selected-country-primary {
+  padding: 0 10px;
 }
 .iti__selected-flag {
   background: none !important;
