@@ -1062,6 +1062,10 @@ input[type=number] {
   transition: all 0.3s;
 }
 
+.iti--fullscreen-popup .iti__dropdown-content {
+  top: auto !important;
+}
+
 .c-note {
   width: -moz-fit-content;
   width: fit-content;

@@ -408,7 +408,11 @@
         transition: all 0.3s;
     }
 }
-
+.iti--fullscreen-popup {
+    .iti__dropdown-content {
+        top: auto !important;
+    }
+}
 .c-note {
     width: fit-content;
     font-size: 15px;
