@@ -623,6 +623,7 @@
     }
     &__sub-link {
         color: white;
+        text-transform: uppercase;
         @include md {
             display: block;
             padding: 20px 0 20px 30px;
