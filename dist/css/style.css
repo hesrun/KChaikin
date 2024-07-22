@@ -1764,7 +1764,7 @@ input[type=number] {
 }
 .main-nav__link {
   display: block;
-  font-size: 35px;
+  font-size: 30px;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 3px;
@@ -1860,7 +1860,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
   position: absolute;
   left: 50%;
   width: 50%;
