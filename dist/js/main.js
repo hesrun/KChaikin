@@ -170,7 +170,7 @@ $('.header-burger').click(function () {
 $('.language-select__current').click(function () {
   $('.language-select__drop').slideToggle(200);
 });
-$('.navigation__title').click(function () {
+$('.main-nav__link_has-sub').click(function () {
   if (screenSize < md) {
     $(this).next().slideToggle();
     return false;

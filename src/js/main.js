@@ -95,6 +95,7 @@ const dateCarusel = new Swiper('.date-list', {
     spaceBetween: 0,
     mousewheel: true,
 })
+
 const inventSlider = new Swiper('.invent-modal-slider', {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -174,12 +175,13 @@ $('.language-select__current').click(function () {
     $('.language-select__drop').slideToggle(200)
 })
 
-$('.navigation__title').click(function () {
+$('.main-nav__link_has-sub').click(function () {
     if (screenSize < md) {
         $(this).next().slideToggle()
         return false
     }
 })
+
 $(document).click(function (e) {
     let search = $('#searchForm')
     let btn = $('#searchOpen')

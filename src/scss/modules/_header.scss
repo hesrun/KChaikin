@@ -128,6 +128,12 @@
         border: none;
         @include md {
             height: 50px;
+            background: #1f2022;
+            border: 1px rgba(#fff, 0.15) solid;
+            color: white;
+            i {
+                color: rgba(#fff, 0.15);
+            }
         }
     }
     &__search-submit {
@@ -138,6 +144,9 @@
         top: 0;
         position: absolute;
         color: #1f2022;
+        @include md {
+            color: rgba(#fff, 0.15);
+        }
     }
     &__search-btn {
         cursor: pointer;
@@ -163,11 +172,14 @@
         padding: 30px;
         border-radius: 20px;
         position: absolute;
+        a {
+            text-decoration: none;
+        }
         @include md {
             height: 70vh;
             overflow: auto;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 20px;
         }
     }
     &__popular-title {
@@ -217,7 +229,7 @@
     &_scrolled {
         color: white;
         &:after {
-            background: rgba(#fff, 0.15);
+            background: none;
         }
         #{$root}__logo {
             background-image: url(../img/logos/logo-white.svg);
@@ -371,120 +383,15 @@
     position: absolute;
     background: #1f2022;
     height: calc(100dvh - 100px);
+    overflow: auto;
+    @include scrollbars(5px, #ccc, #1f2022);
     @include md {
         min-height: calc(100dvh - 70px);
-        overflow: auto;
     }
     > .container {
         height: 100%;
         display: flex;
         flex-direction: column;
-    }
-    &__cols {
-        padding: 50px 0;
-        flex: 1 1 auto;
-        column-count: 3;
-        column-gap: 60px;
-        overflow: auto;
-        @include scrollbars(4px, rgba(white, 0.3), transparent);
-        @include md {
-            padding: 0px 0 20px;
-            column-count: auto;
-            overflow: visible;
-        }
-    }
-    &__block {
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
-    &__title {
-        display: inline-block;
-        width: 100%;
-        font-size: 14px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        border-bottom: 1px rgba(white, 0.15) solid;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        transition: border-color 0.3s;
-        text-decoration: none;
-        @include hover {
-            border-color: white;
-        }
-        @include md {
-            position: relative;
-            padding: 20px 0;
-            margin-bottom: 0;
-            &:after {
-                content: '';
-                display: block;
-                top: 22px;
-                right: 5px;
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                border-right: 1px rgba(white, 0.25) solid;
-                border-bottom: 1px rgba(white, 0.25) solid;
-                transform: rotate(45deg);
-                @include sm {
-                    top: 28px;
-                }
-            }
-        }
-        @include md {
-            font-size: 18px;
-        }
-    }
-    &__links {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        @include md {
-            display: none;
-            margin: 0;
-            padding: 20px 0;
-        }
-        li {
-            @include md {
-                & + li {
-                    margin-top: 10px;
-                }
-            }
-        }
-        a {
-            position: relative;
-            color: rgba(white, 0.5);
-            transition: all 0.3s;
-            text-decoration: none;
-            @include md {
-                font-size: 18px;
-            }
-            img {
-                position: absolute;
-                width: 150px;
-                left: 50%;
-                top: 50%;
-                transform: translateY(-50%) scale(0);
-                opacity: 0;
-                transition: all 0.3s ease-in-out;
-                pointer-events: none;
-                @include md {
-                    display: none;
-                }
-            }
-            &:hover {
-                color: rgba(white, 1);
-                font-weight: 500;
-                img {
-                    left: 150%;
-                    transform: translateY(-50%) scale(1);
-                    opacity: 1;
-                }
-            }
-        }
     }
     &__footer {
         display: flex;
@@ -496,14 +403,29 @@
             flex-direction: column;
             gap: 20px;
             align-items: flex-start;
+            border: none;
         }
     }
     &__adress {
+        display: flex;
+        align-items: center;
         text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 1px;
-        @include md {
-            display: none;
+        gap: 30px;
+        a {
+            display: inline-block;
+            border: 1px rgba(#fff, 0.15) solid;
+            border-radius: 25px;
+            font-size: 14px;
+            line-height: 40px;
+            padding: 0 20px;
+            text-decoration: none;
+            @include hover {
+                background: white;
+                border-color: white;
+                color: black;
+            }
         }
     }
     &__socials {
@@ -516,23 +438,263 @@
         a:hover {
             opacity: 0.5;
         }
+        @include md {
+            width: 100%;
+            justify-content: space-evenly;
+        }
     }
-    &__footer-links {
+}
+
+.main-nav {
+    margin: auto 0;
+    @include md {
+        margin: 0 0 auto;
+    }
+    &__cols {
+        margin: 30px 0;
+        position: relative;
+        @include md {
+            margin: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+    &__list {
         display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0px;
+        width: 50%;
+        @include md {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    &__list-item {
+        &_hide-desk {
+            display: none;
+            @include md {
+                display: block;
+            }
+        }
+        @include md {
+            border-bottom: 1px rgba(#fff, 0.15) solid;
+        }
+        &:hover {
+            color: $orange;
+            .main-nav__sub-list {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .main-nav__link_has-sub:before {
+                opacity: 1;
+            }
+            .main-nav__curves {
+                opacity: 1;
+            }
+        }
+    }
+    &__link {
+        display: block;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 3px;
+        padding: 12px 0;
+        position: relative;
+        cursor: pointer;
+        @include md {
+            font-size: 14px;
+            padding: 20px 0;
+            &:active {
+                color: $orange;
+                background: rgba(#fff, 0.05);
+            }
+        }
+        &_has-sub:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -20px;
+            top: 0px;
+            right: 21px;
+            height: 100%;
+            border: 1px rgba($orange, 0.25) solid;
+            border-right: 0px;
+            border-radius: 20px 0 0 20px;
+            pointer-events: none;
+            opacity: 0;
+            @include md {
+                opacity: 1;
+                width: 10px;
+                height: 10px;
+                border: none;
+                border-right: 2px white solid;
+                border-bottom: 2px white solid;
+                right: 5px;
+                left: auto;
+                bottom: 30px;
+                border-radius: 0px;
+                rotate: 45deg;
+                top: auto;
+            }
+        }
+    }
+    &__curves {
+        position: absolute;
+        right: -1px;
+        width: 1px;
+        top: -22px;
+        bottom: -22px;
+        pointer-events: none;
+        background: #1f2022;
+        z-index: 1;
+        opacity: 0;
+        @include md {
+            display: none;
+        }
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            width: 44px;
+            height: 44px;
+            border: 1px rgba($orange, 0.25) solid;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        &:before {
+            position: absolute;
+            right: 0px;
+            top: -21px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            rotate: 45deg;
+        }
+        &:after {
+            position: absolute;
+            right: 0px;
+            bottom: -21px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            rotate: -45deg;
+        }
+    }
+    &__sub-list {
+        top: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        min-height: 100%;
+        border: 1px rgba($orange, 0.25) solid;
+        padding: 30px 60px;
+        border-radius: 20px;
+        opacity: 0;
+        pointer-events: none;
+        @include md {
+            display: none;
+            border-radius: 0px;
+            gap: 0px;
+            padding: 0px;
+            border: none;
+            width: auto;
+            position: static;
+            opacity: 1;
+            pointer-events: all;
+            margin: 0;
+        }
+    }
+    &__sub-list-item {
+        font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: 300;
+        @include md {
+            text-transform: uppercase;
+            font-size: 14px;
+            border-top: 1px rgba(#fff, 0.15) solid;
+        }
+    }
+    &__sub-link {
+        color: white;
+        @include md {
+            display: block;
+            padding: 20px 0 20px 30px;
+            color: rgba(#fff, 0.7);
+            &:active {
+                color: $orange;
+                background: rgba(#fff, 0.05);
+            }
+        }
+        @include hover {
+            color: $orange;
+        }
+    }
+}
+
+.secondary-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 10%;
+    @include lg {
         gap: 30px;
-        align-items: center;
-        font-size: 14px;
-        @include sm {
-            display: grid;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    @include md {
+        margin-bottom: 0;
+    }
+    &__btns {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        flex: 0 0 320px;
+        align-self: start;
+        @include lg {
+            flex: 1 1 auto;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
         }
-        a {
-            transition: all 0.3s;
-            text-decoration: none;
+        @include md {
+            grid-template-columns: 1fr;
         }
-        a:hover {
-            opacity: 0.5;
+    }
+    &__links-col {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        @include lg {
+            display: none;
+        }
+    }
+    &__title {
+        font-size: 14px;
+        letter-spacing: 2px;
+        border-bottom: 1px rgba(white, 0.15) solid;
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+    }
+    &__links {
+        font-size: 14px;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px 30px;
+        &_single {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__link {
+        opacity: 0.7;
+        text-decoration: none;
+        @include hover {
+            opacity: 1;
         }
     }
 }

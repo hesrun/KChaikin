@@ -7,6 +7,14 @@
         position: static;
         height: auto;
         min-height: auto;
+        .container {
+            flex-direction: column-reverse;
+        }
+        @include md {
+            &__adress {
+                display: none;
+            }
+        }
         &__cols {
             @include md {
                 display: none;
@@ -23,6 +31,8 @@
         padding: 24px 0;
         border-top: 1px rgba(white, 0.15) solid;
         @include md {
+            border-top: none;
+            border-bottom: 1px rgba(white, 0.15) solid;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -34,8 +44,7 @@
             align-items: center;
             font-size: 12px;
             @include md {
-                flex-direction: column;
-                gap: 10px;
+                display: none;
             }
 
             a {
@@ -66,9 +75,6 @@
                 letter-spacing: 1px;
             }
         }
-    }
-    @media screen and (max-height: 900px) {
-        position: static;
     }
 }
 .mobile-cart-btn {
