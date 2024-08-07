@@ -495,8 +495,11 @@
             vertical-align: middle;
         }
         @include md {
-            width: 85%;
+            width: auto;
             max-width: 500px;
+        }
+        @include sm {
+            max-width: 250px;
         }
     }
     &__text {

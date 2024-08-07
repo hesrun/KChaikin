@@ -3588,8 +3588,13 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .watch-descr-list__image {
-    width: 85%;
+    width: auto;
     max-width: 500px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .watch-descr-list__image {
+    max-width: 250px;
   }
 }
 .watch-descr-list__text {
