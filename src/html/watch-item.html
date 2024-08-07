@@ -1,685 +1,439 @@
 <!doctype html>
 <html lang="ru">
-    @include('modules/link.html',{ 'title': 'Main' })
+@include('modules/link.html',{ 'title': 'Main' })
 
-    <body>
-        @include('modules/header.html',{'theme':'white'})
-        <main class="main">
-            <div class="page-hero">
-                <picture>
-                    <source
-                        media="(max-width: 768px)"
-                        srcset="img/watch-item/series-banner-m.jpg"
-                    />
-                    <img src="img/watch-item/series-banner.jpg" alt="" />
-                </picture>
-
-                <div class="page-hero__info">
-                    <div class="container">
-                        <div class="page-hero__text">
-                            <span class="page-hero__subtitle">РИСТМОНЫ</span>
-                            <h1 class="page-hero__title">КОЛОБОК</h1>
-                        </div>
-                        <div class="page-hero__btns">
-                            <a href="" class="button button_white"> 360° </a>
-                            <button id="showParams" class="button button_white">
-                                Характеристики
-                            </button>
-                            <a href="" class="button button_white">
-                                Как купить?
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <h2>Блок заголовок</h2>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <div class="two-col-text">
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Accusantium adipisci
-                                blanditiis consequuntur culpa cupiditate debitis
-                                deleniti doloribus ea eaque ex explicabo facere
-                                fugit incidunt natus nesciunt possimus quae
-                                quisquam sed, tempore unde vitae voluptatem,
-                                voluptates. A ab aspernatur, cumque dolorum ea
-                                incidunt laboriosam laborum libero, magnam
-                                praesentium quasi soluta suscipit?
-                            </p>
-                            <ul>
-                                <li>list 1</li>
-                                <li>list 2</li>
-                                <li>list 3</li>
-                                <li>list 4</li>
-                            </ul>
-                            <ol>
-                                <li>list 1</li>
-                                <li>list 2</li>
-                                <li>list 3</li>
-                                <li>list 4</li>
-                            </ol>
-                        </div>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Accusantium adipisci
-                                blanditiis consequuntur culpa cupiditate debitis
-                                deleniti doloribus ea eaque ex explicabo facere
-                                fugit incidunt natus nesciunt possimus quae
-                                quisquam sed, tempore unde vitae voluptatem,
-                                voluptates. A ab aspernatur, cumque dolorum ea
-                                incidunt laboriosam laborum libero, magnam
-                                praesentium quasi soluta suscipit?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <picture class="img-full">
-                <source
-                    media="(max-width: 768px)"
-                    srcset="img/manufactura/manufactura-banner-3-m.jpg"
-                />
-                <img src="img/manufactura/manufactura-banner-3.jpg" alt="" />
+<body>
+    @include('modules/header.html',{'theme':'white'})
+    <main class="main">
+        <div class="page-hero">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/watch-item/series-banner-m.jpg" />
+                <img src="img/watch-item/series-banner.jpg" alt="" />
             </picture>
-            <div class="page-section">
-                <div class="container">
-                    <h2>Блок заголовок</h2>
-                    <div class="push-left-text">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Ab accusantium aliquam consectetur culpa
-                            dolorem ea eligendi incidunt iusto maxime non
-                            nostrum nulla odit officia repudiandae, temporibus
-                            ullam voluptatem! Cum debitis eligendi enim ipsum
-                            odit quasi voluptates voluptatum. Consequatur, esse
-                            explicabo facilis ipsum iusto natus officiis quas
-                            repellendus sequi vel. Asperiores, atque distinctio
-                            ipsum laudantium magnam placeat sequi vel velit! Cum
-                            explicabo molestias natus obcaecati temporibus.
-                            Aliquid aperiam autem consequatur dolorem doloribus,
-                            eos esse est exercitationem explicabo fugit illo
-                            nemo nesciunt nulla pariatur perferendis possimus
-                            quibusdam sequi similique voluptas, voluptates? At
-                            earum eum maxime mollitia perspiciatis quo
-                            reprehenderit repudiandae rerum tempore.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <p>
-                        В августе 2023 состоялась презентация первого
-                        российского персонажа в коллекции Константина Чайкина
-                        <br />
-                        «Ристмоны» («монстры на запястье») – часов «Колобок».
-                    </p>
-                    <div class="whatch-history-grid">
-                        <div class="whatch-history-grid__item">
-                            <p>
-                                <strong
-                                    >Коллекция была создана в 2017 году</strong
-                                >, и почти сразу Чайкин решил, что в ней должен
-                                появится герой из русских сказок.
-                            </p>
-                            <img src="img/watch-item/geneva.svg" alt="" />
-                        </div>
-                        <div class="whatch-history-grid__item">
-                            <p>
-                                23 августа новая модель часов была
-                                <strong
-                                    >впервые показана российским
-                                    журналистам</strong
-                                >, часовым экспертам и блогерам. Пресс-показ
-                                прошел в Государственном историческом музее.
-                                «Колобок» продолжил ряд произведений высокого
-                                часового искусства, на которые мастера
-                                вдохновили образы русской культуры: «Северная
-                                Пасхалия», «Московская Пасхалия», «Лукоморье» и
-                                др.
-                            </p>
-                            <img src="img/watch-item/geneva.svg" alt="" />
-                        </div>
-                        <div class="whatch-history-grid__item">
-                            <p>
-                                29 августа в рамках Geneva Watch Days состоялась
-                                международная презентация новинки. Таким
-                                образом, герой, известный с детства каждому в
-                                России, получил новое воплощение, которое
-                                позволит рассказать о нем во всех уголках мира.
-                            </p>
-                            <img src="img/watch-item/geneva.svg" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <div class="whatch-master-quote">
-                        <blockquote class="whatch-master-quote__text">
-                            <p>
-                                В моих записях за эти 6 лет можно найти самые
-                                разные образы: богатыри, русалки, матрешки…. Но
-                                в какой-то момент я понял, что именно Колобок
-                                идеально подходит для того, чтобы открыть серию
-                                русских ристмонов, – вспоминает мастер. – Меня
-                                так вдохновил этот образ, что я нарисовал 3-4
-                                варианта эскизов за пару дней. Герой получался
-                                такой яркий и позитивный, что я уже не мог
-                                отложить эту идею и возвращался к доработке
-                                дизайна снова и снова.
-                            </p>
-                            <img
-                                src="img/main/sign.gif"
-                                alt=""
-                                class="signature"
-                            />
-                        </blockquote>
-                        <img src="img/watch-item/watch-round.png" alt="" />
-                    </div>
-                </div>
-            </div>
-            <div class="page-section video-section">
-                <iframe
-                    src="https://www.youtube.com/embed/slGxWPi6rhM"
-                    title="This is the story about Kolobok. A watch from Konstantin Chaykin&#39;s Wristmons collection."
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                ></iframe>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <div class="two-col-text">
-                        <div>
-                            <p>
-                                На всех уровнях: в дизайне часов, особенностях
-                                механизма и даже продвижении, – мастер
-                                рассказывает историю и передает характеры
-                                персонажей современным языком, создает свою
-                                «<strong>сказку на новый лад</strong>», которая
-                                будет понятна каждому без слов.
-                            </p>
-                        </div>
-                        <div>
-                            <p>
-                                Часы «Колобок» выпущены лимитированной серией
-                                <strong>99 экземпляров</strong>. На данный
-                                момент все номера забронированы. Если вас
-                                интересует покупка следующей серийной модели,
-                                оставьте заявку.
-                            </p>
-                            <a href="" class="button button_black">
-                                Лист ожидания
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="divder" />
-            <div class="page-section">
-                <div class="container">
-                    <h2>
-                        СКАЗ О ТОМ, КАК <br />
-                        КОЛОБОК ЧАСАМИ СТАЛ
-                    </h2>
-                    <div class="push-left-text">
-                        <p>
-                            Образ Колобка воплощали многие деятели искусства,
-                            иллюстраторы, мультипликаторы, художники. Колобок
-                            выглядел по-разному, но основные его черты
-                            оставались неизменны: он круглый, желтый (как и
-                            положено булочке, каковой он, по сути, и является),
-                            глазастый, с широкой улыбкой. Именно таким
-                            Константин Чайкин решил создать своего героя с
-                            помощью выразительных средств высокого часового
-                            искусства.
-                        </p>
-                        <br />
-                        <a
-                            href=""
-                            class="button button_black button_full_m openVideoModal"
-                        >
-                            Посмотреть видео
-                        </a>
-                    </div>
-                    <div class="photo-carusel swiper">
-                        <div class="swiper-wrapper">
-                            <a
-                                href="img/watch-item/Rectangle14.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ЯРКИЙ ЦИФЕРБЛАТ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-1.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-2.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    СКАЗОЧНЫЙ РОТОР
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ЯРКИЙ ЦИФЕРБЛАТ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-1.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-2.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    СКАЗОЧНЫЙ РОТОР
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ЯРКИЙ ЦИФЕРБЛАТ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-1.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-2.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    СКАЗОЧНЫЙ РОТОР
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ЯРКИЙ ЦИФЕРБЛАТ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-1.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-2.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    СКАЗОЧНЫЙ РОТОР
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ЯРКИЙ ЦИФЕРБЛАТ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-1.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
-                                </div>
-                            </a>
-                            <a
-                                href="img/watch-item/Rectangle14-2.jpg"
-                                data-fancybox="gallery"
-                                class="photo-carusel__slide swiper-slide"
-                            >
-                                <div class="photo-carusel__image">
-                                    <img
-                                        src="img/watch-item/Rectangle14-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="photo-carusel__title">
-                                    СКАЗОЧНЫЙ РОТОР
-                                </div>
-                            </a>
-                        </div>
-                        <div class="photo-carusel-nav">
-                            <div class="photo-carusel-nav__pagination"></div>
-                            <div class="photo-carusel-nav__arrows">
-                                <div class="photo-carusel-nav__prev">
-                                    <i class="icon-arrow-left"></i>
-                                </div>
-                                <div class="photo-carusel-nav__next">
-                                    <i class="icon-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <div class="tech-block tech-block_1-2">
-                        <picture class="tech-block__image">
-                            <img src="img/watch-item/image30.jpg" alt="" />
-                        </picture>
-                        <div class="tech-block__text">
-                            <h2>Механизм</h2>
-                            <p>
-                                Калибр K.18-20 с автоматическим заводом
-                                производства мануфактуры «Константин Чайкин».
-                                Модуль джокер-индикации включает 80 деталей, в
-                                том числе 8 камней. Запас хода 42 часа.
-                            </p>
-                            <h5>Функции</h5>
-                            <ul>
-                                <li>Джокер-индикация времени</li>
-                                <li>Индикатор дней недели</li>
-                                <li>Индикатор фаз Луны</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="page-section">
+            <div class="page-hero__info">
                 <div class="container">
-                    <h2>
-                        Процесс <br />
-                        производства
-                    </h2>
-                    <div class="process-grid">
-                        <a
-                            href="img/watch-item/process-full.jpg"
-                            data-fancybox="process"
-                            class="process-grid__item"
-                        >
-                            <img src="img/watch-item/process-full.jpg" alt="" />
+                    <div class="page-hero__text">
+                        <span class="page-hero__subtitle">РИСТМОНЫ</span>
+                        <h1 class="page-hero__title">КОЛОБОК</h1>
+                    </div>
+                    <div class="page-hero__btns">
+                        <a href="" class="button button_white"> 360° </a>
+                        <button id="showParams" class="button button_white">
+                            Характеристики
+                        </button>
+                        <a href="" class="button button_white">
+                            Как купить?
                         </a>
-                        <div class="process-grid__item process-grid__item_half">
-                            <div class="process-grid__text">
-                                <p>
-                                    Наблюдать за процессом сборки любых
-                                    ристмонов особенно интересно. На ваших глаза
-                                    механизм приобретает глаза и улыбку. Детали
-                                    складываются в антропоморфный циферблат,
-                                    который никого не оставит равнодушным.
-                                </p>
-                                <br />
-                                <a
-                                    href=""
-                                    class="button button_black button_full_m openVideoModal"
-                                >
-                                    Посмотреть видео
-                                </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <h2>Stargazer Full list <br> of complications</h2>
+            </div>
+            <div class="watch-descr-list">
+                <div class="watch-descr-list__item">
+                    <div class="watch-descr-list__image">
+                        <img class="img-fluid" src="img/watch-item/watch-list-img.jpg" alt="" />
+                    </div>
+                    <div class="watch-descr-list__text">
+                        <b>4-stage discrete moonphase indicator (world premiere)</b>
+                        <hr class="watch-descr-list__line">
+                        <p>
+                            There are four main phases of the moon – waxing moon, full moon, waning and new moon. In
+                            astronomy, four more intermediate phases are added to these to describe the phenomenon in
+                            more detail, so that there are eight phases in total. Typically, the moonphase pointer in a
+                            mechanical watch shows the moon's phase in half-day or one-day increments. The new type of
+                            pointer displays the four main phases with jumping action.
+                        </p>
+                    </div>
+                </div>
+                <div class="watch-descr-list__item watch-descr-list__item_reverse">
+                    <div class="watch-descr-list__image">
+                        <img class="img-fluid" src="img/watch-item/watch-list-img-2.jpg" alt="" />
+                    </div>
+                    <div class="watch-descr-list__text">
+                        <b>Sunrise and sunset azimuth display (world premiere)</b>
+                        <hr class="watch-descr-list__line">
+                        <p>
+                            There are four main phases of the moon – waxing moon, full moon, waning and new moon. In
+                            astronomy, four more intermediate phases are added to these to describe the phenomenon in
+                            more detail, so that there are eight phases in total. Typically, the moonphase pointer in a
+                            mechanical watch shows the moon's phase in half-day or one-day increments. The new type of
+                            pointer displays the four main phases with jumping action.
+                        </p>
+                    </div>
+                </div>
+                <div class="watch-descr-list__item">
+                    <div class="watch-descr-list__image">
+                        <img class="img-fluid" src="img/watch-item/watch-list-img-3.jpg" alt="" />
+                    </div>
+                    <div class="watch-descr-list__text">
+                        <b>Astronomic precision moonphase and moon age display with a deviation of one day in 122 years
+                            and a differential mechanism for driving and setting the display</b>
+                        <hr class="watch-descr-list__line">
+                        <p>
+                            This classic complication is designed as the eye of the light side of Stargazer and is
+                            located on the right side of the dial, at the 2 o'clock position. The design feature of this
+                            indicator is a fully open lunar disc with a circular aperture that gives an image of the
+                            phase of the moon. This pointer provides a smooth phase change as the pointer switches once
+                            a day, at midnight, complementing the 4-stage discrete moonphase indicator next to it. In
+                            the upper part of the indicator there is a dial with the moon’s age.
+                        </p>
+                        <p>
+                            Usually, when designing a mechanism of this type, the lunar month is rounded off to 29 days
+                            and 12 hours. In reality, the moon turns 44 minutes slower. Because of this, lunar calendars
+                            usually give an error of one day in three years. Stargazer is 40 times more accurate: an
+                            error of one day will occur only after 122 years. Besides, the indicator mechanism has drive
+                            and correction with a differential gear. The differential allows wearers to set the display
+                            without affecting the accuracy of the watch itself.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <h2>Блок заголовок</h2>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <div class="two-col-text">
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Accusantium adipisci
+                            blanditiis consequuntur culpa cupiditate debitis
+                            deleniti doloribus ea eaque ex explicabo facere
+                            fugit incidunt natus nesciunt possimus quae
+                            quisquam sed, tempore unde vitae voluptatem,
+                            voluptates. A ab aspernatur, cumque dolorum ea
+                            incidunt laboriosam laborum libero, magnam
+                            praesentium quasi soluta suscipit?
+                        </p>
+                        <ul>
+                            <li>list 1</li>
+                            <li>list 2</li>
+                            <li>list 3</li>
+                            <li>list 4</li>
+                        </ul>
+                        <ol>
+                            <li>list 1</li>
+                            <li>list 2</li>
+                            <li>list 3</li>
+                            <li>list 4</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Accusantium adipisci
+                            blanditiis consequuntur culpa cupiditate debitis
+                            deleniti doloribus ea eaque ex explicabo facere
+                            fugit incidunt natus nesciunt possimus quae
+                            quisquam sed, tempore unde vitae voluptatem,
+                            voluptates. A ab aspernatur, cumque dolorum ea
+                            incidunt laboriosam laborum libero, magnam
+                            praesentium quasi soluta suscipit?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <picture class="img-full">
+            <source media="(max-width: 768px)" srcset="img/manufactura/manufactura-banner-3-m.jpg" />
+            <img src="img/manufactura/manufactura-banner-3.jpg" alt="" />
+        </picture>
+        <div class="page-section">
+            <div class="container">
+                <h2>Блок заголовок</h2>
+                <div class="push-left-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab accusantium aliquam consectetur culpa
+                        dolorem ea eligendi incidunt iusto maxime non
+                        nostrum nulla odit officia repudiandae, temporibus
+                        ullam voluptatem! Cum debitis eligendi enim ipsum
+                        odit quasi voluptates voluptatum. Consequatur, esse
+                        explicabo facilis ipsum iusto natus officiis quas
+                        repellendus sequi vel. Asperiores, atque distinctio
+                        ipsum laudantium magnam placeat sequi vel velit! Cum
+                        explicabo molestias natus obcaecati temporibus.
+                        Aliquid aperiam autem consequatur dolorem doloribus,
+                        eos esse est exercitationem explicabo fugit illo
+                        nemo nesciunt nulla pariatur perferendis possimus
+                        quibusdam sequi similique voluptas, voluptates? At
+                        earum eum maxime mollitia perspiciatis quo
+                        reprehenderit repudiandae rerum tempore.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <p>
+                    В августе 2023 состоялась презентация первого
+                    российского персонажа в коллекции Константина Чайкина
+                    <br />
+                    «Ристмоны» («монстры на запястье») – часов «Колобок».
+                </p>
+                <div class="whatch-history-grid">
+                    <div class="whatch-history-grid__item">
+                        <p>
+                            <strong>Коллекция была создана в 2017 году</strong>, и почти сразу Чайкин решил, что в ней
+                            должен
+                            появится герой из русских сказок.
+                        </p>
+                        <img src="img/watch-item/geneva.svg" alt="" />
+                    </div>
+                    <div class="whatch-history-grid__item">
+                        <p>
+                            23 августа новая модель часов была
+                            <strong>впервые показана российским
+                                журналистам</strong>, часовым экспертам и блогерам. Пресс-показ
+                            прошел в Государственном историческом музее.
+                            «Колобок» продолжил ряд произведений высокого
+                            часового искусства, на которые мастера
+                            вдохновили образы русской культуры: «Северная
+                            Пасхалия», «Московская Пасхалия», «Лукоморье» и
+                            др.
+                        </p>
+                        <img src="img/watch-item/geneva.svg" alt="" />
+                    </div>
+                    <div class="whatch-history-grid__item">
+                        <p>
+                            29 августа в рамках Geneva Watch Days состоялась
+                            международная презентация новинки. Таким
+                            образом, герой, известный с детства каждому в
+                            России, получил новое воплощение, которое
+                            позволит рассказать о нем во всех уголках мира.
+                        </p>
+                        <img src="img/watch-item/geneva.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <div class="whatch-master-quote">
+                    <blockquote class="whatch-master-quote__text">
+                        <p>
+                            В моих записях за эти 6 лет можно найти самые
+                            разные образы: богатыри, русалки, матрешки…. Но
+                            в какой-то момент я понял, что именно Колобок
+                            идеально подходит для того, чтобы открыть серию
+                            русских ристмонов, – вспоминает мастер. – Меня
+                            так вдохновил этот образ, что я нарисовал 3-4
+                            варианта эскизов за пару дней. Герой получался
+                            такой яркий и позитивный, что я уже не мог
+                            отложить эту идею и возвращался к доработке
+                            дизайна снова и снова.
+                        </p>
+                        <img src="img/main/sign.gif" alt="" class="signature" />
+                    </blockquote>
+                    <img src="img/watch-item/watch-round.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="page-section video-section">
+            <iframe src="https://www.youtube.com/embed/slGxWPi6rhM"
+                title="This is the story about Kolobok. A watch from Konstantin Chaykin&#39;s Wristmons collection."
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <div class="two-col-text">
+                    <div>
+                        <p>
+                            На всех уровнях: в дизайне часов, особенностях
+                            механизма и даже продвижении, – мастер
+                            рассказывает историю и передает характеры
+                            персонажей современным языком, создает свою
+                            «<strong>сказку на новый лад</strong>», которая
+                            будет понятна каждому без слов.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Часы «Колобок» выпущены лимитированной серией
+                            <strong>99 экземпляров</strong>. На данный
+                            момент все номера забронированы. Если вас
+                            интересует покупка следующей серийной модели,
+                            оставьте заявку.
+                        </p>
+                        <a href="" class="button button_black">
+                            Лист ожидания
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="divder" />
+        <div class="page-section">
+            <div class="container">
+                <h2>
+                    СКАЗ О ТОМ, КАК <br />
+                    КОЛОБОК ЧАСАМИ СТАЛ
+                </h2>
+                <div class="push-left-text">
+                    <p>
+                        Образ Колобка воплощали многие деятели искусства,
+                        иллюстраторы, мультипликаторы, художники. Колобок
+                        выглядел по-разному, но основные его черты
+                        оставались неизменны: он круглый, желтый (как и
+                        положено булочке, каковой он, по сути, и является),
+                        глазастый, с широкой улыбкой. Именно таким
+                        Константин Чайкин решил создать своего героя с
+                        помощью выразительных средств высокого часового
+                        искусства.
+                    </p>
+                    <br />
+                    <a href="" class="button button_black button_full_m openVideoModal">
+                        Посмотреть видео
+                    </a>
+                </div>
+                <div class="photo-carusel swiper">
+                    <div class="swiper-wrapper">
+                        <a href="img/watch-item/Rectangle14.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14.jpg" alt="" />
                             </div>
-                        </div>
-                        <a
-                            href="img/watch-item/process-half.jpg"
-                            data-fancybox="process"
-                            class="process-grid__item process-grid__item_half"
-                        >
-                            <img src="img/watch-item/process-half.jpg" alt="" />
+                            <div class="photo-carusel__title">
+                                ЯРКИЙ ЦИФЕРБЛАТ
+                            </div>
                         </a>
-                        <a
-                            href="img/watch-item/process-quart.jpg"
-                            class="process-grid__item process-grid__item_quart"
-                            data-fancybox="process"
-                        >
-                            <img
-                                src="img/watch-item/process-quart.jpg"
-                                alt=""
-                            />
+                        <a href="img/watch-item/Rectangle14-1.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-1.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
+                            </div>
                         </a>
-                        <a
-                            href="img/watch-item/image34.jpg"
-                            class="process-grid__item process-grid__item_quart"
-                            data-fancybox="process"
-                        >
-                            <img
-                                src="img/watch-item/process-quart-2.jpg"
-                                alt=""
-                            />
+                        <a href="img/watch-item/Rectangle14-2.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-2.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                СКАЗОЧНЫЙ РОТОР
+                            </div>
                         </a>
-                        <a
-                            href="img/watch-item/process-quart.jpg"
-                            class="process-grid__item process-grid__item_quart"
-                            data-fancybox="process"
-                        >
-                            <img
-                                src="img/watch-item/process-quart.jpg"
-                                alt=""
-                            />
+                        <a href="img/watch-item/Rectangle14.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ЯРКИЙ ЦИФЕРБЛАТ
+                            </div>
                         </a>
-                        <a
-                            href="img/watch-item/image34.jpg"
-                            class="process-grid__item process-grid__item_quart"
-                            data-fancybox="process"
-                        >
-                            <img
-                                src="img/watch-item/process-quart-2.jpg"
-                                alt=""
-                            />
+                        <a href="img/watch-item/Rectangle14-1.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-1.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-2.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-2.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                СКАЗОЧНЫЙ РОТОР
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ЯРКИЙ ЦИФЕРБЛАТ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-1.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-1.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-2.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-2.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                СКАЗОЧНЫЙ РОТОР
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ЯРКИЙ ЦИФЕРБЛАТ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-1.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-1.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-2.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-2.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                СКАЗОЧНЫЙ РОТОР
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ЯРКИЙ ЦИФЕРБЛАТ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-1.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-1.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                ИНДИКАТОР ДНЕЙ НЕДЕЛИ И ФАЗ ЛУНЫ
+                            </div>
+                        </a>
+                        <a href="img/watch-item/Rectangle14-2.jpg" data-fancybox="gallery"
+                            class="photo-carusel__slide swiper-slide">
+                            <div class="photo-carusel__image">
+                                <img src="img/watch-item/Rectangle14-2.jpg" alt="" />
+                            </div>
+                            <div class="photo-carusel__title">
+                                СКАЗОЧНЫЙ РОТОР
+                            </div>
                         </a>
                     </div>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <div class="tech-block tech-block_3-4">
-                        <div class="tech-block__text">
-                            <h2>КОРПУС И РЕМЕШОК</h2>
-                            <p>
-                                Наблюдать за процессом сборки любых ристмонов
-                                особенно интересно. На ваших глаза механизм
-                                приобретает глаза и улыбку. Детали складываются
-                                в антропоморфный циферблат, который никого не
-                                оставит равнодушным.
-                            </p>
-                        </div>
-                        <picture class="tech-block__image">
-                            <img src="img/watch-item/image34.jpg" />
-                        </picture>
-                    </div>
-                    <div class="tech-block tech-block_2-3">
-                        <div class="tech-block__text">
-                            <h2>КОРПУС И РЕМЕШОК</h2>
-                            <p>
-                                Наблюдать за процессом сборки любых ристмонов
-                                особенно интересно. На ваших глаза механизм
-                                приобретает глаза и улыбку. Детали складываются
-                                в антропоморфный циферблат, который никого не
-                                оставит равнодушным.
-                            </p>
-                        </div>
-                        <picture class="tech-block__image">
-                            <img src="img/watch-item/image34.jpg" />
-                        </picture>
-                    </div>
-                    <div class="tech-block tech-block_1-2">
-                        <div class="tech-block__text">
-                            <h2>КОРПУС И РЕМЕШОК</h2>
-                            <p>
-                                Наблюдать за процессом сборки любых ристмонов
-                                особенно интересно. На ваших глаза механизм
-                                приобретает глаза и улыбку. Детали складываются
-                                в антропоморфный циферблат, который никого не
-                                оставит равнодушным.
-                            </p>
-                        </div>
-                        <picture class="tech-block__image">
-                            <img src="img/watch-item/image34.jpg" />
-                        </picture>
-                    </div>
-                    <div class="tech-block tech-block_1-3">
-                        <div class="tech-block__text">
-                            <h2>КОРПУС И РЕМЕШОК</h2>
-                            <p>
-                                Наблюдать за процессом сборки любых ристмонов
-                                особенно интересно. На ваших глаза механизм
-                                приобретает глаза и улыбку. Детали складываются
-                                в антропоморфный циферблат, который никого не
-                                оставит равнодушным.
-                            </p>
-                        </div>
-                        <picture class="tech-block__image">
-                            <img src="img/watch-item/image34.jpg" />
-                        </picture>
-                    </div>
-                    <div class="tech-block tech-block_1-4">
-                        <div class="tech-block__text">
-                            <h2>КОРПУС И РЕМЕШОК</h2>
-                            <p>
-                                Наблюдать за процессом сборки любых ристмонов
-                                особенно интересно. На ваших глаза механизм
-                                приобретает глаза и улыбку. Детали складываются
-                                в антропоморфный циферблат, который никого не
-                                оставит равнодушным.
-                            </p>
-                        </div>
-                        <picture class="tech-block__image">
-                            <img src="img/watch-item/image34.jpg" />
-                        </picture>
-                    </div>
-                </div>
-            </div>
-            <div class="page-section">
-                <div class="container">
-                    <h2>ФОТОГАЛЕРЕЯ</h2>
                     <div class="photo-carusel-nav">
                         <div class="photo-carusel-nav__pagination"></div>
                         <div class="photo-carusel-nav__arrows">
@@ -692,55 +446,210 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="photo-slider swiper">
-                        <div class="swiper-wrapper">
-                            <div class="photo-slider__slide swiper-slide">
-                                <div class="photo-slider__image">
-                                    <img
-                                        src="img/watch-item/photo-gallery-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <div class="tech-block tech-block_1-2">
+                    <picture class="tech-block__image">
+                        <img src="img/watch-item/image30.jpg" alt="" />
+                    </picture>
+                    <div class="tech-block__text">
+                        <h2>Механизм</h2>
+                        <p>
+                            Калибр K.18-20 с автоматическим заводом
+                            производства мануфактуры «Константин Чайкин».
+                            Модуль джокер-индикации включает 80 деталей, в
+                            том числе 8 камней. Запас хода 42 часа.
+                        </p>
+                        <h5>Функции</h5>
+                        <ul>
+                            <li>Джокер-индикация времени</li>
+                            <li>Индикатор дней недели</li>
+                            <li>Индикатор фаз Луны</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-section">
+            <div class="container">
+                <h2>
+                    Процесс <br />
+                    производства
+                </h2>
+                <div class="process-grid">
+                    <a href="img/watch-item/process-full.jpg" data-fancybox="process" class="process-grid__item">
+                        <img src="img/watch-item/process-full.jpg" alt="" />
+                    </a>
+                    <div class="process-grid__item process-grid__item_half">
+                        <div class="process-grid__text">
+                            <p>
+                                Наблюдать за процессом сборки любых
+                                ристмонов особенно интересно. На ваших глаза
+                                механизм приобретает глаза и улыбку. Детали
+                                складываются в антропоморфный циферблат,
+                                который никого не оставит равнодушным.
+                            </p>
+                            <br />
+                            <a href="" class="button button_black button_full_m openVideoModal">
+                                Посмотреть видео
+                            </a>
+                        </div>
+                    </div>
+                    <a href="img/watch-item/process-half.jpg" data-fancybox="process"
+                        class="process-grid__item process-grid__item_half">
+                        <img src="img/watch-item/process-half.jpg" alt="" />
+                    </a>
+                    <a href="img/watch-item/process-quart.jpg" class="process-grid__item process-grid__item_quart"
+                        data-fancybox="process">
+                        <img src="img/watch-item/process-quart.jpg" alt="" />
+                    </a>
+                    <a href="img/watch-item/image34.jpg" class="process-grid__item process-grid__item_quart"
+                        data-fancybox="process">
+                        <img src="img/watch-item/process-quart-2.jpg" alt="" />
+                    </a>
+                    <a href="img/watch-item/process-quart.jpg" class="process-grid__item process-grid__item_quart"
+                        data-fancybox="process">
+                        <img src="img/watch-item/process-quart.jpg" alt="" />
+                    </a>
+                    <a href="img/watch-item/image34.jpg" class="process-grid__item process-grid__item_quart"
+                        data-fancybox="process">
+                        <img src="img/watch-item/process-quart-2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <div class="tech-block tech-block_3-4">
+                    <div class="tech-block__text">
+                        <h2>КОРПУС И РЕМЕШОК</h2>
+                        <p>
+                            Наблюдать за процессом сборки любых ристмонов
+                            особенно интересно. На ваших глаза механизм
+                            приобретает глаза и улыбку. Детали складываются
+                            в антропоморфный циферблат, который никого не
+                            оставит равнодушным.
+                        </p>
+                    </div>
+                    <picture class="tech-block__image">
+                        <img src="img/watch-item/image34.jpg" />
+                    </picture>
+                </div>
+                <div class="tech-block tech-block_2-3">
+                    <div class="tech-block__text">
+                        <h2>КОРПУС И РЕМЕШОК</h2>
+                        <p>
+                            Наблюдать за процессом сборки любых ристмонов
+                            особенно интересно. На ваших глаза механизм
+                            приобретает глаза и улыбку. Детали складываются
+                            в антропоморфный циферблат, который никого не
+                            оставит равнодушным.
+                        </p>
+                    </div>
+                    <picture class="tech-block__image">
+                        <img src="img/watch-item/image34.jpg" />
+                    </picture>
+                </div>
+                <div class="tech-block tech-block_1-2">
+                    <div class="tech-block__text">
+                        <h2>КОРПУС И РЕМЕШОК</h2>
+                        <p>
+                            Наблюдать за процессом сборки любых ристмонов
+                            особенно интересно. На ваших глаза механизм
+                            приобретает глаза и улыбку. Детали складываются
+                            в антропоморфный циферблат, который никого не
+                            оставит равнодушным.
+                        </p>
+                    </div>
+                    <picture class="tech-block__image">
+                        <img src="img/watch-item/image34.jpg" />
+                    </picture>
+                </div>
+                <div class="tech-block tech-block_1-3">
+                    <div class="tech-block__text">
+                        <h2>КОРПУС И РЕМЕШОК</h2>
+                        <p>
+                            Наблюдать за процессом сборки любых ристмонов
+                            особенно интересно. На ваших глаза механизм
+                            приобретает глаза и улыбку. Детали складываются
+                            в антропоморфный циферблат, который никого не
+                            оставит равнодушным.
+                        </p>
+                    </div>
+                    <picture class="tech-block__image">
+                        <img src="img/watch-item/image34.jpg" />
+                    </picture>
+                </div>
+                <div class="tech-block tech-block_1-4">
+                    <div class="tech-block__text">
+                        <h2>КОРПУС И РЕМЕШОК</h2>
+                        <p>
+                            Наблюдать за процессом сборки любых ристмонов
+                            особенно интересно. На ваших глаза механизм
+                            приобретает глаза и улыбку. Детали складываются
+                            в антропоморфный циферблат, который никого не
+                            оставит равнодушным.
+                        </p>
+                    </div>
+                    <picture class="tech-block__image">
+                        <img src="img/watch-item/image34.jpg" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <h2>ФОТОГАЛЕРЕЯ</h2>
+                <div class="photo-carusel-nav">
+                    <div class="photo-carusel-nav__pagination"></div>
+                    <div class="photo-carusel-nav__arrows">
+                        <div class="photo-carusel-nav__prev">
+                            <i class="icon-arrow-left"></i>
+                        </div>
+                        <div class="photo-carusel-nav__next">
+                            <i class="icon-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="photo-slider swiper">
+                    <div class="swiper-wrapper">
+                        <div class="photo-slider__slide swiper-slide">
+                            <div class="photo-slider__image">
+                                <img src="img/watch-item/photo-gallery-1.jpg" alt="" />
                             </div>
-                            <div class="photo-slider__slide swiper-slide">
-                                <div class="photo-slider__image">
-                                    <img
-                                        src="img/watch-item/photo-gallery-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
+                        </div>
+                        <div class="photo-slider__slide swiper-slide">
+                            <div class="photo-slider__image">
+                                <img src="img/watch-item/photo-gallery-1.jpg" alt="" />
                             </div>
-                            <div class="photo-slider__slide swiper-slide">
-                                <div class="photo-slider__image">
-                                    <img
-                                        src="img/watch-item/photo-gallery-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
+                        </div>
+                        <div class="photo-slider__slide swiper-slide">
+                            <div class="photo-slider__image">
+                                <img src="img/watch-item/photo-gallery-1.jpg" alt="" />
                             </div>
-                            <div class="photo-slider__slide swiper-slide">
-                                <div class="photo-slider__image">
-                                    <img
-                                        src="img/watch-item/photo-gallery-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
+                        </div>
+                        <div class="photo-slider__slide swiper-slide">
+                            <div class="photo-slider__image">
+                                <img src="img/watch-item/photo-gallery-1.jpg" alt="" />
                             </div>
-                            <div class="photo-slider__slide swiper-slide">
-                                <div class="photo-slider__image">
-                                    <img
-                                        src="img/watch-item/photo-gallery-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
+                        </div>
+                        <div class="photo-slider__slide swiper-slide">
+                            <div class="photo-slider__image">
+                                <img src="img/watch-item/photo-gallery-1.jpg" alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-        @include('modules/footer.html') @include('modals/techParamsModal.html')
-        @include('modals/videoModal.html')
-    </body>
+        </div>
+    </main>
+    @include('modules/footer.html') @include('modals/techParamsModal.html')
+    @include('modals/videoModal.html')
+</body>
+
 </html>

@@ -458,3 +458,73 @@
         }
     }
 }
+
+.watch-descr-list {
+    $root: &;
+    @include md {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+    }
+    &__item {
+        display: flex;
+        &_reverse {
+            flex-direction: row-reverse;
+            #{$root}__line {
+                margin-left: auto;
+                margin-right: -70px;
+                @include lg {
+                    margin-right: -30px;
+                }
+            }
+            #{$root}__image {
+                @include md {
+                    margin-left: auto;
+                }
+            }
+        }
+        @include md {
+            flex-direction: column;
+            padding: 0 15px;
+            gap: 15px;
+        }
+    }
+    &__image {
+        width: 25%;
+        img {
+            vertical-align: middle;
+        }
+        @include md {
+            width: 85%;
+            max-width: 500px;
+        }
+    }
+    &__text {
+        width: 50%;
+        padding: 0 70px 30px;
+        @include lg {
+            padding: 0 30px 30px;
+        }
+        @include md {
+            padding: 0;
+            width: auto;
+            b {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__line {
+        height: 1px;
+        background: rgba(black, 0.25);
+        margin: 15px 0 15px -70px;
+        width: calc(100% + 70px);
+        @include lg {
+            margin-left: -30px;
+            width: calc(100% + 30px);
+        }
+        @include md {
+            display: none;
+        }
+    }
+}
