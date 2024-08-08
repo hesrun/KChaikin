@@ -15,6 +15,7 @@
         align-items: center;
         justify-content: center;
         transition: all 0.4s;
+        overflow: hidden;
         @include hover {
             &:hover {
                 color: white;
@@ -43,6 +44,14 @@
         }
         .main_dark & {
             background: rgba(white, 0.05);
+        }
+        &:hover {
+            .new-product-request {
+                scale: 1;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
         }
     }
     &__item-name {
@@ -116,6 +125,61 @@
         bottom: 30px;
         @include sm {
             display: none;
+        }
+    }
+}
+
+.new-product-request {
+    color: white;
+    background-color: $black;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    scale: 1.1;
+    transition: 0.3s;
+    @include sm {
+        padding: 30px;
+        display: none;
+    }
+    &_modal {
+        min-height: 400px;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        scale: 1;
+        @include sm {
+            padding: 30px;
+            display: flex;
+        }
+    }
+    &__text {
+        text-align: center;
+        text-transform: uppercase;
+        text-wrap: balance;
+    }
+    &__fields {
+        margin: auto 0;
+    }
+    &__links {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    &__link {
+        line-height: 1;
+        font-size: 40px;
+        text-decoration: none;
+        transition: 0.3s;
+        @include hover {
+            opacity: 0.7;
         }
     }
 }

@@ -42,6 +42,14 @@
             background: #fff;
             color: black;
         }
+        &#{$root}_filled {
+            background: white;
+            color: black;
+            &:hover {
+                background: transparent;
+                color: white;
+            }
+        }
     }
     &_black {
         color: black;
@@ -145,18 +153,6 @@
     &:last-child {
         margin-bottom: 0;
     }
-    &_error {
-        box-shadow: 0 0 0 1px #ff1834 inset;
-        label {
-            color: #ff1834 !important;
-        }
-        input {
-            color: #ff1834 !important;
-        }
-        .с-input__note {
-            color: #ff1834 !important;
-        }
-    }
     &__note {
         font-weight: 400;
         position: absolute;
@@ -202,6 +198,29 @@
         }
         label {
             left: 45px;
+        }
+    }
+    &_error {
+        box-shadow: 0 0 0 1px #ff1834 inset;
+        label {
+            color: #ff1834 !important;
+        }
+        input {
+            color: #ff1834 !important;
+        }
+        .с-input__note {
+            color: #ff1834 !important;
+        }
+    }
+    &_dark {
+        background: none;
+        input {
+            border-bottom: 1px rgba(white, 0.15) solid;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        label {
+            padding-left: 0;
         }
     }
 }

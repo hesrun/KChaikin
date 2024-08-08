@@ -1,6 +1,7 @@
 let headerHeight = $('.header').height()
 let screenSize = window.innerWidth
 let md = 768
+let sm = 576
 let currentSlide = 0
 
 const getScrollbarWidth = () =>
@@ -212,6 +213,12 @@ function checkMediaQuery() {
     } else {
         $('.header__search').prepend($('#searchForm'))
     }
+
+    if (screenSize < sm) {
+        $('.productRequest').click(function () {
+            $('#productRequestModal').modal({ fadeDuration: 300 })
+        })
+    }
 }
 checkMediaQuery()
 
@@ -390,33 +397,3 @@ if (phoneInput) {
             'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/utils.min.js',
     })
 }
-
-// //yamap
-// initMap()
-//
-// async function initMap() {
-//     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-//     await ymaps3.ready
-//
-//     const { YMap, YMapDefaultSchemeLayer } = ymaps3
-//
-//     // Иницилиазируем карту
-//     const map = new YMap(
-//         // Передаём ссылку на HTMLElement контейнера
-//         document.getElementById('yaMap'),
-//
-//         // Передаём параметры инициализации карты
-//         {
-//             location: {
-//                 // Координаты центра карты
-//                 center: [37.588144, 55.733842],
-//
-//                 // Уровень масштабирования
-//                 zoom: 10,
-//             },
-//         }
-//     )
-//
-//     // Добавляем слой для отображения схематической карты
-//     map.addChild(new YMapDefaultSchemeLayer())
-// }
