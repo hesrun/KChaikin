@@ -827,6 +827,12 @@ input[type=number] {
 .с-input_error .с-input__note {
   color: #ff1834 !important;
 }
+.с-input_error.с-input_dark {
+  box-shadow: none;
+}
+.с-input_error.с-input_dark input {
+  border-color: #ff1834 !important;
+}
 .с-input_dark {
   background: none;
 }

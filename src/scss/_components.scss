@@ -145,6 +145,7 @@
 }
 
 .с-input {
+    $root: &;
     height: 60px;
     background: white;
     border-radius: 8px;
@@ -210,6 +211,12 @@
         }
         .с-input__note {
             color: #ff1834 !important;
+        }
+        &#{$root}_dark {
+            box-shadow: none;
+            input {
+                border-color: #ff1834 !important;
+            }
         }
     }
     &_dark {
