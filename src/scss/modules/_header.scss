@@ -332,6 +332,9 @@
             opacity: 0.7;
         }
     }
+    @include md {
+        z-index: 3;
+    }
 }
 .header-burger {
     display: flex;
