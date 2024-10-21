@@ -28,7 +28,14 @@
         @content;
     }
 }
-
+@mixin autocomplete($background, $color) {
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px $background inset;
+        -webkit-text-fill-color: $color;
+        caret-color: $color;
+        font-style: normal;
+    }
+}
 @mixin scrollbars(
     $size,
     $foreground-color,

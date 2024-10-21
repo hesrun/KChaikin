@@ -168,9 +168,11 @@
         width: 100%;
         padding: 15px 15px 0;
         line-height: 20px;
+        border-radius: 8px;
         @include placeholder {
             color: transparent;
         }
+        @include autocomplete(white, black);
         &:placeholder-shown + label {
             line-height: 60px;
             font-size: 16px;

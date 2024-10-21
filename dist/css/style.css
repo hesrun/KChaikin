@@ -755,6 +755,7 @@ input[type=number] {
   width: 100%;
   padding: 15px 15px 0;
   line-height: 20px;
+  border-radius: 8px;
 }
 .с-input input::-webkit-input-placeholder {
   color: transparent;
@@ -772,11 +773,16 @@ input[type=number] {
   color: transparent;
 }
 
+.с-input input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-text-fill-color: black;
+  caret-color: black;
+  font-style: normal;
+}
 .с-input input:-ms-input-placeholder + label {
   line-height: 60px;
   font-size: 16px;
 }
-
 .с-input input:placeholder-shown + label {
   line-height: 60px;
   font-size: 16px;
