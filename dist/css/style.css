@@ -1482,6 +1482,7 @@ input[type=number] {
 }
 .header_black {
   color: #1f2022;
+  background: #e5e5e5;
 }
 .header_black:after {
   background: rgba(0, 0, 0, 0.1);
