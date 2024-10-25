@@ -1683,6 +1683,15 @@ input[type=number] {
   display: flex;
   flex-direction: column;
 }
+.navigation__account {
+  font-size: 24px;
+  padding: 5px 10px;
+}
+.navigation__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .navigation__footer {
   display: flex;
   align-items: center;

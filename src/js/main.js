@@ -209,11 +209,10 @@ $('.header__search-input').on('paste keyup', function () {
 
 function checkMediaQuery() {
     if (screenSize < md) {
-        $('#menu .container').prepend($('#searchForm'))
+        $('.navigation__head').prepend($('#searchForm'))
     } else {
         $('.header__search').prepend($('#searchForm'))
     }
-
     if (screenSize < sm) {
         $('.productRequest').click(function () {
             $('#productRequestModal').modal({ fadeDuration: 300 })
