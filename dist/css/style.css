@@ -1686,6 +1686,12 @@ input[type=number] {
 .navigation__account {
   font-size: 24px;
   padding: 5px 10px;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .navigation__account {
+    display: block;
+  }
 }
 .navigation__head {
   display: flex;

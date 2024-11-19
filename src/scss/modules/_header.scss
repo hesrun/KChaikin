@@ -400,6 +400,10 @@
     &__account {
         font-size: 24px;
         padding: 5px 10px;
+        display: none;
+        @include md {
+            display: block;
+        }
     }
     &__head {
         display: flex;
