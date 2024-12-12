@@ -43,7 +43,14 @@ button {
     flex: 1 0 auto;
     position: relative;
     z-index: 1;
-    &:not(:has(.hero-slider, .page-hero, .page-section_dark:first-child)) {
+    &:not(
+            :has(
+                    .hero-banner,
+                    .hero-slider,
+                    .page-hero,
+                    .page-section_dark:first-child
+                )
+        ) {
         padding-top: 60px;
     }
     &_dark {
@@ -84,7 +91,6 @@ button {
 }
 .page-section {
     margin-top: 100px;
-
     @include md {
         margin-top: 40px;
     }
@@ -129,6 +135,9 @@ button {
         .section-head__subtitle {
             color: white;
         }
+    }
+    &_clear-top {
+        margin-top: 0;
     }
 }
 .section-head {
@@ -240,6 +249,13 @@ button {
             font-size: 20px;
         }
     }
+}
+.full-title {
+    color: #0d0d0d;
+    font-size: clamp(77px, 19.2vw, 250px);
+    text-transform: uppercase;
+    opacity: 0.04;
+    line-height: 1;
 }
 p {
     margin-bottom: 15px;

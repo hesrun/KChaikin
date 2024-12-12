@@ -358,3 +358,15 @@ if (phoneInput) {
     utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/utils.min.js'
   });
 }
+
+function slideRestimons() {
+  var images = $('.restimons-builder__image img');
+  var index = 0;
+  setInterval(function () {
+    images.eq(index).removeClass('active');
+    index = (index + 1) % images.length;
+    images.eq(index).addClass('active');
+  }, 3000);
+}
+
+slideRestimons();

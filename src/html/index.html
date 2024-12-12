@@ -1,315 +1,318 @@
 <!doctype html>
 <html lang="ru">
-    @include('modules/link.html',{ 'title': 'Main' })
-    <body>
-        @include('modules/header.html',{'theme':'white'})
-        <main class="main">
-            <div class="hero-slider swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/main/slider-img-1-mob.jpg"
-                            />
-                            <img src="img/main/slider-img-1.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>
-                                    ЗВЕЗДОЧЕТ <br />
-                                    ЗВЕЗДОЧЕТ
-                                </h2>
-                                <span>
-                                    Самые сложные часы <br />
-                                    Константина Чайкина
-                                </span>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
-                            </div>
-                        </div>
+@include('modules/link.html',{ 'title': 'Main' })
+
+<body>
+    @include('modules/header.html',{'theme':'white'})
+    <main class="main">
+        <section style="display: none;" class="hero-banner hero-banner_brown">
+            <div class="container hero-banner__container">
+                <div class="hero-banner__info">
+                    <h1 class="hero-banner__title">Зооморфный ристмон</h1>
+                    <h2 class="hero-banner__subtitle">ThinKing</h2>
+                    <div class="hero-banner__text">
+                        Новый персонаж в коллекции «ристмонов» Константина Чайкина – это всегда событие. И не только
+                        потому что у коллекционеров
+                        появится возможность прибрести часы нового эффектного дизайна, но и потому что это всегда
+                        интересно: какую новую
+                        дизайнерскую идею или усложнение как будто из шляпы фокусника достанет Чайкин, неутомимый
+                        выдумщик и изобретатель.
                     </div>
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/main/slider-img-2.jpg"
-                            />
-                            <img src="img/main/slider-img-2.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>
-                                    КОЦОУР <br />
-                                    ЛОХМАТЫй
-                                </h2>
-                                <span>
-                                    Самые сложные часы <br />
-                                    Константина Чайкина
-                                </span>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
-                            </div>
-                        </div>
+                    <a href="" class="button button_white">
+                        Подробнее
+                        <i class="icon-arrow-up-right"></i>
+                    </a>
+                </div>
+                <picture class="hero-banner__image">
+                    <img src="img/index/banner-img-4.png">
+                </picture>
+            </div>
+        </section>
+
+        <section class="hero-banner hero-banner_gray">
+            <div class="container hero-banner__container">
+                <div class="hero-banner__info">
+                    <h1 class="hero-banner__title">Самые тонкие
+                        механические
+                        часы в мире</h1>
+                    <h2 class="hero-banner__subtitle">ThinKing</h2>
+                    <div class="hero-banner__text">
+                        В истории часового дела было несколько периодов, когда часовщики серьезно занимались радикальным
+                        снижением толщины
+                        часовых механизмов и, следовательно, также часов - мы называем это гонкой за самыми тонкими
+                        часами. Мы становимся
+                        свидетелями гонки, которая продолжается и по сей день.
                     </div>
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/main/slider-img-3.jpg"
-                            />
-                            <img src="img/main/slider-img-3.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>МАЭСТО</h2>
-                                <span>
-                                    Самые сложные часы <br />
-                                    Константина Чайкина
-                                </span>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
-                            </div>
-                        </div>
+                    <a href="" class="button button_white">
+                        Подробнее
+                        <i class="icon-arrow-up-right"></i>
+                    </a>
+                </div>
+                <picture class="hero-banner__image">
+                    <img src="img/index/banner-img-3.png">
+                </picture>
+            </div>
+        </section>
+
+        <section style="display: none;" class="hero-banner hero-banner_green">
+            <div class="container hero-banner__container">
+                <div class="hero-banner__info">
+                    <h1 class="hero-banner__title">Возвращение легенды</h1>
+                    <h2 class="hero-banner__subtitle">Джокер Классик</h2>
+                    <div class="hero-banner__text">
+                        В апреле 2024 года Константин Чайкин представил на выставке Masters
+                        of Horology в Женеве новые часы — «Джокер Классик»
+                        из коллекции «Ристмоны», линии часов с антропоморфными циферблатами (от англ. wrist monster,
+                        «монстр на запястье»).
+                        Можно без преувеличения сказать, что ценители бренда и высокого часового искусства ждали этого
+                        момента последние семь
+                        лет.
+                    </div>
+                    <a href="" class="button button_white">
+                        Подробнее
+                        <i class="icon-arrow-up-right"></i>
+                    </a>
+                </div>
+                <picture class="hero-banner__image">
+                    <img src="img/index/banner-img-2.png">
+                </picture>
+            </div>
+        </section>
+
+        <section style="display: none;" class="hero-banner hero-banner_black">
+            <div class="container hero-banner__container">
+                <div class="hero-banner__info">
+                    <h1 class="hero-banner__title">Самые сложные наручные часы, созданные в России</h1>
+                    <h2 class="hero-banner__subtitle">Звездочет</h2>
+                    <div class="hero-banner__text">Включает 17 усложнений, механизм состоит из <br> 664 деталей</div>
+                    <a href="" class="button button_white">
+                        Подробнее
+                        <i class="icon-arrow-up-right"></i>
+                    </a>
+                </div>
+                <picture class="hero-banner__image hero-banner__image_first">
+                    <img src="img/index/banner-img-1.png">
+                </picture>
+            </div>
+        </section>
+
+        <section class="index-nav">
+            <a href="" class="index-nav__item">
+                <div class="container index-nav__item-container">
+                    <img src="img/index/nav-thumb-1.jpg" alt="" class="index-nav__thumb">
+                    <div class="index-nav__name">Ристмоны</div>
+                    <div class="index-nav__descr">Самая известная коллекция <br>
+                        наручных часов</div>
+                </div>
+            </a>
+            <a href="" class="index-nav__item">
+                <div class="container index-nav__item-container">
+                    <img src="img/index/nav-thumb-2.jpg" alt="" class="index-nav__thumb">
+                    <div class="index-nav__name">Космическая программа</div>
+                    <div class="index-nav__descr">Константин Чайкин покоряет <br>
+                        Часовую Вселенную</div>
+                </div>
+            </a>
+            <a href="" class="index-nav__item">
+                <div class="container index-nav__item-container">
+                    <img src="img/index/nav-thumb-3.jpg" alt="" class="index-nav__thumb">
+                    <div class="index-nav__name">Классические часы</div>
+                    <div class="index-nav__descr">Классические формы с <br>
+                        уникальным характером</div>
+                </div>
+            </a>
+            <a href="" class="index-nav__item">
+                <div class="container index-nav__item-container">
+                    <img src="img/index/nav-thumb-4.jpg" alt="" class="index-nav__thumb">
+                    <div class="index-nav__name">Интерьерные часы</div>
+                    <div class="index-nav__descr">Время в его самой <br>
+                        изысканной форме</div>
+                </div>
+            </a>
+            <a href="" class="index-nav__item">
+                <div class="container index-nav__item-container">
+                    <img src="img/index/nav-thumb-5.jpg" alt="" class="index-nav__thumb">
+                    <div class="index-nav__name">Уникальные часы</div>
+                    <div class="index-nav__descr">Шедевры, сотканные временем</div>
+                </div>
+            </a>
+            <a href="" class="index-nav__item">
+                <div class="container index-nav__item-container">
+                    <img src="img/index/nav-thumb-6.jpg" alt="" class="index-nav__thumb">
+                    <div class="index-nav__name">Онлайн-магазин</div>
+                    <div class="index-nav__descr">Для тех, кто ценит время <br>
+                        и творчество Чайкина</div>
+                </div>
+            </a>
+        </section>
+
+        <section class="new-items-section">
+            <div class="container">
+                <div class="full-title">
+                    <span class="full-title__text">Новинки</span>
+                </div>
+                <div class="new-items-list">
+                    <a href="" class="new-items-list__item">
+                        <img src="img/index/sample-watch-1.png" alt="" class="new-items-list__image">
+                        <span class="new-items-list__name">СЕНЕКА</span>
+                    </a>
+                    <a href="" class="new-items-list__item">
+                        <img src="img/index/sample-watch-2.png" alt="" class="new-items-list__image">
+                        <span class="new-items-list__name">THINKING</span>
+                    </a>
+                    <a href="" class="new-items-list__item">
+                        <img src="img/index/sample-watch-3.png" alt="" class="new-items-list__image">
+                        <span class="new-items-list__name">ЗВЕЗДОЧЕТ</span>
+                    </a>
+                    <a href="" class="new-items-list__item">
+                        <img src="img/index/sample-watch-4.png" alt="" class="new-items-list__image">
+                        <span class="new-items-list__name">ДЖОКЕР КЛАССИК</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section__clear-top restimons-builder">
+            <div class="container restimons-builder__container">
+                <div class="restimons-builder__info">
+                    <h2 class="restimons-builder__title">
+                        Конструктор Ристмонов
+                    </h2>
+                    <div class="restimons-builder__subtitle">
+                        Закажите часы, которых нет ни у кого в мире
+                    </div>
+                    <div class="restimons-builder__text">
+                        Вы можете заказать уникальный экземпляр часов из коллекции «Ристмоны», на основе одной из
+                        серийных моделей
+                    </div>
+                    <a href="" class="button button_white">
+                        Перейти в конструктор
+                        <i class="icon-arrow-up-right"></i>
+                    </a>
+                </div>
+                <div class="restimons-builder__image">
+                    <img src="img/index/restimon-1.png" alt="" class="active">
+                    <img src="img/index/restimon-2.png" alt="">
+                    <img src="img/index/restimon-3.png" alt="">
+                    <img src="img/index/restimon-4.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section m-hidden">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-head__subtitle">НОВОСТИ И СОБЫТИЯ</span>
+                    <h2 class="section-head__title">БУДЬТе В КУРСе</h2>
+                </div>
+                <div class="newsletter-grid-wrap">
+                    <div class="newsletter-grid">
+                        <a href="" class="newsletter-grid__item">
+                            <blockquote class="newsletter-grid__text">
+                                Константин Чайкин в третий раз примет
+                                участие в
+                            </blockquote>
+                            <span class="newsletter-grid__date">23 АПРЕЛЯ</span>
+                        </a>
+                        <a href="" class="newsletter-grid__item">
+                            <blockquote class="newsletter-grid__text">
+                                Константин Чайкин в третий раз примет
+                                участие в выставке Masters of Horology 23
+                                АПРЕЛЯ
+                            </blockquote>
+                            <span class="newsletter-grid__date">23 АПРЕЛЯ</span>
+                        </a>
+                        <a href="" class="newsletter-grid__item">
+                            <blockquote class="newsletter-grid__text">
+                                Константин Чайкин в третий раз примет
+                                участие в выставке Masters of Horology 23
+                                АПРЕЛЯ
+                            </blockquote>
+                            <span class="newsletter-grid__date">23 АПРЕЛЯ</span>
+                        </a>
                     </div>
                 </div>
-                <div class="hero-slider__pagination">
-                    <div class="container">
-                        <div class="swiper-pagination"></div>
-                        <div class="divider"></div>
-                        <div class="swiper-nav">
-                            <div class="hero-prev">
-                                <i class="icon-arrow-left"></i>
-                            </div>
-                            <div class="hero-next">
-                                <i class="icon-arrow-right"></i>
-                            </div>
+                <div class="to-all-news">
+                    <a href="#" class="button button_black">Все новости</a>
+                    <div class="to-all-news__social">
+                        <a href="">
+                            <i class="icon-instagram"></i>
+                        </a>
+                        <a href="">
+                            <i class="icon-telegram"></i>
+                        </a>
+                        <span>ПОДПИШИТЕСЬ, ЧТОБЫ <br />НИЧЕГО НЕ
+                            ПРОПУСТИТЬ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="club-card-grid">
+                    <div class="club-card-grid__item">
+                        <img src="img/main/Frame%202857436.jpg" alt="" />
+                        <div class="club-card-grid__info">
+                            <span>Стать владельцем</span>
+                            <a href="#" class="button button_gray button_medium">Как купить?</a>
+                            <a href="#" class="button button_gray button_medium">Где купить?</a>
+                        </div>
+                    </div>
+                    <div class="club-card-grid__item">
+                        <img src="img/main/Frame%202857438.jpg" alt="" />
+                        <div class="club-card-grid__info">
+                            <span>Онлайн магазин</span>
+                            <a href="#" class="button button_gray button_medium">За покупками</a>
+                        </div>
+                    </div>
+                    <div class="club-card-grid__item">
+                        <img src="img/main/Frame%202857437.jpg" alt="" />
+                        <div class="club-card-grid__info club-card-grid__info_right">
+                            <span>Клуб <br />владельцев</span>
+                            <a href="#" class="button button_gray button_medium">Войти</a>
+                            <a href="#" class="button button_gray button_medium">Регистрация</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head">
-                        <span class="section-head__subtitle"
-                            >КОНСТАНТИН ЧАЙКИН</span
-                        >
-                        <h2 class="section-head__title">Коллекция часов</h2>
-                    </div>
-                    <div class="watch-collection-grid">
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_2x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/main/Rectangle 14.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name"
-                                >Наручные часы</span
-                            >
-                        </a>
-                        <a href="#" class="watch-collection-grid__item">
-                            <div class="watch-collection-grid__image">
-                                <img src="img/main/Rectangle 15.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name"
-                                >ИНТЕРЬЕРНЫЕ часы</span
-                            >
-                        </a>
-                        <a href="#" class="watch-collection-grid__item">
-                            <div class="watch-collection-grid__image">
-                                <img src="img/main/Rectangle 16.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name"
-                                >ИСТОРИЧЕСКИЕ ШЕДЕВРЫ</span
-                            >
-                        </a>
-                        <a href="#" class="watch-collection-grid__item">
-                            <div class="watch-collection-grid__image">
-                                <img src="img/main/Rectangle 18.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name"
-                                >АКСЕССУАРЫ</span
-                            >
-                        </a>
-                        <a href="#" class="watch-collection-grid__item">
-                            <div class="watch-collection-grid__image">
-                                <img src="img/main/Rectangle 19.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name"
-                                >ЭСКИЗЫ</span
-                            >
-                        </a>
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_2x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/main/Rectangle 17.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name"
-                                >УНИКАЛЬНЫЕ ЧАСЫ</span
-                            >
-                        </a>
-                    </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-head__subtitle">МАНУФАКТУРА</span>
+                    <h3 class="section-head__title text-reveal-anim">
+                        Основана в 2003 году Константином Чайкиным,
+                        изобретателем и часовщиком из России. Единственный
+                        часовой бренд, который полностью производит в России
+                        высококлассные часы категории «люкс».
+                    </h3>
                 </div>
-            </section>
-            <section class="page-section m-hidden">
-                <div class="container">
-                    <div class="section-head">
-                        <span class="section-head__subtitle"
-                            >НОВОСТИ И СОБЫТИЯ</span
-                        >
-                        <h2 class="section-head__title">БУДЬТе В КУРСе</h2>
-                    </div>
-                    <div class="newsletter-grid-wrap">
-                        <div class="newsletter-grid">
-                            <a href="" class="newsletter-grid__item">
-                                <blockquote class="newsletter-grid__text">
-                                    Константин Чайкин в третий раз примет
-                                    участие в
-                                </blockquote>
-                                <span class="newsletter-grid__date"
-                                    >23 АПРЕЛЯ</span
-                                >
-                            </a>
-                            <a href="" class="newsletter-grid__item">
-                                <blockquote class="newsletter-grid__text">
-                                    Константин Чайкин в третий раз примет
-                                    участие в выставке Masters of Horology 23
-                                    АПРЕЛЯ
-                                </blockquote>
-                                <span class="newsletter-grid__date"
-                                    >23 АПРЕЛЯ</span
-                                >
-                            </a>
-                            <a href="" class="newsletter-grid__item">
-                                <blockquote class="newsletter-grid__text">
-                                    Константин Чайкин в третий раз примет
-                                    участие в выставке Masters of Horology 23
-                                    АПРЕЛЯ
-                                </blockquote>
-                                <span class="newsletter-grid__date"
-                                    >23 АПРЕЛЯ</span
-                                >
-                            </a>
+                <div class="about-master">
+                    <img class="about-master__image" src="img/main/konstantin-chaykin-01 1.jpg" alt="" />
+                    <div class="about-master__info">
+                        <div class="about-master__text">
+                            Константин Чайкин и его мануфактура известны
+                            ценителям часового искусства во всём мире, бренд
+                            «<b>Константин Чайкин</b>» (Konstantin Chaykin)
+                            признан всемирным профессиональным сообществом
+                            как один из наиболее креативных и оригинальных.
                         </div>
-                    </div>
-                    <div class="to-all-news">
-                        <a href="#" class="button button_black">Все новости</a>
-                        <div class="to-all-news__social">
-                            <a href="">
-                                <i class="icon-instagram"></i>
+                        <img src="img/main/sign.gif" alt="" class="signature" />
+                        <div class="about-master__more">
+                            <div>СМОТРИТЕ ТАКЖЕ:</div>
+                            <a href="" class="button button_black">
+                                Мануфактура
                             </a>
-                            <a href="">
-                                <i class="icon-telegram"></i>
+                            <a href="" class="button button_black">
+                                Константин Чайкин
                             </a>
-                            <span
-                                >ПОДПИШИТЕСЬ, ЧТОБЫ <br />НИЧЕГО НЕ
-                                ПРОПУСТИТЬ</span
-                            >
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="page-section">
-                <div class="container">
-                    <div class="club-card-grid">
-                        <div class="club-card-grid__item">
-                            <img src="img/main/Frame%202857436.jpg" alt="" />
-                            <div class="club-card-grid__info">
-                                <span>Стать владельцем</span>
-                                <a
-                                    href="#"
-                                    class="button button_gray button_medium"
-                                    >Как купить?</a
-                                >
-                                <a
-                                    href="#"
-                                    class="button button_gray button_medium"
-                                    >Где купить?</a
-                                >
-                            </div>
-                        </div>
-                        <div class="club-card-grid__item">
-                            <img src="img/main/Frame%202857438.jpg" alt="" />
-                            <div class="club-card-grid__info">
-                                <span>Онлайн магазин</span>
-                                <a
-                                    href="#"
-                                    class="button button_gray button_medium"
-                                    >За покупками</a
-                                >
-                            </div>
-                        </div>
-                        <div class="club-card-grid__item">
-                            <img src="img/main/Frame%202857437.jpg" alt="" />
-                            <div
-                                class="club-card-grid__info club-card-grid__info_right"
-                            >
-                                <span>Клуб <br />владельцев</span>
-                                <a
-                                    href="#"
-                                    class="button button_gray button_medium"
-                                    >Войти</a
-                                >
-                                <a
-                                    href="#"
-                                    class="button button_gray button_medium"
-                                    >Регистрация</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head">
-                        <span class="section-head__subtitle">МАНУФАКТУРА</span>
-                        <h3 class="section-head__title text-reveal-anim">
-                            Основана в 2003 году Константином Чайкиным,
-                            изобретателем и часовщиком из России. Единственный
-                            часовой бренд, который полностью производит в России
-                            высококлассные часы категории «люкс».
-                        </h3>
-                    </div>
-                    <div class="about-master">
-                        <img
-                            class="about-master__image"
-                            src="img/main/konstantin-chaykin-01 1.jpg"
-                            alt=""
-                        />
-                        <div class="about-master__info">
-                            <div class="about-master__text">
-                                Константин Чайкин и его мануфактура известны
-                                ценителям часового искусства во всём мире, бренд
-                                «<b>Константин Чайкин</b>» (Konstantin Chaykin)
-                                признан всемирным профессиональным сообществом
-                                как один из наиболее креативных и оригинальных.
-                            </div>
-                            <img
-                                src="img/main/sign.gif"
-                                alt=""
-                                class="signature"
-                            />
-                            <div class="about-master__more">
-                                <div>СМОТРИТЕ ТАКЖЕ:</div>
-                                <a href="" class="button button_black">
-                                    Мануфактура
-                                </a>
-                                <a href="" class="button button_black">
-                                    Константин Чайкин
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        @include('modules/footer.html')
-    </body>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+</body>
+
 </html>
