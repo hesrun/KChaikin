@@ -632,6 +632,31 @@ input[type=number] {
   transition: all 0.3s;
   gap: 10px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  z-index: 0;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+@media (any-hover: hover) {
+  .button:hover:before {
+    transform: scale(1);
+  }
+}
+.button__text {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 1;
 }
 @media only screen and (max-width: 768px) {
   .button {
@@ -657,29 +682,38 @@ input[type=number] {
   color: white;
   border-color: white;
 }
+.button_white:before {
+  background: white;
+}
 .button_white:hover {
-  background: #fff;
   color: black;
 }
 .button_white.button_filled {
   background: white;
   color: black;
 }
+.button_white.button_filled:before {
+  background: black;
+}
 .button_white.button_filled:hover {
-  background: transparent;
   color: white;
 }
 .button_black {
   color: black;
   border-color: black;
 }
-.button_black:hover {
+.button_black:before {
   background: black;
+}
+.button_black:hover {
   color: white;
 }
 .button_black.button_filled {
   background: black;
   color: white;
+}
+.button_black.button_filled:before {
+  background: white;
 }
 .button_black.button_filled:hover {
   background: transparent;
@@ -703,8 +737,10 @@ input[type=number] {
   color: #dca16c;
   border-color: #dca16c;
 }
-.button_orange:hover {
+.button_orange:before {
   background: #dca16c;
+}
+.button_orange:hover {
   color: black;
 }
 .button_medium {
@@ -2825,9 +2861,17 @@ input[type=number] {
   text-decoration: none;
   transition: all 0.5s;
 }
-.index-nav__item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
+@media (any-hover: hover) {
+  .index-nav__item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  .index-nav__item:hover .index-nav__name {
+    transform: scale(1.05);
+  }
+  .index-nav__item:hover .index-nav__descr {
+    transform: scale(1.1);
+  }
 }
 .index-nav__item-container {
   display: grid;
@@ -2842,10 +2886,12 @@ input[type=number] {
 .index-nav__name {
   font-size: 2.25rem;
   font-weight: 100;
+  transition: all 0.3s;
 }
 .index-nav__descr {
   font-size: 16px;
   opacity: 0.6;
+  transition: all 0.3s;
 }
 
 .index-nav-cursor {
@@ -2863,6 +2909,7 @@ input[type=number] {
   pointer-events: none;
   transform: scale(0);
   transition: transform 0.3s;
+  background: black;
 }
 .index-nav-cursor.active {
   transform: scale(1);
@@ -2893,17 +2940,23 @@ input[type=number] {
   gap: 30px;
   z-index: 1;
 }
+@media (any-hover: hover) {
+  .new-items-list:hover .new-items-list__item {
+    filter: blur(4px);
+  }
+}
 .new-items-list__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  filter: blur(4px);
   transition: filter 0.3s;
 }
 @media (any-hover: hover) {
   .new-items-list__item:hover {
-    filter: blur(0px);
+    filter: blur(0px) !important;
+  }
+  .new-items-list__item:hover .new-items-list__image {
     scale: 1.1;
   }
 }
@@ -2911,6 +2964,7 @@ input[type=number] {
   margin: auto;
   max-width: 220px;
   margin-bottom: 10px;
+  transition: all 0.3s;
 }
 
 .restimons-builder {
@@ -2941,7 +2995,7 @@ input[type=number] {
   width: 125%;
   vertical-align: middle;
   opacity: 0;
-  transition: all 0.3s ease-out;
+  transition: all 3s linear;
 }
 .restimons-builder__image img.active {
   opacity: 1;
@@ -2960,6 +3014,7 @@ input[type=number] {
 .restimons-builder__title {
   font-size: 80px;
   margin-bottom: 10px;
+  text-transform: none;
 }
 .restimons-builder__subtitle {
   font-size: 20px;
@@ -2975,6 +3030,13 @@ input[type=number] {
   overflow: hidden;
   position: relative;
   margin-bottom: 70px;
+}
+.master-parallax__image {
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 .master-parallax__text {
   position: absolute;

@@ -467,6 +467,14 @@ function initMenuCursor() {
         $('.index-nav-cursor img').eq(index).addClass('active')
     })
 
+    $(window).scroll(function () {
+        $('.index-nav__item').on('mouseenter', function () {
+            const index = $(this).index()
+            $('.index-nav-cursor img').removeClass('active')
+            $('.index-nav-cursor img').eq(index).addClass('active')
+        })
+    })
+
     // Бесконечный цикл анимации
     gsap.to(
         {},
@@ -540,3 +548,9 @@ function masterParallax() {
     })
 }
 masterParallax()
+
+/* ------------------------------ button Remake ----------------------------- */
+
+$('.button').each(function () {
+    $(this).html('<span class="button__text">' + $(this).html() + '<span>')
+})
