@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                                 hero banner                                */
+/* -------------------------------------------------------------------------- */
 .hero-banner {
     color: white;
     position: relative;
@@ -66,6 +69,10 @@
         }
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                 hero-slider                                */
+/* -------------------------------------------------------------------------- */
 
 .hero-slider {
     position: relative;
@@ -340,8 +347,13 @@
     }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                  index-nav                                 */
+/* -------------------------------------------------------------------------- */
+
 .new-items-section {
-    padding: 130px 0;
+    padding: 100px 0;
+    position: relative;
 }
 .new-items-list {
     $root: &;
@@ -377,6 +389,60 @@
     }
 }
 
+.new-items-preview {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: white;
+    visibility: hidden;
+    &__item {
+        height: 100%;
+        display: none;
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        height: 100%;
+    }
+    &__btns {
+        display: flex;
+        gap: 30px;
+    }
+    &__info {
+        padding: 60px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-size: 70px;
+        font-weight: 100;
+        line-height: 1;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        font-size: 40px;
+        font-weight: 100;
+        line-height: 1;
+        margin-bottom: auto;
+    }
+    &__text {
+        max-width: 450px;
+        margin: 30px 0;
+    }
+    &__image {
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             .new-items-section                             */
+/* -------------------------------------------------------------------------- */
+
 .restimons-builder {
     overflow: hidden;
     background: black;
@@ -410,6 +476,8 @@
             vertical-align: middle;
             opacity: 0;
             transition: all 3s linear;
+            &.previous {
+            }
             &.active {
                 opacity: 1;
             }

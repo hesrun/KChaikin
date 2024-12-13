@@ -402,10 +402,15 @@ if (phoneInput) {
 function slideRestimons() {
     let images = $('.restimons-builder__image img')
     let index = 0
+    let prevIndex = images.length - 1
 
     setInterval(() => {
+        images.eq(prevIndex).removeClass('previous')
         images.eq(index).removeClass('active')
+        prevIndex = index
         index = (index + 1) % images.length
+
+        images.eq(prevIndex).addClass('previous')
         images.eq(index).addClass('active')
     }, 3000)
 }
@@ -515,7 +520,6 @@ function initNewItemsAnimation() {
         },
     })
 
-    // Add animations to the timeline
     tl.from(title, {
         y: 600,
         duration: 1,
@@ -523,11 +527,58 @@ function initNewItemsAnimation() {
         y: 300,
         duration: 1,
         opacity: 0,
-        stagger: 0.05, // Задержка между анимациями элементов
+        stagger: 0.05,
         ease: 'power2.out',
     })
 }
 initNewItemsAnimation()
+
+function openPreview() {
+    const section = $('.new-items-section')
+    const modal = $('.new-items-preview')
+    let lastClickX = 0
+    let lastClickY = 0
+
+    $('.new-items-list__item').on('click', function (e) {
+        e.preventDefault()
+
+        $('.new-items-preview__item').hide()
+        $('.new-items-preview__item').eq($(this).index()).show()
+
+        const sectionOffset = section.offset()
+        lastClickX = e.pageX - sectionOffset.left
+        lastClickY = e.pageY - sectionOffset.top
+
+        modal.css('visibility', 'visible')
+
+        gsap.fromTo(
+            modal,
+            {
+                clipPath: `circle(0 at ${lastClickX}px ${lastClickY}px)`,
+            },
+            {
+                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+                duration: 1,
+            }
+        )
+    })
+
+    $('.new-items-preview__close').on('click', function () {
+        console.log(lastClickX, lastClickY)
+
+        gsap.fromTo(
+            modal,
+            {
+                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+            },
+            {
+                clipPath: `circle(0% at ${lastClickX}px ${lastClickY}px)`,
+                duration: 1,
+            }
+        )
+    })
+}
+openPreview()
 
 /* ---------------------------- master parallax --------------------------- */
 function masterParallax() {
@@ -552,5 +603,5 @@ masterParallax()
 /* ------------------------------ button Remake ----------------------------- */
 
 $('.button').each(function () {
-    $(this).html('<span class="button__text">' + $(this).html() + '<span>')
+    $(this).html('<span class="button__text">' + $(this).html() + '</span>')
 })

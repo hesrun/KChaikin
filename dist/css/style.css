@@ -619,7 +619,7 @@ input[type=number] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   background: none;
   border: 1px transparent solid;
@@ -646,6 +646,9 @@ input[type=number] {
   transform: scale(0);
   transition: all 0.3s;
 }
+.button [class^=icon] {
+  font-size: 24px;
+}
 @media (any-hover: hover) {
   .button:hover:before {
     transform: scale(1);
@@ -671,12 +674,6 @@ input[type=number] {
 .button_sub-text .button__sub-text {
   font-size: 12px;
   opacity: 0.7;
-}
-.button_icon {
-  gap: 10px;
-}
-.button_icon .icon {
-  font-size: 24px;
 }
 .button_white {
   color: white;
@@ -2586,6 +2583,9 @@ input[type=number] {
     translate: 0;
   }
 }
+/* -------------------------------------------------------------------------- */
+/*                                 hero banner                                */
+/* -------------------------------------------------------------------------- */
 .hero-banner {
   color: white;
   position: relative;
@@ -2651,6 +2651,9 @@ input[type=number] {
   margin: auto;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 hero-slider                                */
+/* -------------------------------------------------------------------------- */
 .hero-slider {
   position: relative;
   background: black;
@@ -2928,8 +2931,12 @@ input[type=number] {
   transform: scale(1);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                  index-nav                                 */
+/* -------------------------------------------------------------------------- */
 .new-items-section {
-  padding: 130px 0;
+  padding: 100px 0;
+  position: relative;
 }
 
 .new-items-list {
@@ -2967,6 +2974,58 @@ input[type=number] {
   transition: all 0.3s;
 }
 
+.new-items-preview {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: white;
+  visibility: hidden;
+}
+.new-items-preview__item {
+  height: 100%;
+  display: none;
+}
+.new-items-preview__container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  height: 100%;
+}
+.new-items-preview__btns {
+  display: flex;
+  gap: 30px;
+}
+.new-items-preview__info {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+}
+.new-items-preview__title {
+  font-size: 70px;
+  font-weight: 100;
+  line-height: 1;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.new-items-preview__subtitle {
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 1;
+  margin-bottom: auto;
+}
+.new-items-preview__text {
+  max-width: 450px;
+  margin: 30px 0;
+}
+.new-items-preview__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             .new-items-section                             */
+/* -------------------------------------------------------------------------- */
 .restimons-builder {
   overflow: hidden;
   background: black;
