@@ -358,6 +358,8 @@ if (phoneInput) {
     utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/utils.min.js'
   });
 }
+/* ----------------------------- restimons fade ----------------------------- */
+
 
 function slideRestimons() {
   var images = $('.restimons-builder__image img');
@@ -370,3 +372,123 @@ function slideRestimons() {
 }
 
 slideRestimons();
+/* ----------------------------- parallax mozaik ---------------------------- */
+
+function initParallaxMozaik() {
+  $('.chaykin-mozaik-section').mousemove(function (event) {
+    var _$$0$getBoundingClien = $('.chaykin-mozaik-section')[0].getBoundingClientRect(),
+        left = _$$0$getBoundingClien.left,
+        top = _$$0$getBoundingClien.top;
+
+    var scrollX = window.scrollX || document.documentElement.scrollLeft;
+    var scrollY = window.scrollY || document.documentElement.scrollTop;
+    var x = event.pageX - (left + scrollX);
+    var y = event.pageY - (top + scrollY);
+    gsap.to('.chaykin-mozaik__image', {
+      '--x': "".concat(x, "px"),
+      '--y': "".concat(y, "px"),
+      duration: 1,
+      ease: 'power1.out'
+    });
+  });
+}
+
+initParallaxMozaik();
+/* ------------------------------- MenuCursor ------------------------------- */
+
+function initMenuCursor() {
+  var navBlock = $('.index-nav');
+  var follower = $('.index-nav-cursor');
+  var mouseX = 0,
+      mouseY = 0; // Текущие координаты мыши
+
+  var posX = 0,
+      posY = 0; // Позиция "хвоста"
+
+  $(document).on('mousemove', function (e) {
+    var scrollX = window.scrollX || document.documentElement.scrollLeft;
+    var scrollY = window.scrollY || document.documentElement.scrollTop;
+    mouseX = e.pageX - scrollX;
+    mouseY = e.pageY - scrollY;
+  });
+  $('.index-nav').on('mouseenter', function () {
+    follower.addClass('active');
+  });
+  $('.index-nav').on('mouseleave', function () {
+    follower.removeClass('active');
+  });
+  $('.index-nav__item').on('mouseenter', function () {
+    var index = $(this).index();
+    $('.index-nav-cursor img').removeClass('active');
+    $('.index-nav-cursor img').eq(index).addClass('active');
+  }); // Бесконечный цикл анимации
+
+  gsap.to({}, {
+    duration: 0.016,
+    // ~60 FPS
+    repeat: -1,
+    onRepeat: function onRepeat() {
+      // Плавное следование хвоста
+      posX += (mouseX - posX) / 9;
+      posY += (mouseY - posY) / 9; // Обновление позиции хвоста
+
+      gsap.set(follower, {
+        '--x': "".concat(posX, "px"),
+        '--y': "".concat(posY, "px")
+      });
+    }
+  });
+}
+
+initMenuCursor();
+/* -------------------------------- new items ------------------------------- */
+
+function initNewItemsAnimation() {
+  var items = $('.new-items-list__item');
+  var block = $('.new-items-section');
+  var title = $('.new-items-section .full-title__text');
+  gsap.registerPlugin(ScrollTrigger);
+  var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: block,
+      start: 'top bottom',
+      end: 'bottom top' //scrub: true,
+      //markers: true,
+
+    }
+  }); // Add animations to the timeline
+
+  tl.from(title, {
+    y: 600,
+    duration: 1
+  }).from(items, {
+    y: 300,
+    duration: 1,
+    opacity: 0,
+    stagger: 0.05,
+    // Задержка между анимациями элементов
+    ease: 'power2.out'
+  });
+}
+
+initNewItemsAnimation();
+/* ---------------------------- master parallax --------------------------- */
+
+function masterParallax() {
+  var block = $('.master-parallax');
+  var image = $('.master-parallax__image');
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(image, {
+    y: -300,
+    duration: 1,
+    scrollTrigger: {
+      trigger: block,
+      start: 'top bottom',
+      end: 'bottom center',
+      scrub: true //markers: true,
+
+    }
+  });
+}
+
+masterParallax();

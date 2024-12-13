@@ -397,6 +397,8 @@ if (phoneInput) {
     })
 }
 
+/* ----------------------------- restimons fade ----------------------------- */
+
 function slideRestimons() {
     let images = $('.restimons-builder__image img')
     let index = 0
@@ -407,4 +409,134 @@ function slideRestimons() {
         images.eq(index).addClass('active')
     }, 3000)
 }
+
 slideRestimons()
+
+/* ----------------------------- parallax mozaik ---------------------------- */
+function initParallaxMozaik() {
+    $('.chaykin-mozaik-section').mousemove(function (event) {
+        const { left, top } = $(
+            '.chaykin-mozaik-section'
+        )[0].getBoundingClientRect()
+
+        const scrollX = window.scrollX || document.documentElement.scrollLeft
+        const scrollY = window.scrollY || document.documentElement.scrollTop
+
+        const x = event.pageX - (left + scrollX)
+        const y = event.pageY - (top + scrollY)
+
+        gsap.to('.chaykin-mozaik__image', {
+            '--x': `${x}px`,
+            '--y': `${y}px`,
+            duration: 1,
+            ease: 'power1.out',
+        })
+    })
+}
+initParallaxMozaik()
+
+/* ------------------------------- MenuCursor ------------------------------- */
+
+function initMenuCursor() {
+    const navBlock = $('.index-nav')
+    const follower = $('.index-nav-cursor')
+
+    let mouseX = 0,
+        mouseY = 0 // Текущие координаты мыши
+    let posX = 0,
+        posY = 0 // Позиция "хвоста"
+
+    $(document).on('mousemove', function (e) {
+        const scrollX = window.scrollX || document.documentElement.scrollLeft
+        const scrollY = window.scrollY || document.documentElement.scrollTop
+
+        mouseX = e.pageX - scrollX
+        mouseY = e.pageY - scrollY
+    })
+
+    $('.index-nav').on('mouseenter', function () {
+        follower.addClass('active')
+    })
+    $('.index-nav').on('mouseleave', function () {
+        follower.removeClass('active')
+    })
+
+    $('.index-nav__item').on('mouseenter', function () {
+        const index = $(this).index()
+        $('.index-nav-cursor img').removeClass('active')
+        $('.index-nav-cursor img').eq(index).addClass('active')
+    })
+
+    // Бесконечный цикл анимации
+    gsap.to(
+        {},
+        {
+            duration: 0.016, // ~60 FPS
+            repeat: -1,
+            onRepeat: function () {
+                // Плавное следование хвоста
+                posX += (mouseX - posX) / 9
+                posY += (mouseY - posY) / 9
+
+                // Обновление позиции хвоста
+                gsap.set(follower, {
+                    '--x': `${posX}px`,
+                    '--y': `${posY}px`,
+                })
+            },
+        }
+    )
+}
+initMenuCursor()
+
+/* -------------------------------- new items ------------------------------- */
+function initNewItemsAnimation() {
+    const items = $('.new-items-list__item')
+    const block = $('.new-items-section')
+    const title = $('.new-items-section .full-title__text')
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: block,
+            start: 'top bottom',
+            end: 'bottom top',
+            //scrub: true,
+            //markers: true,
+        },
+    })
+
+    // Add animations to the timeline
+    tl.from(title, {
+        y: 600,
+        duration: 1,
+    }).from(items, {
+        y: 300,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.05, // Задержка между анимациями элементов
+        ease: 'power2.out',
+    })
+}
+initNewItemsAnimation()
+
+/* ---------------------------- master parallax --------------------------- */
+function masterParallax() {
+    const block = $('.master-parallax')
+    const image = $('.master-parallax__image')
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.from(image, {
+        y: -300,
+        duration: 1,
+        scrollTrigger: {
+            trigger: block,
+            start: 'top bottom',
+            end: 'bottom center',
+            scrub: true,
+            //markers: true,
+        },
+    })
+}
+masterParallax()

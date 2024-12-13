@@ -256,6 +256,13 @@ button {
     text-transform: uppercase;
     opacity: 0.04;
     line-height: 1;
+    overflow: hidden;
+    span {
+        display: block;
+    }
+    &_second {
+        font-size: clamp(60px, 13vw, 166px);
+    }
 }
 p {
     margin-bottom: 15px;
@@ -377,7 +384,10 @@ a {
     span {
         opacity: 0.05;
     }
-    @include md {
+    &_small {
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 1.2;
     }
 }
 .article {
