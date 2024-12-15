@@ -620,7 +620,7 @@ input[type=number] {
   min-height: 50px;
   cursor: pointer;
   text-align: center;
-  transition: all 0.3s;
+  transition: color 0.3s, border-color 0.3s;
   gap: 10px;
   text-decoration: none;
   position: relative;
@@ -3072,6 +3072,7 @@ input[type=number] {
   font-size: 80px;
   margin-bottom: 10px;
   text-transform: none;
+  line-height: 1;
 }
 .restimons-builder__subtitle {
   font-size: 20px;

@@ -13,7 +13,9 @@
     min-height: 50px;
     cursor: pointer;
     text-align: center;
-    transition: all 0.3s;
+    transition:
+        color 0.3s,
+        border-color 0.3s;
     gap: 10px;
     text-decoration: none;
     position: relative;

@@ -399,6 +399,28 @@ if (phoneInput) {
     })
 }
 
+/* ----------------------------- hero animation ----------------------------- */
+function heroBannerAnimation() {
+    const heroElements = $('.hero-banner__info > *')
+    const heroImage = $('.hero-banner__image')
+    console.log(heroElements)
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const tl = gsap.timeline()
+    tl.from(heroElements, {
+        x: -100,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+    }).from(heroImage, {
+        x: 100,
+        duration: 1,
+        opacity: 0,
+    })
+}
+heroBannerAnimation()
+
 /* ----------------------------- restimons fade ----------------------------- */
 
 function slideRestimons() {
@@ -561,9 +583,12 @@ function openPreview() {
             modal,
             {
                 clipPath: `circle(0 at ${lastClickX}px ${lastClickY}px)`,
+                ease: 'none',
+                duration: 1,
             },
             {
-                clipPath: `circle(110% at ${lastClickX}px ${lastClickY}px)`,
+                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+                ease: 'none',
                 duration: 1,
             }
         )
@@ -575,10 +600,13 @@ function openPreview() {
         gsap.fromTo(
             modal,
             {
-                clipPath: `circle(110% at ${lastClickX}px ${lastClickY}px)`,
+                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+                ease: 'none',
+                duration: 1,
             },
             {
                 clipPath: `circle(0% at ${lastClickX}px ${lastClickY}px)`,
+                ease: 'none',
                 duration: 1,
             }
         )
@@ -611,7 +639,7 @@ function masterParallax() {
         scrollTrigger: {
             trigger: title,
             start: 'top bottom',
-            end: 'bottom center',
+            end: 'bottom bottom-=200',
             scrub: true,
             //markers: true,
         },

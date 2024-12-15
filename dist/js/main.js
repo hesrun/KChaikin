@@ -358,8 +358,29 @@ if (phoneInput) {
     utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/utils.min.js'
   });
 }
-/* ----------------------------- restimons fade ----------------------------- */
+/* ----------------------------- hero animation ----------------------------- */
 
+
+function heroBannerAnimation() {
+  var heroElements = $('.hero-banner__info > *');
+  var heroImage = $('.hero-banner__image');
+  console.log(heroElements);
+  gsap.registerPlugin(ScrollTrigger);
+  var tl = gsap.timeline();
+  tl.from(heroElements, {
+    x: -100,
+    duration: 1,
+    opacity: 0,
+    stagger: 0.1
+  }).from(heroImage, {
+    x: 100,
+    duration: 1,
+    opacity: 0
+  });
+}
+
+heroBannerAnimation();
+/* ----------------------------- restimons fade ----------------------------- */
 
 function slideRestimons() {
   var images = $('.restimons-builder__image img');
@@ -503,18 +524,24 @@ function openPreview() {
     lastClickY = e.pageY - sectionOffset.top;
     modal.css('visibility', 'visible');
     gsap.fromTo(modal, {
-      clipPath: "circle(0 at ".concat(lastClickX, "px ").concat(lastClickY, "px)")
+      clipPath: "circle(0 at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+      ease: 'none',
+      duration: 1
     }, {
-      clipPath: "circle(110% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+      clipPath: "circle(150% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+      ease: 'none',
       duration: 1
     });
   });
   $('.new-items-preview__close').on('click', function () {
     console.log(lastClickX, lastClickY);
     gsap.fromTo(modal, {
-      clipPath: "circle(110% at ".concat(lastClickX, "px ").concat(lastClickY, "px)")
+      clipPath: "circle(150% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+      ease: 'none',
+      duration: 1
     }, {
       clipPath: "circle(0% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+      ease: 'none',
       duration: 1
     });
   });
@@ -546,7 +573,7 @@ function masterParallax() {
     scrollTrigger: {
       trigger: title,
       start: 'top bottom',
-      end: 'bottom center',
+      end: 'bottom bottom-=200',
       scrub: true //markers: true,
 
     }
