@@ -4,6 +4,7 @@
 .hero-banner {
     color: white;
     position: relative;
+    overflow: hidden;
     &_black {
         background: black;
     }
@@ -52,6 +53,11 @@
     }
     &__image {
         display: flex;
+
+        img {
+            max-width: 470px;
+            margin: auto;
+        }
         &_first {
             position: absolute;
             left: 50%;
@@ -63,10 +69,6 @@
                 max-width: 100%;
                 object-fit: contain;
             }
-        }
-        img {
-            max-width: 470px;
-            margin: auto;
         }
     }
 }

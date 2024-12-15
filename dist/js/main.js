@@ -368,14 +368,15 @@ function heroBannerAnimation() {
   gsap.registerPlugin(ScrollTrigger);
   var tl = gsap.timeline();
   tl.from(heroElements, {
-    x: -100,
-    duration: 1,
+    x: -200,
+    duration: 0.5,
     opacity: 0,
     stagger: 0.1
   }).from(heroImage, {
-    x: 100,
-    duration: 1,
-    opacity: 0
+    x: 200,
+    duration: 0.5,
+    opacity: 0,
+    delay: -0.3
   });
 }
 

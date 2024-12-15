@@ -2581,6 +2581,7 @@ input[type=number] {
 .hero-banner {
   color: white;
   position: relative;
+  overflow: hidden;
 }
 .hero-banner_black {
   background: black;
@@ -2626,6 +2627,10 @@ input[type=number] {
 .hero-banner__image {
   display: flex;
 }
+.hero-banner__image img {
+  max-width: 470px;
+  margin: auto;
+}
 .hero-banner__image_first {
   position: absolute;
   left: 50%;
@@ -2638,10 +2643,6 @@ input[type=number] {
   max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-}
-.hero-banner__image img {
-  max-width: 470px;
-  margin: auto;
 }
 
 /* -------------------------------------------------------------------------- */
