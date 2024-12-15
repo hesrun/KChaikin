@@ -363,16 +363,23 @@ if (phoneInput) {
 
 function slideRestimons() {
   var images = $('.restimons-builder__image img');
-  var index = 0;
-  var prevIndex = images.length - 1;
-  setInterval(function () {
-    images.eq(prevIndex).removeClass('previous');
-    images.eq(index).removeClass('active');
-    prevIndex = index;
-    index = (index + 1) % images.length;
-    images.eq(prevIndex).addClass('previous');
-    images.eq(index).addClass('active');
-  }, 3000);
+  var animationDuration = 1000;
+  var delay = 1500;
+  var currentIndex = 0;
+  var previousIndex = images.length - 1;
+
+  function showNextImage() {
+    images.removeClass('active previous');
+    $(images[currentIndex]).addClass('active');
+    $(images[previousIndex]).addClass('previous');
+    previousIndex = currentIndex;
+    currentIndex = (currentIndex + 1) % images.length;
+    setTimeout(function () {
+      $(images[previousIndex]).removeClass('previous');
+    }, animationDuration);
+  }
+
+  setInterval(showNextImage, delay);
 }
 
 slideRestimons();

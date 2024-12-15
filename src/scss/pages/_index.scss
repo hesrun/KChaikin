@@ -469,24 +469,28 @@
                 rgba(0, 0, 0, 1) 100%
             );
             pointer-events: none;
-            z-index: 2;
+            z-index: 3;
         }
         img {
             position: relative;
             width: 125%;
             vertical-align: middle;
+            transition: opacity 1s linear;
             opacity: 0;
-            transition: all 3s linear;
-            &.previous {
-            }
-            &.active {
-                opacity: 1;
-            }
         }
         img ~ img {
             position: absolute;
             top: 0px;
             left: 0px;
+        }
+        img.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        img.previous {
+            opacity: 1;
+            z-index: 1;
         }
     }
     &__info {

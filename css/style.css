@@ -3040,22 +3040,27 @@ input[type=number] {
   inset: 0;
   background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%);
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 .restimons-builder__image img {
   position: relative;
   width: 125%;
   vertical-align: middle;
+  transition: opacity 1s linear;
   opacity: 0;
-  transition: all 3s linear;
-}
-.restimons-builder__image img.active {
-  opacity: 1;
 }
 .restimons-builder__image img ~ img {
   position: absolute;
   top: 0px;
   left: 0px;
+}
+.restimons-builder__image img.active {
+  opacity: 1;
+  z-index: 2;
+}
+.restimons-builder__image img.previous {
+  opacity: 1;
+  z-index: 1;
 }
 .restimons-builder__info {
   padding: 90px 0;

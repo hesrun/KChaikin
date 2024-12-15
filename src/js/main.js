@@ -402,19 +402,23 @@ if (phoneInput) {
 /* ----------------------------- restimons fade ----------------------------- */
 
 function slideRestimons() {
-    let images = $('.restimons-builder__image img')
-    let index = 0
-    let prevIndex = images.length - 1
+    var images = $('.restimons-builder__image img')
+    const animationDuration = 1000
+    const delay = 1500
+    let currentIndex = 0
+    let previousIndex = images.length - 1
 
-    setInterval(() => {
-        images.eq(prevIndex).removeClass('previous')
-        images.eq(index).removeClass('active')
-        prevIndex = index
-        index = (index + 1) % images.length
-
-        images.eq(prevIndex).addClass('previous')
-        images.eq(index).addClass('active')
-    }, 3000)
+    function showNextImage() {
+        images.removeClass('active previous')
+        $(images[currentIndex]).addClass('active')
+        $(images[previousIndex]).addClass('previous')
+        previousIndex = currentIndex
+        currentIndex = (currentIndex + 1) % images.length
+        setTimeout(() => {
+            $(images[previousIndex]).removeClass('previous')
+        }, animationDuration)
+    }
+    setInterval(showNextImage, delay)
 }
 
 slideRestimons()
