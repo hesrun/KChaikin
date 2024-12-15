@@ -457,7 +457,7 @@ initMenuCursor();
 function initNewItemsAnimation() {
   var items = $('.new-items-list__item');
   var block = $('.new-items-section');
-  var title = $('.new-items-section .full-title__text');
+  var title = $('.new-items-section .full-title__image');
   gsap.registerPlugin(ScrollTrigger);
   var tl = gsap.timeline({
     scrollTrigger: {
@@ -498,14 +498,14 @@ function openPreview() {
     gsap.fromTo(modal, {
       clipPath: "circle(0 at ".concat(lastClickX, "px ").concat(lastClickY, "px)")
     }, {
-      clipPath: "circle(150% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+      clipPath: "circle(110% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
       duration: 1
     });
   });
   $('.new-items-preview__close').on('click', function () {
     console.log(lastClickX, lastClickY);
     gsap.fromTo(modal, {
-      clipPath: "circle(150% at ".concat(lastClickX, "px ").concat(lastClickY, "px)")
+      clipPath: "circle(110% at ".concat(lastClickX, "px ").concat(lastClickY, "px)")
     }, {
       clipPath: "circle(0% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
       duration: 1
@@ -519,12 +519,25 @@ openPreview();
 function masterParallax() {
   var block = $('.master-parallax');
   var image = $('.master-parallax__image');
+  var title = $('.master-parallax .full-title');
+  var titleImg = $('.master-parallax .full-title__image');
   gsap.registerPlugin(ScrollTrigger);
   gsap.from(image, {
-    y: -300,
+    y: -600,
     duration: 1,
     scrollTrigger: {
       trigger: block,
+      start: 'top bottom',
+      end: 'bottom center',
+      scrub: true //markers: true,
+
+    }
+  });
+  gsap.from(titleImg, {
+    y: 300,
+    duration: 1,
+    scrollTrigger: {
+      trigger: title,
       start: 'top bottom',
       end: 'bottom center',
       scrub: true //markers: true,

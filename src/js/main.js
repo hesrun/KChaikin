@@ -297,11 +297,13 @@ $('.faq-accordion__title').click(function () {
 $('.sorting__btn').click(function () {
     $('.sorting__drop').fadeToggle(200)
 })
+
 $('.sorting__option').click(function () {
     let optionText = $(this).find('.sorting__value').text().trim()
     $('.sorting__current').text(optionText)
     $('.sorting__drop').fadeOut(200)
 })
+
 $(document).click(function (e) {
     let sortDrop = $('.sorting__drop')
 })
@@ -506,7 +508,7 @@ initMenuCursor()
 function initNewItemsAnimation() {
     const items = $('.new-items-list__item')
     const block = $('.new-items-section')
-    const title = $('.new-items-section .full-title__text')
+    const title = $('.new-items-section .full-title__image')
 
     gsap.registerPlugin(ScrollTrigger)
 
@@ -557,7 +559,7 @@ function openPreview() {
                 clipPath: `circle(0 at ${lastClickX}px ${lastClickY}px)`,
             },
             {
-                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+                clipPath: `circle(110% at ${lastClickX}px ${lastClickY}px)`,
                 duration: 1,
             }
         )
@@ -569,7 +571,7 @@ function openPreview() {
         gsap.fromTo(
             modal,
             {
-                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+                clipPath: `circle(110% at ${lastClickX}px ${lastClickY}px)`,
             },
             {
                 clipPath: `circle(0% at ${lastClickX}px ${lastClickY}px)`,
@@ -584,13 +586,26 @@ openPreview()
 function masterParallax() {
     const block = $('.master-parallax')
     const image = $('.master-parallax__image')
+    const title = $('.master-parallax .full-title')
+    const titleImg = $('.master-parallax .full-title__image')
     gsap.registerPlugin(ScrollTrigger)
 
     gsap.from(image, {
-        y: -300,
+        y: -600,
         duration: 1,
         scrollTrigger: {
             trigger: block,
+            start: 'top bottom',
+            end: 'bottom center',
+            scrub: true,
+            //markers: true,
+        },
+    })
+    gsap.from(titleImg, {
+        y: 300,
+        duration: 1,
+        scrollTrigger: {
+            trigger: title,
             start: 'top bottom',
             end: 'bottom center',
             scrub: true,

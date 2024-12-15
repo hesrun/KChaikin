@@ -93,6 +93,7 @@ input,
 select {
   color: currentColor;
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
 }
 
@@ -140,7 +141,7 @@ body.lock #menu {
 }
 @media only screen and (max-width: 768px) {
   body.lock .header,
-body.lock #menu {
+  body.lock #menu {
     padding-right: 0;
   }
 }
@@ -358,7 +359,7 @@ a.section-head__subtitle {
   position: absolute;
   height: 1px;
   width: 100%;
-  background: linear-gradient(93deg, rgba(255, 255, 255, 0) 0%, black 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(93deg, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 50%, rgba(255, 255, 255, 0) 100%);
   left: 0px;
 }
 .divider-title:before {
@@ -829,7 +830,7 @@ input[type=number] {
   caret-color: black;
   font-style: normal;
 }
-.с-input input:-ms-input-placeholder + label {
+.с-input input:-moz-placeholder-shown + label {
   line-height: 60px;
   font-size: 16px;
 }
@@ -1019,7 +1020,7 @@ input[type=number] {
   color: #7c7c7c;
 }
 .с-select .select2-container .select2-selection--single .select2-selection__arrow:before {
-  content: "";
+  content: "\e002";
 }
 .с-select .select2-container .select2-selection--single .select2-selection__arrow b {
   display: none;
@@ -1084,7 +1085,7 @@ input[type=number] {
   transition: all 0.3s;
   cursor: pointer;
   -webkit-user-select: none;
-      -ms-user-select: none;
+     -moz-user-select: none;
           user-select: none;
   text-align: center;
   white-space: nowrap;
@@ -2321,6 +2322,7 @@ input[type=number] {
   width: 40px;
   text-align: center;
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
 }
 .cart-product__remove {
@@ -2584,7 +2586,7 @@ input[type=number] {
   background: black;
 }
 .hero-banner_green {
-  background: linear-gradient(180deg, #184036 0%, #184036 70%, #001b14 100%);
+  background: linear-gradient(180deg, rgb(24, 64, 54) 0%, rgb(24, 64, 54) 70%, rgb(0, 27, 20) 100%);
 }
 .hero-banner_gray {
   background: #191919;
@@ -2687,12 +2689,12 @@ input[type=number] {
   top: 0px;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, black 100%);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%);
   pointer-events: none;
 }
 @media only screen and (max-width: 576px) {
   .hero-slider .swiper-slide:after {
-    background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 80%, black 100%);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%);
   }
 }
 .hero-slider__text {
@@ -3036,7 +3038,7 @@ input[type=number] {
   display: block;
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, black 100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -3401,7 +3403,7 @@ input[type=number] {
     transform: translateY(0px) scale(1.03);
   }
   .products-grid__item:hover:hover .products-grid__item-image:after {
-    background: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 40%);
+    background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%);
     transform: translateX(-50%) translateY(50%) rotateX(75deg) scale(0.5);
     opacity: 1;
   }
@@ -3449,7 +3451,7 @@ input[type=number] {
 .products-grid__item-image:after {
   content: "";
   position: absolute;
-  background: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 40%);
+  background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%);
   width: 272px;
   height: 272px;
   bottom: 0px;
@@ -4039,7 +4041,7 @@ input[type=number] {
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, black 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 100%);
 }
 @media only screen and (max-width: 768px) {
   .photo-slider__text {
@@ -4154,12 +4156,12 @@ input[type=number] {
   top: 0px;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, black 100%);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%);
   pointer-events: none;
 }
 @media only screen and (max-width: 576px) {
   .page-hero:after {
-    background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 80%, black 100%);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%);
   }
 }
 .page-hero img {
@@ -4872,7 +4874,7 @@ input[type=number] {
   display: flex;
   align-items: center;
   -webkit-user-select: none;
-      -ms-user-select: none;
+     -moz-user-select: none;
           user-select: none;
   gap: 10px;
 }
@@ -4953,8 +4955,7 @@ input[type=number] {
   .product-detail__images {
     overflow: auto;
     display: flex;
-    -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
   }
   .product-detail__images::-webkit-scrollbar {
     width: 0;

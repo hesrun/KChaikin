@@ -251,17 +251,10 @@ button {
     }
 }
 .full-title {
-    color: #0d0d0d;
-    font-size: clamp(77px, 19.2vw, 250px);
-    text-transform: uppercase;
-    opacity: 0.04;
-    line-height: 1;
     overflow: hidden;
-    span {
-        display: block;
-    }
-    &_second {
-        font-size: clamp(60px, 13vw, 166px);
+    &__image {
+        width: 100%;
+        vertical-align: middle;
     }
 }
 p {
@@ -286,7 +279,6 @@ h1 {
     margin-bottom: 40px;
     letter-spacing: 3px;
     line-height: 1.3;
-    text-transform: uppercase;
     @include lg {
         font-size: 32px;
         margin-bottom: 30px;
@@ -309,7 +301,6 @@ h2 {
     margin-bottom: 40px;
     letter-spacing: 3px;
     line-height: 1.3;
-    text-transform: uppercase;
     @include lg {
         font-size: 32px;
         margin-bottom: 30px;
@@ -332,7 +323,6 @@ h3 {
     margin-bottom: 40px;
     letter-spacing: 2px;
     line-height: 1.3;
-    text-transform: uppercase;
     @include lg {
         font-size: 28px;
         margin-bottom: 30px;
