@@ -2,6 +2,7 @@ let headerHeight = $('.header').height()
 let screenSize = window.innerWidth
 let md = 768
 let sm = 576
+let lg = 992
 let currentSlide = 0
 
 const getScrollbarWidth = () =>
@@ -234,19 +235,21 @@ $('.text-reveal-anim').each(function () {
 
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.to('.text-reveal-anim span', {
-        duration: 0.3,
-        opacity: 1,
-        ease: 'none',
-        stagger: 0.1,
-        scrollTrigger: {
-            trigger: textContainer,
-            //markers: true,
-            start: 'top 100%',
-            end: 'bottom 70%',
-            scrub: true,
-        },
-    })
+    if (screenSize > md) {
+        gsap.to('.text-reveal-anim span', {
+            duration: 0.3,
+            opacity: 1,
+            ease: 'none',
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: textContainer,
+                //markers: true,
+                start: 'top 100%',
+                end: 'bottom 70%',
+                scrub: true,
+            },
+        })
+    }
 })
 
 $('.expand-vacation').click(function () {
@@ -403,22 +406,23 @@ if (phoneInput) {
 function heroBannerAnimation() {
     const heroElements = $('.hero-banner__info > *')
     const heroImage = $('.hero-banner__image')
-    console.log(heroElements)
 
     gsap.registerPlugin(ScrollTrigger)
 
-    const tl = gsap.timeline()
-    tl.from(heroElements, {
-        x: -200,
-        duration: 0.5,
-        opacity: 0,
-        stagger: 0.1,
-    }).from(heroImage, {
-        x: 200,
-        duration: 0.5,
-        opacity: 0,
-        delay: -0.3,
-    })
+    if (screenSize > md) {
+        const tl = gsap.timeline()
+        tl.from(heroElements, {
+            x: -200,
+            duration: 0.5,
+            opacity: 0,
+            stagger: 0.1,
+        }).from(heroImage, {
+            x: 200,
+            duration: 0.5,
+            opacity: 0,
+            delay: -0.3,
+        })
+    }
 }
 heroBannerAnimation()
 
@@ -569,30 +573,32 @@ function openPreview() {
     let lastClickY = 0
 
     $('.new-items-list__item').on('click', function (e) {
-        e.preventDefault()
+        if (screenSize > lg) {
+            e.preventDefault()
 
-        $('.new-items-preview__item').hide()
-        $('.new-items-preview__item').eq($(this).index()).show()
+            $('.new-items-preview__item').hide()
+            $('.new-items-preview__item').eq($(this).index()).show()
 
-        const sectionOffset = section.offset()
-        lastClickX = e.pageX - sectionOffset.left
-        lastClickY = e.pageY - sectionOffset.top
+            const sectionOffset = section.offset()
+            lastClickX = e.pageX - sectionOffset.left
+            lastClickY = e.pageY - sectionOffset.top
 
-        modal.css('visibility', 'visible')
+            modal.css('visibility', 'visible')
 
-        gsap.fromTo(
-            modal,
-            {
-                clipPath: `circle(0 at ${lastClickX}px ${lastClickY}px)`,
-                ease: 'none',
-                duration: 1,
-            },
-            {
-                clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
-                ease: 'none',
-                duration: 1,
-            }
-        )
+            gsap.fromTo(
+                modal,
+                {
+                    clipPath: `circle(0 at ${lastClickX}px ${lastClickY}px)`,
+                    ease: 'none',
+                    duration: 1,
+                },
+                {
+                    clipPath: `circle(150% at ${lastClickX}px ${lastClickY}px)`,
+                    ease: 'none',
+                    duration: 1,
+                }
+            )
+        }
     })
 
     $('.new-items-preview__close').on('click', function () {
@@ -623,28 +629,30 @@ function masterParallax() {
     const titleImg = $('.master-parallax .full-title__image')
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.from(image, {
-        y: -600,
-        duration: 1,
-        scrollTrigger: {
-            trigger: block,
-            start: 'top bottom',
-            end: 'bottom center',
-            scrub: true,
-            //markers: true,
-        },
-    })
-    gsap.from(titleImg, {
-        y: 300,
-        duration: 1,
-        scrollTrigger: {
-            trigger: title,
-            start: 'top bottom',
-            end: 'bottom bottom-=200',
-            scrub: true,
-            //markers: true,
-        },
-    })
+    if (screenSize > md) {
+        gsap.from(image, {
+            y: -600,
+            duration: 1,
+            scrollTrigger: {
+                trigger: block,
+                start: 'top bottom',
+                end: 'bottom center',
+                scrub: true,
+                //markers: true,
+            },
+        })
+        gsap.from(titleImg, {
+            y: 300,
+            duration: 1,
+            scrollTrigger: {
+                trigger: title,
+                start: 'top bottom',
+                end: 'bottom bottom-=200',
+                scrub: true,
+                //markers: true,
+            },
+        })
+    }
 }
 masterParallax()
 

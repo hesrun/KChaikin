@@ -6,6 +6,7 @@ var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
 var sm = 576;
+var lg = 992;
 var currentSlide = 0;
 
 var getScrollbarWidth = function getScrollbarWidth() {
@@ -226,19 +227,22 @@ $('.text-reveal-anim').each(function () {
     textContainer.append(span).append(' ');
   });
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to('.text-reveal-anim span', {
-    duration: 0.3,
-    opacity: 1,
-    ease: 'none',
-    stagger: 0.1,
-    scrollTrigger: {
-      trigger: textContainer,
-      //markers: true,
-      start: 'top 100%',
-      end: 'bottom 70%',
-      scrub: true
-    }
-  });
+
+  if (screenSize > md) {
+    gsap.to('.text-reveal-anim span', {
+      duration: 0.3,
+      opacity: 1,
+      ease: 'none',
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: textContainer,
+        //markers: true,
+        start: 'top 100%',
+        end: 'bottom 70%',
+        scrub: true
+      }
+    });
+  }
 });
 $('.expand-vacation').click(function () {
   var btn = $(this);
@@ -364,20 +368,22 @@ if (phoneInput) {
 function heroBannerAnimation() {
   var heroElements = $('.hero-banner__info > *');
   var heroImage = $('.hero-banner__image');
-  console.log(heroElements);
   gsap.registerPlugin(ScrollTrigger);
-  var tl = gsap.timeline();
-  tl.from(heroElements, {
-    x: -200,
-    duration: 0.5,
-    opacity: 0,
-    stagger: 0.1
-  }).from(heroImage, {
-    x: 200,
-    duration: 0.5,
-    opacity: 0,
-    delay: -0.3
-  });
+
+  if (screenSize > md) {
+    var tl = gsap.timeline();
+    tl.from(heroElements, {
+      x: -200,
+      duration: 0.5,
+      opacity: 0,
+      stagger: 0.1
+    }).from(heroImage, {
+      x: 200,
+      duration: 0.5,
+      opacity: 0,
+      delay: -0.3
+    });
+  }
 }
 
 heroBannerAnimation();
@@ -516,22 +522,24 @@ function openPreview() {
   var lastClickX = 0;
   var lastClickY = 0;
   $('.new-items-list__item').on('click', function (e) {
-    e.preventDefault();
-    $('.new-items-preview__item').hide();
-    $('.new-items-preview__item').eq($(this).index()).show();
-    var sectionOffset = section.offset();
-    lastClickX = e.pageX - sectionOffset.left;
-    lastClickY = e.pageY - sectionOffset.top;
-    modal.css('visibility', 'visible');
-    gsap.fromTo(modal, {
-      clipPath: "circle(0 at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
-      ease: 'none',
-      duration: 1
-    }, {
-      clipPath: "circle(150% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
-      ease: 'none',
-      duration: 1
-    });
+    if (screenSize > lg) {
+      e.preventDefault();
+      $('.new-items-preview__item').hide();
+      $('.new-items-preview__item').eq($(this).index()).show();
+      var sectionOffset = section.offset();
+      lastClickX = e.pageX - sectionOffset.left;
+      lastClickY = e.pageY - sectionOffset.top;
+      modal.css('visibility', 'visible');
+      gsap.fromTo(modal, {
+        clipPath: "circle(0 at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+        ease: 'none',
+        duration: 1
+      }, {
+        clipPath: "circle(150% at ".concat(lastClickX, "px ").concat(lastClickY, "px)"),
+        ease: 'none',
+        duration: 1
+      });
+    }
   });
   $('.new-items-preview__close').on('click', function () {
     console.log(lastClickX, lastClickY);
@@ -556,28 +564,31 @@ function masterParallax() {
   var title = $('.master-parallax .full-title');
   var titleImg = $('.master-parallax .full-title__image');
   gsap.registerPlugin(ScrollTrigger);
-  gsap.from(image, {
-    y: -600,
-    duration: 1,
-    scrollTrigger: {
-      trigger: block,
-      start: 'top bottom',
-      end: 'bottom center',
-      scrub: true //markers: true,
 
-    }
-  });
-  gsap.from(titleImg, {
-    y: 300,
-    duration: 1,
-    scrollTrigger: {
-      trigger: title,
-      start: 'top bottom',
-      end: 'bottom bottom-=200',
-      scrub: true //markers: true,
+  if (screenSize > md) {
+    gsap.from(image, {
+      y: -600,
+      duration: 1,
+      scrollTrigger: {
+        trigger: block,
+        start: 'top bottom',
+        end: 'bottom center',
+        scrub: true //markers: true,
 
-    }
-  });
+      }
+    });
+    gsap.from(titleImg, {
+      y: 300,
+      duration: 1,
+      scrollTrigger: {
+        trigger: title,
+        start: 'top bottom',
+        end: 'bottom bottom-=200',
+        scrub: true //markers: true,
+
+      }
+    });
+  }
 }
 
 masterParallax();

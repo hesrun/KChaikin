@@ -27,6 +27,9 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @include sm {
+            padding: 30px 0;
+        }
     }
     &__container {
         min-height: 100vh;
@@ -34,29 +37,55 @@
         grid-template-columns: 1fr 1fr;
         gap: 30px;
         padding-top: 100px;
+        @include lg {
+            grid-template-columns: 1fr;
+        }
     }
     &__title {
         font-size: 70px;
         margin-bottom: 20px;
         line-height: 1;
+        @include md {
+            font-size: 50px;
+        }
+        @include sm {
+            font-size: 40px;
+        }
     }
     &__subtitle {
         font-size: 35px;
         opacity: 0.5;
         margin-bottom: auto;
         text-transform: none;
+        @include md {
+            font-size: 24px;
+        }
     }
     &__text {
         max-width: 465px;
         margin: 30px 0;
         opacity: 0.7;
+        @include lg {
+            max-width: 100%;
+            br {
+                display: none;
+            }
+        }
+        @include sm {
+            margin: 15px 0;
+        }
     }
     &__image {
         display: flex;
-
+        @include lg {
+            order: -1;
+        }
         img {
             max-width: 470px;
             margin: auto;
+            @include sm {
+                max-width: 100%;
+            }
         }
         &_first {
             position: absolute;
@@ -68,6 +97,18 @@
                 height: 100%;
                 max-width: 100%;
                 object-fit: contain;
+                @include lg {
+                    max-width: 470px;
+                    margin: auto;
+                    height: auto;
+                }
+                @include sm {
+                    max-width: 100%;
+                }
+            }
+            @include lg {
+                position: static;
+                width: auto;
             }
         }
     }
@@ -308,19 +349,39 @@
         padding-block: 30px;
         gap: 15px;
         position: relative;
+        @include md {
+            grid-template-columns: auto 1fr;
+            padding: 0;
+        }
     }
     &__thumb {
         display: none;
+        @include md {
+            display: block;
+        }
+        @include sm {
+            width: 70px;
+            height: 70px;
+        }
     }
     &__name {
-        font-size: 2.25rem;
+        font-size: 36px;
         font-weight: 100;
         transition: all 0.3s;
+        @include lg {
+            font-size: 30px;
+        }
+        @include sm {
+            font-size: 20px;
+        }
     }
     &__descr {
         font-size: 16px;
         opacity: 0.6;
         transition: all 0.3s;
+        @include md {
+            display: none;
+        }
     }
     &__preview {
         right: 100px;
@@ -341,6 +402,9 @@
     }
     &__arrow {
         transition: all 0.3s ease-in-out;
+        @include md {
+            display: none;
+        }
     }
 }
 
@@ -351,6 +415,9 @@
 .new-items-section {
     padding: 100px 0;
     position: relative;
+    @include sm {
+        padding: 50px 0 30px;
+    }
 }
 .new-items-list {
     $root: &;
@@ -360,6 +427,18 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     z-index: 1;
+    @include lg {
+        overflow: auto;
+        @include scrollbars(0px, transparent, transparent);
+        scroll-snap-type: x mandatory;
+    }
+    @include md {
+        margin-top: -50px;
+    }
+    @include sm {
+        grid-template-columns: repeat(4, 220px);
+        gap: 0;
+    }
     @include hover {
         #{$root}__item {
             filter: blur(4px);
@@ -377,6 +456,9 @@
                 scale: 1.1;
             }
         }
+        @include lg {
+            scroll-snap-align: center;
+        }
     }
     &__image {
         margin: auto;
@@ -392,6 +474,9 @@
     z-index: 2;
     background: white;
     visibility: hidden;
+    @include lg {
+        display: none;
+    }
     &__item {
         height: 100%;
         display: none;
@@ -449,9 +534,21 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 30px;
+        @include lg {
+            grid-template-columns: 1fr;
+        }
     }
     &__image {
         position: relative;
+        @include lg {
+            position: absolute;
+            max-width: 600px;
+            top: 250px;
+            z-index: 1;
+        }
+        @include md {
+            top: 18%;
+        }
         &:before {
             content: '';
             display: block;
@@ -473,6 +570,9 @@
             vertical-align: middle;
             transition: opacity 1s linear;
             opacity: 0;
+            @include lg {
+                width: 100%;
+            }
         }
         img ~ img {
             position: absolute;
@@ -494,20 +594,43 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
+        z-index: 3;
+        @include sm {
+            padding: 30px 0;
+        }
     }
     &__title {
         font-size: 80px;
         margin-bottom: 10px;
         text-transform: none;
         line-height: 1;
+        @include md {
+            font-size: 50px;
+        }
+        @include sm {
+            font-size: 40px;
+        }
     }
     &__subtitle {
         font-size: 20px;
         margin-bottom: auto;
+        @include lg {
+            margin-bottom: 400px;
+        }
+        @include sm {
+            font-size: 16px;
+        }
     }
     &__text {
         max-width: 400px;
         margin-bottom: 30px;
+        @include md {
+            max-width: 100%;
+        }
+        @include sm {
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -528,6 +651,10 @@
             rgba(black, 0.8) 100%
         );
         z-index: 1;
+    }
+    @include md {
+        height: auto;
+        aspect-ratio: 1;
     }
     &__image {
         height: 120%;
@@ -718,14 +845,30 @@
         display: flex;
         align-items: flex-end;
         gap: 60px;
+        @include lg {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        @include md {
+            gap: 15px;
+        }
     }
     &__title {
         margin: 0;
         font-size: 100px;
         line-height: 1;
+        @include md {
+            font-size: 50px;
+        }
     }
     &__grid {
         display: flex;
+        @include md {
+            flex-direction: column;
+        }
+        @include sm {
+            gap: 15px;
+        }
     }
     &__item {
         height: 400px;
@@ -746,6 +889,10 @@
         }
         @include hover {
             flex: 1 1 45%;
+        }
+        @include md {
+            height: auto;
+            flex: 1 1 40vw;
         }
     }
     &__image {
