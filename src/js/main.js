@@ -543,26 +543,28 @@ function initNewItemsAnimation() {
 
     gsap.registerPlugin(ScrollTrigger)
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: block,
-            start: 'top bottom',
-            end: 'bottom top',
-            //scrub: true,
-            //markers: true,
-        },
-    })
+    if (screenSize > md) {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: block,
+                start: 'top bottom',
+                end: 'bottom top',
+                //scrub: true,
+                //markers: true,
+            },
+        })
 
-    tl.from(title, {
-        y: 600,
-        duration: 1,
-    }).from(items, {
-        y: 300,
-        duration: 1,
-        opacity: 0,
-        stagger: 0.05,
-        ease: 'power2.out',
-    })
+        tl.from(title, {
+            y: 600,
+            duration: 1,
+        }).from(items, {
+            y: 300,
+            duration: 1,
+            opacity: 0,
+            stagger: 0.05,
+            ease: 'power2.out',
+        })
+    }
 }
 initNewItemsAnimation()
 

@@ -2626,6 +2626,11 @@ input[type=number] {
     grid-template-columns: 1fr;
   }
 }
+@media only screen and (max-width: 576px) {
+  .hero-banner__container {
+    gap: 0;
+  }
+}
 .hero-banner__title {
   font-size: 70px;
   margin-bottom: 20px;
@@ -3175,28 +3180,20 @@ input[type=number] {
 .restimons-builder__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  position: relative;
+  aspect-ratio: 2/1.23;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .restimons-builder__container {
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
 .restimons-builder__image {
-  position: relative;
-}
-@media only screen and (max-width: 992px) {
-  .restimons-builder__image {
-    position: absolute;
-    max-width: 600px;
-    top: 250px;
-    z-index: 1;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .restimons-builder__image {
-    top: 18%;
-  }
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  top: 0px;
+  height: 100%;
 }
 .restimons-builder__image:before {
   content: "";
@@ -3207,6 +3204,21 @@ input[type=number] {
   pointer-events: none;
   z-index: 3;
 }
+@media only screen and (max-width: 768px) {
+  .restimons-builder__image {
+    position: relative;
+    left: auto;
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .restimons-builder__image {
+    margin: -30px auto 0;
+    z-index: 0;
+  }
+}
 .restimons-builder__image img {
   position: relative;
   width: 125%;
@@ -3214,7 +3226,7 @@ input[type=number] {
   transition: opacity 1s linear;
   opacity: 0;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .restimons-builder__image img {
     width: 100%;
   }
@@ -3237,8 +3249,6 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative;
-  z-index: 3;
 }
 @media only screen and (max-width: 576px) {
   .restimons-builder__info {
@@ -3265,14 +3275,10 @@ input[type=number] {
   font-size: 20px;
   margin-bottom: auto;
 }
-@media only screen and (max-width: 992px) {
-  .restimons-builder__subtitle {
-    margin-bottom: 400px;
-  }
-}
 @media only screen and (max-width: 576px) {
   .restimons-builder__subtitle {
-    font-size: 16px;
+    position: relative;
+    z-index: 2;
   }
 }
 .restimons-builder__text {
@@ -3287,6 +3293,8 @@ input[type=number] {
 @media only screen and (max-width: 576px) {
   .restimons-builder__text {
     margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
   }
 }
 

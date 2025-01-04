@@ -493,25 +493,28 @@ function initNewItemsAnimation() {
   var block = $('.new-items-section');
   var title = $('.new-items-section .full-title__image');
   gsap.registerPlugin(ScrollTrigger);
-  var tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: block,
-      start: 'top bottom',
-      end: 'bottom top' //scrub: true,
-      //markers: true,
 
-    }
-  });
-  tl.from(title, {
-    y: 600,
-    duration: 1
-  }).from(items, {
-    y: 300,
-    duration: 1,
-    opacity: 0,
-    stagger: 0.05,
-    ease: 'power2.out'
-  });
+  if (screenSize > md) {
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: block,
+        start: 'top bottom',
+        end: 'bottom top' //scrub: true,
+        //markers: true,
+
+      }
+    });
+    tl.from(title, {
+      y: 600,
+      duration: 1
+    }).from(items, {
+      y: 300,
+      duration: 1,
+      opacity: 0,
+      stagger: 0.05,
+      ease: 'power2.out'
+    });
+  }
 }
 
 initNewItemsAnimation();
