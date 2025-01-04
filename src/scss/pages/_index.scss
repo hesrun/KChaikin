@@ -286,20 +286,28 @@
         @include hover {
             background: rgba(white, 0.2);
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
-            #{$root}__name {
-                transform: scale(1.05);
+            // #{$root}__name {
+            //     transform: scale(1.05);
+            // }
+            // #{$root}__descr {
+            //     transform: scale(1.1);
+            // }
+            #{$root}__preview {
+                scale: 1;
+                opacity: 1;
             }
-            #{$root}__descr {
-                transform: scale(1.1);
+            #{$root}__arrow {
+                rotate: 90deg;
             }
         }
     }
     &__item-container {
         display: grid;
-        grid-template-columns: 1fr 250px;
+        grid-template-columns: 1fr 1fr auto;
         align-items: center;
         padding-block: 30px;
         gap: 15px;
+        position: relative;
     }
     &__thumb {
         display: none;
@@ -314,39 +322,25 @@
         opacity: 0.6;
         transition: all 0.3s;
     }
-}
-
-.index-nav-cursor {
-    position: fixed;
-    z-index: 10;
-    width: 250px;
-    height: 250px;
-    margin-left: -125px;
-    margin-top: -125px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 50%;
-    overflow: hidden;
-    left: var(--x);
-    top: var(--y);
-    pointer-events: none;
-    transform: scale(0);
-    transition: transform 0.3s;
-    background: black;
-    &.active {
-        transform: scale(1);
-    }
-    img {
-        width: 100%;
+    &__preview {
+        right: 100px;
+        top: 50%;
+        border-radius: 50%;
         position: absolute;
-        left: 0px;
-        top: 0px;
+        width: 200px;
+        height: 200px;
+        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
+        translate: 0 -50%;
         opacity: 0;
-        transform: scale(1.2);
-        transition: all 0.3s;
-        &.active {
-            opacity: 1;
-            transform: scale(1);
+        scale: 0;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+        img {
+            vertical-align: middle;
         }
+    }
+    &__arrow {
+        transition: all 0.3s ease-in-out;
     }
 }
 
@@ -717,77 +711,62 @@
     max-width: 230px;
 }
 
-.chaykin-mozaik-section {
-    padding: 120px 0;
-}
-.chaykin-mozaik {
-    min-height: 1000px;
-    position: relative;
-    display: flex;
-    &__image {
-        position: absolute;
-        img {
-            width: 100%;
-        }
-        &_big {
-            width: 370px;
-            translate: calc(var(--x) / 30) calc(var(--y) / 30);
-            &:nth-of-type(2) {
-                translate: calc(var(--x) / -30) calc(var(--y) / -30);
-            }
-        }
-        &_midl {
-            width: 250px;
-            translate: calc(var(--x) / 50) calc(var(--y) / 50);
-            &:nth-of-type(2) {
-                translate: calc(var(--x) / -50) calc(var(--y) / -50);
-            }
-        }
-        &_small {
-            width: 150px;
-            translate: calc(var(--x) / 100) calc(var(--y) / 100);
-        }
-        &_top-right {
-            right: 0px;
-            top: 0px;
-        }
-        &_top-left {
-            left: 0px;
-            top: 10px;
-        }
-        &_bottom-right {
-            right: 50px;
-            bottom: 0;
-        }
-        &_bottom-left {
-            left: 0;
-            bottom: 50px;
-        }
-        &_top-center {
-            top: 100px;
-            left: 50%;
-            margin-left: -75px;
-        }
-    }
-    &__info {
-        margin: auto;
-        max-width: 900px;
+/* ------------------------------ chaykin about ------------------------------ */
+
+.chaykin-about {
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        gap: 60px;
     }
     &__title {
-        font-size: 90px;
-        font-weight: 100;
+        margin: 0;
+        font-size: 100px;
         line-height: 1;
-        span {
+    }
+    &__grid {
+        display: flex;
+    }
+    &__item {
+        height: 400px;
+        flex: 1 1 33.333%;
+        transition: all 1s;
+        position: relative;
+        &:before {
+            content: '';
             display: block;
-            margin-left: 330px;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(black, 0) 0%,
+                rgba(black, 0) 50%,
+                rgba(black, 0.7) 100%
+            );
+        }
+        @include hover {
+            flex: 1 1 45%;
         }
     }
+    &__image {
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+        object-position: center;
+    }
     &__text {
-        margin-left: 330px;
-        margin-top: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
+        position: absolute;
+        bottom: 0;
+        max-width: 350px;
+        padding: 30px;
+        color: white;
+    }
+    &__about-title {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    &__about-text {
+        line-height: 1.3;
     }
 }

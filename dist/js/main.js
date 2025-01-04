@@ -428,59 +428,58 @@ function initParallaxMozaik() {
 
 initParallaxMozaik();
 /* ------------------------------- MenuCursor ------------------------------- */
+// function initMenuCursor() {
+//     const navBlock = $('.index-nav')
+//     const follower = $('.index-nav-cursor')
+//     let mouseX = 0,
+//         mouseY = 0
+//     let posX = 0,
+//         posY = 0
+//     $(document).on('mousemove', function (e) {
+//         const scrollX = window.scrollX || document.documentElement.scrollLeft
+//         const scrollY = window.scrollY || document.documentElement.scrollTop
+//         mouseX = e.pageX - scrollX
+//         mouseY = e.pageY - scrollY
+//     })
+//     $('.index-nav').on('mouseenter', function () {
+//         follower.addClass('active')
+//     })
+//     $('.index-nav').on('mouseleave', function () {
+//         follower.removeClass('active')
+//     })
+//     $('.index-nav__item').on('mouseenter', function () {
+//         const index = $(this).index()
+//         $('.index-nav-cursor img').removeClass('active')
+//         $('.index-nav-cursor img').eq(index).addClass('active')
+//     })
+//     $(window).scroll(function () {
+//         $('.index-nav__item').on('mouseenter', function () {
+//             const index = $(this).index()
+//             $('.index-nav-cursor img').removeClass('active')
+//             $('.index-nav-cursor img').eq(index).addClass('active')
+//         })
+//     })
+//     // Бесконечный цикл анимации
+//     gsap.to(
+//         {},
+//         {
+//             duration: 0.016, // ~60 FPS
+//             repeat: -1,
+//             onRepeat: function () {
+//                 // Плавное следование хвоста
+//                 posX += (mouseX - posX) / 9
+//                 posY += (mouseY - posY) / 9
+//                 // Обновление позиции хвоста
+//                 gsap.set(follower, {
+//                     '--x': `${posX}px`,
+//                     '--y': `${posY}px`,
+//                 })
+//             },
+//         }
+//     )
+// }
+// initMenuCursor()
 
-function initMenuCursor() {
-  var navBlock = $('.index-nav');
-  var follower = $('.index-nav-cursor');
-  var mouseX = 0,
-      mouseY = 0; // Текущие координаты мыши
-
-  var posX = 0,
-      posY = 0; // Позиция "хвоста"
-
-  $(document).on('mousemove', function (e) {
-    var scrollX = window.scrollX || document.documentElement.scrollLeft;
-    var scrollY = window.scrollY || document.documentElement.scrollTop;
-    mouseX = e.pageX - scrollX;
-    mouseY = e.pageY - scrollY;
-  });
-  $('.index-nav').on('mouseenter', function () {
-    follower.addClass('active');
-  });
-  $('.index-nav').on('mouseleave', function () {
-    follower.removeClass('active');
-  });
-  $('.index-nav__item').on('mouseenter', function () {
-    var index = $(this).index();
-    $('.index-nav-cursor img').removeClass('active');
-    $('.index-nav-cursor img').eq(index).addClass('active');
-  });
-  $(window).scroll(function () {
-    $('.index-nav__item').on('mouseenter', function () {
-      var index = $(this).index();
-      $('.index-nav-cursor img').removeClass('active');
-      $('.index-nav-cursor img').eq(index).addClass('active');
-    });
-  }); // Бесконечный цикл анимации
-
-  gsap.to({}, {
-    duration: 0.016,
-    // ~60 FPS
-    repeat: -1,
-    onRepeat: function onRepeat() {
-      // Плавное следование хвоста
-      posX += (mouseX - posX) / 9;
-      posY += (mouseY - posY) / 9; // Обновление позиции хвоста
-
-      gsap.set(follower, {
-        '--x': "".concat(posX, "px"),
-        '--y': "".concat(posY, "px")
-      });
-    }
-  });
-}
-
-initMenuCursor();
 /* -------------------------------- new items ------------------------------- */
 
 function initNewItemsAnimation() {
