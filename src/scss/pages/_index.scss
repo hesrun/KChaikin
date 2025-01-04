@@ -445,6 +445,9 @@
     @include hover {
         #{$root}__item {
             filter: blur(4px);
+            @include md {
+                filter: none;
+            }
         }
     }
     &__item {

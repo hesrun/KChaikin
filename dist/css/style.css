@@ -3087,6 +3087,11 @@ input[type=number] {
     filter: blur(4px);
   }
 }
+@media only screen and (any-hover: hover) and (max-width: 768px) {
+  .new-items-list:hover .new-items-list__item {
+    filter: none;
+  }
+}
 .new-items-list__item {
   display: flex;
   flex-direction: column;
