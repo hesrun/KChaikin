@@ -687,6 +687,11 @@
         display: flex;
         align-items: center;
         gap: 50px;
+        @include sm {
+            flex-direction: column-reverse;
+            gap: 30px;
+            align-items: stretch;
+        }
     }
 }
 

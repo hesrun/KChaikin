@@ -563,7 +563,7 @@ a:hover {
 }
 .text-reveal-anim_small {
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 100;
   line-height: 1.2;
 }
 @media only screen and (max-width: 768px) {
@@ -3344,6 +3344,13 @@ input[type=number] {
   display: flex;
   align-items: center;
   gap: 50px;
+}
+@media only screen and (max-width: 576px) {
+  .about-master__more {
+    flex-direction: column-reverse;
+    gap: 30px;
+    align-items: stretch;
+  }
 }
 
 .watch-collection-grid {
