@@ -330,12 +330,12 @@
         @include hover {
             background: rgba(white, 0.2);
             box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
-            // #{$root}__name {
-            //     transform: scale(1.05);
-            // }
-            // #{$root}__descr {
-            //     transform: scale(1.1);
-            // }
+            #{$root}__name {
+                transform: scale(1.05) translateX(10px);
+            }
+            #{$root}__descr {
+                transform: scale(1.1);
+            }
             #{$root}__thumb {
                 scale: 1;
                 opacity: 1;
@@ -389,6 +389,7 @@
     &__name {
         font-size: 36px;
         font-weight: 100;
+        transform-origin: left;
         transition: all 0.3s;
         @include lg {
             font-size: 30px;
@@ -400,6 +401,7 @@
     &__descr {
         font-size: 16px;
         opacity: 0.6;
+        transform-origin: left;
         transition: all 0.3s;
         @include md {
             display: none;

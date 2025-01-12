@@ -450,6 +450,48 @@ function slideRestimons() {
 
 slideRestimons()
 
+/* ----------------------------- restimons parallax ----------------------------- */
+function restimonsParallax() {
+    const info = $('.restimons-builder__info > *').not(
+        '.restimons-builder__image'
+    )
+    const image = $('.restimons-builder__image')
+    const blockH = $('.restimons-builder').height()
+    const block = $('.restimons-builder')
+
+    console.log(blockH)
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    if (screenSize > md) {
+        gsap.from(image, {
+            y: -blockH,
+            duration: 10,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: block,
+                start: 'top bottom',
+                end: 'bottom bottom',
+                scrub: true,
+                //markers: true,
+            },
+        })
+        gsap.from(info, {
+            x: -100,
+            opacity: 0,
+            duration: 0.3,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: block,
+                start: 'top center',
+                end: 'bottom bottom',
+                //scrub: true,
+                //markers: true,
+            },
+        })
+    }
+}
+restimonsParallax()
 /* ----------------------------- parallax mozaik ---------------------------- */
 function initParallaxMozaik() {
     $('.chaykin-mozaik-section').mousemove(function (event) {
