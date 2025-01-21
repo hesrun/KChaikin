@@ -58,7 +58,11 @@
             opacity: 0.7;
         }
     }
-
+    &_clear {
+        @include hover {
+            opacity: 0.5;
+        }
+    }
     &_white {
         color: white;
         border-color: white;
@@ -95,7 +99,6 @@
                 background: white;
             }
             &:hover {
-                background: transparent;
                 color: black;
             }
             &#{$root}_load {

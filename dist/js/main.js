@@ -339,7 +339,13 @@ $('.media-card').click(function () {
     fadeDuration: 300
   });
 });
-$('#codeModal').modal({});
+$('#codeModal').modal();
+$('.toJoinClub').click(function () {
+  var modalName = $(this).attr('attr-modal');
+  $("#".concat(modalName)).modal({
+    fadeDuration: 300
+  });
+});
 $('.с-select select').select2({
   width: 'style',
   minimumResultsForSearch: Infinity,

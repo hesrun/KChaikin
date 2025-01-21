@@ -366,7 +366,14 @@ $('.media-card').click(function () {
     })
 })
 
-$('#codeModal').modal({})
+$('#codeModal').modal()
+
+$('.toJoinClub').click(function () {
+    let modalName = $(this).attr('attr-modal')
+    $(`#${modalName}`).modal({
+        fadeDuration: 300,
+    })
+})
 
 $('.с-select select')
     .select2({

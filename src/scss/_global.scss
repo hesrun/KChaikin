@@ -80,6 +80,9 @@ button {
 .img-responsive {
     max-width: 100%;
 }
+.uppercase {
+    text-transform: uppercase;
+}
 .divder {
     margin: 80px 0;
     border: none;
@@ -134,6 +137,9 @@ button {
         }
         .section-head__subtitle {
             color: white;
+        }
+        .divder {
+            background: rgba(white, 0.2);
         }
     }
     &_clear-top {

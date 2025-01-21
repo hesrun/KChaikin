@@ -204,7 +204,7 @@
     width: 100%;
     max-width: 650px;
     padding: 0px;
-    background: #e5e5e5;
+    background: white;
     border-radius: 0px;
     box-shadow: none;
     a.close-modal {
@@ -411,6 +411,44 @@
         margin: auto;
         height: 100%;
         max-width: 400px;
+    }
+}
+
+.club-modal {
+    max-width: 600px;
+    &__require {
+        list-style: none;
+        padding-left: 35px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__require-item {
+        position: relative;
+        &:before {
+            content: '';
+            left: -35px;
+            top: 50%;
+            margin-top: -9px;
+            position: absolute;
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: url('../img/club/bullet.png');
+            background-size: contain;
+        }
+    }
+    &__cv-note {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #727273;
+    }
+    &__logo {
+        max-width: 150px;
+        margin: 20px auto 0;
+        @include sm {
+            margin: 15px auto;
+        }
     }
 }
 

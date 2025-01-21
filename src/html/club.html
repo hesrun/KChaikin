@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ru">
+@include('modules/link.html',{ 'title': 'Category' })
+
+<body>
+    @include('modules/header.html',{'theme':'white'})
+    <main class="main">
+        <section class="page-section page-section_dark">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-head__subtitle">
+                        ДОБРО ПОЖАЛОВАТЬ В
+                    </span>
+                    <h1 class="section-head__title club-title">
+                        <span class="club-title__text">
+                            Joker Club
+                        </span>
+                        <img class="club-title__image" src="img/club/club-image.png" alt="">
+                    </h1>
+                </div>
+            </div>
+            <div class="club-banner">
+                <img class="club-banner__image img-responsive" src="img/club/club-watch.png" alt="">
+            </div>
+            <div class="container">
+                <h2 class="uppercase">СТАНЬТЕ ЧЛЕНОМ Joker Club</h2>
+                <div class="push-left-text">
+                    <p>
+                        Константин Чайкин приглашает вас стать участником Joker Club, эксклюзивного сообщества
+                        коллекционеров, объединённого
+                        увлечённостью высоким часовым искусством.
+                        <br><br>
+                        Joker Club назван в честь часов «Джокер», одного из наиболее успешных и ценимых коллекционерами
+                        релизов Константина
+                        Чайкина. Джокер – это символ удачи в карточных играх, благодаря Чайкину джокер обрёл такой же
+                        статус в часовом деле.
+                    </p>
+                </div>
+                <hr class="divder">
+                <div class="club-advantages">
+                    <div class="club-advantages__item">
+                        <i class="icon-hand-watch club-advantages__icon"></i>
+                        <span class="club-advantages__title">Клубные релизы <br> часов</span>
+                        <div class="club-advantages__text">
+                            Только членство в Joker Club предоставляет возможность приобрести лимитированные клубные
+                            модели
+                        </div>
+                    </div>
+                    <div class="club-advantages__item">
+                        <i class="icon-crown club-advantages__icon"></i>
+                        <span class="club-advantages__title">Вы - в <br> приоритете</span>
+                        <div class="club-advantages__text">
+                            Информация о новинках до их официального релиза с возможностью заказа
+                        </div>
+                    </div>
+                    <div class="club-advantages__item">
+                        <i class="icon-soft-drink club-advantages__icon"></i>
+                        <span class="club-advantages__title">Эксклюзивные <br> мероприятия</span>
+                        <div class="club-advantages__text">
+                            Участие в закрытых презентациях, встречах с Константином Чайкиным и собраниях Joker Club
+                        </div>
+                    </div>
+                    <div class="club-advantages__item">
+                        <i class="icon-security-check club-advantages__icon"></i>
+                        <span class="club-advantages__title">Дополнительная <br> гарантия</span>
+                        <div class="club-advantages__text">
+                            Возможность продления гарантии на год или более для новых часов
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-head__title uppercase">
+                        Уровни <br>
+                        членства
+                    </h2>
+                </div>
+                <div class="club-levels">
+                    <div class="club-levels__col">
+                        <div class="club-levels__number">1 уровень</div>
+                        <h3 class="club-levels__title">Кандидат</h3>
+                        <ul class="club-levels__props">
+                            <li>
+                                Возможность заказа новинок Konstantin Chaykin до их официального релиза, но после членов
+                                клуба и амбассадоров
+                            </li>
+                            <li>
+                                Возможность продажи своих часов Konstantin Chaykin через сервис продажи коллекционных
+                                часов с комиссией 10%
+                            </li>
+                            <li>
+                                Подписка на эксклюзивную новостную рассылку
+                            </li>
+                            <li>
+                                Информирование о выпуске специальных клубных изданий, без возможности приобрести часы
+                            </li>
+                        </ul>
+                        <button class="toJoinClub button button_medium button_black button_full_s"
+                            attr-modal='clubModal_1'>
+                            <span class="button__text">Требования к Кандидату</span>
+                        </button>
+                    </div>
+                    <div class="club-levels__col">
+                        <div class="club-levels__number">2 уровень</div>
+                        <h3 class="club-levels__title">Член Клуба</h3>
+                        <ul class="club-levels__props">
+                            <li>
+                                Возможность заказа новинок Konstantin Chaykin до их официального релиза
+                            </li>
+                            <li>
+                                Участие в закрытых мероприятиях бренда Konstantin Chaykin
+                            </li>
+                            <li>
+                                Возможность продления официальной гарантии на год или более
+                            </li>
+                            <li>
+                                Возможность продажи своих часов Konstantin Chaykin через <a href="">сервис продажи</a>
+                                коллекционных часов с льготной комиссией 7%
+                            </li>
+                            <li>
+                                Скидка 10% на аксессуары Konstantin Chaykin
+                            </li>
+                            <li>
+                                Сюрпризы на день рождения и другие важные даты
+                            </li>
+                        </ul>
+                        <button class="toJoinClub button button_medium button_black button_full_s"
+                            attr-modal='clubModal_2'>
+                            <span class="button__text">Требования к Члену Клуба</span>
+                        </button>
+                    </div>
+                    <div class="club-levels__col">
+                        <div class="club-levels__number">3 уровень</div>
+                        <h3 class="club-levels__title">Амбассадор</h3>
+                        <ul class="club-levels__props">
+                            <li>
+                                Раньше членов клуба – возможность заказа новинок Konstantin Chaykin до их официального
+                                релиза
+                            </li>
+                            <li>
+                                Участие в ультраэксклюзивных мероприятиях (гастрономические ужины, винные дегустации,
+                                лекции, другие специальные
+                                события) с ограниченным числом участников 10–30 человек, включая встречи с участием
+                                Константина Чайкина.
+                            </li>
+                            <li>
+                                Постоянный персональный контакт с командой бренда Konstantin Chaykin – консьерж-сервис
+                            </li>
+                            <li>
+                                Персональные поздравления с днём рождения и другими праздниками
+                            </li>
+                            <li>
+                                Возможность продажи своих часов Konstantin Chaykin через <a href="">
+                                    сервис продажи
+                                </a> коллекционных часов с льготной комиссией 5%
+                            </li>
+                            <li>
+                                Скидка 15% на аксессуары Konstantin Chaykin
+                            </li>
+                            <li>
+                                Возможность заказа уникальных часов Piece Unique бренда Konstantin Chaykin
+                            </li>
+                        </ul>
+                        <button class="toJoinClub button button_medium button_black button_full_s"
+                            attr-modal='clubModal_3'>
+                            <span class="button__text">Требования к Амбассадору</span>
+                        </button>
+                    </div>
+                </div>
+                <hr class="divder">
+                <div class="join-club">
+                    <img class="join-club__owner" src="img/club/master-circle.png" alt="">
+                    <h2 class="join-club__title uppercase">Присоединяйтесь!</h2>
+                    <div class="join-club__btns">
+                        <a href="" class="button button_black button_full_sm">
+                            <span class="button__text">Стать членом клуба</span>
+                        </a>
+                        <a href="" class="button button_clear button_full_sm">
+                            <span class="button__text">Вход для членов клуба</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+    @include('modals/clubModal.html')
+</body>
+
+</html>
