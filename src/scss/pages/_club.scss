@@ -80,7 +80,8 @@
         gap: 50px;
     }
     @include md {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow: auto;
         gap: 15px;
     }
     &__col {
@@ -89,6 +90,7 @@
         align-items: flex-start;
         gap: 30px;
         @include md {
+            flex: 0 0 75vw;
             border: 1px rgba($black, 0.2) solid;
             padding: 20px 15px;
             gap: 15px;
@@ -129,6 +131,7 @@
         gap: 20px;
         @include md {
             gap: 10px;
+            margin-bottom: auto;
         }
     }
 }

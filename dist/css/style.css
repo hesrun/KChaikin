@@ -6269,7 +6269,8 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .club-levels {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow: auto;
     gap: 15px;
   }
 }
@@ -6281,6 +6282,7 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .club-levels__col {
+    flex: 0 0 75vw;
     border: 1px rgba(31, 32, 34, 0.2) solid;
     padding: 20px 15px;
     gap: 15px;
@@ -6328,6 +6330,7 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .club-levels__props {
     gap: 10px;
+    margin-bottom: auto;
   }
 }
 
