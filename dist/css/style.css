@@ -2982,117 +2982,87 @@ input[type=number] {
   font-weight: 500;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                             index nav by lines                             */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                              index nav by grid                             */
+/* -------------------------------------------------------------------------- */
+.index-nav {
+  padding: 100px 0;
+}
+@media only screen and (max-width: 768px) {
+  .index-nav {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .index-nav {
+    padding: 30px 0;
+  }
+}
+.index-nav__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+}
+@media only screen and (max-width: 768px) {
+  .index-nav__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .index-nav__grid {
+    gap: 20px 10px;
+  }
+}
 .index-nav__item {
-  display: block;
-  border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
   text-decoration: none;
-  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s;
+}
+@media only screen and (max-width: 576px) {
+  .index-nav__item {
+    gap: 10px;
+  }
 }
 @media (any-hover: hover) {
   .index-nav__item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
-  }
-  .index-nav__item:hover .index-nav__name {
-    transform: scale(1.05) translateX(10px);
-  }
-  .index-nav__item:hover .index-nav__descr {
-    transform: scale(1.1);
-  }
-  .index-nav__item:hover .index-nav__thumb {
-    scale: 1;
-    opacity: 1;
-  }
-  .index-nav__item:hover .index-nav__arrow {
-    rotate: 90deg;
+    opacity: 0.9;
+    filter: grayscale(100%);
   }
 }
-.index-nav__item-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  align-items: center;
-  padding-block: 30px;
-  gap: 15px;
-  position: relative;
+.index-nav__title {
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 0px;
+  line-height: 1;
 }
 @media only screen and (max-width: 768px) {
-  .index-nav__item-container {
-    grid-template-columns: auto 1fr;
-    padding: 0;
-  }
-}
-.index-nav__thumb {
-  right: 100px;
-  top: 50%;
-  border-radius: 50%;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
-  translate: 0 -50%;
-  opacity: 0;
-  scale: 0.2;
-  pointer-events: none;
-  transition: all 0.5s ease-in-out;
-  z-index: 1;
-}
-@media only screen and (max-width: 768px) {
-  .index-nav__thumb {
-    position: static;
-    scale: 1;
-    opacity: 1;
-    translate: 0 0;
-    box-shadow: none;
-    border-radius: 0;
-    width: 100px;
-    height: 100%;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .index-nav__thumb {
-    width: 70px;
-    height: 70px;
-  }
-}
-.index-nav__name {
-  font-size: 36px;
-  font-weight: 100;
-  transform-origin: left;
-  transition: all 0.3s;
-}
-@media only screen and (max-width: 992px) {
-  .index-nav__name {
-    font-size: 30px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .index-nav__name {
+  .index-nav__title {
     font-size: 20px;
   }
 }
-.index-nav__descr {
-  font-size: 16px;
-  opacity: 0.6;
-  transform-origin: left;
-  transition: all 0.3s;
-}
-@media only screen and (max-width: 768px) {
-  .index-nav__descr {
-    display: none;
+@media only screen and (max-width: 576px) {
+  .index-nav__title {
+    font-size: 18px;
   }
 }
-.index-nav__arrow {
-  transition: all 0.3s ease-in-out;
+.index-nav__descr {
+  color: #727273;
 }
-@media only screen and (max-width: 768px) {
-  .index-nav__arrow {
+@media only screen and (max-width: 576px) {
+  .index-nav__descr {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .index-nav__descr br {
     display: none;
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                  index-nav                                 */
-/* -------------------------------------------------------------------------- */
 .new-items-section {
   padding: 100px 0;
   position: relative;

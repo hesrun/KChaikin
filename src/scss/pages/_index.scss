@@ -320,105 +320,165 @@
     }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                             index nav by lines                             */
+/* -------------------------------------------------------------------------- */
+
+// .index-nav {
+//     $root: &;
+//     &__item {
+//         display: block;
+//         border-bottom: 1px rgba(black, 0.1) solid;
+//         text-decoration: none;
+//         transition: all 0.5s;
+//         @include hover {
+//             background: rgba(white, 0.2);
+//             box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
+//             #{$root}__name {
+//                 transform: scale(1.05) translateX(10px);
+//             }
+//             #{$root}__descr {
+//                 transform: scale(1.1);
+//             }
+//             #{$root}__thumb {
+//                 scale: 1;
+//                 opacity: 1;
+//             }
+//             #{$root}__arrow {
+//                 rotate: 90deg;
+//             }
+//         }
+//     }
+//     &__item-container {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr auto;
+//         align-items: center;
+//         padding-block: 30px;
+//         gap: 15px;
+//         position: relative;
+//         @include md {
+//             grid-template-columns: auto 1fr;
+//             padding: 0;
+//         }
+//     }
+//     &__thumb {
+//         right: 100px;
+//         top: 50%;
+//         border-radius: 50%;
+//         position: absolute;
+//         width: 200px;
+//         height: 200px;
+//         box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
+//         translate: 0 -50%;
+//         opacity: 0;
+//         scale: 0.2;
+//         pointer-events: none;
+//         transition: all 0.5s ease-in-out;
+//         z-index: 1;
+//         @include md {
+//             position: static;
+//             scale: 1;
+//             opacity: 1;
+//             translate: 0 0;
+//             box-shadow: none;
+//             border-radius: 0;
+//             width: 100px;
+//             height: 100%;
+//         }
+//         @include sm {
+//             width: 70px;
+//             height: 70px;
+//         }
+//     }
+//     &__name {
+//         font-size: 36px;
+//         font-weight: 100;
+//         transform-origin: left;
+//         transition: all 0.3s;
+//         @include lg {
+//             font-size: 30px;
+//         }
+//         @include sm {
+//             font-size: 20px;
+//         }
+//     }
+//     &__descr {
+//         font-size: 16px;
+//         opacity: 0.6;
+//         transform-origin: left;
+//         transition: all 0.3s;
+//         @include md {
+//             display: none;
+//         }
+//     }
+//     &__arrow {
+//         transition: all 0.3s ease-in-out;
+//         @include md {
+//             display: none;
+//         }
+//     }
+// }
+
+/* -------------------------------------------------------------------------- */
+/*                              index nav by grid                             */
+/* -------------------------------------------------------------------------- */
+
 .index-nav {
-    $root: &;
-    &__item {
-        display: block;
-        border-bottom: 1px rgba(black, 0.1) solid;
-        text-decoration: none;
-        transition: all 0.5s;
-        @include hover {
-            background: rgba(white, 0.2);
-            box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.19);
-            #{$root}__name {
-                transform: scale(1.05) translateX(10px);
-            }
-            #{$root}__descr {
-                transform: scale(1.1);
-            }
-            #{$root}__thumb {
-                scale: 1;
-                opacity: 1;
-            }
-            #{$root}__arrow {
-                rotate: 90deg;
-            }
-        }
+    padding: 100px 0;
+    @include md {
+        padding: 50px 0;
     }
-    &__item-container {
+    @include sm {
+        padding: 30px 0;
+    }
+    &__grid {
         display: grid;
-        grid-template-columns: 1fr 1fr auto;
-        align-items: center;
-        padding-block: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 20px;
+        @include md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include sm {
+            gap: 20px 10px;
+        }
+    }
+    &__item {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
         gap: 15px;
-        position: relative;
-        @include md {
-            grid-template-columns: auto 1fr;
-            padding: 0;
-        }
-    }
-    &__thumb {
-        right: 100px;
-        top: 50%;
-        border-radius: 50%;
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
-        translate: 0 -50%;
-        opacity: 0;
-        scale: 0.2;
-        pointer-events: none;
-        transition: all 0.5s ease-in-out;
-        z-index: 1;
-        @include md {
-            position: static;
-            scale: 1;
-            opacity: 1;
-            translate: 0 0;
-            box-shadow: none;
-            border-radius: 0;
-            width: 100px;
-            height: 100%;
-        }
-        @include sm {
-            width: 70px;
-            height: 70px;
-        }
-    }
-    &__name {
-        font-size: 36px;
-        font-weight: 100;
-        transform-origin: left;
         transition: all 0.3s;
-        @include lg {
-            font-size: 30px;
+        @include sm {
+            gap: 10px;
+        }
+        @include hover {
+            opacity: 0.9;
+            filter: grayscale(100%);
+        }
+    }
+    &__title {
+        font-size: 28px;
+        margin: 0;
+        letter-spacing: 0px;
+        line-height: 1;
+        @include md {
+            font-size: 20px;
         }
         @include sm {
-            font-size: 20px;
+            font-size: 18px;
         }
     }
     &__descr {
-        font-size: 16px;
-        opacity: 0.6;
-        transform-origin: left;
-        transition: all 0.3s;
-        @include md {
-            display: none;
-        }
-    }
-
-    &__arrow {
-        transition: all 0.3s ease-in-out;
-        @include md {
-            display: none;
+        color: #727273;
+        @include sm {
+            font-size: 14px;
+            line-height: 1.2;
+            br {
+                display: none;
+            }
         }
     }
 }
-
-/* -------------------------------------------------------------------------- */
-/*                                  index-nav                                 */
-/* -------------------------------------------------------------------------- */
 
 .new-items-section {
     padding: 100px 0;
