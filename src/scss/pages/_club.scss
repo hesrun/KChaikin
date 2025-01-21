@@ -81,8 +81,18 @@
     }
     @include md {
         display: flex;
-        overflow: auto;
+        flex-direction: column;
         gap: 15px;
+        &_scroll {
+            overflow: auto;
+            flex-direction: row;
+            @include scrollbars(0px, transparent, transparent);
+            .club-levels__col {
+                @include md {
+                    flex: 0 0 75vw;
+                }
+            }
+        }
     }
     &__col {
         display: flex;
@@ -90,7 +100,6 @@
         align-items: flex-start;
         gap: 30px;
         @include md {
-            flex: 0 0 75vw;
             border: 1px rgba($black, 0.2) solid;
             padding: 20px 15px;
             gap: 15px;

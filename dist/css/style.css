@@ -6270,8 +6270,31 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .club-levels {
     display: flex;
-    overflow: auto;
+    flex-direction: column;
     gap: 15px;
+  }
+  .club-levels_scroll {
+    overflow: auto;
+    flex-direction: row;
+  }
+  .club-levels_scroll::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  .club-levels_scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .club-levels_scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .club-levels_scroll {
+    scrollbar-face-color: transparent;
+    scrollbar-track-color: transparent;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 768px) {
+  .club-levels_scroll .club-levels__col {
+    flex: 0 0 75vw;
   }
 }
 .club-levels__col {
@@ -6282,7 +6305,6 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .club-levels__col {
-    flex: 0 0 75vw;
     border: 1px rgba(31, 32, 34, 0.2) solid;
     padding: 20px 15px;
     gap: 15px;

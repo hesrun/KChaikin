@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="img/favicon.png" type="image/png" />
+   <meta name="description" content="description" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/css/intlTelInput.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css" rel="stylesheet" />
+   <link href="https://cdn.iconly.io/kits/KIze4AZ1VXv8/v_7fe76d3/iconly.min.css" rel="stylesheet" integrity="sha384-L9jThkoXFF1e8eCK4xo9MZM4w9wMe0buZwbIMy4wZp8ZtBGe+H4s9ObXc0KSuVmo" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="css/style.min.css" />
+   <title>Category</title>
+</head>
+
+<body>
+   <header class=" header">
+      <div class="container">
+         <button class="header-burger">
+            <div class="header-burger__lines"></div>
+            <div class="header-burger__text">Меню</div>
+         </button>
+         <a href="#" class="header__logo"> </a>
+         <div class="header__tools">
+            <a href="" class="header__tools-link header__tools-link_cart">
+               <i class="icon-shopping-bag"></i>
+               <span class="header__cart-text">Корзина</span>
+               <span class="header__cart-badge">5</span>
+            </a>
+            <a href="" class="header__tools-link header__tools-link_user">
+               <i class="icon-user"></i>
+            </a>
+            <div class="header__search">
+               <form id="searchForm" class="header__search-form">
+                  <input class="header__search-input" type="text" name="" id="" placeholder="Я хочу найти..." />
+                  <div class="header__search-drop">
+                     <div class="search-result">
+                        <a href="" class="search-result__item">
+                           <div class="search-result__product">
+                              <img src="img/shop/shop-item-1.jpg" alt="" class="search-result__product-img" />
+                              <div class="search-result__product-info">
+                                 <div class="search-result__product-series">
+                                    JOKER SKELETON
+                                 </div>
+                                 <div class="search-result__product-price">
+                                    18 700 ₽
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="search-result__type">
+                              LONG-SLEEVED T-SHIRT
+                           </div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__product">
+                              <img src="img/shop/shop-item-1.jpg" alt="" class="search-result__product-img" />
+                              <div class="search-result__product-info">
+                                 <div class="search-result__product-series">
+                                    JOKER SKELETON
+                                 </div>
+                                 <div class="search-result__product-price">
+                                    18 700 ₽
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="search-result__type">часы</div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__category">
+                              Наручные часы
+                           </div>
+                           <div class="search-result__type">Категория</div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__category">
+                              Футболки
+                           </div>
+                           <div class="search-result__type">Категория</div>
+                        </a>
+                     </div>
+                     <span class="header__popular-title">
+                            Популярные запросы
+                            <i></i>
+                        </span>
+                     <div class="header__popular-list">
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                     </div>
+                  </div>
+                  <button type="submit" class="header__search-submit">
+                     <i class="icon-search"></i>
+                  </button>
+               </form>
+               <button id="searchOpen" class="header__search-btn">
+                  <i class="icon-search"></i>
+               </button>
+            </div>
+            <div class="language-select">
+               <div class="language-select__current">
+                  US
+                  <i class="icon icon-arrow-down"></i>
+               </div>
+               <div class="language-select__drop">
+                  <a href="" class="language-select__item">English</a>
+                  <a href="" class="language-select__item">Russian</a>
+                  <a href="" class="language-select__item">Czech</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="menu" class="navigation">
+         <div class="container">
+            <div class="navigation__head">
+               <a href="" class="navigation__account">
+                  <i class="icon-user"></i>
+               </a>
+            </div>
+            <nav class="main-nav">
+               <div class="main-nav__cols">
+                  <ul class="main-nav__list">
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Новинки</a>
+                     </li>
+                     <li class="main-nav__list-item ">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                Коллекции
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Ристмоны</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Космическая программа</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Интерьерные часы</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Уникальные часы</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Классически часы</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Все часы</a>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Исторические шедевры</a>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Ателье</a>
+                     </li>
+                     <li class="main-nav__list-item main-nav__list-item_hide-desk">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                МАНУФАКТУРА
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">О мануфактуре </a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Константин Чайкин </a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Философия</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Изобретения</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Вакансии</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="main-nav__list-item main-nav__list-item_hide-desk">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                СМИ
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Новости</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Блог</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Медиатека</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="main-nav__list-item main-nav__list-item_hide-desk">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                ДЛЯ КЛИЕНТОВ
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Как купить?</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Сервис</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Ритейлеры</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Клуб Чайкина</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="secondary-nav">
+               <div class="secondary-nav__links-col">
+                  <div class="secondary-nav__col">
+                     <div class="secondary-nav__title">МАНУФАКТУРА</div>
+                     <div class="secondary-nav__links">
+                        <a href="" class="secondary-nav__link">О мануфактуре</a>
+                        <a href="" class="secondary-nav__link">Изобретения</a>
+                        <a href="" class="secondary-nav__link">Константин Чайкин</a>
+                        <a href="" class="secondary-nav__link">Вакансии</a>
+                        <a href="" class="secondary-nav__link">Философия</a>
+                     </div>
+                  </div>
+                  <div class="secondary-nav__col">
+                     <div class="secondary-nav__title">СМИ</div>
+                     <div class="secondary-nav__links secondary-nav__links_single">
+                        <a href="" class="secondary-nav__link">Новости</a>
+                        <a href="" class="secondary-nav__link">Блог</a>
+                        <a href="" class="secondary-nav__link">Медиатека</a>
+                     </div>
+                  </div>
+                  <div class="secondary-nav__col">
+                     <div class="secondary-nav__title">ДЛЯ КЛИЕНТОВ</div>
+                     <div class="secondary-nav__links">
+                        <a href="" class="secondary-nav__link">Как купить?</a>
+                        <a href="" class="secondary-nav__link">Сервис</a>
+                        <a href="" class="secondary-nav__link">Ритейлеры</a>
+                        <a href="" class="secondary-nav__link">Клуб Чайкина</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="secondary-nav__btns">
+                  <a href="#" class="button button_orange">КОНСТРУКТОР РИСТМОНОВ</a>
+                  <a href="#" class="button button_orange">ИНТЕРНЕТ - МАГАЗИН</a>
+               </div>
+            </div>
+            <div class="navigation__footer">
+               <div class="navigation__adress">
+                  Россия. Москва, ул. Речников 15 стр. 2
+                  <a href="">Контакты</a>
+               </div>
+               <div class="navigation__socials">
+                  <a href="">
+                     <i class="icon-instagram"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-penterest"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-vk"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-youtube"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-telegram"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <main class="main">
+      <section class="page-section page-section_dark">
+         <div class="container">
+            <div class="section-head">
+               <span class="section-head__subtitle">
+                        ДОБРО ПОЖАЛОВАТЬ В
+                    </span>
+               <h1 class="section-head__title club-title">
+                  <span class="club-title__text">
+                            Joker Club
+                        </span>
+                  <img class="club-title__image" src="img/club/club-image.png" alt="">
+               </h1>
+            </div>
+         </div>
+         <div class="club-banner">
+            <img class="club-banner__image img-responsive" src="img/club/club-watch.png" alt="">
+         </div>
+         <div class="container">
+            <h2 class="uppercase">СТАНЬТЕ ЧЛЕНОМ Joker Club</h2>
+            <div class="push-left-text">
+               <p>
+                  Константин Чайкин приглашает вас стать участником Joker Club, эксклюзивного сообщества
+                  коллекционеров, объединённого
+                  увлечённостью высоким часовым искусством.
+                  <br><br>
+                        Joker Club назван в честь часов «Джокер», одного из наиболее успешных и ценимых коллекционерами
+                        релизов Константина
+                        Чайкина. Джокер – это символ удачи в карточных играх, благодаря Чайкину джокер обрёл такой же
+                        статус в часовом деле.
+               </p>
+            </div>
+            <hr class="divder">
+            <div class="club-advantages">
+               <div class="club-advantages__item">
+                  <i class="icon-hand-watch club-advantages__icon"></i>
+                  <span class="club-advantages__title">Клубные релизы <br> часов</span>
+                  <div class="club-advantages__text">
+                     Только членство в Joker Club предоставляет возможность приобрести лимитированные клубные
+                     модели
+                  </div>
+               </div>
+               <div class="club-advantages__item">
+                  <i class="icon-crown club-advantages__icon"></i>
+                  <span class="club-advantages__title">Вы - в <br> приоритете</span>
+                  <div class="club-advantages__text">
+                     Информация о новинках до их официального релиза с возможностью заказа
+                  </div>
+               </div>
+               <div class="club-advantages__item">
+                  <i class="icon-soft-drink club-advantages__icon"></i>
+                  <span class="club-advantages__title">Эксклюзивные <br> мероприятия</span>
+                  <div class="club-advantages__text">
+                     Участие в закрытых презентациях, встречах с Константином Чайкиным и собраниях Joker Club
+                  </div>
+               </div>
+               <div class="club-advantages__item">
+                  <i class="icon-security-check club-advantages__icon"></i>
+                  <span class="club-advantages__title">Дополнительная <br> гарантия</span>
+                  <div class="club-advantages__text">
+                     Возможность продления гарантии на год или более для новых часов
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="page-section">
+         <div class="container">
+            <div class="section-head">
+               <h2 class="section-head__title uppercase">
+                  Уровни <br>
+                        членства
+               </h2>
+            </div>
+            <div class="club-levels club-levels_scroll">
+               <div class="club-levels__col">
+                  <div class="club-levels__number">1 уровень</div>
+                  <h3 class="club-levels__title">Кандидат</h3>
+                  <ul class="club-levels__props">
+                     <li>
+                        Возможность заказа новинок Konstantin Chaykin до их официального релиза, но после членов
+                        клуба и амбассадоров
+                     </li>
+                     <li>
+                        Возможность продажи своих часов Konstantin Chaykin через сервис продажи коллекционных
+                        часов с комиссией 10%
+                     </li>
+                     <li>
+                        Подписка на эксклюзивную новостную рассылку
+                     </li>
+                     <li>
+                        Информирование о выпуске специальных клубных изданий, без возможности приобрести часы
+                     </li>
+                  </ul>
+                  <button class="toJoinClub button button_medium button_black button_full_s" attr-modal='clubModal_1'>
+                     <span class="button__text">Требования к Кандидату</span>
+                  </button>
+               </div>
+               <div class="club-levels__col">
+                  <div class="club-levels__number">2 уровень</div>
+                  <h3 class="club-levels__title">Член Клуба</h3>
+                  <ul class="club-levels__props">
+                     <li>
+                        Возможность заказа новинок Konstantin Chaykin до их официального релиза
+                     </li>
+                     <li>
+                        Участие в закрытых мероприятиях бренда Konstantin Chaykin
+                     </li>
+                     <li>
+                        Возможность продления официальной гарантии на год или более
+                     </li>
+                     <li>
+                        Возможность продажи своих часов Konstantin Chaykin через <a href="">сервис продажи</a>
+                        коллекционных часов с льготной комиссией 7%
+                     </li>
+                     <li>
+                        Скидка 10% на аксессуары Konstantin Chaykin
+                     </li>
+                     <li>
+                        Сюрпризы на день рождения и другие важные даты
+                     </li>
+                  </ul>
+                  <button class="toJoinClub button button_medium button_black button_full_s" attr-modal='clubModal_2'>
+                     <span class="button__text">Требования к Члену Клуба</span>
+                  </button>
+               </div>
+               <div class="club-levels__col">
+                  <div class="club-levels__number">3 уровень</div>
+                  <h3 class="club-levels__title">Амбассадор</h3>
+                  <ul class="club-levels__props">
+                     <li>
+                        Раньше членов клуба – возможность заказа новинок Konstantin Chaykin до их официального
+                        релиза
+                     </li>
+                     <li>
+                        Участие в ультраэксклюзивных мероприятиях (гастрономические ужины, винные дегустации,
+                        лекции, другие специальные
+                        события) с ограниченным числом участников 10–30 человек, включая встречи с участием
+                        Константина Чайкина.
+                     </li>
+                     <li>
+                        Постоянный персональный контакт с командой бренда Konstantin Chaykin – консьерж-сервис
+                     </li>
+                     <li>
+                        Персональные поздравления с днём рождения и другими праздниками
+                     </li>
+                     <li>
+                        Возможность продажи своих часов Konstantin Chaykin через <a href="">
+                           сервис продажи
+                        </a> коллекционных часов с льготной комиссией 5%
+                     </li>
+                     <li>
+                        Скидка 15% на аксессуары Konstantin Chaykin
+                     </li>
+                     <li>
+                        Возможность заказа уникальных часов Piece Unique бренда Konstantin Chaykin
+                     </li>
+                  </ul>
+                  <button class="toJoinClub button button_medium button_black button_full_s" attr-modal='clubModal_3'>
+                     <span class="button__text">Требования к Амбассадору</span>
+                  </button>
+               </div>
+            </div>
+            <hr class="divder">
+            <div class="join-club">
+               <img class="join-club__owner" src="img/club/master-circle.png" alt="">
+               <h2 class="join-club__title uppercase">Присоединяйтесь!</h2>
+               <div class="join-club__btns">
+                  <a href="" class="button button_black button_full_sm">
+                     <span class="button__text">Стать членом клуба</span>
+                  </a>
+                  <a href="" class="button button_clear button_full_sm">
+                     <span class="button__text">Вход для членов клуба</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+   <footer class="footer">
+      <div class="navigation">
+         <div class="container">
+            <div class="navigation__footer">
+               <div class="navigation__adress">
+                  Россия. Москва, ул. Речников 15 стр. 2
+                  <a href="">Контакты</a>
+               </div>
+               <div class="navigation__socials">
+                  <a href="">
+                     <i class="icon-instagram"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-penterest"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-vk"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-youtube"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-telegram"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="copyright__logo">
+                  <img src="img/logos/logo-icon-white.svg" alt="" />
+                  <span>KONSTANTIN CHAYKIN © 2024</span>
+               </div>
+               <div class="copyright__links">
+                  <a href="">Пользовательское соглашение</a>
+                  <a href="">Обработка персональных данных</a>
+                  <span>Информация не является публичной офертой</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <button class="mobile-cart-btn">
+      <i class="icon-shopping-bag"></i>
+      <span class="mobile-cart-btn__text">Корзина</span>
+      <span class="mobile-cart-btn__badge">5</span>
+   </button>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://api-maps.yandex.ru/v3/?apikey=d0aab0e9-0ef2-4ba3-b5a2-0aea6cdffacf&lang=ru_RU"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/intlTelInput.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+   <script defer src="js/main.min.js"></script>
+   <div id="clubModal_1" class="modal common-modal club-modal">
+      <div class="common-modal__wrapper">
+         <div class="common-modal__head">
+            <h2 class="common-modal__title uppercase">Требования
+               к Кандидату</h2>
+         </div>
+         <div class="common-modal__content">
+            <ul class="club-modal__require">
+               <li class="club-modal__require-item">
+                  Владение хотя бы одними часами Konstantin Chaykin <br> или факт предоплаты за новые часы
+               </li>
+               <li class="club-modal__require-item">
+                  Одобренный личный профиль (CV)*
+               </li>
+            </ul>
+            <div class="club-modal__cv-note">
+               * Профиль CV - анкета с информацией о часах любых брендов из вашей коллекции, а также о профессии,
+               социальном статусе,
+               хобби, причинах выбора бренда Konstantin Chaykin. Данная информация требуется для эффективной
+               коммуникации и лучшего
+               понимания интересов сообщества ценителей бреда Konstantin Chaykin.
+            </div>
+         </div>
+         <div class="common-modal__footer common-modal__btns">
+            <button class="button button_black button_full button_filled">
+               <span class="button__text">
+                    Вступить в Joker Club
+                </span>
+            </button>
+            <img class="club-modal__logo" src="img/club/club-image-gray.png" alt="">
+         </div>
+      </div>
+   </div>
+   <div id="clubModal_2" class="modal common-modal club-modal">
+      <div class="common-modal__wrapper">
+         <div class="common-modal__head">
+            <h2 class="common-modal__title uppercase">Требования
+               к члену клуба</h2>
+         </div>
+         <div class="common-modal__content">
+            <ul class="club-modal__require">
+               <li class="club-modal__require-item">
+                  Владение не менее тремя часами <br> Konstantin Chaykin
+               </li>
+               <li class="club-modal__require-item">
+                  Одобренный личный профиль (CV)*
+               </li>
+               <li class="club-modal__require-item">
+                  Рекомендация действительного <br> Члена либо Амбассадора Joker Club
+               </li>
+            </ul>
+            <div class="club-modal__cv-note">
+               * Профиль CV - анкета с информацией о часах любых брендов из вашей коллекции, а также о профессии,
+               социальном статусе,
+               хобби, причинах выбора бренда Konstantin Chaykin. Данная информация требуется для эффективной
+               коммуникации и лучшего
+               понимания интересов сообщества ценителей бреда Konstantin Chaykin.
+            </div>
+         </div>
+         <div class="common-modal__footer common-modal__btns">
+            <button class="button button_black button_full button_filled">
+               <span class="button__text">
+                    Вступить в Joker Club
+                </span>
+            </button>
+            <img class="club-modal__logo" src="img/club/club-image-gray.png" alt="">
+         </div>
+      </div>
+   </div>
+   <div id="clubModal_3" class="modal common-modal club-modal">
+      <div class="common-modal__wrapper">
+         <div class="common-modal__head">
+            <h2 class="common-modal__title uppercase">Требования
+               к АМБАССАДОРУ</h2>
+         </div>
+         <div class="common-modal__content">
+            <ul class="club-modal__require">
+               <li class="club-modal__require-item">
+                  Действительное членство в Joker Club
+               </li>
+               <li class="club-modal__require-item">
+                  Рекомендация Амбассадора Joker Club
+               </li>
+            </ul>
+            <div class="club-modal__cv-note">
+               * Профиль CV - анкета с информацией о часах любых брендов из вашей коллекции, а также о профессии,
+               социальном статусе,
+               хобби, причинах выбора бренда Konstantin Chaykin. Данная информация требуется для эффективной
+               коммуникации и лучшего
+               понимания интересов сообщества ценителей бреда Konstantin Chaykin.
+            </div>
+         </div>
+         <div class="common-modal__footer common-modal__btns">
+            <button class="button button_black button_full button_filled">
+               <span class="button__text">
+                    Подать заявку
+                </span>
+            </button>
+            <img class="club-modal__logo" src="img/club/club-image-gray.png" alt="">
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
