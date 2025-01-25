@@ -102,7 +102,7 @@
                 color: black;
             }
             &#{$root}_load {
-                &::before {
+                &::after {
                     border-right-color: white;
                     border-bottom-color: white;
                 }
@@ -157,7 +157,7 @@
         color: transparent !important;
         pointer-events: none;
         position: relative;
-        &:before {
+        &:after {
             content: '';
             display: block;
             position: absolute;

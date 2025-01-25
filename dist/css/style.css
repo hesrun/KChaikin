@@ -727,7 +727,7 @@ input[type=number] {
 .button_black.button_filled:hover {
   color: black;
 }
-.button_black.button_filled.button_load::before {
+.button_black.button_filled.button_load::after {
   border-right-color: white;
   border-bottom-color: white;
 }
@@ -780,7 +780,7 @@ input[type=number] {
   pointer-events: none;
   position: relative;
 }
-.button_load:before {
+.button_load:after {
   content: "";
   display: block;
   position: absolute;
@@ -5031,6 +5031,43 @@ input[type=number] {
     font-size: 10px;
   }
 }
+.shop-product_watch {
+  gap: 0;
+}
+.shop-product_watch .shop-product__info {
+  background: white;
+  padding: 20px 30px;
+  gap: 5px;
+}
+@media only screen and (max-width: 576px) {
+  .shop-product_watch .shop-product__info {
+    padding: 15px;
+  }
+}
+.shop-product_watch .shop-product__descr {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 576px) {
+  .shop-product_watch .shop-product__descr {
+    flex-direction: column-reverse;
+  }
+}
+.shop-product_watch .shop-product__props {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #7c7c7c;
+}
+.shop-product_watch .shop-product__price {
+  align-self: flex-end;
+}
+@media only screen and (max-width: 576px) {
+  .shop-product_watch .shop-product__price {
+    align-self: flex-start;
+    margin-bottom: 5px;
+  }
+}
 
 .faq-accordion__item {
   border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
@@ -6354,5 +6391,94 @@ input[type=number] {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+}
+
+.for-owners {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 40px 60px;
+  background-image: url("../img/used/restimon.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 30px 0;
+  margin: 60px 0;
+  gap: 30px;
+}
+@media only screen and (max-width: 992px) {
+  .for-owners {
+    background-image: none;
+    padding: 30px;
+    margin: 30px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .for-owners {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 15px;
+    margin: 30px -15px;
+  }
+}
+.for-owners__text {
+  max-width: 520px;
+  margin-right: auto;
+  margin-left: 230px;
+}
+@media only screen and (max-width: 992px) {
+  .for-owners__text {
+    margin-left: 0;
+  }
+}
+.for-owners__title {
+  margin-bottom: 10px;
+}
+.for-owners__button {
+  flex: 0 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.sell-service-advantages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12%;
+}
+@media only screen and (max-width: 768px) {
+  .sell-service-advantages {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+.sell-service-advantages__props {
+  display: flex;
+}
+.sell-service-advantages__title {
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .sell-service-advantages__title br {
+    display: none;
+  }
+}
+.sell-service-advantages__props-item {
+  flex: 0 0 33%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-advantages__props-item {
+    font-size: 12px;
+  }
+}
+.sell-service-advantages__props-item i {
+  font-size: 50px;
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-advantages__props-item i {
+    font-size: 36px;
   }
 }
