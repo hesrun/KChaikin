@@ -809,6 +809,12 @@ input[type=number] {
   position: relative;
   margin-bottom: 20px;
 }
+.page-section_dark .с-input {
+  background: rgba(255, 255, 255, 0.05);
+}
+.modal .с-input {
+  background: rgba(0, 0, 0, 0.05);
+}
 .с-input:last-child {
   margin-bottom: 0;
 }
@@ -992,6 +998,10 @@ input[type=number] {
 
 .c-textarea:-ms-input-placeholder {
   color: #7c7c7c;
+}
+
+.modal .c-textarea {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .с-select {
@@ -6481,4 +6491,145 @@ input[type=number] {
   .sell-service-advantages__props-item i {
     font-size: 36px;
   }
+}
+
+.owner-ask {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sell-service-achives {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.achives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  padding-left: 30px;
+}
+.achives-list__item {
+  position: relative;
+}
+.achives-list__item:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -30px;
+  top: 2px;
+}
+.achives-list__item_positive:before {
+  background-image: url("../img/owners/checkmark-circle-02 1.png");
+}
+.achives-list__item_negative:before {
+  background-image: url("../img/owners/remove-circle 1.png");
+}
+
+.sell-service-request__inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 15px;
+}
+.sell-service-request__set {
+  display: flex;
+  gap: 30px;
+  margin: 10px 0 30px;
+}
+.sell-service-request__set .с-checkbox {
+  margin: 0;
+}
+
+.clip-photo {
+  margin: 30px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.clip-photo label {
+  cursor: pointer;
+}
+.clip-photo__input {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+.clip-photo__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  gap: 10px;
+  font-size: 13px;
+}
+.clip-photo i {
+  font-size: 24px;
+}
+.clip-photo__remove {
+  background: white;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  z-index: 1;
+  right: 10px;
+  top: 10px;
+}
+.clip-photo__remove:after, .clip-photo__remove:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  position: absolute;
+  background: black;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+.clip-photo__remove:before {
+  rotate: 45deg;
+}
+.clip-photo__remove:after {
+  rotate: -45deg;
+}
+@media (any-hover: hover) {
+  .clip-photo__remove:hover {
+    opacity: 0.7;
+  }
+}
+.clip-photo__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sell-service-request {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 40px;
+}
+.sell-service-request__text {
+  margin-bottom: 30px;
+}
+.sell-service-request__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.sell-service-request__btns .button {
+  padding: 0 15px;
 }

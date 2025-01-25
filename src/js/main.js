@@ -327,6 +327,7 @@ $(document).on('click', '.requestVacancy', function (e) {
     $('#vacancyModal').modal({
         fadeDuration: 300,
     })
+    return false
 })
 $('.queueModalOpen').click(function () {
     $('#queueModal').modal({

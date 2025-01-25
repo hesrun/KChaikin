@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+@include('modules/link.html',{ 'title': 'Category' })
+
+<body>
+    @include('modules/header.html',{'theme':'black'})
+    <main class="main">
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <h1 class="section-head__title uppercase">
+                        ДЛЯ ВЛАДЕЛЬЦЕВ <br>
+                        часов
+                    </h1>
+                </div>
+                <div class="owner-ask">
+                    <div class="owner-ask__text">
+                        Вы владелец часов «Константин Чайкин»? Воспользуйтесь нашим сервисом продажи подержанных часов.
+                        <br>
+                        Это удобно, надежно, выгодно и быстро!
+                    </div>
+                    <div class="owner-ask__btns">
+                        <a href="#" class="button button_black button_full_s">
+                            <span class="button__text">Продать свои часы</span>
+                        </a>
+                        <a href="#" class="button button_clear button_full_s">
+                            <span class="button__text">Посмотреть часы в продаже</span>
+                        </a>
+                    </div>
+                </div>
+                <hr class="divder">
+                <div class="sell-service-achives">
+                    <div>
+                        <h3 class="sell-service-achives__title uppercase">
+                            ПродажА через <br>
+                            Мануфактуру
+                        </h3>
+                        <ul class="achives-list">
+                            <li class="achives-list__item achives-list__item_positive">
+                                Быстрая продажа нашим коллекционерам
+                            </li>
+                            <li class="achives-list__item achives-list__item_positive">
+                                Низкая комиссия до 10%
+                            </li>
+                            <li class="achives-list__item achives-list__item_positive">
+                                Более высокая цена продажи
+                            </li>
+                            <li class="achives-list__item achives-list__item_positive">
+                                Прозрачность и безопасность
+                            </li>
+                            <li class="achives-list__item achives-list__item_positive">
+                                Моментальная выплата
+                            </li>
+                            <li class="achives-list__item achives-list__item_positive">
+                                Поддержка на всех этапах
+                            </li>
+                            <li class="achives-list__item achives-list__item_positive">
+                                Специальные условия для Членов Клуба
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="sell-service-achives__title uppercase">
+                            ПРОДАЖА ЧЕреЗ <br> СТОРОННИе СеРВИСЫ
+                        </h3>
+                        <ul class="achives-list">
+                            <li class="achives-list__item achives-list__item_negative">
+                                Непрогнозируемое время продажи
+                            </li>
+                            <li class="achives-list__item achives-list__item_negative">
+                                Комиссия может быть более 10%
+                            </li>
+                            <li class="achives-list__item achives-list__item_negative">
+                                Цена продажи ниже, чем могла бы быть
+                            </li>
+                            <li class="achives-list__item achives-list__item_negative">
+                                Покупатели переживают за «чистоту» часов
+                            </li>
+                            <li class="achives-list__item achives-list__item_negative">
+                                Выплата денег занимает до 1 месяца
+                            </li>
+                            <li class="achives-list__item achives-list__item_negative">
+                                Никакой поддержки
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section page-section_dark">
+            <div class="container">
+                <div class="sell-service-request">
+                    <form action="" class="sell-service-request__form">
+                        <div class="section-head">
+                            <h3 class="section-head__title uppercase">
+                                Выгодно и быстро <br> продайте свои часы
+                            </h3>
+                        </div>
+                        <p class="sell-service-request__text">
+                            Заполните форму, приложите фотографии часов, и мы сделаем лучшее предложение по продаже
+                            ваших часов «Константин Чайкин».
+                            Эксперты мануфактуры проведут справедливую оценку исходя из модели, состояния часов и
+                            комплектации.
+                        </p>
+                        <div class="sell-service-request__inputs">
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Страна">
+                                <label>Страна</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Имя">
+                                <label>Имя</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="tel" name="" id="" placeholder="Телефон">
+                                <label>Телефон</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="email" name="" id="" placeholder="Электронная почта">
+                                <label>Электронная почта</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Дата приобретения">
+                                <label>Дата приобретения</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="number" name="" id="" placeholder="Желаемая цена продажи, USD">
+                                <label>Желаемая цена продажи, USD</label>
+                            </div>
+                        </div>
+                        <div class="sell-service-request__set">
+                            <label class="с-checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span>Коробка</span>
+                            </label>
+                            <label class="с-checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span>Документы</span>
+                            </label>
+                        </div>
+                        <div class="clip-photo">
+                            <label class="clip-photo__item" for="clipImg">
+                                <input class="clip-photo__input" type="file" name="" id="clipImg">
+                                <i class="icon-cloud-upload"></i>
+                                <span class="clip-photo__text">Загрузить <br> фото</span>
+                            </label>
+                            <div class="clip-photo__item">
+                                <img src="img/owners/Frame 36186.png" alt="" class="clip-photo__img">
+                                <button class="clip-photo__remove"></button>
+                            </div>
+                            <div class="clip-photo__item">
+                                <img src="img/owners/Frame 36186.png" alt="" class="clip-photo__img">
+                                <button class="clip-photo__remove"></button>
+                            </div>
+                        </div>
+                        <div class="sell-service-request__btns">
+                            <button type="submit" class="button button_white button_filled button_full_s">
+                                Отправить в мануфактуру
+                            </button>
+                            <button class="button button_white button_full_s">
+                                <i class="icon-whatsapp"></i>
+                                Через Whatsapp
+                            </button>
+                            <button class="button button_white button_full_s">
+                                <i class="icon-telegram-line"></i>
+                                Через Telegram
+                            </button>
+                        </div>
+                    </form>
+                    <div class="sell-service-request__image">
+                        <img class="img-fluid" src="img/owners/image 52.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+</body>
+
+</html>

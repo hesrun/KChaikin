@@ -189,6 +189,12 @@
     border-radius: 8px;
     position: relative;
     margin-bottom: 20px;
+    .page-section_dark & {
+        background: rgba(white, 0.05);
+    }
+    .modal & {
+        background: rgba(black, 0.05);
+    }
     &:last-child {
         margin-bottom: 0;
     }
@@ -331,6 +337,9 @@
     vertical-align: middle;
     @include placeholder {
         color: #7c7c7c;
+    }
+    .modal & {
+        background: rgba(black, 0.05);
     }
 }
 
