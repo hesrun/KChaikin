@@ -877,6 +877,10 @@ input[type=number] {
   top: 0px;
   position: absolute;
   line-height: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
   transition: all 0.2s;
 }
 .с-input_phone input::-webkit-input-placeholder {
@@ -6504,6 +6508,11 @@ input[type=number] {
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
+@media only screen and (max-width: 576px) {
+  .sell-service-achives {
+    grid-template-columns: 1fr;
+  }
+}
 
 .achives-list {
   display: flex;
@@ -6536,10 +6545,20 @@ input[type=number] {
   grid-template-columns: 1fr 1fr;
   gap: 0 15px;
 }
+@media only screen and (max-width: 768px) {
+  .sell-service-request__inputs {
+    grid-template-columns: 1fr;
+  }
+}
 .sell-service-request__set {
   display: flex;
   gap: 30px;
   margin: 10px 0 30px;
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-request__set {
+    margin: 30px 0;
+  }
 }
 .sell-service-request__set .с-checkbox {
   margin: 0;
@@ -6549,6 +6568,7 @@ input[type=number] {
   margin: 30px 0;
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .clip-photo label {
@@ -6621,6 +6641,21 @@ input[type=number] {
   display: grid;
   grid-template-columns: 1fr 480px;
   gap: 40px;
+}
+@media only screen and (max-width: 992px) {
+  .sell-service-request {
+    grid-template-columns: 1fr 320px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sell-service-request {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sell-service-request__image {
+    display: none;
+  }
 }
 .sell-service-request__text {
   margin-bottom: 30px;
