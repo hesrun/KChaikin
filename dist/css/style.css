@@ -3028,20 +3028,14 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .index-nav__grid {
-    gap: 20px 10px;
+    gap: 20px 6px;
   }
 }
 .index-nav__item {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   transition: all 0.3s;
-}
-@media only screen and (max-width: 576px) {
-  .index-nav__item {
-    gap: 10px;
-  }
 }
 @media (any-hover: hover) {
   .index-nav__item:hover {
@@ -3050,10 +3044,11 @@ input[type=number] {
   }
 }
 .index-nav__title {
-  font-size: 28px;
+  font-size: 32px;
   margin: 0;
   letter-spacing: 0px;
   line-height: 1;
+  margin: 15px 0;
 }
 @media only screen and (max-width: 768px) {
   .index-nav__title {
@@ -3062,16 +3057,18 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .index-nav__title {
-    font-size: 18px;
+    margin: 11px 0 6px;
+    font-size: 16px;
   }
 }
 .index-nav__descr {
   color: #727273;
+  line-height: normal;
 }
 @media only screen and (max-width: 576px) {
   .index-nav__descr {
-    font-size: 14px;
-    line-height: 1.2;
+    margin-top: auto;
+    font-size: 11px;
   }
   .index-nav__descr br {
     display: none;
