@@ -748,6 +748,9 @@
 .about-master {
     &__text {
         margin: 30px 0;
+        @include sm {
+            margin: 15px 0;
+        }
     }
     &__more {
         display: flex;
@@ -755,7 +758,7 @@
         gap: 50px;
         @include sm {
             flex-direction: column-reverse;
-            gap: 30px;
+            gap: 15px;
             align-items: stretch;
         }
     }
