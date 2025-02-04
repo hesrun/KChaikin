@@ -112,6 +112,19 @@ const inventSlider = new Swiper('.invent-modal-slider', {
     },
 })
 
+const newItemsSwiper = new Swiper('.new-items-list', {
+    spaceBetween: 0,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    breakpoints: {
+        768: {
+            centeredSlides: false,
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    },
+})
+
 $(document).on('click', '.date-list .swiper-slide', function (e) {
     e.preventDefault()
 
