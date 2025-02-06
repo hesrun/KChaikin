@@ -6652,6 +6652,9 @@ input[type=number] {
   gap: 10px;
   font-size: 13px;
 }
+.clip-photo__item_error {
+  border: 1px #ff1834 dashed;
+}
 .clip-photo__item_load:after {
   content: "";
   display: block;

@@ -94,6 +94,9 @@
         background: rgba(white, 0.1);
         gap: 10px;
         font-size: 13px;
+        &_error {
+            border: 1px #ff1834 dashed;
+        }
         &_load {
             &:after {
                 content: '';
