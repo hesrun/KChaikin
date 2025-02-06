@@ -94,6 +94,22 @@
         background: rgba(white, 0.1);
         gap: 10px;
         font-size: 13px;
+        &_load {
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border: 4px white solid;
+                border-bottom-color: transparent;
+                border-radius: 50%;
+                left: 50%;
+                top: 50%;
+                translate: -50% -50%;
+                animation: 0.7s Spin infinite linear;
+            }
+        }
     }
     i {
         font-size: 24px;
@@ -162,5 +178,11 @@
         .button {
             padding: 0 15px;
         }
+    }
+}
+
+@keyframes Spin {
+    to {
+        transform: rotate(360deg);
     }
 }

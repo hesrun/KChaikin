@@ -74,7 +74,19 @@
         img {
             transform: translateY(20px);
             transition: transform 0.4s;
-            max-width: 350px;
+            max-width: 250px;
+            display: block;
+            @include xl {
+                width: 230px;
+            }
+            @include md {
+                width: 80%;
+                margin: 0 auto;
+            }
+            @include sm {
+                width: 70%;
+                margin: 0 auto;
+            }
         }
         &:after {
             content: '';
@@ -94,11 +106,6 @@
             filter: blur(20px);
             @include md {
                 display: none;
-            }
-        }
-        @include md {
-            img {
-                width: 100%;
             }
         }
     }

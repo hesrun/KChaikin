@@ -275,6 +275,7 @@
             border-bottom: 1px rgba(white, 0.15) solid;
             padding-left: 0;
             padding-right: 0;
+            border-radius: 0;
         }
         label {
             padding-left: 0;
@@ -463,7 +464,7 @@
         padding: 0;
     }
     &__selected-country-primary {
-        padding: 0 10px;
+        padding: 20px 10px 0;
     }
     &__selected-flag {
         background: none !important;
@@ -480,6 +481,7 @@
         z-index: 11 !important;
         top: calc(100% + 10px) !important;
         margin: 0px !important;
+        color: black;
         background: white;
         left: -2px;
         box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.1) !important;

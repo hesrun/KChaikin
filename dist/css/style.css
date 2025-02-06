@@ -933,6 +933,7 @@ input[type=number] {
   border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
   padding-left: 0;
   padding-right: 0;
+  border-radius: 0;
 }
 .с-input_dark label {
   padding-left: 0;
@@ -1149,7 +1150,7 @@ input[type=number] {
   padding: 0;
 }
 .iti__selected-country-primary {
-  padding: 0 10px;
+  padding: 20px 10px 0;
 }
 .iti__selected-flag {
   background: none !important;
@@ -1166,6 +1167,7 @@ input[type=number] {
   z-index: 11 !important;
   top: calc(100% + 10px) !important;
   margin: 0px !important;
+  color: black;
   background: white;
   left: -2px;
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.1) !important;
@@ -3743,7 +3745,25 @@ input[type=number] {
 .products-grid__item-image img {
   transform: translateY(20px);
   transition: transform 0.4s;
-  max-width: 350px;
+  max-width: 250px;
+  display: block;
+}
+@media only screen and (max-width: 1200px) {
+  .products-grid__item-image img {
+    width: 230px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .products-grid__item-image img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .products-grid__item-image img {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 .products-grid__item-image:after {
   content: "";
@@ -3761,11 +3781,6 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .products-grid__item-image:after {
     display: none;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .products-grid__item-image img {
-    width: 100%;
   }
 }
 .products-grid__item-reward {
@@ -6596,6 +6611,20 @@ input[type=number] {
   gap: 10px;
   font-size: 13px;
 }
+.clip-photo__item_load:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px white solid;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  animation: 0.7s Spin infinite linear;
+}
 .clip-photo i {
   font-size: 24px;
 }
@@ -6669,4 +6698,10 @@ input[type=number] {
 }
 .sell-service-request__btns .button {
   padding: 0 15px;
+}
+
+@keyframes Spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
