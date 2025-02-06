@@ -1,0 +1,38 @@
+.announce-text-block {
+    margin-bottom: 60px;
+    @include md {
+        margin-bottom: 30px;
+    }
+}
+.announce-banner {
+    margin: 60px 0;
+    @include md {
+        margin: 30px 0;
+    }
+}
+
+.announce-request {
+    margin: 60px 0;
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 15px;
+        margin-bottom: 15px;
+        @include md {
+            grid-template-columns: 1fr;
+        }
+    }
+    @include md {
+        margin: 30px 0;
+    }
+}
+
+.announce-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    .button {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

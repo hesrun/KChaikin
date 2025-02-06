@@ -155,8 +155,9 @@
     }
 }
 
-.push-left-text {
-    margin-left: 33.33%;
+.push-left-text,
+.push-left-content {
+    margin-left: 24%;
     line-height: 1.5;
     @include md {
         margin-left: auto;

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+@include('modules/link.html',{ 'title': 'Category' })
+
+<body>
+    @include('modules/header.html',{'theme':'white'})
+    <main class="main">
+        <section class="page-section page-section_dark">
+            <div class="container">
+                <div class="announce-text-block">
+                    <div class="section-head">
+                        <h1 class="section-head__title uppercase h1_big">
+                            Сказка, которая <br>
+                            всегда с вами
+                        </h1>
+                    </div>
+                    <div class="push-left-text">
+                        <p>
+                            Часы мануфактуры Константина Чайкина — не просто высокоточный и совершенный инструмент для
+                            измерения времени: в каждое
+                            свое произведение мастер вкладывает некую идею — философскую или сказочную, но неизменно
+                            увлекательную. Творения Чайкина
+                            наполняют секунды магией, минуты — теплом детских воспоминаний, часы — духом приключений.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="announce-banner">
+                <img class="announce-banner__image img-responsive" src="img/announce/image.jpg" alt="">
+            </div>
+            <div class="container">
+                <div class="announce-text-block">
+                    <h2 class="uppercase">НОВАЯ МОДЕЛЬ</h2>
+                    <div class="push-left-text">
+                        <p>
+                            Новая модель мануфактуры «Константин Чайкин» — волшебная легенда, которая оживает благодаря
+                            искусству часовщика. Чуть
+                            слышное тиканье часов раскрывает сокровенные тайны и рассказывает о необычайном. На ваших
+                            глазах
+                            утекающее время
+                            становится вашей собственной историей.
+                        </p>
+                    </div>
+                </div>
+                <div class="announce-text-block">
+                    <h2 class="uppercase">Следите за анонсами</h2>
+                    <div class="push-left-text">
+                        <p>
+                            Прикоснитесь первыми к сказке, которая отныне всегда будет с вами.
+                        </p>
+                    </div>
+                </div>
+                <div class="push-left-content">
+                    <form action="" class="announce-request">
+                        <div class="announce-request__grid">
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Имя">
+                                <label>Имя</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="text" name="" id="" placeholder="Страна">
+                                <label>Страна</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="tel" name="" id="phone" placeholder="Телефон">
+                                <label>Телефон</label>
+                            </div>
+                            <div class="с-input">
+                                <input type="email" name="" id="" placeholder="Электронная почта">
+                                <label>Электронная почта</label>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="button button_white button_filled button_full_m">
+                                Узнать первым о релизе
+                            </button>
+                        </div>
+                    </form>
+                    <h3 class="uppercase">Еще больше интересного:</h3>
+                    <div class="announce-social">
+                        <button class="button button_white button_full_s">
+                            <i class="icon-instagram-outline"></i>
+                            Подписаться на Instagram
+                        </button>
+                        <button class="button button_white button_full_s">
+                            <i class="icon-telegram-line"></i>
+                            Подписаться на Telegram канал
+                        </button>
+                        <button class="button button_white button_full_s">
+                            <i class="icon-vk-outline"></i>
+                            Подписаться в ВКонтакте
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+    @include('modals/clubModal.html')
+</body>
+
+</html>

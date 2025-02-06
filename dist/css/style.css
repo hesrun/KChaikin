@@ -435,7 +435,8 @@ ol {
   padding-left: 20px;
 }
 
-h1 {
+h1,
+.h1 {
   font-weight: 100;
   font-size: 50px;
   margin-bottom: 40px;
@@ -443,26 +444,53 @@ h1 {
   line-height: 1.3;
 }
 @media only screen and (max-width: 992px) {
-  h1 {
+  h1,
+.h1 {
     font-size: 32px;
     margin-bottom: 30px;
     letter-spacing: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  h1 {
+  h1,
+.h1 {
     font-size: 28px;
     margin-bottom: 20px;
   }
-  h1 br {
+  h1 br,
+.h1 br {
     display: none;
   }
 }
-.article h1 {
+.article h1,
+.article .h1 {
   margin: 50px 0 20px;
 }
+h1_big,
+.h1_big {
+  font-size: 80px;
+}
+@media only screen and (max-width: 992px) {
+  h1_big,
+.h1_big {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  h1_big,
+.h1_big {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  h1_big,
+.h1_big {
+    font-size: 28px;
+  }
+}
 
-h2 {
+h2,
+.h2 {
   font-weight: 100;
   font-size: 50px;
   margin-bottom: 40px;
@@ -470,26 +498,31 @@ h2 {
   line-height: 1.3;
 }
 @media only screen and (max-width: 992px) {
-  h2 {
+  h2,
+.h2 {
     font-size: 32px;
     margin-bottom: 30px;
     letter-spacing: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  h2 {
+  h2,
+.h2 {
     font-size: 28px;
     margin-bottom: 20px;
   }
-  h2 br {
+  h2 br,
+.h2 br {
     display: none;
   }
 }
-.article h2 {
+.article h2,
+.article .h2 {
   margin: 50px 0 20px;
 }
 
-h3 {
+h3,
+.h3 {
   font-weight: 100;
   font-size: 32px;
   margin-bottom: 40px;
@@ -497,42 +530,49 @@ h3 {
   line-height: 1.3;
 }
 @media only screen and (max-width: 992px) {
-  h3 {
+  h3,
+.h3 {
     font-size: 28px;
     margin-bottom: 30px;
     letter-spacing: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  h3 {
+  h3,
+.h3 {
     font-size: 20px;
     margin-bottom: 20px;
   }
 }
-.article h3 {
+.article h3,
+.article .h3 {
   margin: 50px 0 20px;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: 100;
   line-height: 1.3;
 }
 @media only screen and (max-width: 768px) {
-  h4 {
+  h4,
+.h4 {
     margin-bottom: 10px;
   }
 }
 
-h5 {
+h5,
+.h5 {
   font-size: 18px;
   margin-bottom: 20px;
   font-weight: 100;
   line-height: 1.3;
 }
 @media only screen and (max-width: 768px) {
-  h5 {
+  h5,
+.h5 {
     margin-bottom: 10px;
   }
 }
@@ -633,7 +673,6 @@ input[type=number] {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  letter-spacing: 1px;
   background: none;
   border: 1px transparent solid;
   border-radius: 25px;
@@ -660,7 +699,7 @@ input[type=number] {
   transition: all 0.3s;
 }
 .button [class^=icon] {
-  font-size: 24px;
+  font-size: 20px;
 }
 @media (any-hover: hover) {
   .button:hover:before {
@@ -708,7 +747,7 @@ input[type=number] {
   color: black;
 }
 .button_white.button_filled:before {
-  background: black;
+  background: #1f2022;
 }
 .button_white.button_filled:hover {
   color: white;
@@ -4055,12 +4094,14 @@ input[type=number] {
   }
 }
 
-.push-left-text {
-  margin-left: 33.33%;
+.push-left-text,
+.push-left-content {
+  margin-left: 24%;
   line-height: 1.5;
 }
 @media only screen and (max-width: 768px) {
-  .push-left-text {
+  .push-left-text,
+.push-left-content {
     margin-left: auto;
   }
 }
@@ -6704,4 +6745,51 @@ input[type=number] {
   to {
     transform: rotate(360deg);
   }
+}
+.announce-text-block {
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .announce-text-block {
+    margin-bottom: 30px;
+  }
+}
+
+.announce-banner {
+  margin: 60px 0;
+}
+@media only screen and (max-width: 768px) {
+  .announce-banner {
+    margin: 30px 0;
+  }
+}
+
+.announce-request {
+  margin: 60px 0;
+}
+.announce-request__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 15px;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .announce-request__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .announce-request {
+    margin: 30px 0;
+  }
+}
+
+.announce-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.announce-social .button {
+  padding-left: 24px;
+  padding-right: 24px;
 }
