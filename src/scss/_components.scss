@@ -352,6 +352,9 @@
     border-radius: 8px;
     position: relative;
     margin-bottom: 20px;
+    .page-section_dark & {
+        background: rgba(white, 0.05);
+    }
     &:last-child {
         margin-bottom: 0;
     }
@@ -381,6 +384,9 @@
                 line-height: 20px;
                 color: black;
                 padding: 30px 15px 0;
+                .page-section_dark & {
+                    color: white;
+                }
             }
             .select2-selection__arrow {
                 pointer-events: none;
@@ -403,6 +409,7 @@
     z-index: 10;
 }
 .select2-results__option {
+    color: black;
     padding: 10px 15px;
     font-size: 14px;
     border-bottom: 1px rgba(#1f2022, 0.1) solid;
@@ -459,7 +466,7 @@
     height: 100%;
     &__country-container {
         border-radius: 5px 0 0 5px;
-        border-right: 1px rgba(#1f2022, 0.1) solid;
+        border-right: none;
         padding: 0;
     }
     &__selected-country-primary {

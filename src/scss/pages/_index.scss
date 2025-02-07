@@ -45,23 +45,21 @@
         }
     }
     &__title {
-        font-size: 70px;
         margin-bottom: 20px;
         line-height: 1;
         @include md {
             font-size: 50px;
         }
         @include sm {
-            font-size: 40px;
+            font-size: 32px;
         }
     }
     &__subtitle {
-        font-size: 35px;
+        font-size: 28px;
         opacity: 0.5;
         margin-bottom: auto;
-        text-transform: none;
         @include md {
-            font-size: 24px;
+            font-size: 18px;
         }
     }
     &__text {
@@ -440,7 +438,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
         @include sm {
-            gap: 20px 6px;
+            gap: 20px 15px;
         }
     }
     &__item {
@@ -471,11 +469,7 @@
         color: #727273;
         line-height: normal;
         @include sm {
-            margin-top: auto;
-            font-size: 11px;
-            br {
-                display: none;
-            }
+            display: none;
         }
     }
 }
@@ -680,9 +674,7 @@
         }
     }
     &__title {
-        font-size: 80px;
         margin-bottom: 10px;
-        text-transform: none;
         line-height: 1;
         @include md {
             font-size: 50px;
@@ -695,6 +687,7 @@
         font-size: 20px;
         margin-bottom: auto;
         @include sm {
+            font-size: 14px;
             position: relative;
             z-index: 2;
         }
@@ -714,7 +707,7 @@
 }
 
 .master-parallax {
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
     position: relative;
     margin-bottom: 70px;
@@ -943,7 +936,7 @@
     }
     &__title {
         margin: 0;
-        font-size: 100px;
+        font-size: 70px;
         line-height: 1;
         @include md {
             font-size: 50px;
