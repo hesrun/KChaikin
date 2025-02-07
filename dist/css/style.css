@@ -3222,7 +3222,11 @@ input[type=number] {
   max-width: 450px;
   margin: 30px 0;
 }
+.new-items-preview__image {
+  position: relative;
+}
 .new-items-preview__image img {
+  position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -3331,7 +3335,6 @@ input[type=number] {
   }
 }
 .restimons-builder__subtitle {
-  font-size: 20px;
   margin-bottom: auto;
 }
 @media only screen and (max-width: 576px) {
