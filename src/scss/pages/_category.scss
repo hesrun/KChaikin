@@ -74,18 +74,17 @@
         img {
             transform: translateY(20px);
             transition: transform 0.4s;
-            max-width: 250px;
+            max-width: 350px;
             display: block;
             @include xl {
-                width: 230px;
+                max-width: 320px;
             }
             @include md {
-                width: 80%;
+                width: 90%;
                 margin: 0 auto;
             }
             @include sm {
-                width: 70%;
-                margin: 0 auto;
+                width: 100%;
             }
         }
         &:after {

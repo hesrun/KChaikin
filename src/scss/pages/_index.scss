@@ -529,10 +529,13 @@
     }
     &__image {
         margin: auto;
-        max-width: 220px;
         width: 100%;
         margin-bottom: 10px;
         transition: all 0.3s;
+        @include sm {
+            width: calc(100% + 60px);
+            margin-left: -30px;
+        }
     }
 }
 
@@ -941,6 +944,9 @@
         line-height: 1;
         @include md {
             font-size: 50px;
+        }
+        @include md {
+            font-size: 40px;
         }
     }
     &__grid {

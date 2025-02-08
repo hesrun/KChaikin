@@ -3169,10 +3169,15 @@ input[type=number] {
 }
 .new-items-list__image {
   margin: auto;
-  max-width: 220px;
   width: 100%;
   margin-bottom: 10px;
   transition: all 0.3s;
+}
+@media only screen and (max-width: 576px) {
+  .new-items-list__image {
+    width: calc(100% + 60px);
+    margin-left: -30px;
+  }
 }
 
 .new-items-preview {
@@ -3626,6 +3631,11 @@ input[type=number] {
     font-size: 50px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .chaykin-about__title {
+    font-size: 40px;
+  }
+}
 .chaykin-about__grid {
   display: flex;
 }
@@ -3767,24 +3777,23 @@ input[type=number] {
 .products-grid__item-image img {
   transform: translateY(20px);
   transition: transform 0.4s;
-  max-width: 250px;
+  max-width: 350px;
   display: block;
 }
 @media only screen and (max-width: 1200px) {
   .products-grid__item-image img {
-    width: 230px;
+    max-width: 320px;
   }
 }
 @media only screen and (max-width: 768px) {
   .products-grid__item-image img {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
 }
 @media only screen and (max-width: 576px) {
   .products-grid__item-image img {
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
   }
 }
 .products-grid__item-image:after {
