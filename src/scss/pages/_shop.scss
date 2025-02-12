@@ -103,6 +103,7 @@
     &_watch {
         gap: 0;
         #{$root}__info {
+            flex: 1;
             background: white;
             padding: 20px 30px;
             gap: 5px;
@@ -111,12 +112,15 @@
             }
         }
         #{$root}__descr {
-            margin-top: 10px;
+            margin-top: auto;
             display: flex;
             justify-content: space-between;
             @include sm {
                 flex-direction: column-reverse;
             }
+        }
+        #{$root}__series {
+            margin-bottom: 5px;
         }
         #{$root}__props {
             text-transform: uppercase;

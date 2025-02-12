@@ -5090,6 +5090,7 @@ input[type=number] {
   gap: 0;
 }
 .shop-product_watch .shop-product__info {
+  flex: 1;
   background: white;
   padding: 20px 30px;
   gap: 5px;
@@ -5100,7 +5101,7 @@ input[type=number] {
   }
 }
 .shop-product_watch .shop-product__descr {
-  margin-top: 10px;
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
 }
@@ -5108,6 +5109,9 @@ input[type=number] {
   .shop-product_watch .shop-product__descr {
     flex-direction: column-reverse;
   }
+}
+.shop-product_watch .shop-product__series {
+  margin-bottom: 5px;
 }
 .shop-product_watch .shop-product__props {
   text-transform: uppercase;
