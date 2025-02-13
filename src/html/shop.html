@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="ru">
-    @include('modules/link.html',{ 'title': 'Main' })
-    <body>
-        @include('modules/header.html',{'theme':'white'})
-        <main class="main">
+@include('modules/link.html',{ 'title': 'Main' })
+
+<body>
+    @include('modules/header.html',{'theme':'black'})
+    <main class="main">
+        <!-- <div class="hero-slider swiper">
             <div class="hero-slider__title">
                 <div class="container">
                     <div class="section-head">
@@ -17,470 +19,146 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-slider swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/shop/shop-banner-1-m.jpg"
-                            />
-                            <img src="img/shop/shop-banner-1.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>JOKER SKELETON</h2>
-                                <div class="hero-slider__product-info">
-                                    <div class="hero-slider__product-name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="hero-slider__product-price">
-                                        18 700 ₽
-                                    </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="img/shop/shop-banner-1-m.jpg" />
+                        <img src="img/shop/shop-banner-1.jpg" alt="" />
+                    </picture>
+                    <div class="hero-slider__text">
+                        <div class="container">
+                            <h2>JOKER SKELETON</h2>
+                            <div class="hero-slider__product-info">
+                                <div class="hero-slider__product-name">
+                                    LONG-SLEEVED T-SHIRT
                                 </div>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
+                                <div class="hero-slider__product-price">
+                                    18 700 ₽
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/shop/shop-banner-1-m.jpg"
-                            />
-                            <img src="img/shop/shop-banner-1.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>JOKER SKELETON</h2>
-                                <span>
-                                    Самые сложные часы <br />
-                                    Константина Чайкина
-                                </span>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <picture>
-                            <source
-                                media="(max-width: 768px)"
-                                srcset="img/shop/shop-banner-1-m.jpg"
-                            />
-                            <img src="img/shop/shop-banner-1.jpg" alt="" />
-                        </picture>
-                        <div class="hero-slider__text">
-                            <div class="container">
-                                <h2>JOKER SKELETON</h2>
-                                <span>
-                                    Самые сложные часы <br />
-                                    Константина Чайкина
-                                </span>
-                                <a href="" class="button button_white">
-                                    Подробнее
-                                </a>
-                            </div>
+                            <a href="" class="button button_white">
+                                Подробнее
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="hero-slider__pagination">
-                    <div class="container">
-                        <div class="swiper-pagination"></div>
-                        <div class="divider"></div>
-                        <div class="swiper-nav">
-                            <div class="hero-prev">
-                                <i class="icon-arrow-left"></i>
-                            </div>
-                            <div class="hero-next">
-                                <i class="icon-arrow-right"></i>
-                            </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="img/shop/shop-banner-1-m.jpg" />
+                        <img src="img/shop/shop-banner-1.jpg" alt="" />
+                    </picture>
+                    <div class="hero-slider__text">
+                        <div class="container">
+                            <h2>JOKER SKELETON</h2>
+                            <span>
+                                Самые сложные часы <br />
+                                Константина Чайкина
+                            </span>
+                            <a href="" class="button button_white">
+                                Подробнее
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="img/shop/shop-banner-1-m.jpg" />
+                        <img src="img/shop/shop-banner-1.jpg" alt="" />
+                    </picture>
+                    <div class="hero-slider__text">
+                        <div class="container">
+                            <h2>JOKER SKELETON</h2>
+                            <span>
+                                Самые сложные часы <br />
+                                Константина Чайкина
+                            </span>
+                            <a href="" class="button button_white">
+                                Подробнее
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <section class="page-section">
+            <div class="hero-slider__pagination">
                 <div class="container">
-                    <div class="section-head">
-                        <h2 class="section-head__title">Категории</h2>
-                    </div>
-                    <div class="watch-collection-grid">
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_2x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/shop/merch-cat-1.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name">
-                                Мерч
-                            </span>
-                        </a>
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_2x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/shop/merch-cat-2.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name">
-                                Эскизы
-                            </span>
-                        </a>
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_3x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/shop/merch-cat-3.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name">
-                                Литература
-                            </span>
-                        </a>
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_3x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/shop/merch-cat-4.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name">
-                                Футляры
-                            </span>
-                        </a>
-                        <a
-                            href="#"
-                            class="watch-collection-grid__item watch-collection-grid__item_3x"
-                        >
-                            <div class="watch-collection-grid__image">
-                                <img src="img/shop/merch-cat-5.jpg" alt="" />
-                            </div>
-                            <span class="watch-collection-grid__name">
-                                Ремешки
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head">
-                        <h2 class="section-head__title">Популярное</h2>
-                    </div>
-                    <div class="photo-carusel swiper">
-                        <div class="swiper-wrapper">
-                            <a
-                                href=""
-                                class="swiper-slide shop-product shop-product_carusel"
-                            >
-                                <div class="shop-product__image">
-                                    <img
-                                        src="img/shop/merch-item-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="shop-product__info">
-                                    <div class="shop-product__name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="shop-product__series">
-                                        JOKER SKELETON
-                                    </div>
-                                    <div class="shop-product__price">
-                                        18 700 ₽
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href=""
-                                class="swiper-slide shop-product shop-product_carusel"
-                            >
-                                <div class="shop-product__image">
-                                    <img
-                                        src="img/shop/merch-item-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="shop-product__info">
-                                    <div class="shop-product__name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="shop-product__series">
-                                        JOKER SKELETON
-                                    </div>
-                                    <div class="shop-product__price">
-                                        18 700 ₽
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href=""
-                                class="swiper-slide shop-product shop-product_carusel"
-                            >
-                                <div class="shop-product__image">
-                                    <img
-                                        src="img/shop/merch-item-3.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="shop-product__info">
-                                    <div class="shop-product__name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="shop-product__series">
-                                        JOKER SKELETON
-                                    </div>
-                                    <div class="shop-product__price">
-                                        18 700 ₽
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href=""
-                                class="swiper-slide shop-product shop-product_carusel"
-                            >
-                                <div class="shop-product__image">
-                                    <img
-                                        src="img/shop/merch-item-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="shop-product__info">
-                                    <div class="shop-product__name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="shop-product__series">
-                                        JOKER SKELETON
-                                    </div>
-                                    <div class="shop-product__price">
-                                        18 700 ₽
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href=""
-                                class="swiper-slide shop-product shop-product_carusel"
-                            >
-                                <div class="shop-product__image">
-                                    <img
-                                        src="img/shop/merch-item-2.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="shop-product__info">
-                                    <div class="shop-product__name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="shop-product__series">
-                                        JOKER SKELETON
-                                    </div>
-                                    <div class="shop-product__price">
-                                        18 700 ₽
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href=""
-                                class="swiper-slide shop-product shop-product_carusel"
-                            >
-                                <div class="shop-product__image">
-                                    <img
-                                        src="img/shop/merch-item-3.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="shop-product__info">
-                                    <div class="shop-product__name">
-                                        LONG-SLEEVED T-SHIRT
-                                    </div>
-                                    <div class="shop-product__series">
-                                        JOKER SKELETON
-                                    </div>
-                                    <div class="shop-product__price">
-                                        18 700 ₽
-                                    </div>
-                                </div>
-                            </a>
+                    <div class="swiper-pagination"></div>
+                    <div class="divider"></div>
+                    <div class="swiper-nav">
+                        <div class="hero-prev">
+                            <i class="icon-arrow-left"></i>
                         </div>
-                        <div class="photo-carusel-nav">
-                            <div class="photo-carusel-nav__pagination"></div>
-                            <div class="photo-carusel-nav__arrows">
-                                <div class="photo-carusel-nav__prev">
-                                    <i class="icon-arrow-left"></i>
-                                </div>
-                                <div class="photo-carusel-nav__next">
-                                    <i class="icon-arrow-right"></i>
-                                </div>
-                            </div>
+                        <div class="hero-next">
+                            <i class="icon-arrow-right"></i>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head">
-                        <h2 class="section-head__title">Вопрос-ответ</h2>
-                    </div>
-                    <div class="faq-accordion">
-                        <div class="faq-accordion__item">
-                            <h3 class="faq-accordion__title">
-                                Каков процесс оформления заказа?
-                            </h3>
-                            <div class="faq-accordion__content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Aperiam asperiores atque aut
-                                beatae delectus, dignissimos in labore
-                                necessitatibus officia officiis optio, placeat
-                                porro qui quisquam ratione repudiandae sint ut
-                                voluptas? Amet excepturi quae quisquam saepe
-                                sapiente? Animi blanditiis deleniti dolore
-                                doloremque esse, ex fugiat inventore modi
-                                molestiae mollitia nihil nulla qui, quod
-                                reprehenderit sed sunt suscipit tempore veniam
-                                voluptas voluptatibus! Delectus labore, possimus
-                                quasi sint ullam velit! Atque commodi dolorem
-                                ex, hic molestias nemo obcaecati quidem quisquam
-                                sunt veniam! Atque, doloribus ex excepturi
-                                inventore ipsum iure, minus neque nihil officia
-                                officiis porro, quis sequi similique sit sunt.
-                                Minus officia, repellendus!
-                            </div>
-                        </div>
-                        <div class="faq-accordion__item">
-                            <h3 class="faq-accordion__title">
-                                Какие способы оплаты доступны?
-                            </h3>
-                            <div class="faq-accordion__content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Aperiam asperiores atque aut
-                                beatae delectus, dignissimos in labore
-                                necessitatibus officia officiis optio, placeat
-                                porro qui quisquam ratione repudiandae sint ut
-                                voluptas? Amet excepturi quae quisquam saepe
-                                sapiente? Animi blanditiis deleniti dolore
-                                doloremque esse, ex fugiat inventore modi
-                                molestiae mollitia nihil nulla qui, quod
-                                reprehenderit sed sunt suscipit tempore veniam
-                                voluptas voluptatibus! Delectus labore, possimus
-                                quasi sint ullam velit! Atque commodi dolorem
-                                ex, hic molestias nemo obcaecati quidem quisquam
-                                sunt veniam! Atque, doloribus ex excepturi
-                                inventore ipsum iure, minus neque nihil officia
-                                officiis porro, quis sequi similique sit sunt.
-                                Minus officia, repellendus!
-                            </div>
-                        </div>
-                        <div class="faq-accordion__item">
-                            <h3 class="faq-accordion__title">
-                                Каковы сроки доставки товаров?
-                            </h3>
-                            <div class="faq-accordion__content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Aperiam asperiores atque aut
-                                beatae delectus, dignissimos in labore
-                                necessitatibus officia officiis optio, placeat
-                                porro qui quisquam ratione repudiandae sint ut
-                                voluptas? Amet excepturi quae quisquam saepe
-                                sapiente? Animi blanditiis deleniti dolore
-                                doloremque esse, ex fugiat inventore modi
-                                molestiae mollitia nihil nulla qui, quod
-                                reprehenderit sed sunt suscipit tempore veniam
-                                voluptas voluptatibus! Delectus labore, possimus
-                                quasi sint ullam velit! Atque commodi dolorem
-                                ex, hic molestias nemo obcaecati quidem quisquam
-                                sunt veniam! Atque, doloribus ex excepturi
-                                inventore ipsum iure, minus neque nihil officia
-                                officiis porro, quis sequi similique sit sunt.
-                                Minus officia, repellendus!
-                            </div>
-                        </div>
-                        <div class="faq-accordion__item">
-                            <h3 class="faq-accordion__title">
-                                Какие условия возврата и обмена товаров в онлайн
-                                магазине?
-                            </h3>
-                            <div class="faq-accordion__content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Aperiam asperiores atque aut
-                                beatae delectus, dignissimos in labore
-                                necessitatibus officia officiis optio, placeat
-                                porro qui quisquam ratione repudiandae sint ut
-                                voluptas? Amet excepturi quae quisquam saepe
-                                sapiente? Animi blanditiis deleniti dolore
-                                doloremque esse, ex fugiat inventore modi
-                                molestiae mollitia nihil nulla qui, quod
-                                reprehenderit sed sunt suscipit tempore veniam
-                                voluptas voluptatibus! Delectus labore, possimus
-                                quasi sint ullam velit! Atque commodi dolorem
-                                ex, hic molestias nemo obcaecati quidem quisquam
-                                sunt veniam! Atque, doloribus ex excepturi
-                                inventore ipsum iure, minus neque nihil officia
-                                officiis porro, quis sequi similique sit sunt.
-                                Minus officia, repellendus!
-                            </div>
-                        </div>
-                        <div class="faq-accordion__item">
-                            <h3 class="faq-accordion__title">
-                                Как связаться с поддержкой клиентов магазина?
-                            </h3>
-                            <div class="faq-accordion__content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Aperiam asperiores atque aut
-                                beatae delectus, dignissimos in labore
-                                necessitatibus officia officiis optio, placeat
-                                porro qui quisquam ratione repudiandae sint ut
-                                voluptas? Amet excepturi quae quisquam saepe
-                                sapiente? Animi blanditiis deleniti dolore
-                                doloremque esse, ex fugiat inventore modi
-                                molestiae mollitia nihil nulla qui, quod
-                                reprehenderit sed sunt suscipit tempore veniam
-                                voluptas voluptatibus! Delectus labore, possimus
-                                quasi sint ullam velit! Atque commodi dolorem
-                                ex, hic molestias nemo obcaecati quidem quisquam
-                                sunt veniam! Atque, doloribus ex excepturi
-                                inventore ipsum iure, minus neque nihil officia
-                                officiis porro, quis sequi similique sit sunt.
-                                Minus officia, repellendus!
-                            </div>
-                        </div>
-                        <div class="faq-accordion__item">
-                            <h3 class="faq-accordion__title">
-                                Есть ли гарантия на товары?
-                            </h3>
-                            <div class="faq-accordion__content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Aperiam asperiores atque aut
-                                beatae delectus, dignissimos in labore
-                                necessitatibus officia officiis optio, placeat
-                                porro qui quisquam ratione repudiandae sint ut
-                                voluptas? Amet excepturi quae quisquam saepe
-                                sapiente? Animi blanditiis deleniti dolore
-                                doloremque esse, ex fugiat inventore modi
-                                molestiae mollitia nihil nulla qui, quod
-                                reprehenderit sed sunt suscipit tempore veniam
-                                voluptas voluptatibus! Delectus labore, possimus
-                                quasi sint ullam velit! Atque commodi dolorem
-                                ex, hic molestias nemo obcaecati quidem quisquam
-                                sunt veniam! Atque, doloribus ex excepturi
-                                inventore ipsum iure, minus neque nihil officia
-                                officiis porro, quis sequi similique sit sunt.
-                                Minus officia, repellendus!
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div> -->
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-head__title">ONLINE STORE</h2>
                 </div>
-            </section>
-            <section class="page-section">
-                <div class="container">
-                    <div class="section-head">
-                        <h2 class="section-head__title">Вы смотрели</h2>
-                    </div>
-                    <div class="last-view-product">
-                        <a href="" class="shop-product shop-product_row">
+                <div class="watch-collection-grid">
+                    <a href="#" class="watch-collection-grid__item watch-collection-grid__item_full">
+                        <div class="watch-collection-grid__image">
+                            <img src="img/shop/merch-banner.jpg" alt="" />
+                        </div>
+                        <span class="watch-collection-grid__name">
+                            CERTIFIED PRE-OWNED WATCHES
+                        </span>
+                    </a>
+                    <a href="#" class="watch-collection-grid__item watch-collection-grid__item_2x">
+                        <div class="watch-collection-grid__image">
+                            <img src="img/shop/merch-cat-1.jpg" alt="" />
+                        </div>
+                        <span class="watch-collection-grid__name">
+                            Мерч
+                        </span>
+                    </a>
+                    <a href="#" class="watch-collection-grid__item watch-collection-grid__item_2x">
+                        <div class="watch-collection-grid__image">
+                            <img src="img/shop/merch-cat-2.jpg" alt="" />
+                        </div>
+                        <span class="watch-collection-grid__name">
+                            Эскизы
+                        </span>
+                    </a>
+                    <a href="#" class="watch-collection-grid__item watch-collection-grid__item_3x">
+                        <div class="watch-collection-grid__image">
+                            <img src="img/shop/merch-cat-3.jpg" alt="" />
+                        </div>
+                        <span class="watch-collection-grid__name">
+                            Литература
+                        </span>
+                    </a>
+                    <a href="#" class="watch-collection-grid__item watch-collection-grid__item_3x">
+                        <div class="watch-collection-grid__image">
+                            <img src="img/shop/merch-cat-4.jpg" alt="" />
+                        </div>
+                        <span class="watch-collection-grid__name">
+                            Футляры
+                        </span>
+                    </a>
+                    <a href="#" class="watch-collection-grid__item watch-collection-grid__item_3x">
+                        <div class="watch-collection-grid__image">
+                            <img src="img/shop/merch-cat-5.jpg" alt="" />
+                        </div>
+                        <span class="watch-collection-grid__name">
+                            Ремешки
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-head__title">Популярное</h2>
+                </div>
+                <div class="photo-carusel swiper">
+                    <div class="swiper-wrapper">
+                        <a href="" class="swiper-slide shop-product shop-product_carusel">
                             <div class="shop-product__image">
                                 <img src="img/shop/merch-item-1.jpg" alt="" />
                             </div>
@@ -491,10 +169,12 @@
                                 <div class="shop-product__series">
                                     JOKER SKELETON
                                 </div>
-                                <div class="shop-product__price">18 700 ₽</div>
+                                <div class="shop-product__price">
+                                    18 700 ₽
+                                </div>
                             </div>
                         </a>
-                        <a href="" class="shop-product shop-product_row">
+                        <a href="" class="swiper-slide shop-product shop-product_carusel">
                             <div class="shop-product__image">
                                 <img src="img/shop/merch-item-2.jpg" alt="" />
                             </div>
@@ -505,10 +185,12 @@
                                 <div class="shop-product__series">
                                     JOKER SKELETON
                                 </div>
-                                <div class="shop-product__price">18 700 ₽</div>
+                                <div class="shop-product__price">
+                                    18 700 ₽
+                                </div>
                             </div>
                         </a>
-                        <a href="" class="shop-product shop-product_row">
+                        <a href="" class="swiper-slide shop-product shop-product_carusel">
                             <div class="shop-product__image">
                                 <img src="img/shop/merch-item-3.jpg" alt="" />
                             </div>
@@ -519,13 +201,230 @@
                                 <div class="shop-product__series">
                                     JOKER SKELETON
                                 </div>
-                                <div class="shop-product__price">18 700 ₽</div>
+                                <div class="shop-product__price">
+                                    18 700 ₽
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="swiper-slide shop-product shop-product_carusel">
+                            <div class="shop-product__image">
+                                <img src="img/shop/merch-item-1.jpg" alt="" />
+                            </div>
+                            <div class="shop-product__info">
+                                <div class="shop-product__name">
+                                    LONG-SLEEVED T-SHIRT
+                                </div>
+                                <div class="shop-product__series">
+                                    JOKER SKELETON
+                                </div>
+                                <div class="shop-product__price">
+                                    18 700 ₽
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="swiper-slide shop-product shop-product_carusel">
+                            <div class="shop-product__image">
+                                <img src="img/shop/merch-item-2.jpg" alt="" />
+                            </div>
+                            <div class="shop-product__info">
+                                <div class="shop-product__name">
+                                    LONG-SLEEVED T-SHIRT
+                                </div>
+                                <div class="shop-product__series">
+                                    JOKER SKELETON
+                                </div>
+                                <div class="shop-product__price">
+                                    18 700 ₽
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="swiper-slide shop-product shop-product_carusel">
+                            <div class="shop-product__image">
+                                <img src="img/shop/merch-item-3.jpg" alt="" />
+                            </div>
+                            <div class="shop-product__info">
+                                <div class="shop-product__name">
+                                    LONG-SLEEVED T-SHIRT
+                                </div>
+                                <div class="shop-product__series">
+                                    JOKER SKELETON
+                                </div>
+                                <div class="shop-product__price">
+                                    18 700 ₽
+                                </div>
                             </div>
                         </a>
                     </div>
+                    <div class="photo-carusel-nav">
+                        <div class="photo-carusel-nav__pagination"></div>
+                        <div class="photo-carusel-nav__arrows">
+                            <div class="photo-carusel-nav__prev">
+                                <i class="icon-arrow-left"></i>
+                            </div>
+                            <div class="photo-carusel-nav__next">
+                                <i class="icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </main>
-        @include('modules/footer.html')
-    </body>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-head__title">Вопрос-ответ</h2>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-accordion__item">
+                        <h3 class="faq-accordion__title">
+                            Каков процесс оформления заказа?
+                        </h3>
+                        <div class="faq-accordion__content">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Aperiam asperiores atque aut
+                            beatae delectus, dignissimos in labore
+                            necessitatibus officia officiis optio, placeat
+                            porro qui quisquam ratione repudiandae sint ut
+                            voluptas? Amet excepturi quae quisquam saepe
+                            sapiente? Animi blanditiis deleniti dolore
+                            doloremque esse, ex fugiat inventore modi
+                            molestiae mollitia nihil nulla qui, quod
+                            reprehenderit sed sunt suscipit tempore veniam
+                            voluptas voluptatibus! Delectus labore, possimus
+                            quasi sint ullam velit! Atque commodi dolorem
+                            ex, hic molestias nemo obcaecati quidem quisquam
+                            sunt veniam! Atque, doloribus ex excepturi
+                            inventore ipsum iure, minus neque nihil officia
+                            officiis porro, quis sequi similique sit sunt.
+                            Minus officia, repellendus!
+                        </div>
+                    </div>
+                    <div class="faq-accordion__item">
+                        <h3 class="faq-accordion__title">
+                            Какие способы оплаты доступны?
+                        </h3>
+                        <div class="faq-accordion__content">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Aperiam asperiores atque aut
+                            beatae delectus, dignissimos in labore
+                            necessitatibus officia officiis optio, placeat
+                            porro qui quisquam ratione repudiandae sint ut
+                            voluptas? Amet excepturi quae quisquam saepe
+                            sapiente? Animi blanditiis deleniti dolore
+                            doloremque esse, ex fugiat inventore modi
+                            molestiae mollitia nihil nulla qui, quod
+                            reprehenderit sed sunt suscipit tempore veniam
+                            voluptas voluptatibus! Delectus labore, possimus
+                            quasi sint ullam velit! Atque commodi dolorem
+                            ex, hic molestias nemo obcaecati quidem quisquam
+                            sunt veniam! Atque, doloribus ex excepturi
+                            inventore ipsum iure, minus neque nihil officia
+                            officiis porro, quis sequi similique sit sunt.
+                            Minus officia, repellendus!
+                        </div>
+                    </div>
+                    <div class="faq-accordion__item">
+                        <h3 class="faq-accordion__title">
+                            Каковы сроки доставки товаров?
+                        </h3>
+                        <div class="faq-accordion__content">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Aperiam asperiores atque aut
+                            beatae delectus, dignissimos in labore
+                            necessitatibus officia officiis optio, placeat
+                            porro qui quisquam ratione repudiandae sint ut
+                            voluptas? Amet excepturi quae quisquam saepe
+                            sapiente? Animi blanditiis deleniti dolore
+                            doloremque esse, ex fugiat inventore modi
+                            molestiae mollitia nihil nulla qui, quod
+                            reprehenderit sed sunt suscipit tempore veniam
+                            voluptas voluptatibus! Delectus labore, possimus
+                            quasi sint ullam velit! Atque commodi dolorem
+                            ex, hic molestias nemo obcaecati quidem quisquam
+                            sunt veniam! Atque, doloribus ex excepturi
+                            inventore ipsum iure, minus neque nihil officia
+                            officiis porro, quis sequi similique sit sunt.
+                            Minus officia, repellendus!
+                        </div>
+                    </div>
+                    <div class="faq-accordion__item">
+                        <h3 class="faq-accordion__title">
+                            Какие условия возврата и обмена товаров в онлайн
+                            магазине?
+                        </h3>
+                        <div class="faq-accordion__content">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Aperiam asperiores atque aut
+                            beatae delectus, dignissimos in labore
+                            necessitatibus officia officiis optio, placeat
+                            porro qui quisquam ratione repudiandae sint ut
+                            voluptas? Amet excepturi quae quisquam saepe
+                            sapiente? Animi blanditiis deleniti dolore
+                            doloremque esse, ex fugiat inventore modi
+                            molestiae mollitia nihil nulla qui, quod
+                            reprehenderit sed sunt suscipit tempore veniam
+                            voluptas voluptatibus! Delectus labore, possimus
+                            quasi sint ullam velit! Atque commodi dolorem
+                            ex, hic molestias nemo obcaecati quidem quisquam
+                            sunt veniam! Atque, doloribus ex excepturi
+                            inventore ipsum iure, minus neque nihil officia
+                            officiis porro, quis sequi similique sit sunt.
+                            Minus officia, repellendus!
+                        </div>
+                    </div>
+                    <div class="faq-accordion__item">
+                        <h3 class="faq-accordion__title">
+                            Как связаться с поддержкой клиентов магазина?
+                        </h3>
+                        <div class="faq-accordion__content">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Aperiam asperiores atque aut
+                            beatae delectus, dignissimos in labore
+                            necessitatibus officia officiis optio, placeat
+                            porro qui quisquam ratione repudiandae sint ut
+                            voluptas? Amet excepturi quae quisquam saepe
+                            sapiente? Animi blanditiis deleniti dolore
+                            doloremque esse, ex fugiat inventore modi
+                            molestiae mollitia nihil nulla qui, quod
+                            reprehenderit sed sunt suscipit tempore veniam
+                            voluptas voluptatibus! Delectus labore, possimus
+                            quasi sint ullam velit! Atque commodi dolorem
+                            ex, hic molestias nemo obcaecati quidem quisquam
+                            sunt veniam! Atque, doloribus ex excepturi
+                            inventore ipsum iure, minus neque nihil officia
+                            officiis porro, quis sequi similique sit sunt.
+                            Minus officia, repellendus!
+                        </div>
+                    </div>
+                    <div class="faq-accordion__item">
+                        <h3 class="faq-accordion__title">
+                            Есть ли гарантия на товары?
+                        </h3>
+                        <div class="faq-accordion__content">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Aperiam asperiores atque aut
+                            beatae delectus, dignissimos in labore
+                            necessitatibus officia officiis optio, placeat
+                            porro qui quisquam ratione repudiandae sint ut
+                            voluptas? Amet excepturi quae quisquam saepe
+                            sapiente? Animi blanditiis deleniti dolore
+                            doloremque esse, ex fugiat inventore modi
+                            molestiae mollitia nihil nulla qui, quod
+                            reprehenderit sed sunt suscipit tempore veniam
+                            voluptas voluptatibus! Delectus labore, possimus
+                            quasi sint ullam velit! Atque commodi dolorem
+                            ex, hic molestias nemo obcaecati quidem quisquam
+                            sunt veniam! Atque, doloribus ex excepturi
+                            inventore ipsum iure, minus neque nihil officia
+                            officiis porro, quis sequi similique sit sunt.
+                            Minus officia, repellendus!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @include('modules/footer.html')
+</body>
+
 </html>

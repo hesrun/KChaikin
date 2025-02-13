@@ -14,33 +14,33 @@ window.addEventListener('resize', function () {
     checkMediaQuery()
 })
 
-const heroSlider = new Swiper('.hero-slider', {
-    loop: true,
-    speed: 1000,
-    effect: 'creative',
-    autoplay: {
-        delay: 15000,
-    },
-    creativeEffect: {
-        prev: {
-            opacity: 0,
-            rotate: [0, 0, -5],
-        },
-        next: {
-            opacity: 0,
-            scale: 1.2,
-            rotate: [0, 0, 5],
-        },
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        prevEl: '.hero-prev',
-        nextEl: '.hero-next',
-    },
-})
+// const heroSlider = new Swiper('.hero-slider', {
+//     loop: true,
+//     speed: 1000,
+//     effect: 'creative',
+//     autoplay: {
+//         delay: 15000,
+//     },
+//     creativeEffect: {
+//         prev: {
+//             opacity: 0,
+//             rotate: [0, 0, -5],
+//         },
+//         next: {
+//             opacity: 0,
+//             scale: 1.2,
+//             rotate: [0, 0, 5],
+//         },
+//     },
+//     pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//     },
+//     navigation: {
+//         prevEl: '.hero-prev',
+//         nextEl: '.hero-next',
+//     },
+// })
 
 const photoCarusel = new Swiper('.photo-carusel', {
     slidesPerView: 'auto',
