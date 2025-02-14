@@ -558,17 +558,17 @@ function initNewItemsAnimation() {
       scrollTrigger: {
         trigger: block,
         start: 'top bottom',
-        end: 'bottom top' //scrub: true,
-        //markers: true,
+        end: '80% 80%',
+        scrub: true //markers: true,
 
       }
     });
     tl.from(title, {
       y: 600,
-      duration: 1
+      duration: 0.5
     }).from(items, {
       y: 300,
-      duration: 1,
+      duration: 0.5,
       opacity: 0,
       stagger: 0.05,
       ease: 'power2.out'
