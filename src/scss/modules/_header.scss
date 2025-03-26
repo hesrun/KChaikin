@@ -470,8 +470,11 @@
     &__cols {
         margin: 30px 0;
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         @include md {
             margin: 0;
+            grid-template-columns: 1fr;
         }
     }
     a {
@@ -482,10 +485,12 @@
         flex-direction: column;
         list-style: none;
         padding: 0px;
-        width: 50%;
         @include md {
             width: 100%;
-            margin-bottom: 30px;
+            margin-bottom: 0;
+            &:last-child {
+                margin-bottom: 30px;
+            }
         }
     }
     &__list-item {
@@ -568,6 +573,7 @@
         background: #1f2022;
         z-index: 1;
         opacity: 0;
+        z-index: 2;
         @include md {
             display: none;
         }
@@ -615,7 +621,10 @@
         border-radius: 20px;
         opacity: 0;
         pointer-events: none;
+        z-index: 1;
+        background: $black;
         @include md {
+            min-height: auto;
             display: none;
             border-radius: 0px;
             gap: 0px;
@@ -668,6 +677,12 @@
     }
     @include md {
         margin-bottom: 0;
+    }
+    &_footer {
+        margin: 60px 0;
+        @include lg {
+            display: none;
+        }
     }
     &__btns {
         display: grid;

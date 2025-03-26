@@ -1,18 +1,35 @@
 .footer {
-    position: sticky;
     bottom: 0px;
     color: white;
+    background: $black;
+    &__mobile-logo {
+        display: none;
+        img {
+            width: 158px;
+        }
+        @include md {
+            display: block;
+            text-align: center;
+            padding: 24px 0;
+            border-bottom: 1px rgba(white, 0.15) solid;
+        }
+    }
     .navigation {
         display: block;
         position: static;
         height: auto;
         min-height: auto;
-        .container {
-            flex-direction: column-reverse;
-        }
         @include md {
+            &__socials {
+                padding: 20px 0;
+                border-bottom: 1px rgba(white, 0.15) solid;
+            }
             &__adress {
-                display: none;
+                padding: 20px 0;
+                text-align: left;
+                border-bottom: 1px rgba(white, 0.15) solid;
+                width: 100%;
+                justify-content: space-between;
             }
         }
         &__cols {
@@ -23,6 +40,11 @@
         &__footer {
             align-items: center;
             text-align: center;
+            @include md {
+                padding: 0;
+                flex-direction: column-reverse;
+                gap: 0;
+            }
         }
     }
     .copyright {
@@ -30,13 +52,17 @@
         align-items: center;
         padding: 24px 0;
         border-top: 1px rgba(white, 0.15) solid;
+        gap: 24px;
         @include md {
             border-top: none;
             border-bottom: 1px rgba(white, 0.15) solid;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
+            justify-content: space-between;
+        }
+        &__mobile {
+            display: none;
+            @include md {
+                display: block;
+            }
         }
         &__links {
             gap: 20px;
@@ -64,9 +90,7 @@
             align-items: center;
             margin-right: auto;
             @include md {
-                margin-right: 0;
-                justify-content: center;
-                flex-direction: column;
+                display: none;
             }
             span {
                 font-weight: 200;
@@ -74,6 +98,9 @@
                 font-size: 14px;
                 letter-spacing: 1px;
             }
+        }
+        &__developer {
+            font-size: 14px;
         }
     }
 }
