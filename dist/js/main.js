@@ -668,6 +668,11 @@ $('.button').each(function () {
 $('.tabs-list__btn').on('click', function () {
   var $this = $(this);
   var index = $this.index();
+  var parent = $(this).closest('.tabs-list');
+  var leftPos = Math.floor($this.offset().left - parent.offset().left + parent.scrollLeft());
+  parent.animate({
+    scrollLeft: leftPos
+  }, 300);
   $('.tabs-list__btn').removeClass('tabs-list__btn_active');
   $('.tab-content').removeClass('tab-content_active');
   $this.addClass('tabs-list__btn_active');

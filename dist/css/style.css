@@ -648,74 +648,6 @@ input[type=number] {
   padding: 0 20px;
 }
 
-.tabs-list {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  overflow: auto;
-}
-.tabs-list::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-.tabs-list::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-.tabs-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-.tabs-list {
-  scrollbar-face-color: transparent;
-  scrollbar-track-color: transparent;
-}
-@media only screen and (max-width: 768px) {
-  .tabs-list {
-    margin-bottom: 20px;
-  }
-}
-.tabs-list__btn {
-  display: inline-flex;
-  align-items: center;
-  height: 40px;
-  border: 1px rgba(31, 32, 34, 0.15) solid;
-  font-size: 16px;
-  padding: 0 24px;
-  transition: all 0.3s;
-  cursor: pointer;
-  -webkit-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  text-align: center;
-  white-space: nowrap;
-}
-.tabs-list__btn_active {
-  border-color: #1f2022;
-  background: #1f2022;
-  color: #fff;
-}
-.tabs-list__btn:hover {
-  border-color: #1f2022;
-}
-
-.tab-content {
-  display: none;
-}
-.tab-content_active {
-  display: block;
-  animation: tabIn 0.3s both;
-}
-
-@keyframes tabIn {
-  from {
-    opacity: 0;
-    translate: 0 40px;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -1316,6 +1248,78 @@ input[type=number] {
   color: #fff;
 }
 
+.tabs-list {
+  margin-bottom: 30px;
+  overflow: auto;
+}
+.tabs-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.tabs-list::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.tabs-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tabs-list {
+  scrollbar-face-color: transparent;
+  scrollbar-track-color: transparent;
+}
+.tabs-list__container {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .tabs-list {
+    margin-bottom: 20px;
+  }
+}
+.tabs-list__btn {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  border: 1px rgba(31, 32, 34, 0.15) solid;
+  font-size: 16px;
+  padding: 0 24px;
+  transition: all 0.3s;
+  cursor: pointer;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  white-space: nowrap;
+}
+.tabs-list__btn_active {
+  border-color: #1f2022;
+  background: #1f2022;
+  color: #fff;
+}
+.tabs-list__btn:hover {
+  border-color: #1f2022;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content_active {
+  display: block;
+  animation: tabIn 0.3s both;
+}
+
+@keyframes tabIn {
+  from {
+    opacity: 0;
+    translate: 0 40px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
 .footer {
   bottom: 0px;
   color: white;
