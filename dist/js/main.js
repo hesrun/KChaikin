@@ -659,3 +659,17 @@ masterParallax();
 $('.button').each(function () {
   $(this).html('<span class="button__text">' + $(this).html() + '</span>');
 });
+/* -------------------------------------------------------------------------- */
+
+/*                                    tabs                                    */
+
+/* -------------------------------------------------------------------------- */
+
+$('.tabs-list__btn').on('click', function () {
+  var $this = $(this);
+  var index = $this.index();
+  $('.tabs-list__btn').removeClass('tabs-list__btn_active');
+  $('.tab-content').removeClass('tab-content_active');
+  $this.addClass('tabs-list__btn_active');
+  $('.tab-content').eq(index).addClass('tab-content_active');
+});

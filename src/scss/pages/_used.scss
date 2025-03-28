@@ -10,12 +10,15 @@
     background-position: 30px 0;
     margin: 60px 0;
     gap: 30px;
+    border-radius: 50px;
     @include lg {
         background-image: none;
         padding: 30px;
         margin: 30px 0;
+        border-radius: 30px;
     }
     @include sm {
+        border-radius: 0;
         flex-direction: column;
         gap: 15px;
         padding: 20px 15px;
@@ -48,6 +51,11 @@
     }
     &__props {
         display: flex;
+        gap: 15px;
+        @include sm {
+            overflow: auto;
+            @include scrollbars(0, transparent, transparent);
+        }
     }
     &__title {
         margin-bottom: 30px;
@@ -56,22 +64,69 @@
                 display: none;
             }
         }
+        @include sm {
+            margin-bottom: 15px;
+        }
     }
     &__props-item {
-        flex: 0 0 33%;
         display: flex;
+        flex-direction: column;
         gap: 10px;
+        font-size: 14px;
         @include md {
             flex-direction: column;
         }
         @include sm {
             font-size: 12px;
+            flex: 0 0 150px;
         }
         i {
-            font-size: 50px;
+            font-size: 40px;
             @include sm {
-                font-size: 36px;
+                font-size: 24px;
             }
+        }
+    }
+}
+
+.used-watch-subscride-form {
+    margin-bottom: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 50px;
+    @include md {
+        margin-bottom: 30px;
+        grid-template-columns: 1fr;
+    }
+    &__btn {
+        grid-column: 2 span;
+        display: grid;
+        grid-template-columns: 35% auto;
+        margin-top: 30px;
+        align-items: center;
+        gap: 15px 50px;
+        > span {
+            color: rgba(black, 0.5);
+        }
+        @include md {
+            margin-top: 0px;
+            grid-column: 1 span;
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+}
+
+.used-watch-tab {
+    position: relative;
+    .sorting {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 40px);
+        @include lg {
+            position: relative;
+            margin-left: auto;
+            margin-bottom: 15px;
         }
     }
 }
