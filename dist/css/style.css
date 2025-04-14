@@ -6665,39 +6665,20 @@ input[type=number] {
   background-image: url("../img/owners/remove-circle 1.png");
 }
 
-.sell-service-request__inputs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 15px;
-}
-@media only screen and (max-width: 768px) {
-  .sell-service-request__inputs {
-    grid-template-columns: 1fr;
-  }
-}
-.sell-service-request__set {
-  display: flex;
-  gap: 30px;
-  margin: 10px 0 30px;
-}
-@media only screen and (max-width: 576px) {
-  .sell-service-request__set {
-    margin: 30px 0;
-  }
-}
-.sell-service-request__set .с-checkbox {
-  margin: 0;
-}
-
 .clip-photo {
-  margin: 30px 0;
+  margin-bottom: 30px;
   display: flex;
-  align-items: flex-start;
   flex-wrap: wrap;
   gap: 10px;
 }
 .clip-photo label {
+  flex: 0 0 100%;
   cursor: pointer;
+}
+@media (any-hover: hover) {
+  .clip-photo label:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
 }
 .clip-photo__input {
   opacity: 0;
@@ -6712,8 +6693,8 @@ input[type=number] {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 150px;
-  height: 150px;
+  width: 148px;
+  height: 148px;
   position: relative;
   background: rgba(255, 255, 255, 0.1);
   gap: 10px;
@@ -6779,19 +6760,15 @@ input[type=number] {
      object-fit: cover;
 }
 
-.sell-service-request {
+.sell-service-request__cols {
+  gap: 80px;
   display: grid;
-  grid-template-columns: 1fr 480px;
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr;
 }
 @media only screen and (max-width: 992px) {
-  .sell-service-request {
-    grid-template-columns: 1fr 320px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .sell-service-request {
+  .sell-service-request__cols {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -6807,8 +6784,28 @@ input[type=number] {
   flex-wrap: wrap;
   gap: 15px;
 }
-.sell-service-request__btns .button {
-  padding: 0 15px;
+.sell-service-request__inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 15px;
+}
+@media only screen and (max-width: 768px) {
+  .sell-service-request__inputs {
+    grid-template-columns: 1fr;
+  }
+}
+.sell-service-request__set {
+  display: flex;
+  gap: 30px;
+  margin: 10px 0 30px;
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-request__set {
+    margin: 30px 0;
+  }
+}
+.sell-service-request__set .с-checkbox {
+  margin: 0;
 }
 
 @keyframes Spin {

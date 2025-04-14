@@ -83,36 +83,17 @@
     }
 }
 
-.sell-service-request {
-    &__inputs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0 15px;
-        @include md {
-            grid-template-columns: 1fr;
-        }
-    }
-    &__set {
-        display: flex;
-        gap: 30px;
-        margin: 10px 0 30px;
-        @include sm {
-            margin: 30px 0;
-        }
-        .с-checkbox {
-            margin: 0;
-        }
-    }
-}
-
 .clip-photo {
-    margin: 30px 0;
+    margin-bottom: 30px;
     display: flex;
-    align-items: flex-start;
     flex-wrap: wrap;
     gap: 10px;
     label {
+        flex: 0 0 100%;
         cursor: pointer;
+        @include hover {
+            background: rgba(white, 0.05);
+        }
     }
     &__input {
         opacity: 0;
@@ -127,8 +108,8 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 150px;
-        height: 150px;
+        width: 148px;
+        height: 148px;
         position: relative;
         background: rgba(white, 0.1);
         gap: 10px;
@@ -196,14 +177,14 @@
 }
 
 .sell-service-request {
-    display: grid;
-    grid-template-columns: 1fr 480px;
-    gap: 40px;
-    @include lg {
-        grid-template-columns: 1fr 320px;
-    }
-    @include md {
-        grid-template-columns: 1fr;
+    &__cols {
+        gap: 80px;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        @include lg {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
     }
     &__image {
         @include md {
@@ -217,8 +198,24 @@
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
-        .button {
-            padding: 0 15px;
+    }
+    &__inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 15px;
+        @include md {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__set {
+        display: flex;
+        gap: 30px;
+        margin: 10px 0 30px;
+        @include sm {
+            margin: 30px 0;
+        }
+        .с-checkbox {
+            margin: 0;
         }
     }
 }
