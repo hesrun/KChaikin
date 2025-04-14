@@ -6552,24 +6552,90 @@ input[type=number] {
 }
 
 .owner-ask {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   gap: 30px;
+  margin-bottom: 65px;
 }
-.owner-ask__btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px 30px;
+@media only screen and (max-width: 768px) {
+  .owner-ask {
+    grid-template-columns: 1fr;
+    margin-bottom: 30px;
+  }
 }
 
 .sell-service-achives {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr auto;
   gap: 30px;
+}
+@media only screen and (max-width: 992px) {
+  .sell-service-achives {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media only screen and (max-width: 576px) {
   .sell-service-achives {
     grid-template-columns: 1fr;
+  }
+}
+.sell-service-achives__props {
+  max-width: 200px;
+  display: grid;
+  gap: 25px;
+}
+@media only screen and (max-width: 992px) {
+  .sell-service-achives__props {
+    grid-column: 2 span;
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-achives__props {
+    grid-column: auto;
+    display: flex;
+    overflow: auto;
+  }
+  .sell-service-achives__props::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .sell-service-achives__props::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .sell-service-achives__props::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .sell-service-achives__props {
+    scrollbar-face-color: transparent;
+    scrollbar-track-color: transparent;
+  }
+}
+.sell-service-achives__props-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+@media only screen and (max-width: 768px) {
+  .sell-service-achives__props-item {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-achives__props-item {
+    font-size: 12px;
+    flex: 0 0 150px;
+  }
+}
+.sell-service-achives__props-item i {
+  font-size: 40px;
+}
+@media only screen and (max-width: 576px) {
+  .sell-service-achives__props-item i {
+    font-size: 24px;
   }
 }
 
