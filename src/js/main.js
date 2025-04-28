@@ -83,9 +83,12 @@ const photoSlider = new Swiper('.photo-slider', {
         nextEl: '.photo-carusel-nav__next',
     },
     breakpoints: {
-        768: {
-            slidesPerView: 1,
-            spaceBetween: 0,
+        0: {
+            enabled: false,
+        },
+        769: {
+            enabled: true,
+            slidesPerView: 'auto',
             spaceBetween: 30,
         },
     },

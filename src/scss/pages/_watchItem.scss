@@ -405,14 +405,18 @@
 .photo-slider {
     margin-top: 50px;
     overflow: visible;
-    @include sm {
-        margin-top: 30px;
+    @include md {
+        margin-top: 0;
+    }
+    .swiper-wrapper {
+        @include md {
+            flex-direction: column;
+        }
     }
     &__slide {
         @include md {
             margin-bottom: 10px;
-            width: 80vw;
-            height: 70vw;
+            aspect-ratio: 3/2;
         }
     }
     &__image {

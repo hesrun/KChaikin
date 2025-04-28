@@ -4297,16 +4297,20 @@ input[type=number] {
   margin-top: 50px;
   overflow: visible;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .photo-slider {
-    margin-top: 30px;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .photo-slider .swiper-wrapper {
+    flex-direction: column;
   }
 }
 @media only screen and (max-width: 768px) {
   .photo-slider__slide {
     margin-bottom: 10px;
-    width: 80vw;
-    height: 70vw;
+    aspect-ratio: 3/2;
   }
 }
 .photo-slider__image img {

@@ -1,7 +1,5 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
@@ -86,10 +84,14 @@ var photoSlider = new Swiper('.photo-slider', {
     nextEl: '.photo-carusel-nav__next'
   },
   breakpoints: {
-    768: _defineProperty({
-      slidesPerView: 1,
-      spaceBetween: 0
-    }, "spaceBetween", 30)
+    0: {
+      enabled: false
+    },
+    769: {
+      enabled: true,
+      slidesPerView: 'auto',
+      spaceBetween: 30
+    }
   }
 });
 var dateCarusel = new Swiper('.date-list', {
