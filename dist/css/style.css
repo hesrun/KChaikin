@@ -1548,6 +1548,31 @@ input[type=number] {
   align-items: center;
   justify-content: space-between;
 }
+.header__retailer {
+  margin-right: auto;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.header__retailer img {
+  display: block;
+}
+@media only screen and (max-width: 576px) {
+  .header__retailer img {
+    width: 60px;
+  }
+}
+.header__retailer span {
+  line-height: 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media only screen and (max-width: 576px) {
+  .header__retailer span {
+    display: none;
+  }
+}
 .header__logo {
   position: absolute;
   left: 50%;
