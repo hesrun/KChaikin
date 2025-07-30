@@ -32,25 +32,6 @@
         justify-content: space-between;
     }
     &__retailer {
-        margin-right: auto;
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        img {
-            display: block;
-            @include sm {
-                width: 60px;
-            }
-        }
-        span {
-            line-height: 20px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            @include sm {
-                display: none;
-            }
-        }
     }
     &__logo {
         position: absolute;
