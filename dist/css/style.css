@@ -1377,6 +1377,9 @@ input[type=number] {
   height: auto;
   min-height: auto;
 }
+.footer .navigation__adress {
+  text-align: left;
+}
 @media only screen and (max-width: 768px) {
   .footer .navigation__socials {
     padding: 20px 0;

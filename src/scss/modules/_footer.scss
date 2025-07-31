@@ -19,6 +19,9 @@
         position: static;
         height: auto;
         min-height: auto;
+        &__adress {
+            text-align: left;
+        }
         @include md {
             &__socials {
                 padding: 20px 0;
