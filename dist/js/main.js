@@ -72,6 +72,9 @@ $().fancybox({
     photoCarusel.slideTo(instance.currIndex, 0);
   }
 });
+$().fancybox({
+  selector: '[data-fancybox="gum"]'
+});
 var photoSlider = new Swiper('.photo-slider', {
   slidesPerView: 'auto',
   spaceBetween: 15,
@@ -679,4 +682,58 @@ $('.tabs-list__btn').on('click', function () {
   $('.tab-content').removeClass('tab-content_active');
   $this.addClass('tabs-list__btn_active');
   $('.tab-content').eq(index).addClass('tab-content_active');
+});
+
+function initGumAnimations() {
+  gsap.fromTo('.parallax-banner__img img', {
+    yPercent: 0
+  }, {
+    yPercent: 30,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: '.parallax-banner',
+      //markers: true,
+      start: 'bottom 100%',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+  $('.parralax-block').each(function () {
+    var $block = $(this);
+    var $img = $block.find('img');
+    gsap.fromTo($img, {
+      yPercent: -30
+    }, {
+      yPercent: 0,
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: $block,
+        //markers: true,
+        start: 'top 100%',
+        end: 'bottom 0',
+        scrub: true
+      }
+    });
+  });
+  $('.parallax-lines__line').each(function (index) {
+    var line = $(this);
+    var indexLine = index + 1;
+    gsap.fromTo(line, {
+      xPercent: indexLine % 2 ? 25 : -25
+    }, {
+      xPercent: indexLine % 2 ? 0 : 0,
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: line,
+        //markers: true,
+        start: 'top 100%',
+        end: 'bottom 70%',
+        scrub: true
+      }
+    });
+  });
+}
+
+$(document).ready(function () {
+  initGumAnimations();
 });

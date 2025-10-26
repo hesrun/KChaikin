@@ -179,6 +179,7 @@ button {
 .main:not(:has(.hero-banner,
 .hero-slider,
 .page-hero,
+.parallax-banner,
 .page-section_dark:first-child)) {
   padding-top: 60px;
 }
@@ -406,6 +407,10 @@ a.section-head__subtitle {
     padding: 0;
     font-size: 20px;
   }
+}
+
+.font-georgia {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .full-title {
@@ -6884,4 +6889,231 @@ input[type=number] {
 .announce-social .button {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.parallax-banner {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  color: white;
+}
+.parallax-banner__container {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.parallax-banner__title {
+  text-transform: none;
+  margin-bottom: 0;
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.parallax-banner__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.parallax-banner__img img {
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.parallax-banner__img::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#1f2022 0%, rgba(31, 32, 34, 0) 30%, rgba(31, 32, 34, 0) 70%, #1f2022 100%);
+}
+
+.gum-text {
+  margin: 3rem 0;
+  font-size: 2.5rem;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+.boutik-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 1.5rem;
+}
+.boutik-grid__img {
+  position: relative;
+  aspect-ratio: 1.5/1;
+  overflow: hidden;
+}
+.boutik-grid__img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.boutik-grid__img_1 {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.boutik-grid__img_2 {
+  align-self: end;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+.boutik-grid__img_3 {
+  grid-column: 2/4;
+  grid-row: 3/5;
+}
+.boutik-grid__text {
+  gap: 1.5rem;
+  width: calc((100vw - 1270px) / 2 + (1270px - (100vw / 3 * 2)));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.boutik-grid__text_1 {
+  margin-right: auto;
+  padding-right: 1rem;
+}
+.boutik-grid__text_2 {
+  padding-left: 1rem;
+  grid-row: 4/5;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.banner-place {
+  position: relative;
+  overflow: hidden;
+  height: 50rem;
+}
+.banner-place__img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.banner-place__img img {
+  position: absolute;
+  width: 100%;
+}
+.banner-place__img:after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(31, 32, 34, 0) 50%, #1f2022 100%);
+}
+.banner-place__container {
+  color: white;
+  align-items: flex-end;
+  justify-content: space-between;
+  display: flex;
+  height: 100%;
+  padding: 3rem 0;
+  gap: 3rem;
+}
+.banner-place__container_reverse .banner-place__title {
+  order: 2;
+}
+.banner-place__title {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  rotate: 180deg;
+  font-size: 9.375rem;
+  line-height: 0.8;
+}
+.banner-place__text {
+  max-width: 50rem;
+  font-weight: 100;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.boutik-route-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  line-height: 1.3;
+  margin: 3rem 0;
+  gap: 0.5rem;
+}
+.boutik-route-note i {
+  font-size: 2.5rem;
+}
+
+.parallax-lines {
+  overflow: hidden;
+  display: grid;
+  gap: 1rem;
+}
+.parallax-lines__line {
+  display: flex;
+  gap: 1rem;
+}
+.parallax-lines__img img {
+  display: block;
+  width: 100%;
+}
+
+.apointment-form {
+  max-width: 50rem;
+}
+.apointment-form .с-checkbox {
+  margin: 1.5rem 0;
+}
+
+.gum-boutik-lines__line {
+  padding: 3rem 0;
+  border-top: 1px rgba(31, 32, 34, 0.1) solid;
+}
+
+.gum-boutik-contacts {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.gum-boutik-contacts h3 {
+  margin: 0;
+}
+.gum-boutik-contacts__address {
+  font-style: normal;
+}
+.gum-boutik-contacts__info {
+  display: grid;
+  gap: 1rem;
+}
+.gum-boutik-contacts__links > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gum-boutik-contacts__socials {
+  margin-left: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.gum-boutik-contacts__socials a {
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.gum-boutik-contacts__socials a:hover {
+  opacity: 0.5;
+}
+
+.gum-boutik-authors__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gum-boutik-requisits {
+  font-size: 0.875rem;
 }

@@ -48,6 +48,7 @@ button {
                     .hero-banner,
                     .hero-slider,
                     .page-hero,
+                    .parallax-banner,
                     .page-section_dark:first-child
                 )
         ) {
@@ -255,6 +256,10 @@ button {
             font-size: 20px;
         }
     }
+}
+
+.font-georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .full-title {
     overflow: hidden;
