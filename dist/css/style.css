@@ -447,7 +447,6 @@ h1,
   margin-bottom: 40px;
   letter-spacing: 3px;
   line-height: 1.3;
-  text-transform: uppercase;
 }
 @media only screen and (max-width: 992px) {
   h1,
@@ -480,7 +479,6 @@ h2,
   margin-bottom: 40px;
   letter-spacing: 3px;
   line-height: 1.3;
-  text-transform: uppercase;
 }
 @media only screen and (max-width: 992px) {
   h2,
@@ -513,7 +511,6 @@ h3,
   margin-bottom: 30px;
   letter-spacing: 2px;
   line-height: 1.3;
-  text-transform: uppercase;
 }
 @media only screen and (max-width: 992px) {
   h3,
@@ -993,6 +990,14 @@ input[type=number] {
 }
 .с-input_dark label {
   padding-left: 0;
+}
+.с-input__icon {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
 }
 
 .с-checkbox {
@@ -6897,6 +6902,12 @@ input[type=number] {
   position: relative;
   color: white;
 }
+@media only screen and (max-width: 768px) {
+  .parallax-banner {
+    display: block;
+    min-height: 0;
+  }
+}
 .parallax-banner__container {
   width: 100%;
   margin-top: auto;
@@ -6908,9 +6919,15 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .parallax-banner__container {
+    margin-top: 1rem;
+    color: black;
     grid-template-columns: 1fr;
     margin-bottom: 1rem;
     gap: 1rem;
+  }
+  .parallax-banner__container .button {
+    border-color: black;
+    color: black;
   }
 }
 .parallax-banner__title {
@@ -6923,6 +6940,20 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .parallax-banner__title {
     font-size: 2.5rem;
+    display: none;
+  }
+}
+.parallax-banner__title_mobile {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .parallax-banner__title_mobile {
+    display: block;
+    position: absolute;
+    padding: 1rem;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
   }
 }
 .parallax-banner__img {
@@ -6934,13 +6965,26 @@ input[type=number] {
   overflow: hidden;
   z-index: -1;
 }
+@media only screen and (max-width: 768px) {
+  .parallax-banner__img {
+    aspect-ratio: 1/1.4;
+    position: relative;
+    z-index: 1;
+  }
+}
 .parallax-banner__img img {
+  position: absolute;
   left: 0;
-  top: 0;
+  bottom: -15%;
   width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media only screen and (max-width: 1200px) {
+  .parallax-banner__img img {
+    bottom: 0;
+  }
 }
 @media only screen and (max-width: 576px) {
   .parallax-banner__img img {
@@ -6953,11 +6997,11 @@ input[type=number] {
   display: block;
   position: absolute;
   inset: 0;
-  background: linear-gradient(#1f2022 0%, rgba(31, 32, 34, 0) 30%, rgba(31, 32, 34, 0) 70%, #1f2022 100%);
+  background: linear-gradient(black 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, black 100%);
 }
 @media only screen and (max-width: 768px) {
   .parallax-banner__img::after {
-    background: linear-gradient(#1f2022 0%, rgba(31, 32, 34, 0) 30%, rgba(31, 32, 34, 0) 60%, #1f2022 100%);
+    background: linear-gradient(black 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 60%, black 100%);
   }
 }
 
@@ -6969,8 +7013,15 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .gum-text {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     margin: 2rem 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .gum-text {
+    padding: 1.5rem 0;
+    border-top: 1px rgba(31, 32, 34, 0.25) solid;
+    border-bottom: 1px rgba(31, 32, 34, 0.25) solid;
   }
 }
 
@@ -7093,7 +7144,7 @@ input[type=number] {
   display: block;
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(31, 32, 34, 0) 50%, #1f2022 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, black 100%);
 }
 .banner-place__container {
   color: white;
@@ -7141,7 +7192,7 @@ input[type=number] {
 }
 .banner-place__text {
   max-width: 50rem;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 1.25rem;
   line-height: 1.2;
 }

@@ -11,7 +11,10 @@
                     <source media="(min-width: 768px)" srcset="img/gum/banner.webp">
                     <img class="img-response" src="img/gum/banner-m.webp" alt="">
                 </picture>
-
+                <div class="parallax-banner__title parallax-banner__title_mobile font-georgia">
+                    Бутик Чайкина <br>
+                    в ГУМе
+                </div>
             </div>
             <div class="container parallax-banner__container">
                 <h1 class="parallax-banner__title font-georgia">
@@ -37,7 +40,7 @@
                     мир часового искусства.</p>
             </div>
         </section>
-        <section class="page-section">
+        <section class="page-section page-section_clear-top">
             <div class="container">
                 <div class="section-head">
                     <h2>Вселенная Чайкина</h2>
@@ -208,8 +211,9 @@
                         <label>Email</label>
                     </div>
                     <div class="с-input">
-                        <input type="text" name="" placeholder="Дата" />
+                        <input type="text" id="datePicker" name="" placeholder="Дата" />
                         <label>Дата</label>
+                        <i class="с-input__icon icon-calendar"></i>
                     </div>
                     <div class="с-select">
                         <select>
@@ -224,7 +228,8 @@
                     </div>
                     <label class="с-checkbox">
                         <input type="checkbox" name="" id="" />
-                        <span>Принимаю Политику конфиденциальности и Условия обработки персональных данных.
+                        <span>Принимаю <a href="">Политику конфиденциальности</a> и <a href="">Условия обработки
+                                персональных данных</a>.
                     </label>
                     <button type="submit" class="button button_black button_filled button_full_m">
                         Отправить в бутик

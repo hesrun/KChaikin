@@ -755,12 +755,19 @@ $('.tabs-list__btn').on('click', function () {
     $('.tab-content').eq(index).addClass('tab-content_active')
 })
 
+/* -------------------------------------------------------------------------- */
+/*                                 datepicker                                 */
+/* -------------------------------------------------------------------------- */
+new AirDatepicker('#datePicker')
+/* -------------------------------------------------------------------------- */
+/*                              initGumAnimations                             */
+/* -------------------------------------------------------------------------- */
 function initGumAnimations() {
     gsap.fromTo(
         '.parallax-banner__img img',
         { yPercent: 0 },
         {
-            yPercent: 30,
+            yPercent: 20,
             duration: 0.3,
             scrollTrigger: {
                 trigger: '.parallax-banner',
@@ -821,29 +828,29 @@ function initGumAnimations() {
 }
 
 function gumResponsiveInit() {
-    $(window).on('resize load', function () {
-        const windowWidth = $(window).width()
+    const windowWidth = $(window).width()
+    $('.banner-place').each(function () {
+        const $banner = $(this)
+        const $imgBlock = $banner.find('.banner-place__img')
+        const $container = $banner.find('.banner-place__container')
+        const $title = $banner.find('.banner-place__title')
 
-        $('.banner-place').each(function () {
-            const $banner = $(this)
-            const $imgBlock = $banner.find('.banner-place__img')
-            const $container = $banner.find('.banner-place__container')
-            const $title = $banner.find('.banner-place__title')
-
-            if (windowWidth <= 992) {
-                if (!$imgBlock.find('.banner-place__title').length) {
-                    $title.appendTo($imgBlock)
-                }
-            } else {
-                // Возвращаем обратно в контейнер, если не там
-                if (!$container.find('.banner-place__title').length) {
-                    $title.prependTo($container)
-                }
+        if (windowWidth <= 768) {
+            if (!$imgBlock.find('.banner-place__title').length) {
+                $title.appendTo($imgBlock)
             }
-        })
+        } else {
+            if (!$container.find('.banner-place__title').length) {
+                $title.prependTo($container)
+            }
+        }
     })
 }
 gumResponsiveInit()
+
+$(window).on('resize', function () {
+    gumResponsiveInit()
+})
 
 $(document).ready(function () {
     initGumAnimations()
