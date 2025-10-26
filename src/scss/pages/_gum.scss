@@ -11,6 +11,11 @@
         grid-template-columns: 1.3fr 1fr;
         gap: 2rem;
         align-items: start;
+        @include md {
+            grid-template-columns: 1fr;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
     }
     &__title {
         text-transform: none;
@@ -18,18 +23,27 @@
         font-size: 4.5rem;
         font-weight: bold;
         line-height: 1;
+        @include md {
+            font-size: 2.5rem;
+        }
     }
     &__img {
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
+        width: 100%;
         overflow: hidden;
         z-index: -1;
         img {
             left: 0;
             top: 0;
             width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            @include sm {
+                object-position: right;
+            }
         }
         &::after {
             content: '';
@@ -42,6 +56,14 @@
                 rgba($black, 0) 70%,
                 rgba($black, 1) 100%
             );
+            @include md {
+                background: linear-gradient(
+                    rgba($black, 1) 0%,
+                    rgba($black, 0) 30%,
+                    rgba($black, 0) 60%,
+                    rgba($black, 1) 100%
+                );
+            }
         }
     }
 }
@@ -51,12 +73,19 @@
     font-size: 2.5rem;
     font-weight: 100;
     line-height: 1.1;
+    @include md {
+        font-size: 1.125rem;
+        margin: 2rem 0;
+    }
 }
 .boutik-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
     gap: 1.5rem;
+    @include lg {
+        grid-template-columns: 1fr;
+    }
     &__img {
         position: relative;
         aspect-ratio: 1.5/1;
@@ -71,16 +100,27 @@
         &_1 {
             grid-column: 1/3;
             grid-row: 1/3;
+            @include lg {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
         &_2 {
             align-self: end;
-            //aspect-ratio: 1.515/1;
             grid-column: 3/4;
             grid-row: 2/3;
+            @include lg {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
         &_3 {
             grid-column: 2/4;
             grid-row: 3/5;
+            @include lg {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
     }
     &__text {
@@ -89,6 +129,10 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        @include md {
+            width: auto;
+            padding: 0 1rem;
+        }
         &_1 {
             margin-right: auto;
             padding-right: 1rem;
@@ -98,6 +142,10 @@
             grid-row: 4/5;
             margin-left: auto;
             justify-content: flex-end;
+            @include lg {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
     }
 }
@@ -106,13 +154,25 @@
     position: relative;
     overflow: hidden;
     height: 50rem;
+    @include md {
+        height: auto;
+    }
     &__img {
         position: absolute;
         inset: 0;
         z-index: -1;
+
+        @include md {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            z-index: 1;
+        }
         img {
             position: absolute;
             width: 100%;
+            min-height: 120%;
+            object-fit: cover;
         }
         &:after {
             content: '';
@@ -131,8 +191,13 @@
         justify-content: space-between;
         display: flex;
         height: 100%;
-        padding: 3rem 0;
+        padding-block: 3rem;
         gap: 3rem;
+        @include md {
+            color: black;
+            padding-block: 1rem;
+            padding-bottom: 0;
+        }
         &_reverse {
             .banner-place__title {
                 order: 2;
@@ -144,12 +209,30 @@
         rotate: 180deg;
         font-size: 9.375rem;
         line-height: 0.8;
+        @include md {
+            bottom: 0;
+            color: white;
+            position: absolute;
+            writing-mode: initial;
+            rotate: 0deg;
+            padding: 1rem;
+            font-size: 4rem;
+            z-index: 1;
+        }
+        @include sm {
+            font-size: 2.5rem;
+        }
     }
     &__text {
         max-width: 50rem;
         font-weight: 100;
         font-size: 1.25rem;
         line-height: 1.2;
+        @include md {
+            font-weight: 300;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
     }
 }
 
@@ -164,23 +247,31 @@
     i {
         font-size: 2.5rem;
     }
+    @include md {
+        margin: 2rem 0;
+    }
 }
 
 .parallax-lines {
     overflow: hidden;
     display: grid;
     gap: 1rem;
+    @include sm {
+        gap: 0.5rem;
+    }
     &__line {
         display: flex;
         gap: 1rem;
-        // &.left {
-        //     translate: 25% 0;
-        // }
-        // &.right {
-        //     translate: -25% 0;
-        // }
+        @include sm {
+            @include scrollbars(0, transparent, transparent);
+            overflow: auto;
+            gap: 0.5rem;
+        }
     }
     &__img {
+        @include sm {
+            flex: 0 0 70vw;
+        }
         img {
             display: block;
             width: 100%;
@@ -199,12 +290,19 @@
     &__line {
         padding: 3rem 0;
         border-top: 1px rgba($black, 0.1) solid;
+        @include sm {
+            padding: 1.5rem 0;
+        }
     }
 }
 
 .gum-boutik-contacts {
     display: grid;
     grid-template-columns: 1fr auto;
+    @include sm {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     h3 {
         margin: 0;
     }
@@ -241,6 +339,15 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        @include sm {
+            display: flex;
+            overflow: auto;
+            gap: 1.5rem;
+            @include scrollbars(0, transparent, transparent);
+            > div {
+                flex: 0 0 65vw;
+            }
+        }
     }
 }
 

@@ -715,25 +715,53 @@ function initGumAnimations() {
       }
     });
   });
-  $('.parallax-lines__line').each(function (index) {
-    var line = $(this);
-    var indexLine = index + 1;
-    gsap.fromTo(line, {
-      xPercent: indexLine % 2 ? 25 : -25
-    }, {
-      xPercent: indexLine % 2 ? 0 : 0,
-      duration: 0.3,
-      scrollTrigger: {
-        trigger: line,
-        //markers: true,
-        start: 'top 100%',
-        end: 'bottom 70%',
-        scrub: true
+  ScrollTrigger.matchMedia({
+    '(min-width: 768px)': function minWidth768px() {
+      $('.parallax-lines__line').each(function (index) {
+        var line = $(this);
+        var indexLine = index + 1;
+        gsap.fromTo(line, {
+          xPercent: indexLine % 2 ? 25 : -25
+        }, {
+          xPercent: 0,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: line,
+            // markers: true,
+            start: 'top 100%',
+            end: 'bottom 70%',
+            scrub: true
+          }
+        });
+      });
+    }
+  });
+}
+
+function gumResponsiveInit() {
+  $(window).on('resize load', function () {
+    var windowWidth = $(window).width();
+    $('.banner-place').each(function () {
+      var $banner = $(this);
+      var $imgBlock = $banner.find('.banner-place__img');
+      var $container = $banner.find('.banner-place__container');
+      var $title = $banner.find('.banner-place__title');
+
+      if (windowWidth <= 992) {
+        if (!$imgBlock.find('.banner-place__title').length) {
+          $title.appendTo($imgBlock);
+        }
+      } else {
+        // Возвращаем обратно в контейнер, если не там
+        if (!$container.find('.banner-place__title').length) {
+          $title.prependTo($container);
+        }
       }
     });
   });
 }
 
+gumResponsiveInit();
 $(document).ready(function () {
   initGumAnimations();
 });
