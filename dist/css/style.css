@@ -1583,7 +1583,13 @@ input[type=number] {
   translate: -50% -50%;
 }
 .game-loader__text {
+  white-space: nowrap;
   font-size: 6.25rem;
+}
+@media only screen and (max-width: 768px) {
+  .game-loader__text {
+    font-size: 2.5rem;
+  }
 }
 .game-loader__progress {
   position: relative;
