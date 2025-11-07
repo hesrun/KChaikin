@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+@include('modules/link.html',{ 'title': 'Main' })
+
+<body>
+    @include('modules/header.html',{'theme':'white'})
+    <main class="main">
+        <div class="game-wrapper">
+            <img class="game-wrapper__bg" src="img/game/bg.webp" alt="">
+            <div class="game-splash">
+                <div class="game-splash__text">
+                    An imaginary immersion into
+                    the surreal world of Alice in Wonderland
+                    with an exceptionally complex wristwatch 
+                </div>
+                <button class="game-splash__start">START JOURNEY</button>
+                <a href="" class="game-splash__skip">SKIP TO WATCHES</a>
+            </div>
+            <div class="game-loader">
+                <div class="game-loader__text">WHITE RABBIT</div>
+                <div class="game-loader__progress" style="--progress:50%">
+                    <div class="game-loader__progress-bar"></div>
+                    <div class="game-loader__progress-counter">
+                        50%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    @include('modules/footer-mini.html')
+    <script>
+        function startLoader(duration, callback) {
+            let progress = 0;
+            const interval = 50;
+            const step = interval / duration * 100;
+
+            const loaderInterval = setInterval(function () {
+                progress += step;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(loaderInterval);
+                    if (typeof callback === 'function') callback();
+                }
+
+                $('.game-loader__progress').css('--progress', progress + '%');
+                $('.game-loader__progress-counter').text(Math.round(progress) + '%');
+            }, interval);
+        }
+
+        $('.game-splash__start').on('click', function () {
+            $('.header').css({
+                transform: 'translateY(-100%)',
+                transition: 'transform 0.5s ease'
+            });
+            $('.footer-mini').css({
+                transform: 'translateY(100%)',
+                transition: 'transform 0.5s ease'
+            });
+            $('.game-splash').hide();
+            $('.game-loader').show();
+
+
+            startLoader(3000, function () {
+                alert('Загрузка завершена!');
+                $('.game-loader').hide();
+            });
+        });
+    </script>
+</body>
+
+</html>

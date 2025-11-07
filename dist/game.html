@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="img/favicon.png" type="image/png" />
+   <meta name="description" content="description" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/css/intlTelInput.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css" rel="stylesheet" />
+   <link href="
+    https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.css
+    " rel="stylesheet">
+   <!-- -------------------------------- icons -------------------------------- -->
+   <link href="https://cdn.iconly.io/kits/KIze4AZ1VXv8/v_fa5f91b/iconly.min.css" rel="stylesheet" integrity="sha384-EsWR6VEmpEF8YWYFY9SGV6ME/QbbJXc+TdO9G4jFafDdA6X5axsCCJDl2MdQFK2G" crossorigin="anonymous" />
+   <!-- ------------------------------ icons end ------------------------------ -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="css/style.min.css" />
+   <title>Main</title>
+</head>
+
+<body>
+   <header class=" header">
+      <div class="container">
+         <button class="header-burger">
+            <div class="header-burger__lines"></div>
+            <div class="header-burger__text">Меню</div>
+         </button>
+         <picture class="header__retailer" style="display: none;">
+            <source media="(min-width:600px)" srcset="img/logos/indep-retailer.svg">
+            <img src="img/logos/indep-retailer-sm.svg" alt="independence">
+         </picture>
+         <a href="#" class="header__logo"> </a>
+         <div class="header__tools">
+            <a href="" class="header__tools-link header__tools-link_cart">
+               <i class="icon-shopping-bag"></i>
+               <span class="header__cart-text">Корзина</span>
+               <span class="header__cart-badge">5</span>
+            </a>
+            <a href="" class="header__tools-link header__tools-link_user">
+               <i class="icon-user"></i>
+            </a>
+            <div class="header__search">
+               <form id="searchForm" class="header__search-form">
+                  <input class="header__search-input" type="text" name="" id="" placeholder="Я хочу найти..." />
+                  <div class="header__search-drop">
+                     <div class="search-result">
+                        <a href="" class="search-result__item">
+                           <div class="search-result__product">
+                              <img src="img/shop/shop-item-1.jpg" alt="" class="search-result__product-img" />
+                              <div class="search-result__product-info">
+                                 <div class="search-result__product-series">
+                                    JOKER SKELETON
+                                 </div>
+                                 <div class="search-result__product-price">
+                                    18 700 ₽
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="search-result__type">
+                              LONG-SLEEVED T-SHIRT
+                           </div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__product">
+                              <img src="img/shop/shop-item-1.jpg" alt="" class="search-result__product-img" />
+                              <div class="search-result__product-info">
+                                 <div class="search-result__product-series">
+                                    JOKER SKELETON
+                                 </div>
+                                 <div class="search-result__product-price">
+                                    18 700 ₽
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="search-result__type">часы</div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__category">
+                              Наручные часы
+                           </div>
+                           <div class="search-result__type">Категория</div>
+                        </a>
+                        <a href="" class="search-result__item">
+                           <div class="search-result__category">
+                              Футболки
+                           </div>
+                           <div class="search-result__type">Категория</div>
+                        </a>
+                     </div>
+                     <span class="header__popular-title">
+                            Популярные запросы
+                            <i></i>
+                        </span>
+                     <div class="header__popular-list">
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                        <a href="">Ристмоны</a>
+                     </div>
+                  </div>
+                  <button type="submit" class="header__search-submit">
+                     <i class="icon-search"></i>
+                  </button>
+               </form>
+               <button id="searchOpen" class="header__search-btn">
+                  <i class="icon-search"></i>
+               </button>
+            </div>
+            <div class="language-select">
+               <div class="language-select__current">
+                  US
+                  <i class="icon icon-arrow-down"></i>
+               </div>
+               <div class="language-select__drop">
+                  <a href="" class="language-select__item">English</a>
+                  <a href="" class="language-select__item">Russian</a>
+                  <a href="" class="language-select__item">Czech</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="menu" class="navigation">
+         <div class="container">
+            <div class="navigation__head">
+               <a href="" class="navigation__account">
+                  <i class="icon-user"></i>
+               </a>
+            </div>
+            <nav class="main-nav">
+               <div class="main-nav__cols">
+                  <ul class="main-nav__list">
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Новинки</a>
+                     </li>
+                     <li class="main-nav__list-item ">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                Коллекции
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Ристмоны</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Космическая программа</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Интерьерные часы</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Уникальные часы</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Классически часы</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Все часы</a>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Исторические шедевры</a>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">Ателье</a>
+                     </li>
+                     <li class="main-nav__list-item main-nav__list-item_hide-desk">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                МАНУФАКТУРА
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">О мануфактуре </a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Константин Чайкин </a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Философия</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Изобретения</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Вакансии</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="main-nav__list-item main-nav__list-item_hide-desk">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                СМИ
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Новости</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Блог</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Медиатека</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="main-nav__list-item main-nav__list-item_hide-desk">
+                        <span class="main-nav__link main-nav__link_has-sub">
+                                ДЛЯ КЛИЕНТОВ
+                                <div class="main-nav__curves"></div>
+                            </span>
+                        <ul class="main-nav__sub-list">
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Как купить?</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Сервис</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Ритейлеры</a>
+                           </li>
+                           <li class="main-nav__sub-list-item">
+                              <a href="" class="main-nav__sub-link">Клуб Чайкина</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <ul class="main-nav__list">
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">PRE-OWNED</a>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">JOKER CLUB</a>
+                     </li>
+                     <li class="main-nav__list-item">
+                        <a href="" class="main-nav__link">ГАЛЕРЕЯ ЧАЙКИН</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="secondary-nav">
+               <div class="secondary-nav__links-col">
+                  <div class="secondary-nav__col">
+                     <div class="secondary-nav__title">МАНУФАКТУРА</div>
+                     <div class="secondary-nav__links">
+                        <a href="" class="secondary-nav__link">О мануфактуре</a>
+                        <a href="" class="secondary-nav__link">Изобретения</a>
+                        <a href="" class="secondary-nav__link">Константин Чайкин</a>
+                        <a href="" class="secondary-nav__link">Вакансии</a>
+                        <a href="" class="secondary-nav__link">Философия</a>
+                     </div>
+                  </div>
+                  <div class="secondary-nav__col">
+                     <div class="secondary-nav__title">СМИ</div>
+                     <div class="secondary-nav__links secondary-nav__links_single">
+                        <a href="" class="secondary-nav__link">Новости</a>
+                        <a href="" class="secondary-nav__link">Блог</a>
+                        <a href="" class="secondary-nav__link">Медиатека</a>
+                     </div>
+                  </div>
+                  <div class="secondary-nav__col">
+                     <div class="secondary-nav__title">ДЛЯ КЛИЕНТОВ</div>
+                     <div class="secondary-nav__links">
+                        <a href="" class="secondary-nav__link">Как купить?</a>
+                        <a href="" class="secondary-nav__link">Сервис</a>
+                        <a href="" class="secondary-nav__link">Ритейлеры</a>
+                        <a href="" class="secondary-nav__link">Клуб Чайкина</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="secondary-nav__btns">
+                  <a href="#" class="button button_orange">КОНСТРУКТОР РИСТМОНОВ</a>
+                  <a href="#" class="button button_orange">ИНТЕРНЕТ - МАГАЗИН</a>
+               </div>
+            </div>
+            <div class="navigation__footer">
+               <div class="navigation__adress">
+                  Россия. Москва, ул. Речников 15 стр. 2
+                  <a href="">Контакты</a>
+               </div>
+               <div class="navigation__socials">
+                  <a href="">
+                     <i class="icon-instagram"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-penterest"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-vk"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-youtube"></i>
+                  </a>
+                  <a href="">
+                     <i class="icon-telegram"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <main class="main">
+      <div class="game-wrapper">
+         <img class="game-wrapper__bg" src="img/game/bg.webp" alt="">
+         <div class="game-splash">
+            <div class="game-splash__text">
+               An imaginary immersion into
+               the surreal world of Alice in Wonderland
+               with an exceptionally complex wristwatch 
+            </div>
+            <button class="game-splash__start">START JOURNEY</button>
+            <a href="" class="game-splash__skip">SKIP TO WATCHES</a>
+         </div>
+         <div class="game-loader">
+            <div class="game-loader__text">WHITE RABBIT</div>
+            <div class="game-loader__progress" style="--progress:50%">
+               <div class="game-loader__progress-bar"></div>
+               <div class="game-loader__progress-counter">
+                  50%
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+
+   <footer class="footer-mini">
+      <div class="container footer-mini__container">
+         <div class="footer-mini__logo">
+            <img src="img/logos/logo-icon-white.svg" alt="">
+            KONSTANTIN CHAYKIN © 2025
+         </div>
+         <div class="footer-mini__links">
+            <a href="">Terms of use</a>
+            <a href="">Cookie policy</a>
+            <a href="">Privacy Policy</a>
+         </div>
+      </div>
+   </footer>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://api-maps.yandex.ru/v3/?apikey=d0aab0e9-0ef2-4ba3-b5a2-0aea6cdffacf&lang=ru_RU"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/23.0.10/js/intlTelInput.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+   <script src="
+https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.js
+"></script>
+   <script defer src="js/main.min.js"></script>
+   <script>
+      function startLoader(duration, callback) {
+         let progress = 0;
+         const interval = 50;
+         const step = interval / duration * 100;
+
+         const loaderInterval = setInterval(function() {
+            progress += step;
+            if (progress >= 100) {
+               progress = 100;
+               clearInterval(loaderInterval);
+               if (typeof callback === 'function') callback();
+            }
+
+            $('.game-loader__progress').css('--progress', progress + '%');
+            $('.game-loader__progress-counter').text(Math.round(progress) + '%');
+         }, interval);
+      }
+
+      $('.game-splash__start').on('click', function() {
+         $('.header').css({
+            transform: 'translateY(-100%)',
+            transition: 'transform 0.5s ease'
+         });
+         $('.footer-mini').css({
+            transform: 'translateY(100%)',
+            transition: 'transform 0.5s ease'
+         });
+         $('.game-splash').hide();
+         $('.game-loader').show();
+
+
+         startLoader(3000, function() {
+            alert('Загрузка завершена!');
+            $('.game-loader').hide();
+         });
+      });
+   </script>
+</body>
+
+</html>

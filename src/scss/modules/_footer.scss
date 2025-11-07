@@ -143,3 +143,79 @@
         color: white;
     }
 }
+
+.footer-mini {
+    padding: 1.5rem 0;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px rgba(white, 0.15) solid;
+    z-index: 1;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include md {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+    &__logo {
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    &__links {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        gap: 1.5rem;
+        a {
+            font-size: 0.75rem;
+            text-decoration: none;
+            border-left: 1px rgba(white, 0.5) solid;
+            padding: 0 1.5rem;
+            color: rgba(white, 0.5);
+            transition: all 0.3s;
+            &:first-child {
+                border: none;
+            }
+            &:hover {
+                color: white;
+            }
+            @include sm {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}
+.game-loader {
+    display: none;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    &__text {
+        font-size: 6.25rem;
+    }
+    &__progress {
+        position: relative;
+        height: 1px;
+        background: #fff;
+        &-bar {
+            width: var(--progress);
+            height: 1px;
+            background: #ff0000;
+        }
+        &-counter {
+            font-family: 'Onest';
+            top: 0.5rem;
+            position: absolute;
+            left: 50%;
+            translate: -50% 0;
+        }
+    }
+}
