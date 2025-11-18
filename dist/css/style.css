@@ -181,7 +181,8 @@ button {
 .hero-slider,
 .page-hero,
 .parallax-banner,
-.page-section_dark:first-child)) {
+.page-section_dark:first-child,
+.game-wrapper)) {
   padding-top: 60px;
 }
 .main_dark {
@@ -1520,93 +1521,6 @@ input[type=number] {
   border-radius: 20px;
   background: #ff1834;
   color: white;
-}
-
-.footer-mini {
-  padding: 1.5rem 0;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-top: 1px rgba(255, 255, 255, 0.15) solid;
-  z-index: 1;
-}
-.footer-mini__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-@media only screen and (max-width: 768px) {
-  .footer-mini__container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-.footer-mini__logo {
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.footer-mini__links {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  gap: 1.5rem;
-}
-.footer-mini__links a {
-  font-size: 0.75rem;
-  text-decoration: none;
-  border-left: 1px rgba(255, 255, 255, 0.5) solid;
-  padding: 0 1.5rem;
-  color: rgba(255, 255, 255, 0.5);
-  transition: all 0.3s;
-}
-.footer-mini__links a:first-child {
-  border: none;
-}
-.footer-mini__links a:hover {
-  color: white;
-}
-@media only screen and (max-width: 576px) {
-  .footer-mini__links a {
-    padding: 0 0.5rem;
-  }
-}
-
-.game-loader {
-  display: none;
-  color: white;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-}
-.game-loader__text {
-  white-space: nowrap;
-  font-size: 6.25rem;
-}
-@media only screen and (max-width: 768px) {
-  .game-loader__text {
-    font-size: 2.5rem;
-  }
-}
-.game-loader__progress {
-  position: relative;
-  height: 1px;
-  background: #fff;
-}
-.game-loader__progress-bar {
-  width: var(--progress);
-  height: 1px;
-  background: #ff0000;
-}
-.game-loader__progress-counter {
-  font-family: "Onest";
-  top: 0.5rem;
-  position: absolute;
-  left: 50%;
-  translate: -50% 0;
 }
 
 .header {
@@ -7442,8 +7356,8 @@ input[type=number] {
 
 .game-wrapper {
   font-family: "Cinzel", serif;
-  position: fixed;
-  inset: 0;
+  height: 100dvh;
+  position: relative;
 }
 .game-wrapper__bg {
   position: absolute;
@@ -7489,6 +7403,7 @@ input[type=number] {
   border-radius: 4rem;
   padding: 1rem 3rem;
   transition: all 0.3s;
+  text-decoration: none;
 }
 .game-splash__start:hover {
   border-color: white;

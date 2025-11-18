@@ -27,46 +27,6 @@
             </div>
         </div>
     </main>
-
-    @include('modules/footer-mini.html')
-    <script>
-        function startLoader(duration, callback) {
-            let progress = 0;
-            const interval = 50;
-            const step = interval / duration * 100;
-
-            const loaderInterval = setInterval(function () {
-                progress += step;
-                if (progress >= 100) {
-                    progress = 100;
-                    clearInterval(loaderInterval);
-                    if (typeof callback === 'function') callback();
-                }
-
-                $('.game-loader__progress').css('--progress', progress + '%');
-                $('.game-loader__progress-counter').text(Math.round(progress) + '%');
-            }, interval);
-        }
-
-        $('.game-splash__start').on('click', function () {
-            $('.header').css({
-                transform: 'translateY(-100%)',
-                transition: 'transform 0.5s ease'
-            });
-            $('.footer-mini').css({
-                transform: 'translateY(100%)',
-                transition: 'transform 0.5s ease'
-            });
-            $('.game-splash').hide();
-            $('.game-loader').show();
-
-
-            startLoader(3000, function () {
-                alert('Загрузка завершена!');
-                $('.game-loader').hide();
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 .game-wrapper {
     font-family: 'Cinzel', serif;
-    position: fixed;
-    inset: 0;
+    height: 100dvh;
+    position: relative;
     &__bg {
         position: absolute;
         width: 100%;
@@ -40,6 +40,7 @@
         border-radius: 4rem;
         padding: 1rem 3rem;
         transition: all 0.3s;
+        text-decoration: none;
         &:hover {
             border-color: white;
             background-color: white;
