@@ -685,6 +685,74 @@ $('.tabs-list__btn').on('click', function () {
 });
 /* -------------------------------------------------------------------------- */
 
+/*                              image map details                             */
+
+/* -------------------------------------------------------------------------- */
+
+function captionsInit() {
+  var isShow = true;
+  $('.image-collapsible-caption').each(function () {
+    var caption = $(this);
+    var btn = caption.find('.image-collapsible-caption__btn');
+    var content = caption.find('.image-collapsible-caption__content');
+    var parent = caption.closest('.work-detail-image');
+    var parentWidth = parent.width();
+    var btnLeft = caption.position().left;
+    var contentWidth = content.outerWidth();
+
+    if (btnLeft + contentWidth > parentWidth) {
+      caption.addClass('image-collapsible-caption_right');
+    }
+
+    btn.on('click', function () {
+      var captionClass = caption.attr('class').match(/caption_\d+/)[0];
+
+      if ($(window).width() <= 768) {
+        // планшеты и меньше
+        var mobileCaption = $('.work-detail-mobile-captions__item.' + captionClass);
+
+        if (mobileCaption.is(':visible')) {
+          // Закрываем текущий
+          mobileCaption.slideUp();
+          caption.removeClass('image-collapsible-caption_open');
+        } else {
+          // Закрываем все остальные мобильные подписи
+          $('.work-detail-mobile-captions__item').slideUp();
+          $('.image-collapsible-caption').removeClass('image-collapsible-caption_open'); // Открываем выбранный
+
+          mobileCaption.slideDown();
+          caption.addClass('image-collapsible-caption_open');
+        }
+      } else {
+        // Для десктопа просто toggle класс
+        caption.toggleClass('image-collapsible-caption_open');
+      }
+    });
+  }); // Кнопка Hide в мобильном блоке
+
+  $('.work-detail-mobile-captions__hide').on('click', function () {
+    var mobileItem = $(this).closest('.work-detail-mobile-captions__item');
+    var captionClass = mobileItem.attr('class').match(/caption_\d+/)[0]; // Скрываем мобильный блок через slideUp
+
+    mobileItem.slideUp(); // Сбрасываем активный класс у десктопной подписи
+
+    $('.image-collapsible-caption.' + captionClass).removeClass('image-collapsible-caption_open');
+  }); // Кнопка Hide всех десктопных подписей
+
+  $('#hideCaptions').on('click', function () {
+    isShow = !isShow;
+    var btnText = $(this).find('.button__text');
+    $('.work-detail-image__captions').fadeToggle();
+    $('.image-collapsible-caption_open').removeClass('image-collapsible-caption_open'); // Закрываем все мобильные подписи
+
+    $('.work-detail-mobile-captions__item').slideUp();
+    isShow ? btnText.html('Hide Captions') : btnText.html('Show Captions');
+  });
+}
+
+captionsInit();
+/* -------------------------------------------------------------------------- */
+
 /*                                 datepicker                                 */
 
 /* -------------------------------------------------------------------------- */
