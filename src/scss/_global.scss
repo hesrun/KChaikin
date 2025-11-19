@@ -299,6 +299,7 @@ h1,
     @include md {
         font-size: 38px;
         margin-bottom: 20px;
+        line-height: 1;
         br {
             display: none;
         }
@@ -320,6 +321,7 @@ h2,
     @include md {
         font-size: 34px;
         margin-bottom: 20px;
+        line-height: 1;
         br {
             display: none;
         }
@@ -338,7 +340,7 @@ h3,
         font-size: 28px;
     }
     @include md {
-        font-size: 20px;
+        font-size: 26px;
         margin-bottom: 20px;
     }
     .article & {
