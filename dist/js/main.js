@@ -690,63 +690,87 @@ $('.tabs-list__btn').on('click', function () {
 /* -------------------------------------------------------------------------- */
 
 function captionsInit() {
-  var isShow = true;
-  $('.image-collapsible-caption').each(function () {
-    var caption = $(this);
-    var btn = caption.find('.image-collapsible-caption__btn');
-    var content = caption.find('.image-collapsible-caption__content');
-    var parent = caption.closest('.work-detail-image');
-    var parentWidth = parent.width();
-    var btnLeft = caption.position().left;
-    var contentWidth = content.outerWidth();
+  var isCaptions = false;
+  var $image = $('.work-detail-image');
+  $('.work-detail-image-btns__item').on('click', function (e) {
+    var id = $(this).data('id');
+    var btn = $(this);
+    var caption = $('.work-detail-caption__item[data-id="' + id + '"]');
+    $('.work-detail-image-btns__item').not(btn).removeClass('open');
+    $('.work-detail-caption__item').not(caption).removeClass('open');
+    var willOpen = !caption.hasClass('open');
+    btn.toggleClass('open', willOpen);
+    caption.toggleClass('open', willOpen);
 
-    if (btnLeft + contentWidth > parentWidth) {
-      caption.addClass('image-collapsible-caption_right');
+    if (willOpen && $(window).width() > 820) {
+      positionCaptionNearButton(btn, caption, $image);
+    } else {
+      caption.css({
+        position: '',
+        top: '',
+        left: ''
+      });
+    }
+  });
+  $('.work-detail-caption__item .button_small').on('click', function (e) {
+    e.stopPropagation();
+    var caption = $(this).closest('.work-detail-caption__item');
+    var id = caption.data('id');
+    var btn = $('.work-detail-image-btns__item[data-id="' + id + '"]');
+    caption.removeClass('open');
+    btn.removeClass('open');
+    caption.css({
+      position: '',
+      top: '',
+      left: ''
+    });
+  });
+  $('#hideCaptions').on('click', function () {
+    isCaptions = !isCaptions;
+    var btnText = $(this).find('.button__text');
+    $('.work-detail-image-btns').fadeToggle();
+    var isAnyOpen = $('.work-detail-caption__item.open').length > 0;
+
+    if (isAnyOpen) {
+      $('.work-detail-caption__item').removeClass('open');
+      $('.work-detail-image-btns__item').removeClass('open');
+      $('.work-detail-caption__item').css({
+        position: '',
+        top: '',
+        left: ''
+      });
     }
 
-    btn.on('click', function () {
-      var captionClass = caption.attr('class').match(/caption_\d+/)[0];
+    if (isCaptions) {
+      btnText.text('Show captions');
+    } else {
+      btnText.text('Hide captions');
+    }
+  });
+}
 
-      if ($(window).width() <= 768) {
-        // планшеты и меньше
-        var mobileCaption = $('.work-detail-mobile-captions__item.' + captionClass);
+function positionCaptionNearButton($btn, $caption, $image) {
+  var btnOffset = $btn.offset();
+  var parentOffset = $image.offset();
+  var top = btnOffset.top - parentOffset.top;
+  var left = btnOffset.left - parentOffset.left;
+  var parentWidth = $image.width();
+  var captionX = left;
+  var captionY = top;
+  var SHIFT = $caption.width() / 2;
 
-        if (mobileCaption.is(':visible')) {
-          // Закрываем текущий
-          mobileCaption.slideUp();
-          caption.removeClass('image-collapsible-caption_open');
-        } else {
-          // Закрываем все остальные мобильные подписи
-          $('.work-detail-mobile-captions__item').slideUp();
-          $('.image-collapsible-caption').removeClass('image-collapsible-caption_open'); // Открываем выбранный
+  if (left < SHIFT) {
+    captionX = left + SHIFT;
+  }
 
-          mobileCaption.slideDown();
-          caption.addClass('image-collapsible-caption_open');
-        }
-      } else {
-        // Для десктопа просто toggle класс
-        caption.toggleClass('image-collapsible-caption_open');
-      }
-    });
-  }); // Кнопка Hide в мобильном блоке
+  if (parentWidth - left < SHIFT) {
+    captionX = left - SHIFT;
+  }
 
-  $('.work-detail-mobile-captions__hide').on('click', function () {
-    var mobileItem = $(this).closest('.work-detail-mobile-captions__item');
-    var captionClass = mobileItem.attr('class').match(/caption_\d+/)[0]; // Скрываем мобильный блок через slideUp
-
-    mobileItem.slideUp(); // Сбрасываем активный класс у десктопной подписи
-
-    $('.image-collapsible-caption.' + captionClass).removeClass('image-collapsible-caption_open');
-  }); // Кнопка Hide всех десктопных подписей
-
-  $('#hideCaptions').on('click', function () {
-    isShow = !isShow;
-    var btnText = $(this).find('.button__text');
-    $('.work-detail-image__captions').fadeToggle();
-    $('.image-collapsible-caption_open').removeClass('image-collapsible-caption_open'); // Закрываем все мобильные подписи
-
-    $('.work-detail-mobile-captions__item').slideUp();
-    isShow ? btnText.html('Hide Captions') : btnText.html('Show Captions');
+  $caption.css({
+    position: 'absolute',
+    top: captionY + 'px',
+    left: captionX + 'px'
   });
 }
 

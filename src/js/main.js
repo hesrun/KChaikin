@@ -760,87 +760,97 @@ $('.tabs-list__btn').on('click', function () {
 /* -------------------------------------------------------------------------- */
 
 function captionsInit() {
-    let isShow = true
+    let isCaptions = false
+    const $image = $('.work-detail-image')
 
-    $('.image-collapsible-caption').each(function () {
-        const caption = $(this)
-        const btn = caption.find('.image-collapsible-caption__btn')
-        const content = caption.find('.image-collapsible-caption__content')
+    $('.work-detail-image-btns__item').on('click', function (e) {
+        const id = $(this).data('id')
+        const btn = $(this)
+        const caption = $('.work-detail-caption__item[data-id="' + id + '"]')
 
-        const parent = caption.closest('.work-detail-image')
-        const parentWidth = parent.width()
+        $('.work-detail-image-btns__item').not(btn).removeClass('open')
+        $('.work-detail-caption__item').not(caption).removeClass('open')
 
-        const btnLeft = caption.position().left
-        const contentWidth = content.outerWidth()
+        const willOpen = !caption.hasClass('open')
+        btn.toggleClass('open', willOpen)
+        caption.toggleClass('open', willOpen)
 
-        if (btnLeft + contentWidth > parentWidth) {
-            caption.addClass('image-collapsible-caption_right')
+        if (willOpen && $(window).width() > 820) {
+            positionCaptionNearButton(btn, caption, $image)
+        } else {
+            caption.css({ position: '', top: '', left: '' })
         }
-
-        btn.on('click', function () {
-            const captionClass = caption.attr('class').match(/caption_\d+/)[0]
-
-            if ($(window).width() <= 768) {
-                // планшеты и меньше
-                const mobileCaption = $(
-                    '.work-detail-mobile-captions__item.' + captionClass
-                )
-
-                if (mobileCaption.is(':visible')) {
-                    // Закрываем текущий
-                    mobileCaption.slideUp()
-                    caption.removeClass('image-collapsible-caption_open')
-                } else {
-                    // Закрываем все остальные мобильные подписи
-                    $('.work-detail-mobile-captions__item').slideUp()
-                    $('.image-collapsible-caption').removeClass(
-                        'image-collapsible-caption_open'
-                    )
-
-                    // Открываем выбранный
-                    mobileCaption.slideDown()
-                    caption.addClass('image-collapsible-caption_open')
-                }
-            } else {
-                // Для десктопа просто toggle класс
-                caption.toggleClass('image-collapsible-caption_open')
-            }
-        })
     })
 
-    // Кнопка Hide в мобильном блоке
-    $('.work-detail-mobile-captions__hide').on('click', function () {
-        const mobileItem = $(this).closest('.work-detail-mobile-captions__item')
-        const captionClass = mobileItem.attr('class').match(/caption_\d+/)[0]
+    $('.work-detail-caption__item .button_small').on('click', function (e) {
+        e.stopPropagation()
 
-        // Скрываем мобильный блок через slideUp
-        mobileItem.slideUp()
+        const caption = $(this).closest('.work-detail-caption__item')
+        const id = caption.data('id')
+        const btn = $('.work-detail-image-btns__item[data-id="' + id + '"]')
 
-        // Сбрасываем активный класс у десктопной подписи
-        $('.image-collapsible-caption.' + captionClass).removeClass(
-            'image-collapsible-caption_open'
-        )
+        caption.removeClass('open')
+        btn.removeClass('open')
+
+        caption.css({ position: '', top: '', left: '' })
     })
 
-    // Кнопка Hide всех десктопных подписей
     $('#hideCaptions').on('click', function () {
-        isShow = !isShow
+        isCaptions = !isCaptions
         const btnText = $(this).find('.button__text')
 
-        $('.work-detail-image__captions').fadeToggle()
-        $('.image-collapsible-caption_open').removeClass(
-            'image-collapsible-caption_open'
-        )
+        $('.work-detail-image-btns').fadeToggle()
 
-        // Закрываем все мобильные подписи
-        $('.work-detail-mobile-captions__item').slideUp()
+        const isAnyOpen = $('.work-detail-caption__item.open').length > 0
 
-        isShow ? btnText.html('Hide Captions') : btnText.html('Show Captions')
+        if (isAnyOpen) {
+            $('.work-detail-caption__item').removeClass('open')
+            $('.work-detail-image-btns__item').removeClass('open')
+            $('.work-detail-caption__item').css({
+                position: '',
+                top: '',
+                left: '',
+            })
+        }
+
+        if (isCaptions) {
+            btnText.text('Show captions')
+        } else {
+            btnText.text('Hide captions')
+        }
+    })
+}
+
+function positionCaptionNearButton($btn, $caption, $image) {
+    const btnOffset = $btn.offset()
+    const parentOffset = $image.offset()
+
+    let top = btnOffset.top - parentOffset.top
+    let left = btnOffset.left - parentOffset.left
+
+    const parentWidth = $image.width()
+
+    let captionX = left
+    const captionY = top
+
+    const SHIFT = $caption.width() / 2
+
+    if (left < SHIFT) {
+        captionX = left + SHIFT
+    }
+
+    if (parentWidth - left < SHIFT) {
+        captionX = left - SHIFT
+    }
+
+    $caption.css({
+        position: 'absolute',
+        top: captionY + 'px',
+        left: captionX + 'px',
     })
 }
 
 captionsInit()
-
 /* -------------------------------------------------------------------------- */
 /*                                 datepicker                                 */
 /* -------------------------------------------------------------------------- */
