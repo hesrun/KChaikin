@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+@include('modules/link.html',{ 'title': 'Main' })
+
+<body>
+    @include('modules/header.html',{'theme':'black'})
+    <main class="main">
+        <div class="page-section">
+            <div class="venus-hero">
+                <div class="container">
+                    <div class="venus-hero__header">
+                        <h1 class="venus-hero__title playfair">VENUS</h1>
+                        <h5 class="venus-hero__subtitle playfair">ЛИМИТИРОВАННАЯ СЕРИЯ</h5>
+                    </div>
+                    <div class="venus-hero__image-wrapper">
+                        <div class="venus-hero__watch">
+                            <img src="img/venus/perl.webp" alt="">
+                        </div>
+                        <div class="venus-hero__bg">
+                            <img src="img/venus/bg-1.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="container">
+                <h2 class="venus-section-title playfair">
+                    Первые в мире
+                    наручные часы эротоморфного дизайна
+                </h2>
+                <div class="venus-text-cols">
+                    <div>
+                        <p>Константин Чайкин выводит на небосвод сотворённой им вселенной ристмонов новую звезду – часы
+                            «Венус», свою собственную
+                            интерпретацию облика римской богини. В свойственном ему стремлении создавать многогранные,
+                            захватывающие образы он
+                            предлагает воспринимать этот дизайн и как метафору происхождения мира – прежде всего здесь
+                            очевидна ссылка на
+                            классический сюжет рождения Венеры (Афродиты) из пены морской, и как художественное
+                            высказывание об основополагающей
+                            связи мифологии, астрономии и эротики. </p>
+                    </div>
+                    <div>
+                        <p>Безусловно, при первом же взгляде на часы «Венус» их эротическая заряженность очевидна.
+                            Эмоциональная составляющая
+                            крайне важна для любого из ристмонов, что справедливо – в уникальном эротическом ключе – и в
+                            отношении часов «Венус».
+                            Продумывая детали этого проекта, с самого его старта Константин Чайкин понимал, что
+                            разработка эротических часов
+                            сопряжена со многими опасностями, прежде всего, с риском впасть в банальность, хуже того – в
+                            вульгарность. Следует
+                            признать, что в этом квесте ему удалось пройти между Сциллой и Харибдой, и в проекте «Венус»
+                            он максимально далёк и от
+                            того, и от другого </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    @include('modules/footer.html')
+    @include('modals/techParamsModal.html')
+    @include('modals/videoModal.html')
+</body>
+
+</html>

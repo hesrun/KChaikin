@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -188,6 +189,10 @@ button {
   background: #1f2022;
   color: #fff;
   border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
+}
+
+.playfair {
+  font-family: "Playfair", serif;
 }
 
 .footer,
@@ -7622,4 +7627,87 @@ input[type=number] {
   .game-splash__skip:hover {
     text-decoration: underline;
   }
+}
+
+.venus-section-title {
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: clamp( 40px, 40px + (125 - 40) * ((100vw - 320px) / (1440 - 320)), 125px );
+}
+@media only screen and (max-width: 768px) {
+  .venus-section-title {
+    margin-bottom: 2rem;
+  }
+}
+
+.venus-text-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+@media only screen and (max-width: 768px) {
+  .venus-text-cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.venus-hero {
+  overflow: hidden;
+}
+.venus-hero img {
+  width: 100%;
+}
+.venus-hero__header {
+  position: relative;
+  z-index: 1;
+}
+.venus-hero__title {
+  margin: 0;
+  text-align: center;
+  font-weight: 100;
+  line-height: 1;
+  color: #434140;
+  font-size: clamp( 100px, 100px + (300 - 100) * ((100vw - 320px) / (1440 - 320)), 300px );
+  letter-spacing: clamp( 5px, 5px + (100 - 5) * ((100vw - 320px) / (1440 - 320)), 100px );
+}
+.venus-hero__subtitle {
+  font-size: clamp( 15px, 15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)), 30px );
+  letter-spacing: clamp( 5px, 5px + (40 - 5) * ((100vw - 320px) / (1440 - 320)), 40px );
+  white-space: nowrap;
+  text-align: center;
+}
+.venus-hero__image-wrapper {
+  margin-top: -17%;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+@media only screen and (max-width: 576px) {
+  .venus-hero__image-wrapper {
+    aspect-ratio: 1/2;
+    margin-top: -25%;
+  }
+}
+.venus-hero__watch {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 0 10%;
+}
+@media only screen and (max-width: 576px) {
+  .venus-hero__watch {
+    padding: 0;
+    margin: 0 -40px;
+  }
+}
+.venus-hero__bg {
+  height: 100%;
+}
+.venus-hero__bg img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }

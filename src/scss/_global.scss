@@ -33,11 +33,13 @@ body {
     }
     @include scrollbars(5px, #ccc, #1f2022);
 }
+
 input,
 select,
 button {
     font-family: 'Onest';
 }
+
 .main {
     background: #e5e5e5;
     flex: 1 0 auto;
@@ -61,6 +63,11 @@ button {
         border-bottom: 1px rgba(white, 0.15) solid;
     }
 }
+
+.playfair {
+    font-family: 'Playfair', serif;
+}
+
 .footer,
 .header {
     flex-shrink: 0;

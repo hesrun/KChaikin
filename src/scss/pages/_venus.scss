@@ -1,0 +1,71 @@
+.venus-section-title {
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    line-height: 1;
+    @include clamp-calc(font-size, 40, 125);
+    @include md {
+        margin-bottom: 2rem;
+    }
+}
+.venus-text-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+.venus-hero {
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+    &__header {
+        position: relative;
+        z-index: 1;
+    }
+    &__title {
+        margin: 0;
+        text-align: center;
+        font-weight: 100;
+        line-height: 1;
+        color: #434140;
+        @include clamp-calc(font-size, 100, 300);
+        @include clamp-calc(letter-spacing, 5, 100);
+    }
+    &__subtitle {
+        @include clamp-calc(font-size, 15, 30);
+        @include clamp-calc(letter-spacing, 5, 40);
+        white-space: nowrap;
+        text-align: center;
+    }
+    &__image-wrapper {
+        margin-top: -17%;
+        aspect-ratio: 1/1;
+        position: relative;
+        @include sm {
+            aspect-ratio: 1/2;
+            margin-top: -25%;
+        }
+    }
+    &__watch {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        padding: 0 10%;
+        @include sm {
+            padding: 0;
+            margin: 0 -40px;
+        }
+    }
+    &__bg {
+        height: 100%;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
