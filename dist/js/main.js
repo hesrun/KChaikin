@@ -905,6 +905,19 @@ function venusAnimations() {
       end: '200% +=200vh',
       scrub: true
     }
+  });
+  gsap.fromTo('.venus-hero__watch img', {
+    scale: 0.8
+  }, {
+    scale: 1,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: document.body,
+      markers: true,
+      start: '0 0',
+      end: '100% +=200vh',
+      scrub: true
+    }
   }); //animate words
 
   gsap.fromTo('.animate-words .word', {
