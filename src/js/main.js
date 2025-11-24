@@ -950,6 +950,25 @@ gumResponsiveInit()
 splitWords('.split-text-by-word')
 
 function venusAnimations() {
+    ScrollTrigger.matchMedia({
+        '(min-width: 768px)': function () {
+            gsap.fromTo(
+                '.venus-hero__watch img',
+                { scale: 0.8 },
+                {
+                    scale: 1,
+                    duration: 0.3,
+                    scrollTrigger: {
+                        trigger: document.body,
+                        //markers: true,
+                        start: '0 0',
+                        end: '100% +=200vh',
+                        scrub: true,
+                    },
+                }
+            )
+        },
+    })
     //hero section
     gsap.to('.venus-hero__header', {
         yPercent: 50,
@@ -974,21 +993,6 @@ function venusAnimations() {
                 //markers: true,
                 start: '0 0',
                 end: '200% +=200vh',
-                scrub: true,
-            },
-        }
-    )
-    gsap.fromTo(
-        '.venus-hero__watch img',
-        { scale: 0.8 },
-        {
-            scale: 1,
-            duration: 0.3,
-            scrollTrigger: {
-                trigger: document.body,
-                markers: true,
-                start: '0 0',
-                end: '100% +=200vh',
                 scrub: true,
             },
         }
