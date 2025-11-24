@@ -685,6 +685,10 @@ input[type=number] {
   padding: 0 20px;
 }
 
+.split-text-by-word .word {
+  display: inline-block;
+}
+
 @font-face {
   font-family: "TT Ricordi Allegria Trl";
   src: url("../fonts/subset-TTRicordiAllegriaTrl-Regular.woff2") format("woff2"), url("../fonts/subset-TTRicordiAllegriaTrl-Regular.woff") format("woff");
@@ -7710,4 +7714,59 @@ input[type=number] {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.venus-watch-type-one {
+  overflow: hidden;
+  margin: 70px 0;
+  position: relative;
+  padding: 0 5%;
+}
+@media only screen and (max-width: 768px) {
+  .venus-watch-type-one {
+    margin: 30px -15px;
+    padding: 0;
+  }
+}
+.venus-watch-type-one__watch {
+  max-width: 100%;
+  display: block;
+}
+@media only screen and (max-width: 576px) {
+  .venus-watch-type-one__watch {
+    width: calc(100% + 20%);
+    max-width: none;
+    margin-left: -10%;
+  }
+}
+.venus-watch-type-one__bg {
+  position: absolute;
+  top: 21.4%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+@media only screen and (max-width: 576px) {
+  .venus-watch-type-one__bg {
+    top: 14%;
+  }
+}
+.venus-watch-type-one__bg img {
+  display: block;
+  max-width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .venus-watch-type-one__bg img {
+    height: 200%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .animate-words {
+    overflow: hidden;
+  }
 }

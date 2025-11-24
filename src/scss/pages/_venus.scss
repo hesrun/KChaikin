@@ -69,3 +69,49 @@
         }
     }
 }
+
+.venus-watch-type-one {
+    overflow: hidden;
+    margin: 70px 0;
+    position: relative;
+    padding: 0 5%;
+    @include md {
+        margin: 30px -15px;
+        padding: 0;
+    }
+    &__watch {
+        max-width: 100%;
+        display: block;
+        @include sm {
+            width: calc(100% + 20%);
+            max-width: none;
+            margin-left: -10%;
+        }
+    }
+    &__bg {
+        position: absolute;
+        top: 21.4%;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        z-index: -1;
+        @include sm {
+            top: 14%;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            @include sm {
+                height: 200%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.animate-words {
+    @include md {
+        overflow: hidden;
+    }
+}

@@ -1,5 +1,13 @@
 "use strict";
 
+var splitWords = function splitWords(selector) {
+  var el = document.querySelector(selector);
+  var text = el.innerText.trim().split(/\s+/);
+  el.innerHTML = text.map(function (word) {
+    return "<span class=\"word\">".concat(word, "</span>");
+  }).join(' ');
+};
+
 var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
@@ -869,6 +877,8 @@ gumResponsiveInit();
 
 /* -------------------------------------------------------------------------- */
 
+splitWords('.split-text-by-word');
+
 function venusAnimations() {
   //hero section
   gsap.to('.venus-hero__header', {
@@ -895,6 +905,57 @@ function venusAnimations() {
       end: '200% +=200vh',
       scrub: true
     }
+  }); //animate words
+
+  gsap.fromTo('.animate-words .word', {
+    opacity: 0,
+    x: 50
+  }, {
+    opacity: 1,
+    x: 0,
+    duration: 2,
+    ease: 'power3.out',
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: '.animate-words',
+      start: 'top 80%',
+      once: true //markers: true,
+
+    }
+  }); //animate image type one
+
+  gsap.fromTo('.venus-watch-type-one__bg img', {
+    yPercent: -100
+  }, {
+    yPercent: 0,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: '.venus-watch-type-one',
+      //markers: true,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  }); //animate text-cols
+
+  $('.venus-text-cols').each(function () {
+    var items = $(this).find('div').toArray();
+    gsap.fromTo(items, {
+      opacity: 0,
+      y: 100
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: this,
+        start: 'top 80%',
+        once: true //markers: true,
+
+      }
+    });
   });
 }
 
