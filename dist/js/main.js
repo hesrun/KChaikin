@@ -872,8 +872,9 @@ gumResponsiveInit();
 function venusAnimations() {
   //hero section
   gsap.to('.venus-hero__header', {
-    yPercent: 100,
+    yPercent: 200,
     opacity: 0,
+    scale: 2,
     duration: 0.3,
     scrollTrigger: {
       trigger: document.body,
