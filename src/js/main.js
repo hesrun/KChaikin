@@ -998,26 +998,28 @@ function venusAnimations() {
         }
     )
     //animate words
-    gsap.fromTo(
-        '.animate-words .word',
-        {
-            opacity: 0,
-            x: 50,
-        },
-        {
-            opacity: 1,
-            x: 0,
-            duration: 2,
-            ease: 'power3.out',
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: '.animate-words',
-                start: 'top 80%',
-                once: true,
-                //markers: true,
+    document.querySelectorAll('.animate-words').forEach((title) => {
+        gsap.fromTo(
+            title.querySelectorAll('.word'),
+            {
+                opacity: 0,
+                x: 50,
             },
-        }
-    )
+            {
+                opacity: 1,
+                x: 0,
+                duration: 2,
+                ease: 'power3.out',
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: title,
+                    start: 'top 80%',
+                    once: true,
+                    //markers: true,
+                },
+            }
+        )
+    })
     //animate image type one
     gsap.fromTo(
         '.venus-watch-type-one__bg img',
