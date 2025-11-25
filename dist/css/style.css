@@ -7684,7 +7684,23 @@ input[type=number] {
 .venus-hero img {
   width: 100%;
 }
+.venus-hero__age {
+  left: 5%;
+  top: 120%;
+  color: #434140;
+  border-radius: 50%;
+  position: absolute;
+  border: 1px solid currentColor;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp( 20px, 20px + (75 - 20) * ((100vw - 320px) / (1440 - 320)), 75px );
+  width: clamp( 40px, 40px + (125 - 40) * ((100vw - 320px) / (1440 - 320)), 125px );
+  height: clamp( 40px, 40px + (125 - 40) * ((100vw - 320px) / (1440 - 320)), 125px );
+}
 .venus-hero__header {
+  color: #434140;
   position: relative;
   z-index: 1;
 }
@@ -7692,26 +7708,26 @@ input[type=number] {
   margin: 0;
   text-align: center;
   font-weight: 100;
-  line-height: 1;
-  color: #434140;
+  line-height: 0.8;
   font-size: clamp( 100px, 100px + (300 - 100) * ((100vw - 320px) / (1440 - 320)), 300px );
-  letter-spacing: clamp( 5px, 5px + (100 - 5) * ((100vw - 320px) / (1440 - 320)), 100px );
+  letter-spacing: clamp( 5px, 5px + (96 - 5) * ((100vw - 320px) / (1440 - 320)), 96px );
 }
 .venus-hero__subtitle {
   font-size: clamp( 15px, 15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)), 30px );
-  letter-spacing: clamp( 5px, 5px + (40 - 5) * ((100vw - 320px) / (1440 - 320)), 40px );
+  letter-spacing: clamp( 5px, 5px + (43.5 - 5) * ((100vw - 320px) / (1440 - 320)), 43.5px );
+  padding-left: clamp( 5px, 5px + (22 - 5) * ((100vw - 320px) / (1440 - 320)), 22px );
   white-space: nowrap;
   text-align: center;
 }
 .venus-hero__image-wrapper {
-  margin-top: -17%;
+  margin-top: -13%;
   aspect-ratio: 1/1;
   position: relative;
 }
 @media only screen and (max-width: 576px) {
   .venus-hero__image-wrapper {
     aspect-ratio: 1/2;
-    margin-top: -25%;
+    margin-top: -20%;
   }
 }
 .venus-hero__watch {
@@ -7911,10 +7927,8 @@ input[type=number] {
     margin-bottom: 15px;
   }
 }
-@media only screen and (max-width: 576px) {
-  .shell-icon img {
-    max-width: 50px;
-  }
+.shell-icon img {
+  max-width: clamp( 55px, 55px + (110 - 55) * ((100vw - 320px) / (1440 - 320)), 110px );
 }
 
 .venus-parallax {
@@ -7964,7 +7978,8 @@ input[type=number] {
 }
 
 .venus-specification-image {
-  background: #d9d8d5;
+  background: url("../img/venus/bg-1.webp");
+  background-size: cover;
   margin: 70px 0;
 }
 @media only screen and (max-width: 576px) {

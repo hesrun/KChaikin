@@ -36,7 +36,23 @@
     img {
         width: 100%;
     }
+    &__age {
+        left: 5%;
+        top: 120%;
+        color: #434140;
+        border-radius: 50%;
+        position: absolute;
+        border: 1px solid currentColor;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include clamp-calc(font-size, 20, 75);
+        @include clamp-calc(width, 40, 125);
+        @include clamp-calc(height, 40, 125);
+    }
     &__header {
+        color: #434140;
         position: relative;
         z-index: 1;
     }
@@ -44,24 +60,24 @@
         margin: 0;
         text-align: center;
         font-weight: 100;
-        line-height: 1;
-        color: #434140;
+        line-height: 0.8;
         @include clamp-calc(font-size, 100, 300);
-        @include clamp-calc(letter-spacing, 5, 100);
+        @include clamp-calc(letter-spacing, 5, 96);
     }
     &__subtitle {
         @include clamp-calc(font-size, 15, 30);
-        @include clamp-calc(letter-spacing, 5, 40);
+        @include clamp-calc(letter-spacing, 5, 43.5);
+        @include clamp-calc(padding-left, 5, 22);
         white-space: nowrap;
         text-align: center;
     }
     &__image-wrapper {
-        margin-top: -17%;
+        margin-top: -13%;
         aspect-ratio: 1/1;
         position: relative;
         @include sm {
             aspect-ratio: 1/2;
-            margin-top: -25%;
+            margin-top: -20%;
         }
     }
     &__watch {
@@ -240,9 +256,7 @@
         margin-bottom: 15px;
     }
     img {
-        @include sm {
-            max-width: 50px;
-        }
+        @include clamp-calc(max-width, 55, 110);
     }
 }
 
@@ -287,7 +301,8 @@
 }
 
 .venus-specification-image {
-    background: #d9d8d5;
+    background: url('../img/venus/bg-1.webp');
+    background-size: cover;
     margin: 70px 0;
     @include sm {
         margin: 30px 0;

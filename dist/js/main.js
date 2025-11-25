@@ -932,21 +932,44 @@ function venusAnimations() {
           scrub: true
         }
       });
+      gsap.to('.venus-hero__age', {
+        opacity: 0,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: document.body,
+          //markers: true,
+          start: '0 0',
+          end: '50% +=50',
+          scrub: true
+        }
+      });
+      gsap.to('.venus-hero__title', {
+        y: 200,
+        scale: 1.1,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: document.body,
+          //markers: true,
+          start: '0 0',
+          end: '50% +=50',
+          scrub: true
+        }
+      });
+      gsap.to('.venus-hero__subtitle', {
+        y: 250,
+        scale: 1.1,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: document.body,
+          //markers: true,
+          start: '0 0',
+          end: '50% +=50',
+          scrub: true
+        }
+      });
     }
   }); //hero section
 
-  gsap.to('.venus-hero__header', {
-    yPercent: 50,
-    scale: 1.1,
-    duration: 0.3,
-    scrollTrigger: {
-      trigger: document.body,
-      //markers: true,
-      start: '0 0',
-      end: '50% +=50',
-      scrub: true
-    }
-  });
   gsap.fromTo('.venus-hero__bg img', {
     yPercent: 0
   }, {
