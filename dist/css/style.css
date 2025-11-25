@@ -689,6 +689,10 @@ input[type=number] {
   display: inline-block;
 }
 
+.text-center {
+  text-align: center;
+}
+
 @font-face {
   font-family: "TT Ricordi Allegria Trl";
   src: url("../fonts/subset-TTRicordiAllegriaTrl-Regular.woff2") format("woff2"), url("../fonts/subset-TTRicordiAllegriaTrl-Regular.woff") format("woff");
@@ -7657,6 +7661,23 @@ input[type=number] {
   }
 }
 
+.venus-text-center {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.venus-lg-text {
+  font-weight: 200;
+  line-height: 1.1;
+  font-size: clamp( 20px, 20px + (40 - 20) * ((100vw - 320px) / (1440 - 320)), 40px );
+  margin: 40px 0;
+}
+@media only screen and (max-width: 768px) {
+  .venus-lg-text {
+    margin: 20px 0;
+  }
+}
+
 .venus-hero {
   overflow: hidden;
 }
@@ -7768,5 +7789,176 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .animate-words {
     overflow: hidden;
+  }
+}
+
+.venus-symbol {
+  overflow: hidden;
+}
+.venus-symbol__content {
+  position: relative;
+  margin-bottom: 100px;
+}
+@media only screen and (max-width: 576px) {
+  .venus-symbol__content {
+    margin-inline: -40px;
+    margin-bottom: 70px;
+  }
+}
+.venus-symbol__circle-part {
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  position: relative;
+}
+.venus-symbol__circle-part:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  border-color: #dadada;
+  border-style: solid;
+  border-radius: 50%;
+  border-width: clamp( 40px, 40px + (140 - 40) * ((100vw - 320px) / (1440 - 320)), 140px );
+}
+.venus-symbol__cross-part {
+  margin: -2% auto;
+  height: clamp( 150px, 150px + (600 - 150) * ((100vw - 320px) / (1440 - 320)), 600px );
+  width: clamp( 40px, 40px + (140 - 40) * ((100vw - 320px) / (1440 - 320)), 140px );
+  background: #dadada;
+  position: relative;
+}
+.venus-symbol__cross-part:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #dadada;
+  rotate: 90deg;
+}
+.venus-symbol__watch {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.venus-symbol__watch img {
+  margin: auto;
+  max-width: 80%;
+}
+.venus-symbol__three {
+  max-width: 30%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
+}
+@media only screen and (max-width: 576px) {
+  .venus-symbol__three {
+    max-width: 40%;
+  }
+}
+.venus-symbol__three img {
+  max-width: 100%;
+}
+.venus-symbol__side-text {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.1;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: clamp( 80px, 80px + (500 - 80) * ((100vw - 320px) / (1440 - 320)), 500px );
+  line-height: 0.8;
+  translate: -40% 0;
+}
+@media only screen and (max-width: 768px) {
+  .venus-symbol__side-text {
+    display: none;
+  }
+}
+.venus-symbol__circle-text {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.venus-symbol__circle-text textPath {
+  font-family: "Playfair";
+  font-weight: 100;
+  font-size: 3px;
+  opacity: 0.7;
+  letter-spacing: clamp( 2px, 2px + (2 - 2) * ((100vw - 320px) / (1440 - 320)), 2px );
+}
+@media only screen and (max-width: 768px) {
+  .venus-symbol__circle-text {
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+  }
+}
+
+.shell-icon {
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 576px) {
+  .shell-icon {
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .shell-icon img {
+    max-width: 50px;
+  }
+}
+
+.venus-parallax {
+  position: relative;
+  background: #d9d9d9;
+  max-width: 1000px;
+  margin: 50px auto;
+  aspect-ratio: 1/0.8;
+}
+@media only screen and (max-width: 576px) {
+  .venus-parallax {
+    margin: 25px -15px;
+    aspect-ratio: 1/1;
+  }
+}
+.page-section:has(.venus-parallax) {
+  overflow: hidden;
+}
+.venus-parallax__venera {
+  position: absolute;
+  max-width: 45%;
+  left: 5%;
+  translate: calc(var(--mouse-x) / -50) calc(var(--mouse-y) / -50);
+}
+@media only screen and (max-width: 576px) {
+  .venus-parallax__venera {
+    max-width: 65%;
+    left: -5%;
+    top: -20%;
+    rotate: -10deg;
+  }
+}
+.venus-parallax__watch {
+  position: absolute;
+  max-width: 60%;
+  bottom: -10%;
+  right: 0%;
+  rotate: 30deg;
+  translate: calc(var(--mouse-x) / 50) calc(var(--mouse-y) / 50);
+}
+@media only screen and (max-width: 576px) {
+  .venus-parallax__watch {
+    max-width: 80%;
+    bottom: -10%;
+    right: 0%;
   }
 }

@@ -1,13 +1,50 @@
 "use strict";
 
 var splitWords = function splitWords(selector) {
-  var el = document.querySelector(selector);
-  var text = el.innerText.trim().split(/\s+/);
-  el.innerHTML = text.map(function (word) {
-    return "<span class=\"word\">".concat(word, "</span>");
-  }).join(' ');
+  var elements = document.querySelectorAll(selector);
+  elements.forEach(function (el) {
+    var text = el.innerText.trim().split(/\s+/);
+    el.innerHTML = text.map(function (word) {
+      return "<span class=\"word\">".concat(word, "</span>");
+    }).join(' ');
+  });
 };
+/* -------------------------------------------------------------------------- */
 
+/*                            initParallaxMouseMove                           */
+
+/* -------------------------------------------------------------------------- */
+
+
+function initParallaxMouseMove() {
+  var mouseX = 0;
+  var mouseY = 0;
+  window.addEventListener('mousemove', function (e) {
+    console.log(window.innerWidth, window.innerHeight);
+    var centerX = window.innerWidth / 2;
+    var centerY = window.innerHeight / 2;
+    mouseX = e.clientX - centerX;
+    mouseY = e.clientY - centerY;
+  });
+  var paralaxElements = document.querySelectorAll('.move-paralax');
+  paralaxElements.forEach(function (block) {
+    var currentX = 0;
+    var currentY = 0;
+
+    function animate() {
+      var ease = 0.05;
+      currentX += (mouseX - currentX) * ease;
+      currentY += (mouseY - currentY) * ease;
+      block.style.setProperty('--mouse-x', "".concat(currentX, "px"));
+      block.style.setProperty('--mouse-y', "".concat(currentY, "px"));
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  });
+}
+
+initParallaxMouseMove();
 var headerHeight = $('.header').height();
 var screenSize = window.innerWidth;
 var md = 768;
@@ -973,6 +1010,46 @@ function venusAnimations() {
 
       }
     });
+  }); //vinus symbol section
+
+  gsap.fromTo('.venus-symbol__side-text', {
+    yPercent: 100
+  }, {
+    yPercent: -100,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: '.venus-symbol__content',
+      //markers: true,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+  gsap.fromTo('.venus-symbol__three', {
+    yPercent: 100
+  }, {
+    yPercent: 0,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: '.venus-symbol__content',
+      //markers: true,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+  gsap.fromTo('.venus-symbol__circle-text', {
+    rotate: 270
+  }, {
+    rotate: 0,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: '.venus-symbol__circle-part',
+      //markers: true,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
   });
 }
 
