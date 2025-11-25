@@ -964,10 +964,10 @@ function venusAnimations() {
   document.querySelectorAll('.animate-words').forEach(function (title) {
     gsap.fromTo(title.querySelectorAll('.word'), {
       opacity: 0,
-      x: 50
+      yPercent: 100
     }, {
       opacity: 1,
-      x: 0,
+      yPercent: 0,
       duration: 2,
       ease: 'power3.out',
       stagger: 0.1,
