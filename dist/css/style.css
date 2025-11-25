@@ -7962,3 +7962,44 @@ input[type=number] {
     right: 0%;
   }
 }
+
+.venus-specification-image {
+  background: #d9d8d5;
+  margin: 70px 0;
+}
+@media only screen and (max-width: 576px) {
+  .venus-specification-image {
+    margin: 30px 0;
+  }
+}
+.venus-specification-image img {
+  display: block;
+  width: 100%;
+}
+
+.venus-specification-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+}
+.venus-specification-table td {
+  padding-bottom: 50px;
+  vertical-align: top;
+}
+@media only screen and (max-width: 576px) {
+  .venus-specification-table td {
+    padding-bottom: 15px;
+  }
+}
+.venus-specification-table td:first-child {
+  white-space: nowrap;
+  padding-right: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 768px) {
+  .venus-specification-table td:first-child {
+    padding-right: 30px;
+    white-space: inherit;
+  }
+}

@@ -1020,6 +1020,27 @@ function venusAnimations() {
             }
         )
     })
+    document.querySelectorAll('.gsap-fade-in-up').forEach((block) => {
+        gsap.fromTo(
+            block,
+            {
+                opacity: 0,
+                yPercent: 50,
+            },
+            {
+                opacity: 1,
+                yPercent: 0,
+                duration: 0.5,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: block,
+                    start: 'top 80%',
+                    once: true,
+                    //markers: true,
+                },
+            }
+        )
+    })
     //animate image type one
     gsap.fromTo(
         '.venus-watch-type-one__bg img',
