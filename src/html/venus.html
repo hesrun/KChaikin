@@ -382,18 +382,18 @@
         loader.load('/static/model/Venus_lowpoly.glb', function (gltf) {
             watch = gltf.scene;
 
-            // Настройка металла и шероховатости
-            watch.traverse((child) => {
-                if (child.isMesh && child.material) {
-                    if (Array.isArray(child.material)) {
-                        child.material.forEach(m => { m.metalness = 1; m.roughness = 0.3; m.needsUpdate = true; });
-                    } else {
-                        child.material.metalness = 1;
-                        child.material.roughness = 0.3;
-                        child.material.needsUpdate = true;
-                    }
-                }
-            });
+            // // Настройка металла и шероховатости
+            // watch.traverse((child) => {
+            //     if (child.isMesh && child.material) {
+            //         if (Array.isArray(child.material)) {
+            //             child.material.forEach(m => { m.metalness = 1; m.roughness = 0.3; m.needsUpdate = true; });
+            //         } else {
+            //             child.material.metalness = 1;
+            //             child.material.roughness = 0.3;
+            //             child.material.needsUpdate = true;
+            //         }
+            //     }
+            // });
 
             const offsetX = 0;  // сдвинуть вправо
             const offsetY = 0.05;    // без смещения по вертикали
