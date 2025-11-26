@@ -24,6 +24,7 @@ const path = {
         ],
         svg: source_folder + '/img/sprite/*.svg',
         fonts: source_folder + '/fonts/*.+(otf|ttf|woff|woff2)',
+        static: source_folder + '/static/**/*',
     },
     build: {
         html: project_folder + '/',
@@ -32,6 +33,7 @@ const path = {
         js: project_folder + '/js/',
         img: project_folder + '/img/',
         fonts: project_folder + '/fonts/',
+        static: project_folder + '/static/',
     },
     watch: {
         html: source_folder + '/**/*.html',
@@ -85,6 +87,13 @@ gulp.task('html', function () {
             })
         )
         .pipe(gulp.dest(path.build.html))
+        .pipe(browserSync.stream())
+})
+
+gulp.task('static', function () {
+    return gulp
+        .src(path.src.static)
+        .pipe(gulp.dest(path.build.static))
         .pipe(browserSync.stream())
 })
 
@@ -304,6 +313,7 @@ gulp.task('watch', function () {
     gulp.watch([path.watch.js], gulp.parallel('js'))
     gulp.watch([path.watch.img], gulp.parallel('img'))
     gulp.watch([path.watch.svg], gulp.parallel('svg'))
+    gulp.watch([path.src.static], gulp.parallel('static'))
 })
 
 // ===========================================================================
@@ -313,7 +323,16 @@ gulp.task(
     'build',
     gulp.series(
         'clean',
-        gulp.parallel('html', 'php', 'js', 'img', 'css', 'fonts', 'svg')
+        gulp.parallel(
+            'html',
+            'php',
+            'js',
+            'img',
+            'css',
+            'fonts',
+            'svg',
+            'static'
+        )
     )
 )
 gulp.task('favicon', gulp.series('create-favicon', 'inject-favicon'))

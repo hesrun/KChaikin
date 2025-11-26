@@ -38,7 +38,8 @@
     },
     "repository": "https://github.com/mmarienko/gulp-starter",
     "dependencies": {
-        "prettier": "^3.2.5"
+        "prettier": "^3.2.5",
+        "three": "^0.181.2"
     },
     "prettier": {
         "trailingComma": "es5",

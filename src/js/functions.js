@@ -2,10 +2,16 @@ const splitWords = (selector) => {
     const elements = document.querySelectorAll(selector)
 
     elements.forEach((el) => {
-        const text = el.innerText.trim().split(/\s+/)
-
-        el.innerHTML = text
-            .map((word) => `<span class="word">${word}</span>`)
+        let html = el.innerHTML.trim()
+        html = html.replace(/<br\s*\/?>/gi, '[[BR]]')
+        const parts = html.split(/\s+/)
+        el.innerHTML = parts
+            .map((part) => {
+                if (part === '[[BR]]') {
+                    return '<br>' // ставим бр обратно
+                }
+                return `<span class="word">${part}</span>`
+            })
             .join(' ')
     })
 }

@@ -2,7 +2,7 @@
     margin-bottom: 80px;
     text-transform: uppercase;
     line-height: 1;
-    @include clamp-calc(font-size, 40, 125);
+    @include clamp-calc(font-size, 35, 100);
     @include md {
         margin-bottom: 2rem;
     }
@@ -137,6 +137,21 @@
                 height: 200%;
                 object-fit: cover;
             }
+        }
+        &:before {
+            content: '';
+            display: block;
+            background: radial-gradient(
+                50% 50% at 50% 50%,
+                rgba(0, 56, 96, 0.8) 0%,
+                rgba(139, 228, 255, 0) 100%
+            );
+            width: 80%;
+            height: 90%;
+            position: absolute;
+            left: 16%;
+            z-index: 1;
+            rotate: -30deg;
         }
     }
 }
@@ -278,6 +293,7 @@
         max-width: 45%;
         left: 5%;
         translate: calc(var(--mouse-x) / -50) calc(var(--mouse-y) / -50);
+        z-index: 1;
         @include sm {
             max-width: 65%;
             left: -5%;
@@ -292,10 +308,53 @@
         right: 0%;
         rotate: 30deg;
         translate: calc(var(--mouse-x) / 50) calc(var(--mouse-y) / 50);
+        z-index: 1;
         @include sm {
             max-width: 80%;
             bottom: -10%;
             right: 0%;
+        }
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: radial-gradient(
+            50% 50% at 50% 50%,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(217, 217, 217, 0) 100%
+        );
+        filter: blur(5px);
+        width: 20%;
+        aspect-ratio: 3/1;
+        rotate: -30deg;
+        left: 27%;
+        top: 50%;
+        translate: calc(var(--mouse-x) / -30) calc(var(--mouse-y) / -30);
+        @include sm {
+            width: 80%;
+            left: 13%;
+            top: 25%;
+        }
+    }
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: radial-gradient(
+            50% 50% at 50% 50%,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(217, 217, 217, 0) 100%
+        );
+        filter: blur(5px);
+        width: 40%;
+        aspect-ratio: 3/1;
+        rotate: -45deg;
+        right: 0%;
+        top: 70%;
+        translate: calc(var(--mouse-x) / 20) calc(var(--mouse-y) / 20);
+        @include sm {
+            width: 80%;
         }
     }
 }

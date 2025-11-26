@@ -3,9 +3,15 @@
 var splitWords = function splitWords(selector) {
   var elements = document.querySelectorAll(selector);
   elements.forEach(function (el) {
-    var text = el.innerText.trim().split(/\s+/);
-    el.innerHTML = text.map(function (word) {
-      return "<span class=\"word\">".concat(word, "</span>");
+    var html = el.innerHTML.trim();
+    html = html.replace(/<br\s*\/?>/gi, '[[BR]]');
+    var parts = html.split(/\s+/);
+    el.innerHTML = parts.map(function (part) {
+      if (part === '[[BR]]') {
+        return '<br>'; // ставим бр обратно
+      }
+
+      return "<span class=\"word\">".concat(part, "</span>");
     }).join(' ');
   });
 };
@@ -919,20 +925,8 @@ splitWords('.split-text-by-word');
 function venusAnimations() {
   ScrollTrigger.matchMedia({
     '(min-width: 768px)': function minWidth768px() {
-      gsap.fromTo('.venus-hero__watch img', {
-        scale: 0.8
-      }, {
-        scale: 1,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: document.body,
-          //markers: true,
-          start: '0 0',
-          end: '100% +=200vh',
-          scrub: true
-        }
-      });
       gsap.to('.venus-hero__age', {
+        y: 200,
         opacity: 0,
         duration: 0.3,
         scrollTrigger: {
@@ -1052,20 +1046,6 @@ function venusAnimations() {
 
       }
     });
-  }); //vinus symbol section
-
-  gsap.fromTo('.venus-symbol__side-text', {
-    yPercent: 100
-  }, {
-    yPercent: -100,
-    duration: 0.3,
-    scrollTrigger: {
-      trigger: '.venus-symbol__content',
-      //markers: true,
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true
-    }
   });
   gsap.fromTo('.venus-symbol__three', {
     yPercent: 100
