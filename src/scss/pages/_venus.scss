@@ -1,5 +1,5 @@
 .venus-section-title {
-    margin-bottom: 80px;
+    margin-bottom: 75px;
     text-transform: uppercase;
     line-height: 1;
     @include clamp-calc(font-size, 35, 100);
@@ -33,6 +33,10 @@
 
 .venus-hero {
     overflow: hidden;
+    margin-bottom: 75px;
+    @include sm {
+        margin-bottom: 30px;
+    }
     img {
         width: 100%;
     }
@@ -164,6 +168,9 @@
 
 .venus-symbol {
     overflow: hidden;
+    #scene {
+        touch-action: pan-y !important;
+    }
     &__content {
         position: relative;
         margin-bottom: 100px;
@@ -261,6 +268,35 @@
             width: 110%;
             height: 110%;
         }
+    }
+}
+
+.venus-quote {
+    margin-top: 50px;
+    margin-left: auto;
+    max-width: 660px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 50px;
+    &:before {
+        content: '”';
+        @include clamp-calc(font-size, 75, 100);
+        font-family: 'Playfair', serif;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 0.5;
+        @include sm {
+            top: -25px;
+            left: 30px;
+        }
+    }
+    img {
+        display: inline;
+        vertical-align: text-top;
+    }
+    @include sm {
+        padding: 0 30px;
     }
 }
 

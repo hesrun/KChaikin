@@ -16,7 +16,6 @@
                         </div>
                     </div>
                     <div class="venus-hero__image-wrapper">
-
                         <div class="venus-hero__watch">
                             <img src="img/venus/perl.webp" alt="">
                         </div>
@@ -26,8 +25,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="page-section">
             <div class="container">
                 <h2 class="venus-section-title playfair split-text-by-word animate-words">
                     Константин Чайкин заново изобретает эротические часы
@@ -180,12 +177,12 @@
                             Чайкин решил, что это правильный момент, чтобы приступить к реализации ранее отложенного
                             проекта «Венус». </p>
 
-                        <div class="venus-quote">
+                        <div class="venus-quote gsap-fade-in-up">
                             Раз уж мне пришла в голову мысль поработать в этом жанре, с самого начала я поставил перед
                             собой
                             чёткие условия:
                             эротический сюжет без пошлости и порно, и полностью в моём стиле. 
-                            <img src="" alt="">
+                            <img src="img/venus/sign.svg" alt="">
                         </div>
                     </div>
 
@@ -479,6 +476,43 @@
         }
 
         window.addEventListener('resize', onWindowResize);
+
+        let startX = 0;
+        let startY = 0;
+        let isOrbiting = null; // null = ещё не определили направление
+        let threshold = 3; // минимальное движение в px для определения направления
+
+        canvas.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isOrbiting = null;
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            const dx = e.touches[0].clientX - startX;
+            const dy = e.touches[0].clientY - startY;
+
+            // если движение маленькое, не определяем направление
+            if (isOrbiting === null) {
+                if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
+
+                // горизонталь → OrbitControls, вертикаль → страница скроллится
+                isOrbiting = Math.abs(dx) > Math.abs(dy);
+            }
+
+            if (isOrbiting) {
+                controls.enabled = true;
+                e.preventDefault(); // предотвращаем скролл страницы только при вращении
+            } else {
+                controls.enabled = false;
+                // не вызываем preventDefault → вертикальный свайп скроллит страницу
+            }
+        }, { passive: false });
+
+        canvas.addEventListener('touchend', () => {
+            controls.enabled = true;
+            isOrbiting = null;
+        });
     </script>
     @include('modules/footer.html')
     @include('modals/techParamsModal.html')

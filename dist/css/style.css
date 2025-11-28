@@ -7638,7 +7638,7 @@ input[type=number] {
 }
 
 .venus-section-title {
-  margin-bottom: 80px;
+  margin-bottom: 75px;
   text-transform: uppercase;
   line-height: 1;
   font-size: clamp( 35px, 35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)), 100px );
@@ -7680,6 +7680,12 @@ input[type=number] {
 
 .venus-hero {
   overflow: hidden;
+  margin-bottom: 75px;
+}
+@media only screen and (max-width: 576px) {
+  .venus-hero {
+    margin-bottom: 30px;
+  }
 }
 .venus-hero img {
   width: 100%;
@@ -7822,6 +7828,9 @@ input[type=number] {
 .venus-symbol {
   overflow: hidden;
 }
+.venus-symbol #scene {
+  touch-action: pan-y !important;
+}
 .venus-symbol__content {
   position: relative;
   margin-bottom: 100px;
@@ -7926,6 +7935,39 @@ input[type=number] {
     top: -5%;
     width: 110%;
     height: 110%;
+  }
+}
+
+.venus-quote {
+  margin-top: 50px;
+  margin-left: auto;
+  max-width: 660px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 50px;
+}
+.venus-quote:before {
+  content: "”";
+  font-size: clamp( 75px, 75px + (100 - 75) * ((100vw - 320px) / (1440 - 320)), 100px );
+  font-family: "Playfair", serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 0.5;
+}
+@media only screen and (max-width: 576px) {
+  .venus-quote:before {
+    top: -25px;
+    left: 30px;
+  }
+}
+.venus-quote img {
+  display: inline;
+  vertical-align: text-top;
+}
+@media only screen and (max-width: 576px) {
+  .venus-quote {
+    padding: 0 30px;
   }
 }
 
