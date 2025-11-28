@@ -46,7 +46,7 @@
 
 		// HDRI
 		const rgbeLoader = new THREE.RGBELoader();
-		rgbeLoader.load('https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.hdr', function (hdrEquirect) {
+		rgbeLoader.load('/static/model/citrus_orchard_road_puresky_4k.hdr', function (hdrEquirect) {
 			const pmremGenerator = new THREE.PMREMGenerator(renderer);
 			pmremGenerator.compileEquirectangularShader();
 			const envMap = pmremGenerator.fromEquirectangular(hdrEquirect).texture;
@@ -56,12 +56,16 @@
 		});
 
 		// Свет
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
-		directionalLight.position.set(5, 10, 7.5);
-		scene.add(directionalLight);
 
-		const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+		const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 		scene.add(ambientLight);
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+		directionalLight.position.set(20, 20, 50);
+		scene.add(directionalLight);
+		const SpotLight = new THREE.DirectionalLight(0xffffff, 0.6);
+		SpotLight.position.set(-50, -50, 100);
+		scene.add(SpotLight);
+
 
 		// Загрузка модели
 		const loader = new THREE.GLTFLoader();
