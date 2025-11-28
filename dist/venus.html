@@ -438,8 +438,9 @@
                   Рождение <br>
                         “ВЕНУС”
                </h2>
-               <div class="venus-text-center gsap-fade-in-up">
-                  <p>В 2018 году, всего через год после запуска часов «Джокер», у Константина Чайкина родилась
+               <div class="venus-text-center">
+                  <p class="gsap-fade-in-up">В 2018 году, всего через год после запуска часов «Джокер», у
+                     Константина Чайкина родилась
                      идея часов эротического
                      дизайна, созданного по образу и подобию его ристмонов. Первым шагом в этом направлении был
                      проект наручных часов
@@ -451,7 +452,8 @@
                      десятками, если не сотнями
                      других замыслов, беспрерывно генерируемых его пытливым умом.</p>
 
-                  <p>В июне 2023 года, просматривая старые эскизы, Константин Чайкин решил изменить дизайн, взяв в
+                  <p class="gsap-fade-in-up">В июне 2023 года, просматривая старые эскизы, Константин Чайкин решил
+                     изменить дизайн, взяв в
                      качестве отправной точки
                      другого персонажа – Венеру, богиню красоты и любви древнеримского пантеона и самую яркую
                      планету на небосклоне. Уже
@@ -465,7 +467,8 @@
                      пожалуй, самую серьёзную
                      проблему для Чайкина – найти время для осуществления этого проекта.</p>
 
-                  <p>Тем временем он всерьёз вернулся к своему давнему увлечению живописью, и первым делом
+                  <p class="gsap-fade-in-up">Тем временем он всерьёз вернулся к своему давнему увлечению
+                     живописью, и первым делом
                      обратился к теме эротических часов
                      уже не как часовщик, но за мольбертом и с кистью в руке. Впрочем, «Богиня времени Темпа»
                      (Goddess of Time Tempa), первая
@@ -479,7 +482,16 @@
                      франков. Это был успех, и
                      Чайкин решил, что это правильный момент, чтобы приступить к реализации ранее отложенного
                      проекта «Венус». </p>
+
+                  <div class="venus-quote">
+                     Раз уж мне пришла в голову мысль поработать в этом жанре, с самого начала я поставил перед
+                     собой
+                     чёткие условия:
+                     эротический сюжет без пошлости и порно, и полностью в моём стиле. 
+                     <img src="" alt="">
+                  </div>
                </div>
+
             </div>
          </div>
       </div>
@@ -497,8 +509,9 @@
                <img class="venus-parallax__venera" src="img/venus/bust.webp" alt="">
                <img class="venus-parallax__watch" src="img/venus/watch-3.webp" alt="">
             </div>
-            <div class="venus-text-center gsap-fade-in-up">
-               <p>В отличие от большинства других ристмонов циферблат часов «Венус» выполнен в минималистичной
+            <div class="venus-text-center">
+               <p class="gsap-fade-in-up">В отличие от большинства других ристмонов циферблат часов «Венус»
+                  выполнен в минималистичной
                   манере, возможно, поэтому
                   его эмоциональное воздействие максимально. И тому причиной не только и не столько эротический
                   сюжет с обнажённой грудью,
@@ -511,7 +524,8 @@
                   маркеров индикации времени, отсчитываемого в интуитивно понятном порядке, то есть в часах слева
                   и минутах справа.</p>
 
-               <p>Образ Венеры занимает всё пространство циферблата, декорированное лаковым покрытием тёплого
+               <p class="gsap-fade-in-up">Образ Венеры занимает всё пространство циферблата, декорированное лаковым
+                  покрытием тёплого
                   оранжево-розового тона,
                   включая фон лунного диска (лунная тень дана в тёмно-синем цвете) и лик Венеры, нанесённый
                   изнутри сапфирового стекла,
@@ -538,6 +552,9 @@
             </div>
             <div class="venus-specification-image">
                <img src="img/venus/watch-4.webp" alt="">
+               <div class="venus-specification-image__bg">
+                  <img src="img/venus/bg-3.webp" alt="">
+               </div>
             </div>
             <table class="venus-specification-table">
                <tr>
@@ -627,6 +644,26 @@
             <h2 class="venus-section-title text-center playfair split-text-by-word animate-words">
                ФОТОГАЛЕРЕЯ
             </h2>
+            <div class="venus-gallery">
+               <div class="venus-gallery__image">
+                  <img src="img/venus/gallery-photo-1.jpg" alt="">
+               </div>
+               <div class="venus-gallery__image">
+                  <img src="img/venus/gallery-photo-2.jpg" alt="">
+               </div>
+               <div class="venus-gallery__image">
+                  <img src="img/venus/gallery-photo-3.jpg" alt="">
+               </div>
+               <div class="venus-gallery__image">
+                  <img src="img/venus/gallery-photo-1.jpg" alt="">
+               </div>
+               <div class="venus-gallery__image">
+                  <img src="img/venus/gallery-photo-2.jpg" alt="">
+               </div>
+               <div class="venus-gallery__image">
+                  <img src="img/venus/gallery-photo-3.jpg" alt="">
+               </div>
+            </div>
          </div>
       </div>
    </main>
@@ -643,8 +680,8 @@
       // Сцена
       const scene = new THREE.Scene();
 
-      // Камера
-      const camera = new THREE.PerspectiveCamera(65, container.clientWidth / container.clientHeight, 0.1, 1000);
+      // Камера (фиксированный FOV!)
+      const camera = new THREE.PerspectiveCamera(10, container.clientWidth / container.clientHeight, 0.1, 1000);
       camera.position.set(0, 0, 2);
 
       // Рендерер
@@ -657,7 +694,7 @@
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.outputEncoding = THREE.sRGBEncoding;
 
-      // Контролы — только вращение, без зума
+      // Контролы
       const controls = new THREE.OrbitControls(camera, renderer.domElement);
       controls.enableZoom = false;
       controls.enablePan = false;
@@ -665,68 +702,68 @@
 
       // HDRI
       const textureLoader = new THREE.TextureLoader();
-      textureLoader.load('/static/model/bg.png', function(pngTexture) {
+      textureLoader.load('/static/model/bg.png', pngTexture => {
          pngTexture.mapping = THREE.EquirectangularReflectionMapping;
-
          const pmremGenerator = new THREE.PMREMGenerator(renderer);
-         const envMap = pmremGenerator.fromEquirectangular(pngTexture).texture;
-
-         scene.environment = envMap; // отражения на модели
-         // scene.background = envMap; // ← НЕ ставим! Фон будет прозрачным
-
+         scene.environment = pmremGenerator.fromEquirectangular(pngTexture).texture;
          pmremGenerator.dispose();
       });
 
       // Свет
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-      scene.add(ambientLight);
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      directionalLight.position.set(20, 20, 50);
-      scene.add(directionalLight);
-      const SpotLight = new THREE.DirectionalLight(0xffffff, 0.6);
-      SpotLight.position.set(-50, -50, 100);
-      scene.add(SpotLight);
+      scene.add(new THREE.AmbientLight(0xffffff, 1));
+      const dir1 = new THREE.DirectionalLight(0xffffff, 1);
+      dir1.position.set(20, 20, 50);
+      scene.add(dir1);
+      const dir2 = new THREE.DirectionalLight(0xffffff, 0.6);
+      dir2.position.set(-50, -50, 100);
+      scene.add(dir2);
 
+
+      // ============================================================
+      // Центрирование модели внутри группы
+      // ============================================================
+      const group = new THREE.Group();
+      scene.add(group);
+
+      let watch = null;
+
+      function fitCameraToObject(camera, object, offset = 1.5) {
+         const box = new THREE.Box3().setFromObject(object);
+         const size = box.getSize(new THREE.Vector3());
+         const center = box.getCenter(new THREE.Vector3());
+
+         const maxDim = Math.max(size.x, size.y, size.z);
+
+         const fov = camera.fov * (Math.PI / 180);
+         let cameraZ = (maxDim / 2) / Math.tan(fov / 2);
+         cameraZ *= offset;
+
+         camera.position.set(center.x, center.y, cameraZ + center.z);
+         camera.lookAt(center);
+
+         controls.target.copy(center);
+         controls.update();
+
+         camera.updateProjectionMatrix();
+      }
 
       // Загрузка модели
       const loader = new THREE.GLTFLoader();
-      let watch = null;
-
-      loader.load('/static/model/model.glb', function(gltf) {
+      loader.load('/static/model/model.glb', gltf => {
          watch = gltf.scene;
 
-         // // Настройка металла и шероховатости
-         // watch.traverse((child) => {
-         //     if (child.isMesh && child.material) {
-         //         if (Array.isArray(child.material)) {
-         //             child.material.forEach(m => { m.metalness = 1; m.roughness = 0.3; m.needsUpdate = true; });
-         //         } else {
-         //             child.material.metalness = 1;
-         //             child.material.roughness = 0.3;
-         //             child.material.needsUpdate = true;
-         //         }
-         //     }
-         // });
-
-         const offsetX = 0; // сдвинуть вправо
-         const offsetY = 0.05; // без смещения по вертикали
-         const offsetZ = 0; // без смещения по глубине
-
-         // Центрируем и задаём фиксированный размер
+         // центрируем модель внутри самой себя
          const box = new THREE.Box3().setFromObject(watch);
          const center = box.getCenter(new THREE.Vector3());
-         const size = box.getSize(new THREE.Vector3());
-         const maxDim = Math.max(size.x, size.y, size.z);
-         const scale = 1.5 / maxDim; // фиксированный размер модели
-         watch.scale.setScalar(scale);
-         watch.position.set(
-            -center.x * scale + offsetX,
-            -center.y * scale + offsetY,
-            -center.z * scale + offsetZ
-         );
+         watch.position.sub(center);
 
-         scene.add(watch);
+         // добавляем в группу
+         group.add(watch);
+
+         // камера — строго по центру
+         fitCameraToObject(camera, group, 1.5);
       });
+
 
       // Анимация
       function animate() {
@@ -736,26 +773,16 @@
       }
       animate();
 
-      // Ресайз — только меняем перспективу камеры по ширине
+      // Адаптивность
       function onWindowResize() {
          const width = container.clientWidth;
          const height = container.clientHeight;
 
-         // Фиксированное расстояние до модели
-         const distance = .8;
-
-         // Ширина модели в сцене (максимальный размер)
-         const modelWidth = 1; // примерно размер модели после масштабирования
-
-         // Рассчитываем fov по ширине
-         const fovRad = 2 * Math.atan((modelWidth / 2) / distance);
-         camera.fov = THREE.MathUtils.radToDeg(fovRad);
-
-         // Обновляем аспект
          camera.aspect = width / height;
          camera.updateProjectionMatrix();
-
          renderer.setSize(width, height);
+
+         if (watch) fitCameraToObject(camera, group, 1.5);
       }
 
       window.addEventListener('resize', onWindowResize);

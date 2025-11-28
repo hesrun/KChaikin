@@ -28,8 +28,8 @@
 		// Сцена
 		const scene = new THREE.Scene();
 
-		// Камера
-		const camera = new THREE.PerspectiveCamera(65, container.clientWidth / container.clientHeight, 0.1, 1000);
+		// Камера (фиксированный FOV!)
+		const camera = new THREE.PerspectiveCamera(10, container.clientWidth / container.clientHeight, 0.1, 1000);
 		camera.position.set(0, 0, 2);
 
 		// Рендерер
@@ -38,7 +38,7 @@
 		renderer.setPixelRatio(window.devicePixelRatio);
 		renderer.outputEncoding = THREE.sRGBEncoding;
 
-		// Контролы — только вращение, без зума
+		// Контролы
 		const controls = new THREE.OrbitControls(camera, renderer.domElement);
 		controls.enableZoom = false;
 		controls.enablePan = false;
@@ -48,50 +48,66 @@
 		const textureLoader = new THREE.TextureLoader();
 		textureLoader.load('/static/model/bg.png', function (pngTexture) {
 			pngTexture.mapping = THREE.EquirectangularReflectionMapping;
-
 			const pmremGenerator = new THREE.PMREMGenerator(renderer);
 			const envMap = pmremGenerator.fromEquirectangular(pngTexture).texture;
-
-			scene.environment = envMap;  // отражения на модели
-			// scene.background = envMap; // ← НЕ ставим! Фон будет прозрачным
-
+			scene.environment = envMap;
 			pmremGenerator.dispose();
 		});
 
 		// Свет
+		scene.add(new THREE.AmbientLight(0xffffff, 1));
 
-		const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-		scene.add(ambientLight);
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-		directionalLight.position.set(20, 20, 50);
-		scene.add(directionalLight);
-		const SpotLight = new THREE.DirectionalLight(0xffffff, 0.6);
-		SpotLight.position.set(-50, -50, 100);
-		scene.add(SpotLight);
+		const dir1 = new THREE.DirectionalLight(0xffffff, 1);
+		dir1.position.set(20, 20, 50);
+		scene.add(dir1);
+
+		const dir2 = new THREE.DirectionalLight(0xffffff, 0.6);
+		dir2.position.set(-50, -50, 100);
+		scene.add(dir2);
 
 
+		//------------------------------------------------------------
+		// Функция адаптивной подстройки камеры
+		//------------------------------------------------------------
+		function fitCameraToObject(camera, object, offset = 1.5) {
+			const box = new THREE.Box3().setFromObject(object);
+
+			const size = box.getSize(new THREE.Vector3());
+			const center = box.getCenter(new THREE.Vector3());
+
+			const maxDim = Math.max(size.x, size.y, size.z);
+
+			// вычисляем расстояние, при котором объект входит в кадр
+			const fov = camera.fov * (Math.PI / 180);
+			let cameraZ = (maxDim / 2) / Math.tan(fov / 2);
+
+			cameraZ *= offset; // запас
+
+			camera.position.set(center.x, center.y, cameraZ + center.z);
+			camera.lookAt(center);
+
+			camera.updateProjectionMatrix();
+		}
+
+
+		//------------------------------------------------------------
 		// Загрузка модели
-		const loader = new THREE.GLTFLoader();
+		//------------------------------------------------------------
 		let watch = null;
 
+		const loader = new THREE.GLTFLoader();
 		loader.load('/static/model/model.glb', function (gltf) {
 			watch = gltf.scene;
-
-
-
-			// Центрируем и задаём фиксированный размер
-			const box = new THREE.Box3().setFromObject(watch);
-			const center = box.getCenter(new THREE.Vector3());
-			const size = box.getSize(new THREE.Vector3());
-			const maxDim = Math.max(size.x, size.y, size.z);
-			const scale = 1.5 / maxDim; // фиксированный размер модели
-			watch.scale.setScalar(scale);
-			watch.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
-
 			scene.add(watch);
+
+			// автоцентрирование + авто-расстояние камеры
+			fitCameraToObject(camera, watch);
 		});
 
+
+		//------------------------------------------------------------
 		// Анимация
+		//------------------------------------------------------------
 		function animate() {
 			requestAnimationFrame(animate);
 			controls.update();
@@ -99,26 +115,20 @@
 		}
 		animate();
 
-		// Ресайз — только меняем перспективу камеры по ширине
+
+		//------------------------------------------------------------
+		// Адаптивный ресайз
+		//------------------------------------------------------------
 		function onWindowResize() {
 			const width = container.clientWidth;
 			const height = container.clientHeight;
 
-			// Фиксированное расстояние до модели
-			const distance = 2;
-
-			// Ширина модели в сцене (максимальный размер)
-			const modelWidth = 1.5; // примерно размер модели после масштабирования
-
-			// Рассчитываем fov по ширине
-			const fovRad = 2 * Math.atan((modelWidth / 2) / distance);
-			camera.fov = THREE.MathUtils.radToDeg(fovRad);
-
-			// Обновляем аспект
 			camera.aspect = width / height;
 			camera.updateProjectionMatrix();
-
 			renderer.setSize(width, height);
+
+			// повторно подстраиваем дистанцию
+			if (watch) fitCameraToObject(camera, watch);
 		}
 
 		window.addEventListener('resize', onWindowResize);

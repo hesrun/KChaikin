@@ -950,6 +950,7 @@ gumResponsiveInit()
 splitWords('.split-text-by-word')
 
 function venusAnimations() {
+    //hero section
     ScrollTrigger.matchMedia({
         '(min-width: 768px)': function () {
             gsap.to('.venus-hero__age', {
@@ -966,7 +967,7 @@ function venusAnimations() {
             })
             gsap.to('.venus-hero__title', {
                 y: 200,
-                scale: 1.1,
+                scale: 1.05,
                 duration: 0.3,
                 scrollTrigger: {
                     trigger: document.body,
@@ -978,7 +979,7 @@ function venusAnimations() {
             })
             gsap.to('.venus-hero__subtitle', {
                 y: 250,
-                scale: 1.1,
+                scale: 1.05,
                 duration: 0.3,
                 scrollTrigger: {
                     trigger: document.body,
@@ -988,10 +989,46 @@ function venusAnimations() {
                     scrub: true,
                 },
             })
+            document
+                .querySelectorAll('.venus-gallery__image')
+                .forEach((img) => {
+                    ScrollTrigger.create({
+                        trigger: img,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true,
+                        onUpdate: (self) => {
+                            const centerProgress =
+                                1 - Math.abs(self.progress - 0.5) * 2
+                            const minWidth = 70
+                            const maxWidth = 100
+                            const width =
+                                minWidth +
+                                (maxWidth - minWidth) * centerProgress
+                            img.style.maxWidth = width + '%'
+                        },
+                    })
+                })
+        },
+        '(max-width: 768px)': function () {
+            document
+                .querySelectorAll('.venus-gallery__image')
+                .forEach((img) => {
+                    gsap.from(img.querySelectorAll('img'), {
+                        yPercent: -30,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: img,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true,
+                            //markers: true,
+                        },
+                    })
+                })
         },
     })
     //hero section
-
     gsap.fromTo(
         '.venus-hero__bg img',
         { yPercent: 0 },
@@ -1093,6 +1130,7 @@ function venusAnimations() {
             }
         )
     })
+    //venus symbol section
     gsap.fromTo(
         '.venus-symbol__three',
         {
@@ -1127,6 +1165,41 @@ function venusAnimations() {
             },
         }
     )
+    //venus second parallax
+    gsap.fromTo(
+        '.venus-specification-image__bg img',
+        {
+            yPercent: -20,
+        },
+        {
+            yPercent: 5,
+            duration: 0.3,
+            scrollTrigger: {
+                trigger: '.venus-specification-image',
+                //markers: true,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true,
+            },
+        }
+    )
+
+    //gallery
+    document.querySelectorAll('.gallery__image').forEach((img) => {
+        ScrollTrigger.create({
+            trigger: img,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+            onUpdate: (self) => {
+                const centerProgress = 1 - Math.abs(self.progress - 0.5) * 2
+                const minWidth = 70
+                const maxWidth = 100
+                const width = minWidth + (maxWidth - minWidth) * centerProgress
+                img.style.maxWidth = width + '%'
+            },
+        })
+    })
 }
 
 venusAnimations()

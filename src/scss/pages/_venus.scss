@@ -360,15 +360,24 @@
 }
 
 .venus-specification-image {
-    background: url('../img/venus/bg-1.webp');
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
     margin: 70px 0;
-    @include sm {
-        margin: 30px 0;
+    &__bg {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        img {
+            height: 130%;
+        }
     }
     img {
         display: block;
         width: 100%;
+    }
+    @include sm {
+        overflow: hidden;
+        margin: 30px -15px;
     }
 }
 
@@ -391,6 +400,53 @@
         @include md {
             padding-right: 30px;
             white-space: inherit;
+        }
+    }
+}
+
+.venus-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    &__image {
+        position: relative;
+        overflow: hidden;
+        height: 70vh;
+        width: 100%;
+        max-width: 70%;
+        @include lg {
+            max-width: 100%;
+            height: auto;
+        }
+        @include sm {
+            aspect-ratio: 2/1.5;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            object-fit: cover;
+            @include lg {
+                position: static;
+                translate: 0;
+            }
+            @include sm {
+                height: 130%;
+            }
+        }
+    }
+    @include sm {
+        gap: 1rem;
+    }
+    &__more {
+        width: 100%;
+        max-width: 250px;
+        @include sm {
+            max-width: none;
         }
     }
 }

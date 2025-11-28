@@ -8029,18 +8029,27 @@ input[type=number] {
 }
 
 .venus-specification-image {
-  background: url("../img/venus/bg-1.webp");
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
   margin: 70px 0;
 }
-@media only screen and (max-width: 576px) {
-  .venus-specification-image {
-    margin: 30px 0;
-  }
+.venus-specification-image__bg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.venus-specification-image__bg img {
+  height: 130%;
 }
 .venus-specification-image img {
   display: block;
   width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .venus-specification-image {
+    overflow: hidden;
+    margin: 30px -15px;
+  }
 }
 
 .venus-specification-table {
@@ -8067,5 +8076,65 @@ input[type=number] {
   .venus-specification-table td:first-child {
     padding-right: 30px;
     white-space: inherit;
+  }
+}
+
+.venus-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.venus-gallery__image {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  width: 100%;
+  max-width: 70%;
+}
+@media only screen and (max-width: 992px) {
+  .venus-gallery__image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-gallery__image {
+    aspect-ratio: 2/1.5;
+  }
+}
+.venus-gallery__image img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 992px) {
+  .venus-gallery__image img {
+    position: static;
+    translate: 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-gallery__image img {
+    height: 130%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-gallery {
+    gap: 1rem;
+  }
+}
+.venus-gallery__more {
+  width: 100%;
+  max-width: 250px;
+}
+@media only screen and (max-width: 576px) {
+  .venus-gallery__more {
+    max-width: none;
   }
 }

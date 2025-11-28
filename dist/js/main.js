@@ -923,6 +923,7 @@ gumResponsiveInit();
 splitWords('.split-text-by-word');
 
 function venusAnimations() {
+  //hero section
   ScrollTrigger.matchMedia({
     '(min-width: 768px)': function minWidth768px() {
       gsap.to('.venus-hero__age', {
@@ -939,7 +940,7 @@ function venusAnimations() {
       });
       gsap.to('.venus-hero__title', {
         y: 200,
-        scale: 1.1,
+        scale: 1.05,
         duration: 0.3,
         scrollTrigger: {
           trigger: document.body,
@@ -951,7 +952,7 @@ function venusAnimations() {
       });
       gsap.to('.venus-hero__subtitle', {
         y: 250,
-        scale: 1.1,
+        scale: 1.05,
         duration: 0.3,
         scrollTrigger: {
           trigger: document.body,
@@ -960,6 +961,36 @@ function venusAnimations() {
           end: '50% +=50',
           scrub: true
         }
+      });
+      document.querySelectorAll('.venus-gallery__image').forEach(function (img) {
+        ScrollTrigger.create({
+          trigger: img,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: function onUpdate(self) {
+            var centerProgress = 1 - Math.abs(self.progress - 0.5) * 2;
+            var minWidth = 70;
+            var maxWidth = 100;
+            var width = minWidth + (maxWidth - minWidth) * centerProgress;
+            img.style.maxWidth = width + '%';
+          }
+        });
+      });
+    },
+    '(max-width: 768px)': function maxWidth768px() {
+      document.querySelectorAll('.venus-gallery__image').forEach(function (img) {
+        gsap.from(img.querySelectorAll('img'), {
+          yPercent: -30,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: img,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true //markers: true,
+
+          }
+        });
       });
     }
   }); //hero section
@@ -1046,7 +1077,8 @@ function venusAnimations() {
 
       }
     });
-  });
+  }); //venus symbol section
+
   gsap.fromTo('.venus-symbol__three', {
     yPercent: 100
   }, {
@@ -1072,6 +1104,36 @@ function venusAnimations() {
       end: 'bottom top',
       scrub: true
     }
+  }); //venus second parallax
+
+  gsap.fromTo('.venus-specification-image__bg img', {
+    yPercent: -20
+  }, {
+    yPercent: 5,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: '.venus-specification-image',
+      //markers: true,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  }); //gallery
+
+  document.querySelectorAll('.gallery__image').forEach(function (img) {
+    ScrollTrigger.create({
+      trigger: img,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+      onUpdate: function onUpdate(self) {
+        var centerProgress = 1 - Math.abs(self.progress - 0.5) * 2;
+        var minWidth = 70;
+        var maxWidth = 100;
+        var width = minWidth + (maxWidth - minWidth) * centerProgress;
+        img.style.maxWidth = width + '%';
+      }
+    });
   });
 }
 
