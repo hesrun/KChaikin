@@ -353,13 +353,16 @@
       controls.enableDamping = true;
 
       // HDRI
-      const rgbeLoader = new THREE.RGBELoader();
-      rgbeLoader.load('/static/model/citrus_orchard_road_puresky_4k.hdr', function(hdrEquirect) {
+      const textureLoader = new THREE.TextureLoader();
+      textureLoader.load('/static/model/bg.png', function(pngTexture) {
+         pngTexture.mapping = THREE.EquirectangularReflectionMapping;
+
          const pmremGenerator = new THREE.PMREMGenerator(renderer);
-         pmremGenerator.compileEquirectangularShader();
-         const envMap = pmremGenerator.fromEquirectangular(hdrEquirect).texture;
-         scene.environment = envMap;
-         hdrEquirect.dispose();
+         const envMap = pmremGenerator.fromEquirectangular(pngTexture).texture;
+
+         scene.environment = envMap; // отражения на модели
+         // scene.background = envMap; // ← НЕ ставим! Фон будет прозрачным
+
          pmremGenerator.dispose();
       });
 
