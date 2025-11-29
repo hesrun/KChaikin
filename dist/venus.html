@@ -903,59 +903,6 @@
       }
 
       window.addEventListener('resize', onWindowResize);
-
-      // ----------------------------
-      // Мобильный контроль: только горизонталь
-      // ----------------------------
-      if (/Mobi|Android/i.test(navigator.userAgent)) {
-         let startX = 0,
-            startY = 0;
-         let isDragging = false;
-         let allowRotate = false;
-
-         canvas.addEventListener('touchstart', e => {
-            if (e.touches.length === 1) {
-               startX = e.touches[0].clientX;
-               startY = e.touches[0].clientY;
-               isDragging = true;
-               allowRotate = false;
-            }
-         }, {
-            passive: true
-         });
-
-         canvas.addEventListener('touchmove', e => {
-            if (!isDragging || e.touches.length !== 1) return;
-
-            const currentX = e.touches[0].clientX;
-            const currentY = e.touches[0].clientY;
-
-            const deltaX = currentX - startX;
-            const deltaY = currentY - startY;
-
-            // Определяем направление после небольшой дистанции
-            if (!allowRotate && Math.abs(deltaX) + Math.abs(deltaY) > 5) {
-               allowRotate = Math.abs(deltaX) > Math.abs(deltaY);
-            }
-
-            // Горизонталь = вращение, вертикаль = скролл
-            if (allowRotate) {
-               e.preventDefault(); // блокируем скролл страницы только если горизонталь
-               controls.rotateLeft(-deltaX * 0.005);
-               controls.rotateUp(0); // вертикаль игнорируем
-               controls.update();
-            }
-
-            startX = currentX;
-            startY = currentY;
-         }, {
-            passive: false
-         });
-
-         canvas.addEventListener('touchend', () => {
-            isDragging = false;
-         });
-      }
    </script>
    <footer class="footer">
       <div class="container">
