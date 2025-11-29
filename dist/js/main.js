@@ -1079,7 +1079,7 @@ function venusAnimations() {
     }
   }); //venus symbol section
 
-  gsap.fromTo('.venus-symbol__three', {
+  gsap.fromTo('.venus-symbol__three img', {
     yPercent: 100
   }, {
     yPercent: 0,
@@ -1148,9 +1148,6 @@ function venusCollapse() {
     btn.click(function () {
       content.toggleClass('open');
       isOpen = !isOpen;
-      console.log('====================================');
-      console.log(btnText);
-      console.log('====================================');
       btnText.html(!isOpen ? 'Читать далее' : 'Свернуть');
     });
   });

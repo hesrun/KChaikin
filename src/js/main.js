@@ -1132,7 +1132,7 @@ function venusAnimations() {
     )
     //venus symbol section
     gsap.fromTo(
-        '.venus-symbol__three',
+        '.venus-symbol__three img',
         {
             yPercent: 100,
         },
@@ -1213,9 +1213,6 @@ function venusCollapse() {
         btn.click(function () {
             content.toggleClass('open')
             isOpen = !isOpen
-            console.log('====================================')
-            console.log(btnText)
-            console.log('====================================')
             btnText.html(!isOpen ? 'Читать далее' : 'Свернуть')
         })
     })
