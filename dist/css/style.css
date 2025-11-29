@@ -7741,18 +7741,35 @@ input[type=number] {
   }
 }
 .venus-hero__watch {
-  display: flex;
-  align-items: center;
   position: absolute;
-  inset: 0;
+  width: 100%;
+  max-width: 70%;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
   z-index: 1;
-  padding: 0 10%;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .venus-hero__watch {
-    padding: 0;
-    margin: 0 -40px;
+    max-width: none;
+    width: 120%;
   }
+}
+.venus-hero__watch-body {
+  position: relative;
+  z-index: 2;
+}
+.venus-hero__watch-back {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+.venus-hero__watch-front {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 3;
 }
 .venus-hero__bg {
   height: 100%;

@@ -1112,6 +1112,21 @@ function venusAnimations() {
             },
         }
     )
+    gsap.fromTo(
+        '.venus-hero__watch-body img',
+        { yPercent: 0 },
+        {
+            yPercent: -30,
+            duration: 0.3,
+            scrollTrigger: {
+                trigger: document.body,
+                //markers: true,
+                start: '0 0',
+                end: '200% +=200vh',
+                scrub: true,
+            },
+        }
+    )
     //animate image type one
     gsap.fromTo(
         '.venus-watch-type-one__bg img',
