@@ -1146,6 +1146,7 @@ function venusCollapse() {
     var btn = $(this).find('.venus-collpase__action .button');
     var btnText = btn.find('.button__text');
     btn.click(function () {
+      alert("'click' ".concat(isOpen));
       content.toggleClass('open');
       isOpen = !isOpen;
       btnText.html(!isOpen ? 'Читать далее' : 'Свернуть');

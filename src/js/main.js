@@ -1211,6 +1211,7 @@ function venusCollapse() {
         const btnText = btn.find('.button__text')
 
         btn.click(function () {
+            alert(`'click' ${isOpen}`)
             content.toggleClass('open')
             isOpen = !isOpen
             btnText.html(!isOpen ? 'Читать далее' : 'Свернуть')
