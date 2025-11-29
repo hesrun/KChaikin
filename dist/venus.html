@@ -859,6 +859,8 @@
 
             // стартовый угол
             rotateCameraAroundTarget(camera, controls, -0.4, -0.4);
+
+            needsRender = true;
          },
 
          // === ПРОГРЕСС ===
@@ -879,11 +881,21 @@
 
 
       // Анимация
+      let needsRender = true;
+
       function animate() {
          requestAnimationFrame(animate);
-         controls.update();
-         renderer.render(scene, camera);
+
+
+         if (needsRender) {
+            console.log('rendering');
+            controls.update();
+            renderer.render(scene, camera);
+            needsRender = false;
+         }
       }
+
+      controls.addEventListener('change', () => needsRender = true);
       animate();
 
       // Адаптивность
