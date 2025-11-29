@@ -791,8 +791,10 @@ input[type=number] {
 .button_black:before {
   background: black;
 }
-.button_black:hover {
-  color: white;
+@media (any-hover: hover) {
+  .button_black:hover {
+    color: white;
+  }
 }
 .button_black.button_filled {
   background: black;
@@ -801,8 +803,10 @@ input[type=number] {
 .button_black.button_filled:before {
   background: white;
 }
-.button_black.button_filled:hover {
-  color: black;
+@media (any-hover: hover) {
+  .button_black.button_filled:hover {
+    color: black;
+  }
 }
 .button_black.button_filled.button_load::after {
   border-right-color: white;
@@ -8179,4 +8183,67 @@ input[type=number] {
   .venus-gallery__more {
     max-width: none;
   }
+}
+
+@media only screen and (max-width: 576px) {
+  .venus-collpase__content {
+    overflow: hidden;
+    max-height: 300px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .venus-collpase__content:before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(229, 229, 229, 0) 0%, rgba(229, 229, 229, 0) 80%, #e5e5e5 95%);
+    z-index: 1;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-collpase__content.open {
+    max-height: 1500px;
+  }
+  .venus-collpase__content.open:before {
+    display: none;
+  }
+}
+.venus-collpase__action {
+  display: none;
+  padding-top: 15px;
+}
+@media only screen and (max-width: 576px) {
+  .venus-collpase__action {
+    display: block;
+  }
+}
+
+.venus-model-loader {
+  position: absolute;
+  inset: 0;
+}
+.venus-model-loader__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.venus-model-loader__text {
+  font-size: clamp( 20px, 20px + (30 - 20) * ((100vw - 320px) / (1440 - 320)), 30px );
+  letter-spacing: clamp( 10px, 10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)), 20px );
+}
+.venus-model-loader__bar {
+  height: 2px;
+  width: 100%;
+  max-width: 50%;
+  background: rgba(0, 0, 0, 0.05);
+}
+.venus-model-loader__bar-inner {
+  width: 50%;
+  background: black;
+  height: 100%;
 }

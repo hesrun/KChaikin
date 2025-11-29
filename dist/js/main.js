@@ -926,42 +926,42 @@ function venusAnimations() {
   //hero section
   ScrollTrigger.matchMedia({
     '(min-width: 768px)': function minWidth768px() {
-      gsap.to('.venus-hero__age', {
-        y: 200,
-        opacity: 0,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: document.body,
-          //markers: true,
-          start: '0 0',
-          end: '50% +=50',
-          scrub: true
-        }
-      });
-      gsap.to('.venus-hero__title', {
-        y: 200,
-        scale: 1.05,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: document.body,
-          //markers: true,
-          start: '0 0',
-          end: '50% +=50',
-          scrub: true
-        }
-      });
-      gsap.to('.venus-hero__subtitle', {
-        y: 250,
-        scale: 1.05,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: document.body,
-          //markers: true,
-          start: '0 0',
-          end: '50% +=50',
-          scrub: true
-        }
-      });
+      // gsap.to('.venus-hero__age', {
+      //     y: 200,
+      //     opacity: 0,
+      //     duration: 0.3,
+      //     scrollTrigger: {
+      //         trigger: document.body,
+      //         //markers: true,
+      //         start: '0 0',
+      //         end: '50% +=50',
+      //         scrub: true,
+      //     },
+      // })
+      // gsap.to('.venus-hero__title', {
+      //     y: 200,
+      //     scale: 1.05,
+      //     duration: 0.3,
+      //     scrollTrigger: {
+      //         trigger: document.body,
+      //         //markers: true,
+      //         start: '0 0',
+      //         end: '50% +=50',
+      //         scrub: true,
+      //     },
+      // })
+      // gsap.to('.venus-hero__subtitle', {
+      //     y: 250,
+      //     scale: 1.05,
+      //     duration: 0.3,
+      //     scrollTrigger: {
+      //         trigger: document.body,
+      //         //markers: true,
+      //         start: '0 0',
+      //         end: '50% +=50',
+      //         scrub: true,
+      //     },
+      // })
       document.querySelectorAll('.venus-gallery__image').forEach(function (img) {
         ScrollTrigger.create({
           trigger: img,
@@ -974,6 +974,62 @@ function venusAnimations() {
             var maxWidth = 100;
             var width = minWidth + (maxWidth - minWidth) * centerProgress;
             img.style.maxWidth = width + '%';
+          }
+        });
+      });
+      document.querySelectorAll('.gsap-fade-in-up').forEach(function (block) {
+        gsap.fromTo(block, {
+          opacity: 0,
+          y: 100
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 80%',
+            once: true //markers: true,
+
+          }
+        });
+      }); //animate text-cols
+
+      $('.venus-text-cols').each(function () {
+        var items = $(this).find('div').toArray();
+        gsap.fromTo(items, {
+          opacity: 0,
+          y: 100
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: this,
+            start: 'top 80%',
+            once: true //markers: true,
+
+          }
+        });
+      }); //animate words
+
+      document.querySelectorAll('.animate-words').forEach(function (title) {
+        gsap.fromTo(title.querySelectorAll('.word'), {
+          opacity: 0,
+          yPercent: 100
+        }, {
+          opacity: 1,
+          yPercent: 0,
+          duration: 2,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 80%',
+            once: true //markers: true,
+
           }
         });
       });
@@ -1007,42 +1063,6 @@ function venusAnimations() {
       end: '200% +=200vh',
       scrub: true
     }
-  }); //animate words
-
-  document.querySelectorAll('.animate-words').forEach(function (title) {
-    gsap.fromTo(title.querySelectorAll('.word'), {
-      opacity: 0,
-      yPercent: 100
-    }, {
-      opacity: 1,
-      yPercent: 0,
-      duration: 2,
-      ease: 'power3.out',
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: title,
-        start: 'top 80%',
-        once: true //markers: true,
-
-      }
-    });
-  });
-  document.querySelectorAll('.gsap-fade-in-up').forEach(function (block) {
-    gsap.fromTo(block, {
-      opacity: 0,
-      yPercent: 50
-    }, {
-      opacity: 1,
-      yPercent: 0,
-      duration: 0.5,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: block,
-        start: 'top 80%',
-        once: true //markers: true,
-
-      }
-    });
   }); //animate image type one
 
   gsap.fromTo('.venus-watch-type-one__bg img', {
@@ -1057,26 +1077,6 @@ function venusAnimations() {
       end: 'bottom top',
       scrub: true
     }
-  }); //animate text-cols
-
-  $('.venus-text-cols').each(function () {
-    var items = $(this).find('div').toArray();
-    gsap.fromTo(items, {
-      opacity: 0,
-      y: 100
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power3.out',
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: this,
-        start: 'top 80%',
-        once: true //markers: true,
-
-      }
-    });
   }); //venus symbol section
 
   gsap.fromTo('.venus-symbol__three', {
@@ -1138,8 +1138,28 @@ function venusAnimations() {
 }
 
 venusAnimations();
+
+function venusCollapse() {
+  $('.venus-collpase').each(function () {
+    var isOpen = false;
+    var content = $(this).find('.venus-collpase__content');
+    var btn = $(this).find('.venus-collpase__action .button');
+    var btnText = btn.find('.button__text');
+    btn.click(function () {
+      content.toggleClass('open');
+      isOpen = !isOpen;
+      console.log('====================================');
+      console.log(btnText);
+      console.log('====================================');
+      btnText.html(!isOpen ? 'Читать далее' : 'Свернуть');
+    });
+  });
+}
+
+venusCollapse();
 $(window).on('resize', function () {
   gumResponsiveInit();
+  venusCollapse();
 });
 $(document).ready(function () {
   initGumAnimations();

@@ -953,42 +953,42 @@ function venusAnimations() {
     //hero section
     ScrollTrigger.matchMedia({
         '(min-width: 768px)': function () {
-            gsap.to('.venus-hero__age', {
-                y: 200,
-                opacity: 0,
-                duration: 0.3,
-                scrollTrigger: {
-                    trigger: document.body,
-                    //markers: true,
-                    start: '0 0',
-                    end: '50% +=50',
-                    scrub: true,
-                },
-            })
-            gsap.to('.venus-hero__title', {
-                y: 200,
-                scale: 1.05,
-                duration: 0.3,
-                scrollTrigger: {
-                    trigger: document.body,
-                    //markers: true,
-                    start: '0 0',
-                    end: '50% +=50',
-                    scrub: true,
-                },
-            })
-            gsap.to('.venus-hero__subtitle', {
-                y: 250,
-                scale: 1.05,
-                duration: 0.3,
-                scrollTrigger: {
-                    trigger: document.body,
-                    //markers: true,
-                    start: '0 0',
-                    end: '50% +=50',
-                    scrub: true,
-                },
-            })
+            // gsap.to('.venus-hero__age', {
+            //     y: 200,
+            //     opacity: 0,
+            //     duration: 0.3,
+            //     scrollTrigger: {
+            //         trigger: document.body,
+            //         //markers: true,
+            //         start: '0 0',
+            //         end: '50% +=50',
+            //         scrub: true,
+            //     },
+            // })
+            // gsap.to('.venus-hero__title', {
+            //     y: 200,
+            //     scale: 1.05,
+            //     duration: 0.3,
+            //     scrollTrigger: {
+            //         trigger: document.body,
+            //         //markers: true,
+            //         start: '0 0',
+            //         end: '50% +=50',
+            //         scrub: true,
+            //     },
+            // })
+            // gsap.to('.venus-hero__subtitle', {
+            //     y: 250,
+            //     scale: 1.05,
+            //     duration: 0.3,
+            //     scrollTrigger: {
+            //         trigger: document.body,
+            //         //markers: true,
+            //         start: '0 0',
+            //         end: '50% +=50',
+            //         scrub: true,
+            //     },
+            // })
             document
                 .querySelectorAll('.venus-gallery__image')
                 .forEach((img) => {
@@ -1009,6 +1009,74 @@ function venusAnimations() {
                         },
                     })
                 })
+            document.querySelectorAll('.gsap-fade-in-up').forEach((block) => {
+                gsap.fromTo(
+                    block,
+                    {
+                        opacity: 0,
+                        y: 100,
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.5,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: block,
+                            start: 'top 80%',
+                            once: true,
+                            //markers: true,
+                        },
+                    }
+                )
+            })
+            //animate text-cols
+            $('.venus-text-cols').each(function () {
+                const items = $(this).find('div').toArray()
+                gsap.fromTo(
+                    items,
+                    {
+                        opacity: 0,
+                        y: 100,
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: 'power3.out',
+                        stagger: 0.1,
+                        scrollTrigger: {
+                            trigger: this,
+                            start: 'top 80%',
+                            once: true,
+                            //markers: true,
+                        },
+                    }
+                )
+            })
+            //animate words
+            document.querySelectorAll('.animate-words').forEach((title) => {
+                gsap.fromTo(
+                    title.querySelectorAll('.word'),
+                    {
+                        opacity: 0,
+                        yPercent: 100,
+                    },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 2,
+                        ease: 'power3.out',
+                        stagger: 0.1,
+                        scrollTrigger: {
+                            trigger: title,
+                            start: 'top 80%',
+                            once: true,
+                            //markers: true,
+                        },
+                    }
+                )
+            })
         },
         '(max-width: 768px)': function () {
             document
@@ -1044,50 +1112,6 @@ function venusAnimations() {
             },
         }
     )
-    //animate words
-    document.querySelectorAll('.animate-words').forEach((title) => {
-        gsap.fromTo(
-            title.querySelectorAll('.word'),
-            {
-                opacity: 0,
-                yPercent: 100,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                duration: 2,
-                ease: 'power3.out',
-                stagger: 0.1,
-                scrollTrigger: {
-                    trigger: title,
-                    start: 'top 80%',
-                    once: true,
-                    //markers: true,
-                },
-            }
-        )
-    })
-    document.querySelectorAll('.gsap-fade-in-up').forEach((block) => {
-        gsap.fromTo(
-            block,
-            {
-                opacity: 0,
-                yPercent: 50,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                duration: 0.5,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: block,
-                    start: 'top 80%',
-                    once: true,
-                    //markers: true,
-                },
-            }
-        )
-    })
     //animate image type one
     gsap.fromTo(
         '.venus-watch-type-one__bg img',
@@ -1106,30 +1130,6 @@ function venusAnimations() {
             },
         }
     )
-    //animate text-cols
-    $('.venus-text-cols').each(function () {
-        const items = $(this).find('div').toArray()
-        gsap.fromTo(
-            items,
-            {
-                opacity: 0,
-                y: 100,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: 'power3.out',
-                stagger: 0.1,
-                scrollTrigger: {
-                    trigger: this,
-                    start: 'top 80%',
-                    once: true,
-                    //markers: true,
-                },
-            }
-        )
-    })
     //venus symbol section
     gsap.fromTo(
         '.venus-symbol__three',
@@ -1183,7 +1183,6 @@ function venusAnimations() {
             },
         }
     )
-
     //gallery
     document.querySelectorAll('.gallery__image').forEach((img) => {
         ScrollTrigger.create({
@@ -1204,8 +1203,28 @@ function venusAnimations() {
 
 venusAnimations()
 
+function venusCollapse() {
+    $('.venus-collpase').each(function () {
+        let isOpen = false
+        const content = $(this).find('.venus-collpase__content')
+        const btn = $(this).find('.venus-collpase__action .button')
+        const btnText = btn.find('.button__text')
+
+        btn.click(function () {
+            content.toggleClass('open')
+            isOpen = !isOpen
+            console.log('====================================')
+            console.log(btnText)
+            console.log('====================================')
+            btnText.html(!isOpen ? 'Читать далее' : 'Свернуть')
+        })
+    })
+}
+venusCollapse()
+
 $(window).on('resize', function () {
     gumResponsiveInit()
+    venusCollapse()
 })
 
 $(document).ready(function () {

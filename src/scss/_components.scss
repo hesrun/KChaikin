@@ -88,7 +88,7 @@
         &:before {
             background: black;
         }
-        &:hover {
+        @include hover {
             color: white;
         }
         &#{$root}_filled {
@@ -97,7 +97,7 @@
             &:before {
                 background: white;
             }
-            &:hover {
+            @include hover {
                 color: black;
             }
             &#{$root}_load {

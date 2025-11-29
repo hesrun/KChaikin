@@ -486,3 +486,75 @@
         }
     }
 }
+
+.venus-collpase {
+    &__content {
+        @include sm {
+            overflow: hidden;
+            max-height: 300px;
+            position: relative;
+            transition: all 0.3s;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(#e5e5e5, 0) 0%,
+                    rgba(#e5e5e5, 0) 80%,
+                    rgba(#e5e5e5, 1) 95%
+                );
+                z-index: 1;
+            }
+        }
+        &.open {
+            @include sm {
+                max-height: 1500px;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__action {
+        display: none;
+        padding-top: 15px;
+        @include sm {
+            display: block;
+        }
+    }
+}
+
+.venus-model-loader {
+    position: absolute;
+    inset: 0;
+    &__content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    &__text {
+        @include clamp-calc(font-size, 20, 30);
+        @include clamp-calc(letter-spacing, 10, 20);
+    }
+    &__bar {
+        height: 2px;
+        width: 100%;
+        max-width: 50%;
+        background: rgba(0, 0, 0, 0.05);
+    }
+    &__bar-inner {
+        width: 50%;
+        background: black;
+        height: 100%;
+    }
+}
+
+#viewer {
+    //display: none;
+}
