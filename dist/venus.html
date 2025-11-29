@@ -707,12 +707,12 @@
       });
 
       // Свет
-      scene.add(new THREE.AmbientLight(0xffffff, 1));
       const dir1 = new THREE.DirectionalLight(0xffffff, 1);
-      dir1.position.set(20, 20, 50);
+      dir1.position.set(0, 60, 70);
       scene.add(dir1);
-      const dir2 = new THREE.DirectionalLight(0xffffff, 0.6);
-      dir2.position.set(-50, -50, 100);
+
+      const dir2 = new THREE.DirectionalLight(0xffffff, 0.5);
+      dir2.position.set(0, -50, 40);
       scene.add(dir2);
 
 
