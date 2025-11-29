@@ -557,8 +557,7 @@
             // === ПРОГРЕСС ===
             xhr => {
                 if (xhr.lengthComputable) {
-                    const percent = Math.round((xhr.loaded / xhr.total) * 100);
-
+                    const percent = Math.min(100, Math.round((xhr.loaded / xhr.total) * 100));
                     loaderPerc.textContent = percent + ' %';
                     loaderBar.style.width = percent + '%';
                 }
@@ -581,11 +580,14 @@
         animate();
 
         // Адаптивность
+        let lastWidth = container.clientWidth;
         function onWindowResize() {
             const width = container.clientWidth;
+            if (width === lastWidth) return;
+            lastWidth = width;
+
             const height = container.clientHeight;
 
-            alert('resize')
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height);
