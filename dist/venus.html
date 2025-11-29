@@ -892,6 +892,7 @@
          const width = container.clientWidth;
          const height = container.clientHeight;
 
+         alert('resize')
          camera.aspect = width / height;
          camera.updateProjectionMatrix();
          renderer.setSize(width, height);
