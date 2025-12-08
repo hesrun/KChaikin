@@ -1065,7 +1065,7 @@ function venusAnimations() {
     }
   });
   gsap.fromTo('.venus-hero__watch-body img', {
-    yPercent: 0
+    yPercent: 5
   }, {
     yPercent: -30,
     duration: 0.3,

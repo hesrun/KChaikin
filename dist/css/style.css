@@ -7959,39 +7959,6 @@ input[type=number] {
   }
 }
 
-.venus-quote {
-  margin-top: 50px;
-  margin-left: auto;
-  max-width: 660px;
-  font-weight: 600;
-  position: relative;
-  padding-left: 50px;
-}
-.venus-quote:before {
-  content: "”";
-  font-size: clamp( 75px, 75px + (100 - 75) * ((100vw - 320px) / (1440 - 320)), 100px );
-  font-family: "Playfair", serif;
-  position: absolute;
-  left: 0;
-  top: 0;
-  line-height: 0.5;
-}
-@media only screen and (max-width: 576px) {
-  .venus-quote:before {
-    top: -25px;
-    left: 30px;
-  }
-}
-.venus-quote img {
-  display: inline;
-  vertical-align: text-top;
-}
-@media only screen and (max-width: 576px) {
-  .venus-quote {
-    padding: 0 30px;
-  }
-}
-
 .shell-icon {
   text-align: center;
   margin-bottom: 50px;
@@ -8007,9 +7974,7 @@ input[type=number] {
 
 .venus-parallax {
   position: relative;
-  background: #d9d9d9;
-  max-width: 1000px;
-  margin: 50px auto;
+  margin-bottom: 80px;
   aspect-ratio: 1/0.8;
 }
 @media only screen and (max-width: 576px) {
@@ -8031,14 +7996,14 @@ input[type=number] {
 @media only screen and (max-width: 576px) {
   .venus-parallax__venera {
     max-width: 65%;
-    left: -5%;
-    top: -20%;
+    left: 0%;
+    top: -10%;
     rotate: -10deg;
   }
 }
 .venus-parallax__watch {
   position: absolute;
-  max-width: 60%;
+  max-width: 50%;
   bottom: -10%;
   right: 0%;
   rotate: 30deg;
@@ -8047,9 +8012,9 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .venus-parallax__watch {
-    max-width: 80%;
-    bottom: -10%;
-    right: 0%;
+    max-width: 60%;
+    bottom: 0%;
+    right: 5%;
   }
 }
 .venus-parallax::before {
@@ -8088,6 +8053,8 @@ input[type=number] {
 @media only screen and (max-width: 576px) {
   .venus-parallax::after {
     width: 80%;
+    top: 55%;
+    right: -10%;
   }
 }
 
@@ -8117,7 +8084,7 @@ input[type=number] {
 
 .venus-specification-table {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 50px auto;
 }
 .venus-specification-table td {
@@ -8126,19 +8093,35 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .venus-specification-table td {
-    padding-bottom: 15px;
+    padding: 0;
   }
 }
 .venus-specification-table td:first-child {
   white-space: nowrap;
-  padding-right: 50px;
+  padding-right: 70px;
   font-weight: 500;
   text-transform: uppercase;
 }
 @media only screen and (max-width: 768px) {
   .venus-specification-table td:first-child {
-    padding-right: 30px;
+    padding-right: 0;
     white-space: inherit;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-specification-table tr {
+    display: grid;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-specification-table {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-specification-table tbody {
+    display: grid;
+    gap: 15px;
   }
 }
 

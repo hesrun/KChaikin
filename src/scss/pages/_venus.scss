@@ -289,35 +289,6 @@
     }
 }
 
-.venus-quote {
-    margin-top: 50px;
-    margin-left: auto;
-    max-width: 660px;
-    font-weight: 600;
-    position: relative;
-    padding-left: 50px;
-    &:before {
-        content: '”';
-        @include clamp-calc(font-size, 75, 100);
-        font-family: 'Playfair', serif;
-        position: absolute;
-        left: 0;
-        top: 0;
-        line-height: 0.5;
-        @include sm {
-            top: -25px;
-            left: 30px;
-        }
-    }
-    img {
-        display: inline;
-        vertical-align: text-top;
-    }
-    @include sm {
-        padding: 0 30px;
-    }
-}
-
 .shell-icon {
     text-align: center;
     margin-bottom: 50px;
@@ -331,9 +302,7 @@
 
 .venus-parallax {
     position: relative;
-    background: #d9d9d9;
-    max-width: 1000px;
-    margin: 50px auto;
+    margin-bottom: 80px;
     aspect-ratio: 1/0.8;
     @include sm {
         margin: 25px -15px;
@@ -350,23 +319,23 @@
         z-index: 1;
         @include sm {
             max-width: 65%;
-            left: -5%;
-            top: -20%;
+            left: -0%;
+            top: -10%;
             rotate: -10deg;
         }
     }
     &__watch {
         position: absolute;
-        max-width: 60%;
+        max-width: 50%;
         bottom: -10%;
         right: 0%;
         rotate: 30deg;
         translate: calc(var(--mouse-x) / 50) calc(var(--mouse-y) / 50);
         z-index: 1;
         @include sm {
-            max-width: 80%;
-            bottom: -10%;
-            right: 0%;
+            max-width: 60%;
+            bottom: -0%;
+            right: 5%;
         }
     }
     &::before {
@@ -409,6 +378,8 @@
         translate: calc(var(--mouse-x) / 20) calc(var(--mouse-y) / 20);
         @include sm {
             width: 80%;
+            top: 55%;
+            right: -10%;
         }
     }
 }
@@ -437,23 +408,37 @@
 
 .venus-specification-table {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 50px auto;
     td {
         padding-bottom: 50px;
         vertical-align: top;
         @include sm {
-            padding-bottom: 15px;
+            padding: 0;
         }
     }
     td:first-child {
         white-space: nowrap;
-        padding-right: 50px;
+        padding-right: 70px;
         font-weight: 500;
         text-transform: uppercase;
         @include md {
-            padding-right: 30px;
+            padding-right: 0;
             white-space: inherit;
+        }
+    }
+    tr {
+        @include sm {
+            display: grid;
+        }
+    }
+    @include sm {
+        margin-top: 30px;
+    }
+    tbody {
+        @include sm {
+            display: grid;
+            gap: 15px;
         }
     }
 }
