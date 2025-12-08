@@ -340,9 +340,12 @@
 
         // Контролы
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
         controls.enableZoom = false;
         controls.enablePan = false;
         controls.enableDamping = true;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 1.0;
 
 
         // HDRI
@@ -473,10 +476,11 @@
         function animate() {
             requestAnimationFrame(animate);
 
+            controls.update();
+
+            if (controls.autoRotate) needsRender = true;
 
             if (needsRender) {
-                console.log('rendering');
-                controls.update();
                 renderer.render(scene, camera);
                 needsRender = false;
             }
