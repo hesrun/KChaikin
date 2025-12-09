@@ -8238,6 +8238,7 @@ input[type=number] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  display: none;
 }
 .venus-gallery-grid__link img {
   max-width: 100%;
