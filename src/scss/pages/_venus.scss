@@ -1,10 +1,13 @@
 .venus-section-title {
-    margin-bottom: 75px;
+    margin-bottom: 45px;
     text-transform: uppercase;
     line-height: 1;
-    @include clamp-calc(font-size, 35, 100);
+    @include clamp-calc(font-size, 30, 100);
     @include md {
-        margin-bottom: 2rem;
+        margin-bottom: 30px;
+        br {
+            display: none;
+        }
     }
 }
 .venus-text-cols {
@@ -61,27 +64,17 @@
         z-index: 1;
     }
     &__title {
-        margin: 0;
-        text-align: center;
-        font-weight: 100;
-        line-height: 0.8;
-        @include clamp-calc(font-size, 100, 300);
-        @include clamp-calc(letter-spacing, 5, 96);
-    }
-    &__subtitle {
-        @include clamp-calc(font-size, 15, 30);
-        @include clamp-calc(letter-spacing, 5, 43.5);
-        @include clamp-calc(padding-left, 5, 22);
-        white-space: nowrap;
-        text-align: center;
+        padding: 0 30px;
+        svg {
+            width: 100%;
+        }
     }
     &__image-wrapper {
-        margin-top: -13%;
+        margin-top: -10%;
         aspect-ratio: 1/1;
         position: relative;
         @include sm {
-            aspect-ratio: 1/2;
-            margin-top: -20%;
+            aspect-ratio: 1/1.8;
         }
     }
     &__watch {
@@ -94,7 +87,10 @@
         z-index: 1;
         @include md {
             max-width: none;
-            width: 120%;
+            width: 150%;
+        }
+        @include sm {
+            top: 45%;
         }
         &-body {
             //overflow: hidden;
@@ -127,10 +123,8 @@
     overflow: hidden;
     margin: 70px 0;
     position: relative;
-    padding: 0 5%;
     @include md {
         margin: 30px -15px;
-        padding: 0;
     }
     &__watch {
         max-width: 100%;
@@ -143,7 +137,7 @@
     }
     &__bg {
         position: absolute;
-        top: 21.4%;
+        top: 23%;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -185,16 +179,19 @@
 }
 
 .venus-symbol {
-    overflow: hidden;
+    padding-bottom: 50px;
+    @include sm {
+        overflow: hidden;
+        padding-bottom: 30px;
+    }
+
     #scene {
         touch-action: pan-y !important;
     }
     &__content {
         position: relative;
-        margin-bottom: 100px;
         @include sm {
             margin-inline: -40px;
-            margin-bottom: 70px;
         }
     }
     &__circle-part {
@@ -252,19 +249,6 @@
         }
         img {
             max-width: 100%;
-        }
-    }
-    &__side-text {
-        display: flex;
-        flex-direction: column;
-        opacity: 0.1;
-        position: absolute;
-        text-transform: uppercase;
-        @include clamp-calc(font-size, 80, 500);
-        line-height: 0.8;
-        translate: -40% 0;
-        @include md {
-            display: none;
         }
     }
     &__circle-text {
@@ -555,6 +539,46 @@
         width: 50%;
         background: black;
         height: 100%;
+    }
+}
+
+.venus-gallery-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    &__link {
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+    @include sm {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 30px;
+    }
+}
+
+.venus-buy {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    gap: 30px;
+    &__price {
+        line-height: 1;
+        display: grid;
+        @include clamp-calc(font-size, 24, 40);
+        span {
+            @include clamp-calc(font-size, 45, 80);
+        }
+    }
+    &__VAT {
+        color: #555;
+    }
+    @include sm {
+        gap: 15px;
     }
 }
 

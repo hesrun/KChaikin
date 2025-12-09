@@ -126,6 +126,9 @@ $().fancybox({
 $().fancybox({
   selector: '[data-fancybox="gum"]'
 });
+$().fancybox({
+  selector: '[data-fancybox="venera-gallery"]'
+});
 var photoSlider = new Swiper('.photo-slider', {
   slidesPerView: 'auto',
   spaceBetween: 15,
@@ -1093,7 +1096,7 @@ function venusAnimations() {
   }); //venus symbol section
 
   gsap.fromTo('.venus-symbol__three img', {
-    yPercent: 100
+    yPercent: 300
   }, {
     yPercent: 0,
     duration: 0.3,
@@ -1169,6 +1172,7 @@ function venusCollapse() {
 venusCollapse();
 $(window).on('resize', function () {
   gumResponsiveInit();
+  ScrollTrigger.refresh();
 });
 $(document).ready(function () {
   initGumAnimations();

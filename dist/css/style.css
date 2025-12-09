@@ -7642,14 +7642,17 @@ input[type=number] {
 }
 
 .venus-section-title {
-  margin-bottom: 75px;
+  margin-bottom: 45px;
   text-transform: uppercase;
   line-height: 1;
-  font-size: clamp( 35px, 35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)), 100px );
+  font-size: clamp( 30px, 30px + (100 - 30) * ((100vw - 320px) / (1440 - 320)), 100px );
 }
 @media only screen and (max-width: 768px) {
   .venus-section-title {
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
+  }
+  .venus-section-title br {
+    display: none;
   }
 }
 
@@ -7715,29 +7718,19 @@ input[type=number] {
   z-index: 1;
 }
 .venus-hero__title {
-  margin: 0;
-  text-align: center;
-  font-weight: 100;
-  line-height: 0.8;
-  font-size: clamp( 100px, 100px + (300 - 100) * ((100vw - 320px) / (1440 - 320)), 300px );
-  letter-spacing: clamp( 5px, 5px + (96 - 5) * ((100vw - 320px) / (1440 - 320)), 96px );
+  padding: 0 30px;
 }
-.venus-hero__subtitle {
-  font-size: clamp( 15px, 15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)), 30px );
-  letter-spacing: clamp( 5px, 5px + (43.5 - 5) * ((100vw - 320px) / (1440 - 320)), 43.5px );
-  padding-left: clamp( 5px, 5px + (22 - 5) * ((100vw - 320px) / (1440 - 320)), 22px );
-  white-space: nowrap;
-  text-align: center;
+.venus-hero__title svg {
+  width: 100%;
 }
 .venus-hero__image-wrapper {
-  margin-top: -13%;
+  margin-top: -10%;
   aspect-ratio: 1/1;
   position: relative;
 }
 @media only screen and (max-width: 576px) {
   .venus-hero__image-wrapper {
-    aspect-ratio: 1/2;
-    margin-top: -20%;
+    aspect-ratio: 1/1.8;
   }
 }
 .venus-hero__watch {
@@ -7752,7 +7745,12 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .venus-hero__watch {
     max-width: none;
-    width: 120%;
+    width: 150%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .venus-hero__watch {
+    top: 45%;
   }
 }
 .venus-hero__watch-body {
@@ -7784,12 +7782,10 @@ input[type=number] {
   overflow: hidden;
   margin: 70px 0;
   position: relative;
-  padding: 0 5%;
 }
 @media only screen and (max-width: 768px) {
   .venus-watch-type-one {
     margin: 30px -15px;
-    padding: 0;
   }
 }
 .venus-watch-type-one__watch {
@@ -7805,7 +7801,7 @@ input[type=number] {
 }
 .venus-watch-type-one__bg {
   position: absolute;
-  top: 21.4%;
+  top: 23%;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -7847,19 +7843,23 @@ input[type=number] {
 }
 
 .venus-symbol {
-  overflow: hidden;
+  padding-bottom: 50px;
+}
+@media only screen and (max-width: 576px) {
+  .venus-symbol {
+    overflow: hidden;
+    padding-bottom: 30px;
+  }
 }
 .venus-symbol #scene {
   touch-action: pan-y !important;
 }
 .venus-symbol__content {
   position: relative;
-  margin-bottom: 100px;
 }
 @media only screen and (max-width: 576px) {
   .venus-symbol__content {
     margin-inline: -40px;
-    margin-bottom: 70px;
   }
 }
 .venus-symbol__circle-part {
@@ -7920,21 +7920,6 @@ input[type=number] {
 }
 .venus-symbol__three img {
   max-width: 100%;
-}
-.venus-symbol__side-text {
-  display: flex;
-  flex-direction: column;
-  opacity: 0.1;
-  position: absolute;
-  text-transform: uppercase;
-  font-size: clamp( 80px, 80px + (500 - 80) * ((100vw - 320px) / (1440 - 320)), 500px );
-  line-height: 0.8;
-  translate: -40% 0;
-}
-@media only screen and (max-width: 768px) {
-  .venus-symbol__side-text {
-    display: none;
-  }
 }
 .venus-symbol__circle-text {
   pointer-events: none;
@@ -8246,4 +8231,46 @@ input[type=number] {
   width: 50%;
   background: black;
   height: 100%;
+}
+
+.venus-gallery-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.venus-gallery-grid__link img {
+  max-width: 100%;
+  display: block;
+}
+@media only screen and (max-width: 576px) {
+  .venus-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 30px;
+  }
+}
+
+.venus-buy {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 30px;
+}
+.venus-buy__price {
+  line-height: 1;
+  display: grid;
+  font-size: clamp( 24px, 24px + (40 - 24) * ((100vw - 320px) / (1440 - 320)), 40px );
+}
+.venus-buy__price span {
+  font-size: clamp( 45px, 45px + (80 - 45) * ((100vw - 320px) / (1440 - 320)), 80px );
+}
+.venus-buy__VAT {
+  color: #555;
+}
+@media only screen and (max-width: 576px) {
+  .venus-buy {
+    gap: 15px;
+  }
 }

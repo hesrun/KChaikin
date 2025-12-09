@@ -75,6 +75,10 @@ $().fancybox({
     selector: '[data-fancybox="gum"]',
 })
 
+$().fancybox({
+    selector: '[data-fancybox="venera-gallery"]',
+})
+
 const photoSlider = new Swiper('.photo-slider', {
     slidesPerView: 'auto',
     spaceBetween: 15,
@@ -337,11 +341,13 @@ $('#addCart').click(function () {
         showClose: false,
     })
 })
+
 $('#showParams').click(function () {
     $('#techModal').modal({
         fadeDuration: 300,
     })
 })
+
 $(document).on('click', '.requestVacancy', function (e) {
     $('#vacancyModal').find('#VACANCY').val($(this).attr('val'))
     $('#vacancyModal').modal({
@@ -1149,7 +1155,7 @@ function venusAnimations() {
     gsap.fromTo(
         '.venus-symbol__three img',
         {
-            yPercent: 100,
+            yPercent: 300,
         },
         {
             yPercent: 0,
@@ -1236,6 +1242,7 @@ venusCollapse()
 
 $(window).on('resize', function () {
     gumResponsiveInit()
+    ScrollTrigger.refresh()
 })
 
 $(document).ready(function () {
