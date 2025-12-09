@@ -7725,7 +7725,7 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .venus-hero__title {
-    margin: 0 -15px;
+    margin: 0 -8px;
     padding: 0;
   }
 }
