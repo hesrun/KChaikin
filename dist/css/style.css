@@ -8181,40 +8181,6 @@ input[type=number] {
   }
 }
 
-@media only screen and (max-width: 576px) {
-  .venus-collpase__content {
-    overflow: hidden;
-    max-height: 300px;
-    position: relative;
-    transition: all 0.3s;
-  }
-  .venus-collpase__content:before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(229, 229, 229, 0) 0%, rgba(229, 229, 229, 0) 80%, #e5e5e5 95%);
-    z-index: 1;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .venus-collpase__content.open {
-    max-height: 1500px;
-  }
-  .venus-collpase__content.open:before {
-    display: none;
-  }
-}
-.venus-collpase__action {
-  display: none;
-  padding-top: 15px;
-}
-@media only screen and (max-width: 576px) {
-  .venus-collpase__action {
-    display: block;
-  }
-}
-
 .venus-model-loader {
   position: absolute;
   inset: 0;

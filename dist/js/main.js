@@ -1155,22 +1155,6 @@ function venusAnimations() {
 }
 
 venusAnimations();
-
-function venusCollapse() {
-  $('.venus-collpase').each(function () {
-    var isOpen = false;
-    var content = $(this).find('.venus-collpase__content');
-    var btn = $(this).find('.venus-collpase__action .button');
-    var btnText = btn.find('.button__text');
-    btn.click(function () {
-      content.toggleClass('open');
-      isOpen = !isOpen;
-      btnText.html(!isOpen ? 'Читать далее' : 'Свернуть');
-    });
-  });
-}
-
-venusCollapse();
 $(window).on('resize', function () {
   gumResponsiveInit();
   ScrollTrigger.refresh();

@@ -1223,24 +1223,7 @@ function venusAnimations() {
         })
     })
 }
-
 venusAnimations()
-
-function venusCollapse() {
-    $('.venus-collpase').each(function () {
-        let isOpen = false
-        const content = $(this).find('.venus-collpase__content')
-        const btn = $(this).find('.venus-collpase__action .button')
-        const btnText = btn.find('.button__text')
-
-        btn.click(function () {
-            content.toggleClass('open')
-            isOpen = !isOpen
-            btnText.html(!isOpen ? 'Читать далее' : 'Свернуть')
-        })
-    })
-}
-venusCollapse()
 
 $(window).on('resize', function () {
     gumResponsiveInit()
