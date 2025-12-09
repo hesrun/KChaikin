@@ -395,6 +395,8 @@ $('.media-card').click(function () {
 
 $('#codeModal').modal()
 
+$('#adultModal').modal()
+
 $('.toJoinClub').click(function () {
     let modalName = $(this).attr('attr-modal')
     $(`#${modalName}`).modal({

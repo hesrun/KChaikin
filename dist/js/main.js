@@ -412,6 +412,7 @@ $('.media-card').click(function () {
   });
 });
 $('#codeModal').modal();
+$('#adultModal').modal();
 $('.toJoinClub').click(function () {
   var modalName = $(this).attr('attr-modal');
   $("#".concat(modalName)).modal({
