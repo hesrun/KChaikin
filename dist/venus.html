@@ -800,6 +800,45 @@
             rotateCameraAroundTarget(camera, controls, -0.4, -0.4);
 
             needsRender = true;
+
+            // --- Найти Boob_Right и Boob_Left и добавить их в ротаторы
+            window.debugRotators = window.debugRotators || [];
+            const boobRight = gltf.scene.getObjectByName('Boob_Right');
+            const boobLeft = gltf.scene.getObjectByName('Boob_Left');
+
+            if (boobRight) {
+               window.boobRight = boobRight;
+               console.log('Found Boob_Right');
+            }
+            if (boobLeft) {
+               window.boobLeft = boobLeft;
+               console.log('Found Boob_Left');
+            }
+            if (!boobRight && !boobLeft) {
+               console.warn('Boob_Right and/or Boob_Left not found in model');
+            }
+
+            window.updateBoobClock = (nowDate) => {
+               const now = nowDate || new Date();
+               const hours = now.getHours();
+               const minutes = now.getMinutes();
+               const seconds = now.getSeconds();
+
+               const minuteAngle = (minutes + seconds / 60) * (Math.PI * 2 / 60);
+
+
+               const hourAngle = ((hours % 12) + minutes / 60 + seconds / 3600) * (Math.PI * 2 / 12);
+
+
+               if (window.boobLeft) window.boobLeft.rotation.z = -(minuteAngle);
+               if (window.boobRight) window.boobRight.rotation.z = (hourAngle - .05);
+
+
+               needsRender = true;
+            };
+
+            // Вызов один раз сразу
+            window.updateBoobClock(new Date());
          },
 
          // === ПРОГРЕСС ===
@@ -826,6 +865,25 @@
          requestAnimationFrame(animate);
 
          controls.update();
+
+         // Обновить время на циферблатах
+         if (window.updateBoobClock) {
+            const nowMs = Date.now();
+            if (!window._lastBoobUpdate || (nowMs - window._lastBoobUpdate) > 500) {
+               window.updateBoobClock(new Date());
+               window._lastBoobUpdate = nowMs;
+            }
+         }
+
+         // Применить ротацию к debug-ротаторам (Boob_Right, Boob_Left и т.п.)
+         if (window.debugRotators && window.debugRotators.length) {
+            window.debugRotators.forEach(r => {
+               if (r.obj && r.obj.rotation) {
+                  r.obj.rotation[r.axis] += r.speed;
+               }
+            });
+            needsRender = true;
+         }
 
          if (controls.autoRotate) needsRender = true;
 
