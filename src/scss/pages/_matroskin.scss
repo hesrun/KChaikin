@@ -1,0 +1,255 @@
+.matroskin-page {
+    background-color: #d1d1d1;
+    color: #1f2022;
+}
+.roboto {
+    font-family: 'Roboto Flex', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-variation-settings:
+        'slnt' 0,
+        'wdth' 151,
+        'GRAD' 0,
+        'XOPQ' 96,
+        'XTRA' 468,
+        'YOPQ' 79,
+        'YTAS' 750,
+        'YTDE' -203,
+        'YTFI' 738,
+        'YTLC' 514,
+        'YTUC' 712;
+}
+
+.matroskin-section {
+    padding: 50px 0;
+    &_green {
+        color: white;
+        background: radial-gradient(circle, #2f7824, #154826);
+    }
+    &_pb-0 {
+        padding-bottom: 0;
+    }
+    &_pn {
+        padding: 0;
+    }
+}
+.matroskin-text-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+}
+.matroskin-title {
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    @include clamp-calc(font-size, 25, 55);
+    &_xl {
+        @include clamp-calc(font-size, 35, 100);
+    }
+}
+
+.fixed-parallax {
+    min-height: 100dvh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.matroskin-hero {
+    margin-top: 220px;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(#9e9fa3, 1) 0px,
+            rgba(#9e9fa3, 1) 60px,
+            rgba(#9e9fa3, 0.5) 60px,
+            rgba(#9e9fa3, 0.5) 120px
+        );
+        z-index: -1;
+    }
+    &__container {
+        position: relative;
+    }
+    &__logo {
+        width: 100%;
+        max-width: 100%;
+        margin-top: -8%;
+    }
+    &__watch {
+        display: block;
+        margin: -7% auto 0;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        position: absolute;
+        bottom: 120px;
+        left: 0;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    &__person {
+        width: 50%;
+        max-width: 45%;
+        font-size: 14px;
+    }
+}
+
+.product-card {
+    max-width: 320px;
+    display: grid;
+    padding: 20px;
+    gap: 16px;
+    background: white;
+    box-shadow: 0 24px 44px 0 rgba(black, 0.25);
+    border-radius: 24px;
+    line-height: 1;
+    .button {
+        padding: 0 10px;
+    }
+    &__name {
+        font-size: 25px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &__price {
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &__vat {
+        margin-top: 5px;
+        font-size: 14px;
+        opacity: 0.7;
+    }
+}
+
+.matroskin-hearth {
+    min-height: 530px;
+    position: relative;
+    display: flex;
+    z-index: 1;
+    &__text {
+        max-width: 400px;
+    }
+    &__image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+    }
+}
+
+.matroskin-calibr {
+    position: relative;
+    aspect-ratio: 1/0.66;
+    &__image {
+        position: absolute;
+    }
+    &__text {
+        position: absolute;
+        width: 400px;
+        left: 65%;
+        top: 15%;
+    }
+    &__title {
+        margin-bottom: 30px;
+        line-height: 1;
+        text-transform: uppercase;
+        font-weight: 700;
+        @include clamp-calc(font-size, 25, 40);
+    }
+}
+
+.matroskin-cols-section {
+    display: flex;
+    &_reverse {
+        flex-direction: row-reverse;
+    }
+    > div {
+        flex: 0 0 50%;
+        aspect-ratio: 1/1;
+    }
+    &__descr {
+        color: white;
+        background: #1f2022;
+        display: flex;
+    }
+    &__content {
+        margin: auto;
+    }
+    &__text {
+        max-width: 400px;
+    }
+    &__title {
+        text-transform: uppercase;
+        line-height: 1.1;
+        font-weight: 700;
+        margin-bottom: 30px;
+        @include clamp-calc(font-size, 25, 40);
+    }
+    &__image {
+        background: radial-gradient(circle, #5c5d60, #1f2022);
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.matroskin-parallax-cols {
+    display: flex;
+    > div {
+        flex: 0 0 50%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.matroskin-specification-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto;
+    td {
+        padding-bottom: 50px;
+        vertical-align: top;
+        @include sm {
+            padding: 0;
+        }
+    }
+    td:first-child {
+        white-space: nowrap;
+        padding-right: 70px;
+        font-weight: 500;
+        text-transform: uppercase;
+        @include md {
+            padding-right: 0;
+            white-space: inherit;
+        }
+    }
+    tr {
+        @include sm {
+            display: grid;
+        }
+    }
+    @include sm {
+        margin-top: 30px;
+    }
+    tbody {
+        @include sm {
+            display: grid;
+            gap: 15px;
+        }
+    }
+}

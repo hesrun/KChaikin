@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -213,6 +214,7 @@ button {
 }
 
 .img-fluid {
+  display: block;
   width: 100%;
 }
 
@@ -831,6 +833,34 @@ input[type=number] {
 }
 .button_orange:hover {
   color: black;
+}
+.button_green {
+  color: #327f3c;
+  border-color: #327f3c;
+}
+.button_green:before {
+  background: #327f3c;
+}
+@media (any-hover: hover) {
+  .button_green:hover {
+    color: white;
+  }
+}
+.button_green.button_filled {
+  background: #327f3c;
+  color: white;
+}
+.button_green.button_filled:before {
+  background: white;
+}
+@media (any-hover: hover) {
+  .button_green.button_filled:hover {
+    color: #327f3c;
+  }
+}
+.button_green.button_filled.button_load::after {
+  border-right-color: white;
+  border-bottom-color: white;
 }
 .button_medium {
   font-size: 14px;
@@ -8272,4 +8302,252 @@ input[type=number] {
 
 .venus-view-action {
   margin-top: 30px;
+}
+
+.matroskin-page {
+  background-color: #d1d1d1;
+  color: #1f2022;
+}
+
+.roboto {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-variation-settings: "slnt" 0, "wdth" 151, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+
+.matroskin-section {
+  padding: 50px 0;
+}
+.matroskin-section_green {
+  color: white;
+  background: radial-gradient(circle, #2f7824, #154826);
+}
+.matroskin-section_pb-0 {
+  padding-bottom: 0;
+}
+.matroskin-section_pn {
+  padding: 0;
+}
+
+.matroskin-text-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+
+.matroskin-title {
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+  font-size: clamp( 25px, 25px + (55 - 25) * ((100vw - 320px) / (1440 - 320)), 55px );
+}
+.matroskin-title_xl {
+  font-size: clamp( 35px, 35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)), 100px );
+}
+
+.fixed-parallax {
+  min-height: 100dvh;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.matroskin-hero {
+  margin-top: 220px;
+  position: relative;
+}
+.matroskin-hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, #9e9fa3 0px, #9e9fa3 60px, rgba(158, 159, 163, 0.5) 60px, rgba(158, 159, 163, 0.5) 120px);
+  z-index: -1;
+}
+.matroskin-hero__container {
+  position: relative;
+}
+.matroskin-hero__logo {
+  width: 100%;
+  max-width: 100%;
+  margin-top: -8%;
+}
+.matroskin-hero__watch {
+  display: block;
+  margin: -7% auto 0;
+}
+.matroskin-hero__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  bottom: 120px;
+  left: 0;
+  width: 100%;
+  padding: 0 1rem;
+}
+.matroskin-hero__person {
+  width: 50%;
+  max-width: 45%;
+  font-size: 14px;
+}
+
+.product-card {
+  max-width: 320px;
+  display: grid;
+  padding: 20px;
+  gap: 16px;
+  background: white;
+  box-shadow: 0 24px 44px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  line-height: 1;
+}
+.product-card .button {
+  padding: 0 10px;
+}
+.product-card__name {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.product-card__price {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.product-card__vat {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.matroskin-hearth {
+  min-height: 530px;
+  position: relative;
+  display: flex;
+  z-index: 1;
+}
+.matroskin-hearth__text {
+  max-width: 400px;
+}
+.matroskin-hearth__image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+}
+
+.matroskin-calibr {
+  position: relative;
+  aspect-ratio: 1/0.66;
+}
+.matroskin-calibr__image {
+  position: absolute;
+}
+.matroskin-calibr__text {
+  position: absolute;
+  width: 400px;
+  left: 65%;
+  top: 15%;
+}
+.matroskin-calibr__title {
+  margin-bottom: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: clamp( 25px, 25px + (40 - 25) * ((100vw - 320px) / (1440 - 320)), 40px );
+}
+
+.matroskin-cols-section {
+  display: flex;
+}
+.matroskin-cols-section_reverse {
+  flex-direction: row-reverse;
+}
+.matroskin-cols-section > div {
+  flex: 0 0 50%;
+  aspect-ratio: 1/1;
+}
+.matroskin-cols-section__descr {
+  color: white;
+  background: #1f2022;
+  display: flex;
+}
+.matroskin-cols-section__content {
+  margin: auto;
+}
+.matroskin-cols-section__text {
+  max-width: 400px;
+}
+.matroskin-cols-section__title {
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: clamp( 25px, 25px + (40 - 25) * ((100vw - 320px) / (1440 - 320)), 40px );
+}
+.matroskin-cols-section__image {
+  background: radial-gradient(circle, #5c5d60, #1f2022);
+}
+.matroskin-cols-section__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.matroskin-parallax-cols {
+  display: flex;
+}
+.matroskin-parallax-cols > div {
+  flex: 0 0 50%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.matroskin-parallax-cols > div img {
+  display: block;
+  width: 100%;
+}
+
+.matroskin-specification-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.matroskin-specification-table td {
+  padding-bottom: 50px;
+  vertical-align: top;
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-specification-table td {
+    padding: 0;
+  }
+}
+.matroskin-specification-table td:first-child {
+  white-space: nowrap;
+  padding-right: 70px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-specification-table td:first-child {
+    padding-right: 0;
+    white-space: inherit;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-specification-table tr {
+    display: grid;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-specification-table {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-specification-table tbody {
+    display: grid;
+    gap: 15px;
+  }
 }
