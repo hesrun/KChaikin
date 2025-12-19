@@ -1171,11 +1171,12 @@ function matroskinAnimations() {
         }, {
           yPercent: 0,
           duration: 1,
+          ease: 'linear',
           scrollTrigger: {
             trigger: section,
             scrub: true,
             start: 'top bottom',
-            end: 'bottom center' //markers: true,
+            end: 'bottom bottom' //markers: true,
 
           }
         });
@@ -1184,6 +1185,7 @@ function matroskinAnimations() {
         }, {
           yPercent: 0,
           duration: 1,
+          ease: 'linear',
           scrollTrigger: {
             trigger: section,
             scrub: true,
