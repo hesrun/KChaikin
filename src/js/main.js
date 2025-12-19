@@ -1225,6 +1225,86 @@ function venusAnimations() {
 }
 venusAnimations()
 
+/* -------------------------------------------------------------------------- */
+/*                                  matroskin                                 */
+/* -------------------------------------------------------------------------- */
+
+function matroskinAnimations() {
+    ScrollTrigger.matchMedia({
+        '(min-width: 768px)': function () {
+            document
+                .querySelectorAll('.matroskin-cols-section')
+                .forEach((section) => {
+                    const image = section.querySelector(
+                        '.matroskin-cols-section__image img'
+                    )
+                    const text = section.querySelector(
+                        '.matroskin-cols-section__descr'
+                    )
+                    gsap.fromTo(
+                        image,
+                        {
+                            yPercent: 100,
+                        },
+                        {
+                            yPercent: 0,
+                            duration: 1,
+                            scrollTrigger: {
+                                trigger: section,
+                                scrub: true,
+                                start: 'top bottom',
+                                end: 'bottom center',
+                                //markers: true,
+                            },
+                        }
+                    )
+                    gsap.fromTo(
+                        text,
+                        {
+                            yPercent: -100,
+                        },
+                        {
+                            yPercent: 0,
+                            duration: 1,
+                            scrollTrigger: {
+                                trigger: section,
+                                scrub: true,
+                                start: 'top bottom',
+                                end: 'bottom bottom',
+                                //markers: true,
+                            },
+                        }
+                    )
+                })
+
+            document
+                .querySelectorAll('.matroskin-parallax-cols > div')
+                .forEach((col) => {
+                    const image = col.querySelector('img')
+                    gsap.fromTo(
+                        image,
+                        {
+                            yPercent: -100,
+                        },
+                        {
+                            yPercent: 20,
+                            duration: 1,
+                            scrollTrigger: {
+                                trigger: col,
+                                scrub: true,
+                                start: 'top bottom',
+                                end: 'bottom top',
+                                //markers: true,
+                            },
+                        }
+                    )
+                })
+        },
+        '(max-width: 768px)': function () {},
+    })
+}
+matroskinAnimations()
+
 $(window).on('resize', function () {
     gumResponsiveInit()
     ScrollTrigger.refresh()

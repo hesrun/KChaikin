@@ -26,7 +26,6 @@ function initParallaxMouseMove() {
   var mouseX = 0;
   var mouseY = 0;
   window.addEventListener('mousemove', function (e) {
-    console.log(window.innerWidth, window.innerHeight);
     var centerX = window.innerWidth / 2;
     var centerY = window.innerHeight / 2;
     mouseX = e.clientX - centerX;
@@ -1155,6 +1154,67 @@ function venusAnimations() {
 }
 
 venusAnimations();
+/* -------------------------------------------------------------------------- */
+
+/*                                  matroskin                                 */
+
+/* -------------------------------------------------------------------------- */
+
+function matroskinAnimations() {
+  ScrollTrigger.matchMedia({
+    '(min-width: 768px)': function minWidth768px() {
+      document.querySelectorAll('.matroskin-cols-section').forEach(function (section) {
+        var image = section.querySelector('.matroskin-cols-section__image img');
+        var text = section.querySelector('.matroskin-cols-section__descr');
+        gsap.fromTo(image, {
+          yPercent: 100
+        }, {
+          yPercent: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            scrub: true,
+            start: 'top bottom',
+            end: 'bottom center' //markers: true,
+
+          }
+        });
+        gsap.fromTo(text, {
+          yPercent: -100
+        }, {
+          yPercent: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            scrub: true,
+            start: 'top bottom',
+            end: 'bottom bottom' //markers: true,
+
+          }
+        });
+      });
+      document.querySelectorAll('.matroskin-parallax-cols > div').forEach(function (col) {
+        var image = col.querySelector('img');
+        gsap.fromTo(image, {
+          yPercent: -100
+        }, {
+          yPercent: 20,
+          duration: 1,
+          scrollTrigger: {
+            trigger: col,
+            scrub: true,
+            start: 'top bottom',
+            end: 'bottom top' //markers: true,
+
+          }
+        });
+      });
+    },
+    '(max-width: 768px)': function maxWidth768px() {}
+  });
+}
+
+matroskinAnimations();
 $(window).on('resize', function () {
   gumResponsiveInit();
   ScrollTrigger.refresh();

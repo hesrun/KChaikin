@@ -25,8 +25,6 @@ function initParallaxMouseMove() {
     let mouseY = 0
 
     window.addEventListener('mousemove', function (e) {
-        console.log(window.innerWidth, window.innerHeight)
-
         const centerX = window.innerWidth / 2
         const centerY = window.innerHeight / 2
 
