@@ -1193,11 +1193,13 @@ function matroskinAnimations() {
           }
         });
       });
-      document.querySelectorAll('.matroskin-parallax-cols > div').forEach(function (col) {
+      document.querySelectorAll('.matroskin-parallax-cols__item').forEach(function (col) {
         var image = col.querySelector('img');
         gsap.fromTo(image, {
+          scale: 1,
           yPercent: -100
         }, {
+          scale: 1.1,
           yPercent: 20,
           duration: 1,
           scrollTrigger: {
@@ -1205,6 +1207,36 @@ function matroskinAnimations() {
             scrub: true,
             start: 'top bottom',
             end: 'bottom top' //markers: true,
+
+          }
+        });
+      });
+      gsap.fromTo('.matroskin-parallax-cols__bg', {
+        opacity: 1
+      }, {
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.matroskin-parallax-cols',
+          scrub: true,
+          start: 'top bottom',
+          end: 'bottom top' //markers: true,
+
+        }
+      });
+      document.querySelectorAll('.matroskin-hearth').forEach(function (item) {
+        var img = item.querySelector('.matroskin-hearth__image');
+        gsap.fromTo(img, {
+          y: 200,
+          opacity: 0
+        }, {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: item,
+            //scrub: true,
+            start: 'top 70%' //markers: true,
 
           }
         });

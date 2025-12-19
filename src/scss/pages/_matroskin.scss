@@ -145,23 +145,24 @@
 }
 
 .matroskin-hearth {
+    min-height: 456px;
     position: relative;
     display: flex;
     z-index: 1;
     &__text {
-        max-width: 400px;
-        padding-bottom: 110px;
+        max-width: 380px;
+        padding-bottom: 50px;
     }
     &__image {
         position: absolute;
-        right: 0;
-        top: 0;
-        width: 50%;
+        right: -5%;
+        top: -35%;
+        width: 60%;
         &_face {
-            left: 50%;
+            left: 40%;
             right: 0;
             width: 75%;
-            translate: -15% 0;
+            top: 0%;
         }
         img {
             translate: calc(var(--mouse-x) / -50) calc(var(--mouse-y) / -50);
@@ -171,23 +172,30 @@
 }
 
 .matroskin-calibr {
+    display: flex;
     position: relative;
     aspect-ratio: 1/0.66;
     &__image {
         position: absolute;
+        top: 0;
+        width: 100%;
+        max-width: 75%;
+        right: 0;
+    }
+    .container {
+        margin-top: auto;
+        margin-bottom: 5%;
+        width: 100%;
     }
     &__text {
-        position: absolute;
         width: 400px;
-        left: 65%;
-        top: 15%;
     }
     &__title {
         margin-bottom: 30px;
         line-height: 1;
         text-transform: uppercase;
         font-weight: 700;
-        @include clamp-calc(font-size, 25, 40);
+        @include clamp-calc(font-size, 25, 55);
     }
 }
 
@@ -233,7 +241,8 @@
 
 .matroskin-parallax-cols {
     display: flex;
-    > div {
+    position: relative;
+    &__item {
         overflow: hidden;
         flex: 0 0 50%;
         aspect-ratio: 1;
@@ -242,6 +251,11 @@
             display: block;
             width: 100%;
         }
+    }
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(black, 0.9);
     }
 }
 
