@@ -1212,6 +1212,36 @@ function matroskinAnimations() {
     },
     '(max-width: 768px)': function maxWidth768px() {}
   });
+  document.querySelectorAll('.fixed-parallax').forEach(function (parallax) {
+    var bg = parallax.querySelector('.fixed-parallax__bg');
+    var overlay = parallax.querySelector('.fixed-parallax__overlay');
+    gsap.fromTo(overlay, {
+      opacity: 1
+    }, {
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: parallax,
+        scrub: true,
+        start: 'top bottom',
+        end: 'bottom center' //markers: true,
+
+      }
+    });
+    gsap.fromTo(bg, {
+      scale: 1
+    }, {
+      scale: 1.3,
+      duration: 1,
+      scrollTrigger: {
+        trigger: parallax,
+        scrub: true,
+        start: 'top bottom',
+        end: 'bottom center' //markers: true,
+
+      }
+    });
+  });
 }
 
 matroskinAnimations();

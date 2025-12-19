@@ -1302,6 +1302,45 @@ function matroskinAnimations() {
         },
         '(max-width: 768px)': function () {},
     })
+
+    document.querySelectorAll('.fixed-parallax').forEach((parallax) => {
+        const bg = parallax.querySelector('.fixed-parallax__bg')
+        const overlay = parallax.querySelector('.fixed-parallax__overlay')
+        gsap.fromTo(
+            overlay,
+            {
+                opacity: 1,
+            },
+            {
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: parallax,
+                    scrub: true,
+                    start: 'top bottom',
+                    end: 'bottom center',
+                    //markers: true,
+                },
+            }
+        )
+        gsap.fromTo(
+            bg,
+            {
+                scale: 1,
+            },
+            {
+                scale: 1.3,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: parallax,
+                    scrub: true,
+                    start: 'top bottom',
+                    end: 'bottom center',
+                    //markers: true,
+                },
+            }
+        )
+    })
 }
 matroskinAnimations()
 
