@@ -8464,6 +8464,7 @@ input[type=number] {
 }
 
 .matroskin-calibr {
+  overflow: hidden;
   display: flex;
   position: relative;
   aspect-ratio: 1/0.66;
