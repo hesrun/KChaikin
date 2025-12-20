@@ -8450,6 +8450,7 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .matroskin-hero__content {
+    margin-top: -12%;
     position: relative;
     bottom: 0;
     padding: 0 0 30px 0;
@@ -8509,9 +8510,6 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .matroskin-hero__matroskin {
-    scale: 1;
-    rotate: 0deg;
-    transform: skew(0, 0);
     max-width: 100px;
   }
 }
