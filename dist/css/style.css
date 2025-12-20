@@ -8358,6 +8358,10 @@ input[type=number] {
   font-size: clamp( 35px, 35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)), 100px );
 }
 
+.matroskin-detail {
+  overflow: hidden;
+}
+
 .fixed-parallax {
   overflow: hidden;
   min-height: 100dvh;
@@ -8414,7 +8418,7 @@ input[type=number] {
 @media only screen and (max-width: 576px) {
   .matroskin-hero__logo {
     margin-top: 0;
-    translate: 0 -200%;
+    translate: 0 -160%;
   }
 }
 .matroskin-hero__watch {
@@ -8428,8 +8432,10 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .matroskin-hero__watch {
+    position: relative;
     max-width: 90%;
-    margin: -23% auto 0;
+    margin: -30% auto 0;
+    z-index: 1;
   }
 }
 .matroskin-hero__content {
@@ -8444,11 +8450,13 @@ input[type=number] {
 }
 @media only screen and (max-width: 768px) {
   .matroskin-hero__content {
-    position: static;
+    position: relative;
+    bottom: 0;
     padding: 0 0 30px 0;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    z-index: 1;
   }
 }
 .matroskin-hero__copy {
@@ -8456,7 +8464,8 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .matroskin-hero__copy {
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: 12px;
   }
   .matroskin-hero__copy br {
     display: none;
@@ -8470,6 +8479,8 @@ input[type=number] {
 }
 .matroskin-hero__person:hover .matroskin-hero__matroskin {
   scale: 1;
+  rotate: 0deg;
+  transform: skew(0, 0);
 }
 @media only screen and (max-width: 768px) {
   .matroskin-hero__person {
@@ -8488,12 +8499,21 @@ input[type=number] {
   bottom: 100%;
   left: 10%;
   scale: 0;
+  transform: skew(15deg, 0);
   transform-origin: left bottom;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 .matroskin-hero__matroskin img {
   display: block;
   max-width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-hero__matroskin {
+    scale: 1;
+    rotate: 0deg;
+    transform: skew(0, 0);
+    max-width: 100px;
+  }
 }
 
 .product-card {
@@ -8523,6 +8543,11 @@ input[type=number] {
   margin-top: 5px;
   font-size: 14px;
   opacity: 0.7;
+}
+@media only screen and (max-width: 576px) {
+  .product-card {
+    max-width: 100%;
+  }
 }
 
 .matroskin-hearth {
@@ -8656,12 +8681,12 @@ input[type=number] {
 }
 @media only screen and (max-width: 576px) {
   .matroskin-cols-section_reverse {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 @media only screen and (max-width: 576px) {
   .matroskin-cols-section {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 .matroskin-cols-section > div {
@@ -8723,6 +8748,11 @@ input[type=number] {
 @media only screen and (max-width: 768px) {
   .matroskin-parallax-cols__bg {
     display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-parallax-cols {
+    display: block;
   }
 }
 

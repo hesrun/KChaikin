@@ -56,6 +56,10 @@
     }
 }
 
+.matroskin-detail {
+    overflow: hidden;
+}
+
 .fixed-parallax {
     overflow: hidden;
     min-height: 100dvh;
@@ -109,7 +113,7 @@
         margin-top: -8%;
         @include sm {
             margin-top: 0;
-            translate: 0 -200%;
+            translate: 0 -160%;
         }
     }
     &__watch {
@@ -119,8 +123,10 @@
             max-width: 70%;
         }
         @include md {
+            position: relative;
             max-width: 90%;
-            margin: -23% auto 0;
+            margin: -30% auto 0;
+            z-index: 1;
         }
     }
     &__content {
@@ -133,17 +139,20 @@
         width: 100%;
         padding: 0 1rem;
         @include md {
-            position: static;
+            position: relative;
+            bottom: 0;
             padding: 0 0 30px 0;
             flex-direction: column;
             align-items: center;
             gap: 30px;
+            z-index: 1;
         }
     }
     &__copy {
         margin-top: 20px;
         @include sm {
-            margin-top: 10px;
+            margin-top: 5px;
+            font-size: 12px;
             br {
                 display: none;
             }
@@ -157,6 +166,8 @@
         &:hover {
             .matroskin-hero__matroskin {
                 scale: 1;
+                rotate: 0deg;
+                transform: skew(0, 0);
             }
         }
         @include md {
@@ -175,11 +186,18 @@
         bottom: 100%;
         left: 10%;
         scale: 0;
+        transform: skew(15deg, 0);
         transform-origin: left bottom;
-        transition: all 0.3s;
+        transition: all 0.2s;
         img {
             display: block;
             max-width: 100%;
+        }
+        @include sm {
+            scale: 1;
+            rotate: 0deg;
+            transform: skew(0, 0);
+            max-width: 100px;
         }
     }
 }
@@ -210,6 +228,9 @@
         margin-top: 5px;
         font-size: 14px;
         opacity: 0.7;
+    }
+    @include sm {
+        max-width: 100%;
     }
 }
 
@@ -319,11 +340,11 @@
     &_reverse {
         flex-direction: row-reverse;
         @include sm {
-            flex-direction: column;
+            flex-direction: column-reverse;
         }
     }
     @include sm {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     > div {
         flex: 0 0 50%;
@@ -381,6 +402,9 @@
         @include md {
             display: none;
         }
+    }
+    @include sm {
+        display: block;
     }
 }
 
