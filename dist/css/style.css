@@ -8320,6 +8320,11 @@ input[type=number] {
 .matroskin-section {
   padding: 50px 0;
 }
+@media only screen and (max-width: 576px) {
+  .matroskin-section {
+    padding: 20px 0;
+  }
+}
 .matroskin-section_green {
   color: white;
   background: radial-gradient(circle, #2f7824, #154826);
@@ -8335,6 +8340,12 @@ input[type=number] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 90px;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-text-cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .matroskin-title {
@@ -8364,10 +8375,26 @@ input[type=number] {
   background: rgba(0, 0, 0, 0.9);
   inset: 0;
 }
+@media only screen and (max-width: 768px) {
+  .fixed-parallax {
+    aspect-ratio: 1;
+    min-height: auto;
+  }
+}
 
 .matroskin-hero {
   margin-top: 12%;
   position: relative;
+}
+@media only screen and (max-width: 992px) {
+  .matroskin-hero {
+    margin-top: 15%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-hero {
+    margin-top: 30%;
+  }
 }
 .matroskin-hero:after {
   content: "";
@@ -8384,9 +8411,26 @@ input[type=number] {
   max-width: 100%;
   margin-top: -8%;
 }
+@media only screen and (max-width: 576px) {
+  .matroskin-hero__logo {
+    margin-top: 0;
+    translate: 0 -200%;
+  }
+}
 .matroskin-hero__watch {
   display: block;
   margin: -7% auto 0;
+}
+@media only screen and (max-width: 992px) {
+  .matroskin-hero__watch {
+    max-width: 70%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-hero__watch {
+    max-width: 90%;
+    margin: -23% auto 0;
+  }
 }
 .matroskin-hero__content {
   display: flex;
@@ -8398,13 +8442,58 @@ input[type=number] {
   width: 100%;
   padding: 0 1rem;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-hero__content {
+    position: static;
+    padding: 0 0 30px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+.matroskin-hero__copy {
+  margin-top: 20px;
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-hero__copy {
+    margin-top: 10px;
+  }
+  .matroskin-hero__copy br {
+    display: none;
+  }
+}
 .matroskin-hero__person {
+  position: relative;
   width: 40%;
   max-width: 45%;
   font-size: 14px;
 }
-.matroskin-hero__copy {
-  margin-top: 20px;
+.matroskin-hero__person:hover .matroskin-hero__matroskin {
+  scale: 1;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-hero__person {
+    width: auto;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-hero__person > img {
+    max-width: 200px;
+  }
+}
+.matroskin-hero__matroskin {
+  position: absolute;
+  max-width: 147px;
+  bottom: 100%;
+  left: 10%;
+  scale: 0;
+  transform-origin: left bottom;
+  transition: all 0.3s;
+}
+.matroskin-hero__matroskin img {
+  display: block;
+  max-width: 100%;
 }
 
 .product-card {
@@ -8442,9 +8531,21 @@ input[type=number] {
   display: flex;
   z-index: 1;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-hearth {
+    min-height: 0;
+    flex-direction: column;
+  }
+}
 .matroskin-hearth__text {
   max-width: 380px;
   padding-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-hearth__text {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
 }
 .matroskin-hearth__image {
   position: absolute;
@@ -8452,11 +8553,36 @@ input[type=number] {
   top: -35%;
   width: 60%;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-hearth__image {
+    position: static;
+    width: 90%;
+    margin: -5% auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-hearth__image {
+    width: 100%;
+    margin: -15% auto;
+  }
+}
 .matroskin-hearth__image_face {
   left: 40%;
   right: 0;
   width: 75%;
   top: 0%;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-hearth__image_face {
+    width: 100%;
+    margin: 5% auto -15%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-hearth__image_face {
+    width: 150%;
+    margin: 5% 0 -35% -18%;
+  }
 }
 .matroskin-hearth__image img {
   translate: calc(var(--mouse-x) / -50) calc(var(--mouse-y) / -50);
@@ -8469,6 +8595,12 @@ input[type=number] {
   position: relative;
   aspect-ratio: 1/0.66;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-calibr {
+    aspect-ratio: auto;
+    display: block;
+  }
+}
 .matroskin-calibr__image {
   position: absolute;
   top: 0;
@@ -8476,13 +8608,35 @@ input[type=number] {
   max-width: 75%;
   right: 0;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-calibr__image {
+    position: static;
+    max-width: 100%;
+    margin-top: -50px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-calibr__image {
+    margin-top: -20px;
+  }
+}
 .matroskin-calibr .container {
   margin-top: auto;
   margin-bottom: 5%;
   width: 100%;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-calibr .container {
+    margin-bottom: 0;
+  }
+}
 .matroskin-calibr__text {
   width: 400px;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-calibr__text {
+    width: 100%;
+  }
 }
 .matroskin-calibr__title {
   margin-bottom: 30px;
@@ -8500,6 +8654,16 @@ input[type=number] {
 .matroskin-cols-section_reverse {
   flex-direction: row-reverse;
 }
+@media only screen and (max-width: 576px) {
+  .matroskin-cols-section_reverse {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .matroskin-cols-section {
+    flex-direction: column;
+  }
+}
 .matroskin-cols-section > div {
   flex: 0 0 50%;
   aspect-ratio: 1/1;
@@ -8508,6 +8672,11 @@ input[type=number] {
   color: white;
   background: #1f2022;
   display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-cols-section__descr {
+    padding: 1rem;
+  }
 }
 .matroskin-cols-section__content {
   margin: auto;
@@ -8550,6 +8719,11 @@ input[type=number] {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.9);
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-parallax-cols__bg {
+    display: none;
+  }
 }
 
 .matroskin-specification-table {
@@ -8598,13 +8772,29 @@ input[type=number] {
 .buy-matroskin-watch {
   background: radial-gradient(circle, #2f7824, #154826);
 }
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch {
+    position: relative;
+    margin-top: 15%;
+  }
+}
 .buy-matroskin-watch__container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
 }
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch__container {
+    display: block;
+  }
+}
 .buy-matroskin-watch .button {
   padding: 0 10px;
   max-width: 270px;
+}
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch .button {
+    max-width: 100%;
+  }
 }
 .buy-matroskin-watch__name {
   font-size: 25px;
@@ -8624,6 +8814,12 @@ input[type=number] {
 .buy-matroskin-watch__image {
   position: relative;
 }
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch__image {
+    position: absolute;
+    top: -7%;
+  }
+}
 .buy-matroskin-watch__image img {
   position: absolute;
   max-width: 85%;
@@ -8632,11 +8828,24 @@ input[type=number] {
   translate: -50% -50%;
   width: 100%;
 }
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch__image img {
+    position: static;
+    translate: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
 .buy-matroskin-watch__copy {
   margin-top: 65px;
   line-height: 1.4;
   font-size: 14px;
   opacity: 0.7;
+}
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch__copy {
+    margin-top: 0;
+  }
 }
 .buy-matroskin-watch__text {
   line-height: 1;
@@ -8646,6 +8855,13 @@ input[type=number] {
   flex-direction: column;
   gap: 20px;
   align-items: start;
+}
+@media only screen and (max-width: 576px) {
+  .buy-matroskin-watch__text {
+    position: relative;
+    padding: 110% 20px 30px;
+    z-index: 1;
+  }
 }
 
 .main:has(.buy-matroskin-watch) ~ footer {

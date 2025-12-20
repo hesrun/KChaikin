@@ -12,7 +12,7 @@
                 <div class="matroskin-hero__content">
                     <div class="matroskin-hero__person">
                         <div class="matroskin-hero__matroskin">
-                            <img src="img/matroskin/matroskin.png" alt="">
+                            <img src="img/matroskin/matroskin.webp" alt="">
                         </div>
                         <img src="img/matroskin/soyuz.svg" alt="">
                         <div class="matroskin-hero__copy">
@@ -68,7 +68,7 @@
             <div class="fixed-parallax__bg" style="background-image: url('../img/matroskin/prallax-bg-1.webp');"></div>
             <div class="fixed-parallax__overlay"></div>
         </section>
-        <section class="matroskin-section matroskin-section_pb-0 matroskin-section_green">
+        <section class="matroskin-section matroskin-section_pb-0 matroskin-section_green matroskin-detail">
             <div class="container">
                 <h2 class="matroskin-title roboto">
                     Каждая деталь <br>
@@ -95,7 +95,10 @@
                     </div>
                 </div>
             </div>
-            <img class="img-fluid" src="img/matroskin/matroskin-1.webp" alt="">
+            <picture>
+                <source media="(max-width: 576px)" srcset="img/matroskin/matroskin-1-m.webp">
+                <img class="img-fluid" src="img/matroskin/matroskin-1.webp" alt="">
+            </picture>
         </section>
         <section class="matroskin-section">
             <div class="container">
@@ -125,7 +128,10 @@
             </div>
         </section>
         <section class="matroskin-section matroskin-calibr matroskin-section_green">
-            <img class="matroskin-calibr__image" src="img/matroskin/matroskin-calibr.webp" alt="">
+            <picture>
+                <source media="(max-width: 576px)" srcset="img/matroskin/matroskin-calibr-1.webp">
+                <img class="matroskin-calibr__image" class="img-fluid" src="img/matroskin/matroskin-calibr.webp" alt="">
+            </picture>
             <div class="container">
                 <div class="matroskin-calibr__text">
                     <div class="matroskin-calibr__title roboto">
@@ -262,64 +268,69 @@
             <div class="matroskin-parallax-cols__bg"></div>
         </section>
         <section class="matroskin-section">
-            <h2 class="matroskin-title roboto text-center">
-                ТЕХНИЧЕСКИЕ <br>
-                спецификации
-            </h2>
-            <table class="matroskin-specification-table">
-                <tr>
-                    <td>Калибр</td>
-                    <td>K.18-27 с автоматическим заводом  </td>
-                </tr>
-                <tr>
-                    <td>Модуль джокер-индикации</td>
-                    <td>Производства мануфактуры Konstantin Chaykin  </td>
-                </tr>
-                <tr>
-                    <td>Базовый механизм</td>
-                    <td>La Joux-Perret G200 швейцарского производства, модифицированный    мануфактуры Konstantin
-                        Chaykin, диаметр 33,4 мм;
-                        толщина: 7,9 мм (с модулем), 28’800 полуколебаний в час, 32 камня (базовый механизм – 24, модуль
-                        – 8), запас хода 68
-                        часов</td>
-                </tr>
-                <tr>
-                    <td>Отделка механизма </td>
-                    <td>
-                        Жемчужная шлифовка, продольная, радиальная и циркулярная шлифовки, плоская полировка, ручное
-                        снятие и полировка фасок, полировка углублений под винты, штифты и камни, сферическая нагартовка
-                        кончиков осей колес, абразивно-струйная обработка, а также гальванические покрытия родием и
-                        позолотой.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Функции</td>
-                    <td>Джокер-индикация времени с дисковыми указателями часов, минут и фазы Луны  </td>
-                </tr>
-                <tr>
-                    <td>Корпус </td>
-                    <td>Из нержавеющей стали, 33 детали, диаметр 40 мм, толщина 12,15 мм, задняя крышка с сапфировым
-                        окном прикреплена 6 винтами </td>
-                </tr>
-                <tr>
-                    <td>Отделка циферблата </td>
-                    <td>Рельефный декор «гильоше», многослойное лаковое покрытие, прецизионная тампонная печать маркеров
-                        и логотипа,
-                        гальваническое покрытие родием, гальваническое покрытие рутением  </td>
-                </tr>
-                <tr>
-                    <td>Часовые стекла</td>
-                    <td>Сапфировое стекло с просветляющим покрытием, диаметр 33 мм; сапфировое стекло задней крышки
-                        корпуса с просветляющим
-                        покрытием, диаметр 25,5 мм</td>
-                </tr>
-                <tr>
-                    <td>Ремешок</td>
-                    <td>Эксклюзивный коллекционный кожанный ремешок с подкладкой из высококачественной кожи и
-                        классической застежкой из
-                        нержавеющей стали, произведенной мануфактурой Konstantin Chaykin</td>
-                </tr>
-            </table>
+            <div class="container">
+                <h2 class="matroskin-title roboto text-center">
+                    ТЕХНИЧЕСКИЕ <br>
+                    спецификации
+                </h2>
+                <table class="matroskin-specification-table">
+                    <tr>
+                        <td>Калибр</td>
+                        <td>K.18-27 с автоматическим заводом  </td>
+                    </tr>
+                    <tr>
+                        <td>Модуль джокер-индикации</td>
+                        <td>Производства мануфактуры Konstantin Chaykin  </td>
+                    </tr>
+                    <tr>
+                        <td>Базовый механизм</td>
+                        <td>La Joux-Perret G200 швейцарского производства, модифицированный    мануфактуры Konstantin
+                            Chaykin, диаметр 33,4 мм;
+                            толщина: 7,9 мм (с модулем), 28’800 полуколебаний в час, 32 камня (базовый механизм – 24,
+                            модуль
+                            – 8), запас хода 68
+                            часов</td>
+                    </tr>
+                    <tr>
+                        <td>Отделка механизма </td>
+                        <td>
+                            Жемчужная шлифовка, продольная, радиальная и циркулярная шлифовки, плоская полировка, ручное
+                            снятие и полировка фасок, полировка углублений под винты, штифты и камни, сферическая
+                            нагартовка
+                            кончиков осей колес, абразивно-струйная обработка, а также гальванические покрытия родием и
+                            позолотой.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Функции</td>
+                        <td>Джокер-индикация времени с дисковыми указателями часов, минут и фазы Луны  </td>
+                    </tr>
+                    <tr>
+                        <td>Корпус </td>
+                        <td>Из нержавеющей стали, 33 детали, диаметр 40 мм, толщина 12,15 мм, задняя крышка с сапфировым
+                            окном прикреплена 6 винтами </td>
+                    </tr>
+                    <tr>
+                        <td>Отделка циферблата </td>
+                        <td>Рельефный декор «гильоше», многослойное лаковое покрытие, прецизионная тампонная печать
+                            маркеров
+                            и логотипа,
+                            гальваническое покрытие родием, гальваническое покрытие рутением  </td>
+                    </tr>
+                    <tr>
+                        <td>Часовые стекла</td>
+                        <td>Сапфировое стекло с просветляющим покрытием, диаметр 33 мм; сапфировое стекло задней крышки
+                            корпуса с просветляющим
+                            покрытием, диаметр 25,5 мм</td>
+                    </tr>
+                    <tr>
+                        <td>Ремешок</td>
+                        <td>Эксклюзивный коллекционный кожанный ремешок с подкладкой из высококачественной кожи и
+                            классической застежкой из
+                            нержавеющей стали, произведенной мануфактурой Konstantin Chaykin</td>
+                    </tr>
+                </table>
+            </div>
         </section>
         <section class="matroskin-section matroskin-section_pn">
             <h2 class="matroskin-title matroskin-title_xl roboto text-center">

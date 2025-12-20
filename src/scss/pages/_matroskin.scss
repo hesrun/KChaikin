@@ -23,6 +23,9 @@
 
 .matroskin-section {
     padding: 50px 0;
+    @include sm {
+        padding: 20px 0;
+    }
     &_green {
         color: white;
         background: radial-gradient(circle, #2f7824, #154826);
@@ -38,6 +41,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 90px;
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 .matroskin-title {
     text-transform: uppercase;
@@ -65,11 +72,21 @@
         background: rgba(black, 0.9);
         inset: 0;
     }
+    @include md {
+        aspect-ratio: 1;
+        min-height: auto;
+    }
 }
 
 .matroskin-hero {
     margin-top: 12%;
     position: relative;
+    @include lg {
+        margin-top: 15%;
+    }
+    @include sm {
+        margin-top: 30%;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -90,10 +107,21 @@
         width: 100%;
         max-width: 100%;
         margin-top: -8%;
+        @include sm {
+            margin-top: 0;
+            translate: 0 -200%;
+        }
     }
     &__watch {
         display: block;
         margin: -7% auto 0;
+        @include lg {
+            max-width: 70%;
+        }
+        @include md {
+            max-width: 90%;
+            margin: -23% auto 0;
+        }
     }
     &__content {
         display: flex;
@@ -104,14 +132,55 @@
         left: 0;
         width: 100%;
         padding: 0 1rem;
-    }
-    &__person {
-        width: 40%;
-        max-width: 45%;
-        font-size: 14px;
+        @include md {
+            position: static;
+            padding: 0 0 30px 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
     }
     &__copy {
         margin-top: 20px;
+        @include sm {
+            margin-top: 10px;
+            br {
+                display: none;
+            }
+        }
+    }
+    &__person {
+        position: relative;
+        width: 40%;
+        max-width: 45%;
+        font-size: 14px;
+        &:hover {
+            .matroskin-hero__matroskin {
+                scale: 1;
+            }
+        }
+        @include md {
+            width: auto;
+            max-width: 100%;
+        }
+        @include sm {
+            > img {
+                max-width: 200px;
+            }
+        }
+    }
+    &__matroskin {
+        position: absolute;
+        max-width: 147px;
+        bottom: 100%;
+        left: 10%;
+        scale: 0;
+        transform-origin: left bottom;
+        transition: all 0.3s;
+        img {
+            display: block;
+            max-width: 100%;
+        }
     }
 }
 
@@ -149,20 +218,45 @@
     position: relative;
     display: flex;
     z-index: 1;
+    @include md {
+        min-height: 0;
+        flex-direction: column;
+    }
     &__text {
         max-width: 380px;
         padding-bottom: 50px;
+        @include md {
+            max-width: 100%;
+            padding-bottom: 0;
+        }
     }
     &__image {
         position: absolute;
         right: -5%;
         top: -35%;
         width: 60%;
+        @include md {
+            position: static;
+            width: 90%;
+            margin: -5% auto;
+        }
+        @include sm {
+            width: 100%;
+            margin: -15% auto;
+        }
         &_face {
             left: 40%;
             right: 0;
             width: 75%;
             top: 0%;
+            @include md {
+                width: 100%;
+                margin: 5% auto -15%;
+            }
+            @include sm {
+                width: 150%;
+                margin: 5% 0 -35% -18%;
+            }
         }
         img {
             translate: calc(var(--mouse-x) / -50) calc(var(--mouse-y) / -50);
@@ -176,20 +270,38 @@
     display: flex;
     position: relative;
     aspect-ratio: 1/0.66;
+    @include md {
+        aspect-ratio: auto;
+        display: block;
+    }
     &__image {
         position: absolute;
         top: 0;
         width: 100%;
         max-width: 75%;
         right: 0;
+        @include md {
+            position: static;
+            max-width: 100%;
+            margin-top: -50px;
+        }
+        @include sm {
+            margin-top: -20px;
+        }
     }
     .container {
         margin-top: auto;
         margin-bottom: 5%;
         width: 100%;
+        @include md {
+            margin-bottom: 0;
+        }
     }
     &__text {
         width: 400px;
+        @include md {
+            width: 100%;
+        }
     }
     &__title {
         margin-bottom: 30px;
@@ -206,6 +318,12 @@
     display: flex;
     &_reverse {
         flex-direction: row-reverse;
+        @include sm {
+            flex-direction: column;
+        }
+    }
+    @include sm {
+        flex-direction: column;
     }
     > div {
         flex: 0 0 50%;
@@ -215,6 +333,9 @@
         color: white;
         background: #1f2022;
         display: flex;
+        @include md {
+            padding: 1rem;
+        }
     }
     &__content {
         margin: auto;
@@ -257,6 +378,9 @@
         position: absolute;
         inset: 0;
         background: rgba(black, 0.9);
+        @include md {
+            display: none;
+        }
     }
 }
 
@@ -299,13 +423,23 @@
 
 .buy-matroskin-watch {
     background: radial-gradient(circle, #2f7824, #154826);
+    @include sm {
+        position: relative;
+        margin-top: 15%;
+    }
     &__container {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
+        @include sm {
+            display: block;
+        }
     }
     .button {
         padding: 0 10px;
         max-width: 270px;
+        @include sm {
+            max-width: 100%;
+        }
     }
     &__name {
         font-size: 25px;
@@ -324,6 +458,10 @@
     }
     &__image {
         position: relative;
+        @include sm {
+            position: absolute;
+            top: -7%;
+        }
         img {
             position: absolute;
             max-width: 85%;
@@ -331,6 +469,12 @@
             left: 60%;
             translate: -50% -50%;
             width: 100%;
+            @include sm {
+                position: static;
+                translate: 0;
+                width: 100%;
+                max-width: 100%;
+            }
         }
     }
     &__copy {
@@ -338,6 +482,9 @@
         line-height: 1.4;
         font-size: 14px;
         opacity: 0.7;
+        @include sm {
+            margin-top: 0;
+        }
     }
     &__text {
         line-height: 1;
@@ -347,6 +494,11 @@
         flex-direction: column;
         gap: 20px;
         align-items: start;
+        @include sm {
+            position: relative;
+            padding: 110% 20px 30px;
+            z-index: 1;
+        }
     }
 }
 
