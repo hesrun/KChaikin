@@ -8616,7 +8616,7 @@ input[type=number] {
   overflow: hidden;
   display: flex;
   position: relative;
-  aspect-ratio: 1/0.66;
+  aspect-ratio: 16/9;
 }
 @media only screen and (max-width: 768px) {
   .matroskin-calibr {
@@ -8628,7 +8628,7 @@ input[type=number] {
   position: absolute;
   top: 0;
   width: 100%;
-  max-width: 75%;
+  max-width: 65%;
   right: 0;
 }
 @media only screen and (max-width: 768px) {

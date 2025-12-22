@@ -1342,44 +1342,6 @@ function matroskinAnimations() {
                     }
                 )
             })
-
-            gsap.fromTo(
-                '.matroskin-calibr__image',
-                {
-                    yPercent: -100,
-                },
-                {
-                    yPercent: 0,
-                    duration: 1,
-                    ease: 'linear',
-                    scrollTrigger: {
-                        trigger: '.matroskin-calibr',
-                        scrub: true,
-                        start: 'top bottom',
-                        end: 'bottom bottom',
-                        //markers: true,
-                    },
-                }
-            )
-            gsap.fromTo(
-                '.matroskin-detail img',
-                {
-                    yPercent: 100,
-                },
-                {
-                    yPercent: 0,
-                    duration: 1,
-                    ease: 'linear',
-                    scrollTrigger: {
-                        trigger: '.matroskin-detail',
-                        scrub: true,
-                        start: 'top bottom',
-                        end: 'center center',
-                        //markers: true,
-                    },
-                }
-            )
-
             gsap.fromTo(
                 '.buy-matroskin-watch__image',
                 {

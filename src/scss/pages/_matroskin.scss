@@ -288,7 +288,7 @@
     overflow: hidden;
     display: flex;
     position: relative;
-    aspect-ratio: 1/0.66;
+    aspect-ratio: 16/9;
     @include md {
         aspect-ratio: auto;
         display: block;
@@ -297,7 +297,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-        max-width: 75%;
+        max-width: 65%;
         right: 0;
         @include md {
             position: static;
