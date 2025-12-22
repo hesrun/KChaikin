@@ -8478,11 +8478,6 @@ input[type=number] {
   max-width: 45%;
   font-size: 14px;
 }
-.matroskin-hero__person:hover .matroskin-hero__matroskin {
-  scale: 1;
-  rotate: 0deg;
-  transform: skew(0, 0);
-}
 @media only screen and (max-width: 768px) {
   .matroskin-hero__person {
     width: auto;
@@ -8499,10 +8494,7 @@ input[type=number] {
   max-width: 147px;
   bottom: 100%;
   left: 10%;
-  scale: 0;
-  transform: skew(15deg, 0);
   transform-origin: left bottom;
-  transition: all 0.2s;
 }
 .matroskin-hero__matroskin img {
   display: block;
@@ -8558,6 +8550,14 @@ input[type=number] {
   .matroskin-hearth {
     min-height: 0;
     flex-direction: column;
+  }
+}
+.matroskin-hearth_second {
+  min-height: 450px;
+}
+@media only screen and (max-width: 768px) {
+  .matroskin-hearth_second {
+    min-height: 0;
   }
 }
 .matroskin-hearth__text {
@@ -8722,36 +8722,6 @@ input[type=number] {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.matroskin-parallax-cols {
-  display: flex;
-  position: relative;
-}
-.matroskin-parallax-cols__item {
-  overflow: hidden;
-  flex: 0 0 50%;
-  aspect-ratio: 1;
-  overflow: hidden;
-}
-.matroskin-parallax-cols__item img {
-  display: block;
-  width: 100%;
-}
-.matroskin-parallax-cols__bg {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-}
-@media only screen and (max-width: 768px) {
-  .matroskin-parallax-cols__bg {
-    display: none;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .matroskin-parallax-cols {
-    display: block;
-  }
 }
 
 .matroskin-specification-table {

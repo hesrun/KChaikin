@@ -164,13 +164,6 @@
         width: 40%;
         max-width: 45%;
         font-size: 14px;
-        &:hover {
-            .matroskin-hero__matroskin {
-                scale: 1;
-                rotate: 0deg;
-                transform: skew(0, 0);
-            }
-        }
         @include md {
             width: auto;
             max-width: 100%;
@@ -186,10 +179,7 @@
         max-width: 147px;
         bottom: 100%;
         left: 10%;
-        scale: 0;
-        transform: skew(15deg, 0);
         transform-origin: left bottom;
-        transition: all 0.2s;
         img {
             display: block;
             max-width: 100%;
@@ -240,6 +230,12 @@
     @include md {
         min-height: 0;
         flex-direction: column;
+    }
+    &_second {
+        min-height: 450px;
+        @include md {
+            min-height: 0;
+        }
     }
     &__text {
         max-width: 380px;
@@ -377,32 +373,6 @@
             width: 100%;
             height: 100%;
         }
-    }
-}
-
-.matroskin-parallax-cols {
-    display: flex;
-    position: relative;
-    &__item {
-        overflow: hidden;
-        flex: 0 0 50%;
-        aspect-ratio: 1;
-        overflow: hidden;
-        img {
-            display: block;
-            width: 100%;
-        }
-    }
-    &__bg {
-        position: absolute;
-        inset: 0;
-        background: rgba(black, 0.9);
-        @include md {
-            display: none;
-        }
-    }
-    @include sm {
-        display: block;
     }
 }
 
