@@ -8367,6 +8367,9 @@ input[type=number] {
   min-height: 100dvh;
   position: relative;
 }
+.fixed-parallax_sm {
+  min-height: 80dvh;
+}
 .fixed-parallax__bg {
   position: absolute;
   inset: 0;

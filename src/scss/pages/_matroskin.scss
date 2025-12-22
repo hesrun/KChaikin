@@ -64,6 +64,9 @@
     overflow: hidden;
     min-height: 100dvh;
     position: relative;
+    &_sm {
+        min-height: 80dvh;
+    }
     &__bg {
         position: absolute;
         inset: 0;
