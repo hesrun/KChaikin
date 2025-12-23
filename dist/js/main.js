@@ -1293,11 +1293,24 @@ function matroskinAnimations() {
   });
 }
 
-matroskinAnimations();
+function matroskinModelViewInit() {
+  var btn = $('#showModel');
+  var model = $('#modelView');
+  var close = $('#modelViewClose');
+  btn.click(function () {
+    model.toggleClass('show');
+  });
+  close.click(function () {
+    model.toggleClass('show');
+  });
+}
+
 $(window).on('resize', function () {
   gumResponsiveInit();
   ScrollTrigger.refresh();
 });
 $(document).ready(function () {
   initGumAnimations();
+  matroskinModelViewInit();
+  matroskinAnimations();
 });

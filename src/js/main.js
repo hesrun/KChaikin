@@ -1402,7 +1402,18 @@ function matroskinAnimations() {
         }
     )
 }
-matroskinAnimations()
+
+function matroskinModelViewInit() {
+    const btn = $('#showModel')
+    const model = $('#modelView')
+    const close = $('#modelViewClose')
+    btn.click(function () {
+        model.toggleClass('show')
+    })
+    close.click(function () {
+        model.toggleClass('show')
+    })
+}
 
 $(window).on('resize', function () {
     gumResponsiveInit()
@@ -1411,4 +1422,6 @@ $(window).on('resize', function () {
 
 $(document).ready(function () {
     initGumAnimations()
+    matroskinModelViewInit()
+    matroskinAnimations()
 })

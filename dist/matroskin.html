@@ -309,13 +309,17 @@
       </div>
    </header>
    <main class="main">
+
       <section class="matroskin-hero">
          <div class="container matroskin-hero__container">
+            <button id="showModel" class="matroskin-hero__3d-btn">
+               <img src="img/matroskin/3d-view.svg" alt="">
+               <span>3d</span>
+            </button>
             <picture>
                <source media="(max-width: 576px)" srcset="img/matroskin/logo-m.svg">
                <img class="matroskin-hero__logo" src="img/matroskin/logo.svg" alt="Matroskin Logo">
             </picture>
-
             <img class="matroskin-hero__watch" src="img/matroskin/hero-img.webp" alt="Matroskin Hero watch">
             <div class="matroskin-hero__content">
                <div class="matroskin-hero__person">
@@ -672,6 +676,290 @@
          </div>
       </section>
    </main>
+   <div id="modelView" class="matroskin-model-viewer">
+      <button id="modelViewClose">
+         <img class="matroskin-model-viewer__close" src="img/matroskin/close.svg" alt="">
+      </button>
+      <div class="matroskin-model-loader">
+         <div class="matroskin-model-loader__content">
+            <div class="matroskin-model-loader__text">
+               ЗАГРУЗКА
+            </div>
+            <div class="matroskin-model-loader__bar">
+               <div class="matroskin-model-loader__bar-inner"></div>
+            </div>
+            <div class="matroskin-model-loader__percents">56 %</div>
+         </div>
+      </div>
+      <div class="matroskin-model-viewer__container" id="viewer">
+         <canvas id="scene"></canvas>
+      </div>
+      <div class="matroskin-model-viewer__notif roboto">
+         <img src="img/matroskin/3d-rotate.svg" alt="">
+         Вращайте часы,<br>
+            зажав левую клавишу мышки
+      </div>
+   </div>
+   <script src="https://unpkg.com/three@0.140.0/build/three.min.js"></script>
+   <script src="https://unpkg.com/three@0.140.0/examples/js/loaders/GLTFLoader.js"></script>
+   <script src="https://unpkg.com/three@0.140.0/examples/js/controls/OrbitControls.js"></script>
+   <script src="https://unpkg.com/three@0.140.0/examples/js/loaders/RGBELoader.js"></script>
+
+   <script>
+      const loaderBlock = document.querySelector('.matroskin-model-loader');
+      const loaderBar = document.querySelector('.matroskin-model-loader__bar-inner');
+      const loaderPerc = document.querySelector('.matroskin-model-loader__percents');
+      const container = document.getElementById('viewer');
+      const canvas = document.getElementById('scene');
+
+      // Сцена
+      const scene = new THREE.Scene();
+
+      // Камера (фиксированный FOV!)
+      const camera = new THREE.PerspectiveCamera(10, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 0, 2);
+
+      // Рендерер
+      const renderer = new THREE.WebGLRenderer({
+         canvas,
+         antialias: true,
+         alpha: true
+      });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+
+      // Контролы
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+      controls.enableZoom = false;
+      controls.enablePan = false;
+      controls.enableDamping = true;
+      //controls.autoRotate = true;
+      //controls.autoRotateSpeed = 1.0;
+
+
+      // HDRI
+      const textureLoader = new THREE.TextureLoader();
+      textureLoader.load('/static/model/bg.png', pngTexture => {
+         pngTexture.mapping = THREE.EquirectangularReflectionMapping;
+         const pmremGenerator = new THREE.PMREMGenerator(renderer);
+         scene.environment = pmremGenerator.fromEquirectangular(pngTexture).texture;
+         pmremGenerator.dispose();
+      });
+
+      // Свет
+      const dir1 = new THREE.DirectionalLight(0xffffff, 1);
+      dir1.position.set(0, 60, 70);
+      scene.add(dir1);
+
+      const dir2 = new THREE.DirectionalLight(0xffffff, 0.5);
+      dir2.position.set(0, -50, 40);
+      scene.add(dir2);
+
+
+      // ============================================================
+      // Центрирование модели внутри группы
+      // ============================================================
+      const group = new THREE.Group();
+      scene.add(group);
+
+      let watch = null;
+
+      // ----------------------------------------
+      // АДАПТИВНЫЙ offset — модель крупнее в мобиле
+      // ----------------------------------------
+      function getOffset() {
+         if (window.innerWidth < 480) return 2; // маленькие телефоны
+         if (window.innerWidth < 768) return 1.30; // обычные телефоны
+         return 1.50; // ПК
+      }
+
+      function fitCameraToObject(camera, object, offset = 1.5) {
+         const box = new THREE.Box3().setFromObject(object);
+         const size = box.getSize(new THREE.Vector3());
+         const center = box.getCenter(new THREE.Vector3());
+
+         const maxDim = Math.max(size.x, size.y, size.z);
+
+         const fov = camera.fov * (Math.PI / 180);
+         let cameraZ = (maxDim / 2) / Math.tan(fov / 2);
+         cameraZ *= offset;
+
+         camera.position.set(center.x, center.y, cameraZ + center.z);
+         camera.lookAt(center);
+
+         controls.target.copy(center);
+         controls.update();
+
+         camera.updateProjectionMatrix();
+      }
+
+      // -----------------------------
+      // Функция смещения камеры (орбита)
+      // -----------------------------
+
+      function rotateCameraAroundTarget(camera, controls, angleX, angleY) {
+         const target = controls.target;
+         const r = camera.position.distanceTo(target);
+
+         camera.position.x = target.x + r * Math.sin(angleY) * Math.cos(angleX);
+         camera.position.y = target.y + r * Math.sin(angleX);
+         camera.position.z = target.z + r * Math.cos(angleY) * Math.cos(angleX);
+
+         camera.lookAt(target);
+         controls.update();
+      }
+
+
+      // Загрузка модели
+      const loader = new THREE.GLTFLoader();
+
+      loader.load(
+         '/static/model/matroskin.glb',
+
+         // === УСПЕШНАЯ ЗАГРУЗКА ===
+         gltf => {
+            // скрываем лоадер
+            loaderBlock.style.opacity = '0';
+            loaderBlock.style.pointerEvents = 'none';
+            setTimeout(() => loaderBlock.style.display = 'none', 300);
+
+            watch = gltf.scene;
+
+            // центрируем
+            const box = new THREE.Box3().setFromObject(watch);
+            const center = box.getCenter(new THREE.Vector3());
+            watch.position.sub(center);
+
+            // добавляем
+            group.add(watch);
+
+            // ставим камеру
+            fitCameraToObject(camera, group, getOffset());
+
+            // стартовый угол
+            rotateCameraAroundTarget(camera, controls, -0.4, -0.4);
+
+            needsRender = true;
+
+            // --- Найти Boob_Right и Boob_Left и добавить их в ротаторы
+            window.debugRotators = window.debugRotators || [];
+            const boobRight = gltf.scene.getObjectByName('Boob_Right');
+            const boobLeft = gltf.scene.getObjectByName('Boob_Left');
+
+            if (boobRight) {
+               window.boobRight = boobRight;
+               console.log('Found Boob_Right');
+            }
+            if (boobLeft) {
+               window.boobLeft = boobLeft;
+               console.log('Found Boob_Left');
+            }
+            if (!boobRight && !boobLeft) {
+               console.warn('Boob_Right and/or Boob_Left not found in model');
+            }
+
+            window.updateBoobClock = (nowDate) => {
+               const now = nowDate || new Date();
+               const hours = now.getHours();
+               const minutes = now.getMinutes();
+               const seconds = now.getSeconds();
+
+               const minuteAngle = (minutes + seconds / 60) * (Math.PI * 2 / 60);
+
+
+               const hourAngle = ((hours % 12) + minutes / 60 + seconds / 3600) * (Math.PI * 2 / 12);
+
+
+               if (window.boobLeft) window.boobLeft.rotation.z = -(minuteAngle);
+               if (window.boobRight) window.boobRight.rotation.z = (hourAngle - .05);
+
+
+               needsRender = true;
+            };
+
+            // Вызов один раз сразу
+            window.updateBoobClock(new Date());
+         },
+
+         // === ПРОГРЕСС ===
+         xhr => {
+            if (xhr.lengthComputable) {
+               const percent = Math.min(100, Math.round((xhr.loaded / xhr.total) * 100));
+               loaderPerc.textContent = percent + ' %';
+               loaderBar.style.width = percent + '%';
+            }
+         },
+
+         // === ОШИБКА ===
+         err => {
+            console.error('Ошибка загрузки модели:', err);
+            loaderPerc.textContent = 'Ошибка загрузки';
+         }
+      );
+
+
+      // Анимация
+      let needsRender = true;
+
+      function animate() {
+         requestAnimationFrame(animate);
+
+         controls.update();
+
+         // Обновить время на циферблатах
+         if (window.updateBoobClock) {
+            const nowMs = Date.now();
+            if (!window._lastBoobUpdate || (nowMs - window._lastBoobUpdate) > 500) {
+               window.updateBoobClock(new Date());
+               window._lastBoobUpdate = nowMs;
+            }
+         }
+
+         // Применить ротацию к debug-ротаторам (Boob_Right, Boob_Left и т.п.)
+         if (window.debugRotators && window.debugRotators.length) {
+            window.debugRotators.forEach(r => {
+               if (r.obj && r.obj.rotation) {
+                  r.obj.rotation[r.axis] += r.speed;
+               }
+            });
+            needsRender = true;
+         }
+
+         if (controls.autoRotate) needsRender = true;
+
+         if (needsRender) {
+            renderer.render(scene, camera);
+            needsRender = false;
+         }
+      }
+
+      controls.addEventListener('change', () => needsRender = true);
+      animate();
+
+      // Адаптивность
+      let lastWidth = container.clientWidth;
+
+      function onWindowResize() {
+         const width = container.clientWidth;
+         if (width === lastWidth) return;
+         lastWidth = width;
+
+         const height = container.clientHeight;
+
+         camera.aspect = width / height;
+         camera.updateProjectionMatrix();
+         renderer.setSize(width, height);
+
+         if (watch) {
+            fitCameraToObject(camera, group, getOffset());
+            rotateCameraAroundTarget(camera, controls, -0.4, -0.4);
+         }
+      }
+
+      window.addEventListener('resize', onWindowResize);
+   </script>
 
    <footer class="footer">
       <div class="container">

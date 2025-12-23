@@ -110,6 +110,40 @@
     &__container {
         position: relative;
     }
+    &__3d-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 30%;
+        left: 1rem;
+        background: white;
+        box-shadow: 0 24px 44px 0 rgba(black, 0.25);
+        border-radius: 50%;
+        transition: all 0.3s;
+        z-index: 2;
+        @include sm {
+            width: 60px;
+            height: 60px;
+            right: 1rem;
+            left: auto;
+            top: 40%;
+            img {
+                width: 24px;
+            }
+        }
+        span {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        @include hover {
+            background: #eee;
+        }
+    }
     &__logo {
         width: 100%;
         max-width: 100%;
@@ -125,7 +159,7 @@
         @include lg {
             max-width: 70%;
         }
-        @include md {
+        @include sm {
             position: relative;
             max-width: 90%;
             margin: -30% auto 0;
@@ -504,4 +538,73 @@
 
 .main:has(.matroskin-hearth) {
     overflow: hidden;
+}
+
+.matroskin-model-viewer {
+    right: 0;
+    position: fixed;
+    background: linear-gradient(to bottom, #dfdfdf, #5c5e64, #83838c);
+    border-radius: 50px 0 0 50px;
+    aspect-ratio: 1/1;
+    height: 100dvh;
+    translate: 100% 0;
+    transition: all 0.3s;
+    z-index: 100;
+    @include lg {
+        aspect-ratio: auto;
+        width: 100%;
+        border-radius: 0;
+    }
+    &.show {
+        translate: 0;
+    }
+    &__close {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        @include hover {
+            opacity: 0.5;
+        }
+    }
+    &__container {
+        height: 100%;
+    }
+    &__notif {
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+.matroskin-model-loader {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    inset: 0;
+    &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    &__bar {
+        height: 2px;
+        width: 80%;
+        background: rgba(black, 0.25);
+        max-width: 300px;
+    }
+    &__bar-inner {
+        height: 100%;
+        background: white;
+        width: 0;
+    }
 }
