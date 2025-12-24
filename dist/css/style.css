@@ -8958,6 +8958,11 @@ input[type=number] {
   text-transform: uppercase;
   font-weight: 700;
 }
+@media only screen and (max-width: 768px) {
+  .matroskin-model-viewer__notif {
+    display: none;
+  }
+}
 
 .matroskin-model-loader {
   font-family: "Roboto Flex", sans-serif;

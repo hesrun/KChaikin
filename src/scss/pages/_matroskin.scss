@@ -580,6 +580,9 @@
         font-size: 14px;
         text-transform: uppercase;
         font-weight: 700;
+        @include md {
+            display: none;
+        }
     }
 }
 
